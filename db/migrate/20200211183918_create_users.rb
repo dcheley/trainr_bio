@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
     create_table :users do |t|
       t.string :email
       t.string :username
+      t.string :password_digest
       t.string :phone
       t.string :location
       t.string :first_name
@@ -13,6 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :website_url
       t.string :tik_tok_url
       t.text :description
+      t.integer :role
       t.timestamps
     end
 

@@ -14,7 +14,7 @@ class StudiosController < ApplicationController
   end
 
   def index
-
+    @studio = Studio.all
   end
 
   def edit

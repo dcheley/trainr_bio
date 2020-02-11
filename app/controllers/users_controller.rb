@@ -6,7 +6,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
 
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   def show
@@ -14,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @users = User.all
   end
 
   def edit
@@ -38,7 +44,8 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
-      :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description
+      :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
+      :password, :password_confirmation
     )
   end
 end

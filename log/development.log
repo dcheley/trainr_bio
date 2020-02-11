@@ -97,3 +97,578 @@ Migrating to CreateUsers (20200211183918)
   [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-11 18:50:43.631743"], ["key", "environment"]]
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (34.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.6ms)[0m  [1m[35mDROP TABLE "user_studios"[0m
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE "studios"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200211183918"]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (35.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "username" character varying, "password" character varying, "phone" character varying, "location" character varying, "first_name" character varying, "last_name" character varying, "img_url" character varying, "instragram_url" character varying, "facebook_url" character varying, "website_url" character varying, "tik_tok_url" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "studios" ("id" bigserial primary key, "name" character varying, "location" character varying, "phone" character varying, "img_url" character varying, "website_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "user_studios" ("id" bigserial primary key, "user_id" bigint, "studio_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_user_id" ON "user_studios"  ("user_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_studio_id" ON "user_studios"  ("studio_id")[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200211183918"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "user_studios"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "studios"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (4.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200211183918"]]
+  [1m[35m (14.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "username" character varying, "password" character varying, "phone" character varying, "location" character varying, "first_name" character varying, "last_name" character varying, "img_url" character varying, "instragram_url" character varying, "facebook_url" character varying, "website_url" character varying, "tik_tok_url" character varying, "description" text, "role" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "studios" ("id" bigserial primary key, "name" character varying, "location" character varying, "phone" character varying, "img_url" character varying, "website_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "user_studios" ("id" bigserial primary key, "user_id" bigint, "studio_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_user_id" ON "user_studios"  ("user_id")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_studio_id" ON "user_studios"  ("studio_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200211183918"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-11 15:41:47 -0500
+  [1m[35m (42.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (13.5ms)
+Completed 200 OK in 55ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:42:14 -0500
+  
+ArgumentError (must be called with a path and/or options):
+  
+config/routes.rb:3:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2020-02-11 15:43:31 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 41.3ms)
+
+
+  
+SyntaxError (/Users/dcheley/Desktop/projx/trainr_bio/app/views/users/_form.html.erb:38: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...er.append=( f.submit, "submit", class: 'btn submit' );@outpu...
+...                              ^):
+  
+app/views/users/_form.html.erb:38: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1345091840281040725_70248821754440'
+Started GET "/" for ::1 at 2020-02-11 15:44:11 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (208.4ms)
+  Rendered users/new.html.erb within layouts/application (211.0ms)
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `checkbox' for #<ActionView::Helpers::FormBuilder:0x00007fc823a1b830>
+Did you mean?  check_box):
+    12: 
+    13:   <div class="field">
+    14:     <%= f.label 'I am an instructor' %>
+    15:     <%= f.checkbox :instructor %>
+    16:   </div>
+    17: 
+    18:   <!-- <div class="field">
+  
+app/views/users/_form.html.erb:15:in `block in _app_views_users__form_html_erb___4315329375071229127_70248817206940'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4315329375071229127_70248817206940'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1345091840281040725_70248783974340'
+Started GET "/" for ::1 at 2020-02-11 15:44:23 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (31.2ms)
+  Rendered users/new.html.erb within layouts/application (34.3ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `instructor' for #<User:0x00007fc824cf74e0>):
+    12: 
+    13:   <div class="field">
+    14:     <%= f.label 'I am an instructor' %>
+    15:     <%= f.check_box :instructor %>
+    16:   </div>
+    17: 
+    18:   <!-- <div class="field">
+  
+app/views/users/_form.html.erb:15:in `block in _app_views_users__form_html_erb___4315329375071229127_70248793779900'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4315329375071229127_70248793779900'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1345091840281040725_70248781454520'
+Started GET "/" for ::1 at 2020-02-11 15:44:32 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (32.5ms)
+  Rendered users/new.html.erb within layouts/application (35.4ms)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant User::Password):
+    32: 
+    33:   <div class="field">
+    34:     <%= f.label :password %>
+    35:     <%= f.text_field :password, required: true %>
+    36:   </div>
+    37: 
+    38:   <%= f.submit "submit", class: 'btn submit' %>
+  
+app/models/user.rb:11:in `password'
+app/views/users/_form.html.erb:35:in `block in _app_views_users__form_html_erb___4315329375071229127_70248784630700'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4315329375071229127_70248784630700'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1345091840281040725_70248818437080'
+Started GET "/" for ::1 at 2020-02-11 15:44:56 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (wrong argument type String (expected Module)):
+  
+app/models/user.rb:2:in `include'
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:5:in `new'
+Started GET "/" for ::1 at 2020-02-11 15:45:32 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (42.6ms)
+  Rendered users/new.html.erb within layouts/application (46.4ms)
+Completed 500 Internal Server Error in 116ms (ActiveRecord: 9.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `password_hash' for #<User:0x00007fc8282a3008>
+Did you mean?  password_was
+               password_change):
+    32: 
+    33:   <div class="field">
+    34:     <%= f.label :password %>
+    35:     <%= f.text_field :password, required: true %>
+    36:   </div>
+    37: 
+    38:   <%= f.submit "submit", class: 'btn submit' %>
+  
+app/models/user.rb:13:in `password'
+app/views/users/_form.html.erb:35:in `block in _app_views_users__form_html_erb___4315329375071229127_70248788872520'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___4315329375071229127_70248788872520'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1345091840281040725_70248818357500'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.5ms)[0m  [1m[35mDROP TABLE "user_studios"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE "studios"[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (6.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200211183918"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "username" character varying, "password" character varying, "password_hash" character varying, "phone" character varying, "location" character varying, "first_name" character varying, "last_name" character varying, "img_url" character varying, "instragram_url" character varying, "facebook_url" character varying, "website_url" character varying, "tik_tok_url" character varying, "description" text, "role" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "studios" ("id" bigserial primary key, "name" character varying, "location" character varying, "phone" character varying, "img_url" character varying, "website_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "user_studios" ("id" bigserial primary key, "user_id" bigint, "studio_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_user_id" ON "user_studios"  ("user_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_studio_id" ON "user_studios"  ("studio_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200211183918"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-11 15:47:07 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (50.0ms)
+  Rendered users/new.html.erb within layouts/application (56.5ms)
+Completed 500 Internal Server Error in 160ms (ActiveRecord: 12.4ms)
+
+
+  
+ActionView::Template::Error (invalid hash):
+    32: 
+    33:   <div class="field">
+    34:     <%= f.label :password %>
+    35:     <%= f.text_field :password, required: true %>
+    36:   </div>
+    37: 
+    38:   <div class="field">
+  
+app/models/user.rb:15:in `new'
+app/models/user.rb:15:in `password'
+app/views/users/_form.html.erb:35:in `block in _app_views_users__form_html_erb__522077047148974406_70352965734000'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__522077047148974406_70352965734000'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___215733635578022317_70352945395220'
+Started GET "/" for ::1 at 2020-02-11 15:48:02 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (26.9ms)
+  Rendered users/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 512ms (Views: 421.8ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:48:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.6ms)
+  Rendered users/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 15:48:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.4ms)
+  Rendered users/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 71ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:48:41 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameters: :role, :password, :password_hash
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `password_digest' for #<User:0x00007fe8fcfeec40>
+Did you mean?  password):
+  
+app/controllers/users_controller.rb:11:in `create'
+Started POST "/users" for ::1 at 2020-02-11 15:49:19 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+Completed 500 Internal Server Error in 406ms (ActiveRecord: 25.2ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe9014581d8>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-02-11 15:50:06 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameters: :role, :password_hash
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 7.5ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe8fc56f828>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-02-11 15:50:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameters: :role, :password_hash
+Completed 500 Internal Server Error in 300ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe8fd75e7f0>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-02-11 15:51:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameters: :role, :password_hash
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe902876408>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-02-11 15:51:49 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"23ZYyrskNON56O6MxnXR6FGakwaVAn5iefTKVmxmH1tweEd5pxj+nSkUuUKx/LHdfmhrz2WexudV6NKwYYhEZg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_hash"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameters: :role, :password_hash
+Completed 500 Internal Server Error in 415ms (ActiveRecord: 21.8ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe8fde05ae0>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2020-02-11 15:51:59 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (5.4ms)
+  Rendered users/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 71ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:52:06 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XLMfYGNxqn2rp6snsGR6jsilGauCEt0gQH5vUOxLxH/3vQDTf01gA/tb/OnH7Rq751fhYnKOZaVsYne24aWfQg==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `password_digest=' for #<User:0x00007fe901929450>
+Did you mean?  password=):
+  
+app/controllers/users_controller.rb:9:in `create'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE "user_studios"[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE "studios"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200211183918"]]
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200211183918)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (47.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "username" character varying, "password_digest" character varying, "phone" character varying, "location" character varying, "first_name" character varying, "last_name" character varying, "img_url" character varying, "instragram_url" character varying, "facebook_url" character varying, "website_url" character varying, "tik_tok_url" character varying, "description" text, "role" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "studios" ("id" bigserial primary key, "name" character varying, "location" character varying, "phone" character varying, "img_url" character varying, "website_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "user_studios" ("id" bigserial primary key, "user_id" bigint, "studio_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_user_id" ON "user_studios"  ("user_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_user_studios_on_studio_id" ON "user_studios"  ("studio_id")[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200211183918"]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-11 15:55:30 -0500
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (43.5ms)
+  Rendered users/new.html.erb within layouts/application (48.1ms)
+Completed 200 OK in 752ms (Views: 645.0ms | ActiveRecord: 10.8ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 15:55:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7V67ParYFJYLJ2s8roxUVLo/7jGgK9YCdS85Fo/8yxou2Vf6peqLAjQymKFM1FkfRoHcTYcF90lyKQCV9GoEQ==", "user"=>{"role"=>"1", "email"=>"blah@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "blah@test.com"], ["password_digest", "$2a$12$o4gFGuLkH42nqV.qLYbz..ETscYdTcQp.GKO7vmvddPJSORwmhRUW"], ["created_at", "2020-02-11 20:55:45.663077"], ["updated_at", "2020-02-11 20:55:45.663077"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 372ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/users/1" for ::1 at 2020-02-11 15:55:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 50ms (Views: 34.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 15:55:45 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 15:55:45 -0500
+Started GET "/users/profile.css" for ::1 at 2020-02-11 15:55:45 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 120ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 234ms (ActiveRecord: 39.5ms)
+
+
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+Completed 404 Not Found in 239ms (ActiveRecord: 37.8ms)
+
+
+  
+  
+app/controllers/users_controller.rb:41:in `load_user'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+Started GET "/users/2" for ::1 at 2020-02-11 15:56:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 8ms (ActiveRecord: 2.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=2):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 15:56:04 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-11 15:56:04 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 15:56:05 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 110ms (ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+Completed 404 Not Found in 110ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+  
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 202ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+app/controllers/users_controller.rb:41:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 15:56:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 69ms (Views: 25.5ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-11 15:56:32 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 15:56:32 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 15:56:32 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 46ms (ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 39ms (ActiveRecord: 4.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+Completed 404 Not Found in 55ms (ActiveRecord: 2.5ms)
+
+
+  
+app/controllers/users_controller.rb:41:in `load_user'
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 15:56:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 15:56:34 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 40ms (ActiveRecord: 1.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+Completed 200 OK in 153ms (Views: 114.5ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 15:56:34 -0500
+Started GET "/users/profile.css" for ::1 at 2020-02-11 15:56:34 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'
+  [1m[36mUser Load (50.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 56ms (ActiveRecord: 50.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:41:in `load_user'

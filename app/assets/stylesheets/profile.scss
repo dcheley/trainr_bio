@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #add8e6;
+	font-family: Montserrat, sans-serif;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	min-height: 100vh;
+	margin: 0;
+}
+
+h3 {
+	margin: 10px 0;
+}
+
+h6 {
+	margin: 5px 0;
+	text-transform: uppercase;
+}
+
+h7 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 400;
+  color: dark-grey;
+}
+
+p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.card-container {
+	background-color: #1F1A36;
+	border-radius: 5px;
+	box-shadow: 0px 10px 20px -10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	padding-top: 30px;
+	position: relative;
+	width: 350px;
+	max-width: 100%;
+	text-align: center;
+}
+
+.card-container .pro {
+	color: #FFFFFF;
+	background-color: #ffc0cb;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 3px 7px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+}
+
+button.primary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	padding: 10px 25px;
+}
+
+button.primary.ghost {
+	background-color: transparent;
+	color: #02899C;
+}
+
+.skills {
+	background-color: #1F1A36;
+	text-align: left;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.skills ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.skills ul li {
+	border: 1px solid #2D2747;
+	border-radius: 2px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
+
+
+
+
+/* timeline */
+
+.timeline ul {
+    padding: 1em 0 0 0em;
+    margin: 0;
+    list-style: none;
+    position: relative;
+}
+
+.timeline ul li:before {
+      content: "";
+      height: 100%;
+      width: 1px;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 3em;
+      z-index: 0;
+    }
+
+
+.timeline ul li div{
+    display: inline-block;
+    margin: 1em 0;
+    vertical-align: top;
+  }
+
+
+/* .bullet for timeline { */
+
+        .bulletpink {
+          width: .7em;
+          height: .7em;
+          box-sizing: border-box;
+          border-radius: 50%;
+          background: white;
+          z-index: 1;
+          margin-right: .1em;
+          border: 2px solid pink;
+        }
+
+        .bulletgreen {
+          width: .7em;
+          height: .7em;
+          box-sizing: border-box;
+          border-radius: 50%;
+          background: white;
+          z-index: 1;
+          margin-right: .1em;
+          border: 2px solid white;
+        }
+
+        .bulletorange {
+          width: .7em;
+          height: .7em;
+          box-sizing: border-box;
+          border-radius: 50%;
+          background: #1F1A36;
+          z-index: 1;
+          margin-right: .1em;
+          border: 2px solid orange;
+        }
+
+
+      .date {
+        width: 10%;
+        font-size: 0.70em;
+        padding-top: 0.25em;
+      }
+
+      .desc {
+        width: 60%;
+      }
+
+      h5 {
+        font-size: 0.7em;
+        font-weight: 400;
+        margin: 0;
+      }
+
+      h6 {
+        margin: 0;
+        font-size: 0.5em;
+        font-weight: 400;
+        color: dark-grey;
+      }
+
+
+
+
+/* schedule */
+.scheduletitle {
+  font-size: 14px;
+  margin: auto;
+  width: 80%;
+  padding: 12px;
+}
+
+/* Scrolling menu */
+/*
+button.secondary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	padding: 10px 25px;
+}
+*/
+
+/* Style the navbar */
+#navbar {
+ overflow: hidden;
+ background-color: grey;
+}
+
+/* Navbar links */
+#navbar a {
+ float: left;
+ display: block;
+ color: #f2f2f2;
+ text-align: center;
+ padding: 8px;
+ text-decoration: none;
+}
+
+/* Page content */
+/* .content {
+ padding: 16px;
+} */
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+ position: fixed;
+ top: 0;
+ width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .scheduletitle {
+ padding-top: 50px;
+}

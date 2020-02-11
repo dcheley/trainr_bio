@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20200211183918) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "studios", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 20200211183918) do
   end
 
   create_table "user_studios", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "studio_id"
+    t.bigint "user_id"
+    t.bigint "studio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["studio_id"], name: "index_user_studios_on_studio_id"
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(version: 20200211183918) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "username"
+    t.string "password_digest"
     t.string "phone"
     t.string "location"
     t.string "first_name"
@@ -44,6 +48,7 @@ ActiveRecord::Schema.define(version: 20200211183918) do
     t.string "website_url"
     t.string "tik_tok_url"
     t.text "description"
+    t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
