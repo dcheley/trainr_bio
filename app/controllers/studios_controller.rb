@@ -1,5 +1,13 @@
 class StudiosController < ApplicationController
-  before_action :load_studio, only: [:show, :edit, :destroy]
+  before_action :load_studio, only: [:show, :edit, :update, :destroy]
+
+  def new
+    @studio = Studio.new
+  end
+
+  def create
+
+  end
 
   def show
 
@@ -25,5 +33,9 @@ class StudiosController < ApplicationController
 
   def load_studio
     @user = Studio.find(params[:id])
+  end
+
+  def studio_params
+    params.require(:user).permit(:name, :phone, :location, :img_url, :website_url)
   end
 end
