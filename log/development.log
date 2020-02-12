@@ -672,3 +672,2617 @@ Completed 404 Not Found in 56ms (ActiveRecord: 50.5ms)
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
   
 app/controllers/users_controller.rb:41:in `load_user'
+Started GET "/" for ::1 at 2020-02-11 16:07:01 -0500
+  [1m[35m (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 342ms (Views: 305.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:44:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 62ms (Views: 53.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:44:59 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/config
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/images
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/javascripts
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/stylesheets
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.7/lib/assets/compiled
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.7/lib/assets/compiled
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/dcheley/Desktop/projx/trainr_bio/node_modules):
+    4:     <title>TrainrBio</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__578917521619907604_70278959006420'
+Started GET "/" for ::1 at 2020-02-11 17:47:30 -0500
+  [1m[35m (46.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 282ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap-sprockets.
+Load paths:
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/config
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/images
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/javascripts
+  /Users/dcheley/Desktop/projx/trainr_bio/app/assets/stylesheets
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.1.7/lib/assets/compiled
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.1.7/lib/assets/compiled
+  /Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/turbolinks-source-5.2.0/lib/assets/javascripts
+  /Users/dcheley/Desktop/projx/trainr_bio/node_modules):
+    4:     <title>TrainrBio</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__701683436112733187_70350484439320'
+Started GET "/" for ::1 at 2020-02-11 17:50:32 -0500
+  [1m[35m (39.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.8ms)
+  Rendered users/index.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 8379ms (Views: 8321.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:51:44 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 774ms (Views: 770.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:52:51 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 218ms (Views: 213.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:53:10 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 117ms (Views: 111.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:54:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 133ms (Views: 130.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:54:11 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 253ms (Views: 249.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:54:24 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3958ms (Views: 3954.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:56:34 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.9ms)
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 269ms (Views: 264.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:57:05 -0500
+  [1m[35m (30.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 9960ms (Views: 9924.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-02-11 17:57:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (41.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 254ms (Views: 89.9ms | ActiveRecord: 96.4ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 17:57:28 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 17:57:28 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 17:57:28 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 198ms (ActiveRecord: 9.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (50.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 463ms (ActiveRecord: 225.5ms)
+
+
+  
+  [1m[36mUser Load (52.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+Completed 404 Not Found in 364ms (ActiveRecord: 75.7ms)
+
+
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+app/controllers/users_controller.rb:43:in `load_user'
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 17:57:30 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (23.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 31ms (ActiveRecord: 23.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 17:57:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6336ms (Views: 6330.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 17:57:53 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 17:57:53 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 17:57:54 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 112ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (63.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (62.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 150ms (ActiveRecord: 62.4ms)
+
+
+Completed 404 Not Found in 145ms (ActiveRecord: 63.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/" for ::1 at 2020-02-11 17:57:59 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 141ms (Views: 134.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 17:58:58 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 18:00:14 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 7106ms (Views: 7103.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-02-11 18:00:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 230ms (Views: 220.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:00:24 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:00:24 -0500
+Processing by UsersController#show as JPEG
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:00:24 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (11.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 77ms (ActiveRecord: 11.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (100.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 221ms (ActiveRecord: 100.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+  [1m[36mUser Load (284.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 594ms (ActiveRecord: 284.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:00:26 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 5ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:00:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5527ms (Views: 5521.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:00:54 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:00:54 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:00:54 -0500
+Processing by UsersController#show as CSS
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 73ms (ActiveRecord: 7.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  
+  [1m[36mUser Load (84.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+Completed 404 Not Found in 274ms (ActiveRecord: 84.3ms)
+
+
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:02:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6139ms (Views: 6128.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:02:54 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:02:54 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:02:54 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 26ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 91ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 266ms (ActiveRecord: 2.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:03:17 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 174ms (Views: 165.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:03:17 -0500
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:03:17 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:03:17 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 96ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (79.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 176ms (ActiveRecord: 79.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (46.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 219ms (ActiveRecord: 46.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:03:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 270ms (Views: 263.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:03:38 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:03:38 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:03:38 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 53ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (43.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (44.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 96ms (ActiveRecord: 43.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+Completed 404 Not Found in 102ms (ActiveRecord: 44.6ms)
+
+
+app/controllers/users_controller.rb:43:in `load_user'
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:03:40 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:03:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 97ms (Views: 87.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:04:00 -0500
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:00 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:04:00 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 106ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (61.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 162ms (ActiveRecord: 61.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (99.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 215ms (ActiveRecord: 99.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:02 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:04:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 83ms (Views: 77.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:04:12 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:04:12 -0500
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:12 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 94ms (ActiveRecord: 0.8ms)
+
+
+  
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 96ms (ActiveRecord: 2.0ms)
+
+
+Completed 404 Not Found in 95ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+  
+app/controllers/users_controller.rb:43:in `load_user'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:14 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:04:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 118ms (Views: 107.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:04:23 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:23 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:04:23 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (18.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 121ms (ActiveRecord: 18.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (22.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (77.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 188ms (ActiveRecord: 22.8ms)
+
+
+Completed 404 Not Found in 175ms (ActiveRecord: 77.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+app/controllers/users_controller.rb:43:in `load_user'
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:04:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 96ms (Views: 90.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:04:32 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:04:32 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:04:32 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 138ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (40.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 190ms (ActiveRecord: 40.1ms)
+
+
+  
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 631ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+  
+app/controllers/users_controller.rb:43:in `load_user'
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:05:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 88ms (Views: 80.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:05:25 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:05:25 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:05:25 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 78ms (ActiveRecord: 2.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (33.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 98ms (ActiveRecord: 33.9ms)
+
+
+  [1m[36mUser Load (42.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 214ms (ActiveRecord: 42.1ms)
+
+
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:05:43 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 94ms (Views: 80.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:05:44 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:05:44 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:05:44 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 133ms (ActiveRecord: 4.0ms)
+
+
+Completed 404 Not Found in 124ms (ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 134ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:05:53 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 146ms (Views: 138.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:05:53 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:05:53 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:05:53 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (6.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 130ms (ActiveRecord: 6.6ms)
+
+
+Completed 404 Not Found in 135ms (ActiveRecord: 6.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 128ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:06:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 174ms (Views: 121.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:06:13 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:06:13 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 39ms (ActiveRecord: 3.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:06:13 -0500
+  [1m[36mUser Load (66.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 112ms (ActiveRecord: 66.9ms)
+
+
+Processing by UsersController#show as CSS
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  Parameters: {"id"=>"profile"}
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (42.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 44ms (ActiveRecord: 42.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:06:23 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 175ms (Views: 131.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:06:23 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:06:23 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:06:23 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 47ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 48ms (ActiveRecord: 3.0ms)
+
+
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (41.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 128ms (ActiveRecord: 41.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:06:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.4ms)
+  Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:06:34 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:06:34 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:06:34 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (31.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 137ms (ActiveRecord: 31.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (70.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (105.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 204ms (ActiveRecord: 105.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 192ms (ActiveRecord: 70.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/" for ::1 at 2020-02-11 18:06:37 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 119ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:06:37 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/" for ::1 at 2020-02-11 18:08:14 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.7ms)
+  Rendered users/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/dcheley/Desktop/projx/trainr_bio/app/views/layouts/_navbar.html.erb:13: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...ffer.append=( if current_user );@output_buffer.safe_append='
+...                              ^
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/layouts/_navbar.html.erb:27: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;     else 
+              ^~~~
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/layouts/_navbar.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+              ^~~
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/layouts/_navbar.html.erb:42: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/layouts/_navbar.html.erb:44: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/_navbar.html.erb:13: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/layouts/_navbar.html.erb:27: syntax error, unexpected keyword_else, expecting ')'
+app/views/layouts/_navbar.html.erb:37: syntax error, unexpected keyword_end, expecting ')'
+app/views/layouts/_navbar.html.erb:42: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/_navbar.html.erb:44: syntax error, unexpected keyword_end, expecting ')'
+app/views/users/index.html.erb:1:in `_app_views_users_index_html_erb__4400638960921681274_70299853016100'
+Started GET "/users/" for ::1 at 2020-02-11 18:08:25 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (6.8ms)
+  Rendered users/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 146ms (Views: 142.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/" for ::1 at 2020-02-11 18:11:21 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 148ms (Views: 117.4ms | ActiveRecord: 21.0ms)
+
+
+Started GET "/users/" for ::1 at 2020-02-11 18:12:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 133ms (Views: 128.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:12:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/" for ::1 at 2020-02-11 18:12:27 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:12:27 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/" for ::1 at 2020-02-11 18:12:34 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.4ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 112ms (Views: 106.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:12:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/" for ::1 at 2020-02-11 18:12:57 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 199ms (Views: 192.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:12:57 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/" for ::1 at 2020-02-11 18:13:12 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 112ms (Views: 106.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:13:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2020-02-11 18:13:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 127ms (Views: 119.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:13:16 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:13:16 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:13:16 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 96ms (ActiveRecord: 18.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (94.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 197ms (ActiveRecord: 95.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 222ms (ActiveRecord: 106.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:13:30 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  Rendered users/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 142ms (Views: 125.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:13:30 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:13:30 -0500
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:13:30 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 44ms (ActiveRecord: 1.5ms)
+
+
+  
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 47ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Completed 404 Not Found in 43ms (ActiveRecord: 3.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/1" for ::1 at 2020-02-11 18:18:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (651.5ms)
+  Rendered users/show.html.erb within layouts/application (657.9ms)
+Completed 500 Internal Server Error in 709ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_sessions_path' for #<#<Class:0x00007fdfe92abcc0>:0x00007fdfe92a9c18>
+Did you mean?  new_studio_path):
+    31:         </li>
+    32: 
+    33:         <li class="nav-item">
+    34:           <%= link_to new_sessions_path, "Log In", class: "nav-link" %>
+    35:         </li>
+    36:       </ul>
+    37:     <% end %>
+  
+app/views/layouts/_navbar.html.erb:34:in `_app_views_layouts__navbar_html_erb__3133352157446154200_70299833123560'
+app/views/users/show.html.erb:10:in `_app_views_users_show_html_erb___4170448058349169576_70299833172760'
+Started GET "/" for ::1 at 2020-02-11 18:21:01 -0500
+  [1m[35m (42.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered layouts/_navbar.html.erb (1245.3ms)
+  Rendered users/index.html.erb within layouts/application (1267.2ms)
+Completed 500 Internal Server Error in 1338ms (ActiveRecord: 97.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_session_path' for #<#<Class:0x00007f9e5ff9d4b8>:0x00007f9e5ffbc778>
+Did you mean?  new_studio_path):
+    31:         </li>
+    32: 
+    33:         <li class="nav-item">
+    34:           <%= link_to new_session_path, "Log In", class: "nav-link" %>
+    35:         </li>
+    36:       </ul>
+    37:     <% end %>
+  
+app/views/layouts/_navbar.html.erb:34:in `_app_views_layouts__navbar_html_erb___414098165126707127_70159129663980'
+app/views/users/index.html.erb:1:in `_app_views_users_index_html_erb___1533633025129234469_70159095888800'
+Started GET "/" for ::1 at 2020-02-11 18:21:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  Rendered layouts/_navbar.html.erb (1191.6ms)
+  Rendered users/index.html.erb within layouts/application (1196.7ms)
+Completed 500 Internal Server Error in 1209ms (ActiveRecord: 16.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_session_path' for #<#<Class:0x00007f9e5ff9d4b8>:0x00007f9e633205b0>
+Did you mean?  new_studio_path):
+    31:         </li>
+    32: 
+    33:         <li class="nav-item">
+    34:           <%= link_to new_session_path, "Log In", class: "nav-link" %>
+    35:         </li>
+    36:       </ul>
+    37:     <% end %>
+  
+app/views/layouts/_navbar.html.erb:34:in `_app_views_layouts__navbar_html_erb___414098165126707127_70159130666980'
+app/views/users/index.html.erb:1:in `_app_views_users_index_html_erb___1533633025129234469_70159122892660'
+Started GET "/" for ::1 at 2020-02-11 18:22:21 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 691ms (Views: 686.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:22:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:22:49 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 180ms (Views: 172.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:22:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2020-02-11 18:22:51 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 144ms (Views: 137.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:22:52 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/login" for ::1 at 2020-02-11 18:24:46 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 81ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-02-11 18:24:53 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 95ms (Views: 90.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-02-11 18:24:55 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 86ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user/new" for ::1 at 2020-02-11 18:25:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/usesr/new" for ::1 at 2020-02-11 18:25:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/usesr/new"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2020-02-11 18:25:22 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (40.0ms)
+  Rendered users/new.html.erb within layouts/application (49.1ms)
+Completed 200 OK in 131ms (Views: 126.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:28:49 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 95ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:28:55 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 187ms (Views: 183.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:29:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.7ms)
+  Rendered users/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 244ms (Views: 240.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:29:16 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.4ms)
+  Rendered users/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 97ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:30:44 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 103ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:31:04 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 8397ms (Views: 8394.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:32:42 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.6ms)
+  Rendered users/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 119ms (Views: 114.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:32:57 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (46.4ms)
+  Rendered users/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 216ms (Views: 212.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:33:16 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 97ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:33:24 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.0ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 216ms (Views: 213.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:33:45 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial layout/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/dcheley/Desktop/projx/trainr_bio/app/views"
+):
+    1: <%= render 'layout/navbar' %>
+    2: <h1 class="text-center mb-3">Sign Up</h1>
+    3: 
+    4: <%= render 'form' %>
+  
+app/views/users/new.html.erb:1:in `_app_views_users_new_html_erb___3062363743452463152_70159150795400'
+Started GET "/users/new" for ::1 at 2020-02-11 18:33:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.9ms)
+  Rendered users/_form.html.erb (3.1ms)
+  Rendered users/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 105ms (Views: 100.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:34:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered users/_form.html.erb (2.5ms)
+  Rendered users/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:34:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.6ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 89ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:35:05 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.7ms)
+  Rendered users/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 142ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm%2FD2s8H3uF1q4pa6E6gKSZ7gX%2BZWlEf6SaeYX16p8Iyc9s8wumF3A%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=blah%40text.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:35:19 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm/D2s8H3uF1q4pa6E6gKSZ7gX+ZWlEf6SaeYX16p8Iyc9s8wumF3A==", "user"=>{"role"=>"0", "email"=>"blah@text.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.1ms)
+  Rendered users/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 230ms (Views: 222.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm%2FD2s8H3uF1q4pa6E6gKSZ7gX%2BZWlEf6SaeYX16p8Iyc9s8wumF3A%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=blah%40text.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:36:30 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm/D2s8H3uF1q4pa6E6gKSZ7gX+ZWlEf6SaeYX16p8Iyc9s8wumF3A==", "user"=>{"role"=>"0", "email"=>"blah@text.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 284ms (Views: 201.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm%2FD2s8H3uF1q4pa6E6gKSZ7gX%2BZWlEf6SaeYX16p8Iyc9s8wumF3A%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=blah%40text.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:39:13 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qWV6fRyald2h9ax7tMxKsbUZqiN5h9HHm/D2s8H3uF1q4pa6E6gKSZ7gX+ZWlEf6SaeYX16p8Iyc9s8wumF3A==", "user"=>{"role"=>"0", "email"=>"blah@text.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.1ms)
+  Rendered users/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 191ms (Views: 133.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:39:25 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 117ms (Views: 113.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=UXrdaZGQSQ5RKoSG9LOzYZD8o2x%2B5Umpg2kvLnZVRqH6dMLajayDcAHW00iDOtNUvw5bpY558SyvdTfIe7sdnA%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=dsaf%40email.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:39:41 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UXrdaZGQSQ5RKoSG9LOzYZD8o2x+5Umpg2kvLnZVRqH6dMLajayDcAHW00iDOtNUvw5bpY558SyvdTfIe7sdnA==", "user"=>{"role"=>"0", "email"=>"dsaf@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 168ms (Views: 163.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=UXrdaZGQSQ5RKoSG9LOzYZD8o2x%2B5Umpg2kvLnZVRqH6dMLajayDcAHW00iDOtNUvw5bpY558SyvdTfIe7sdnA%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=dsaf%40email.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:41:34 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UXrdaZGQSQ5RKoSG9LOzYZD8o2x+5Umpg2kvLnZVRqH6dMLajayDcAHW00iDOtNUvw5bpY558SyvdTfIe7sdnA==", "user"=>{"role"=>"0", "email"=>"dsaf@email.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 92ms (Views: 88.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=JQ5cohjt7N6KoEYBapJ%2BXRBqbAcrvs%2FOvh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:41:46 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JQ5cohjt7N6KoEYBapJ+XRBqbAcrvs/Ovh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.3ms)
+  Rendered users/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 157ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=JQ5cohjt7N6KoEYBapJ%2BXRBqbAcrvs%2FOvh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:41:55 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JQ5cohjt7N6KoEYBapJ+XRBqbAcrvs/Ovh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.8ms)
+  Rendered users/new.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 246ms (Views: 242.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=JQ5cohjt7N6KoEYBapJ%2BXRBqbAcrvs%2FOvh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:43:55 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JQ5cohjt7N6KoEYBapJ+XRBqbAcrvs/Ovh0DpSKzu1uOAEMRBNEmoNpcEc8dGx5oP5iUztsid0uSARtDL13gZg==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 117ms (Views: 114.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=%2F5kVd5TSn60wTiyYdWUgIYel%2BVO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:44:05 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5kVd5TSn60wTiyYdWUgIYel+VO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 150ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=%2F5kVd5TSn60wTiyYdWUgIYel%2BVO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:44:38 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5kVd5TSn60wTiyYdWUgIYel+VO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (242.2ms)
+Completed 500 Internal Server Error in 253ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `create_path' for #<#<Class:0x00007f9e64340058>:0x00007f9e6686aab8>):
+    2:   <h1 class="mt-5 mb-3">Sign Up</h1>
+    3: 
+    4:   <form>
+    5:     <%= form_for(@user, url: :create) do |f| %>
+    6:       <% if @user.errors.any? %>
+    7:         <div id="error_explanation">
+    8:           <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+  
+app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___3062363743452463152_70159150832180'
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=%2F5kVd5TSn60wTiyYdWUgIYel%2BVO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:44:48 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5kVd5TSn60wTiyYdWUgIYel+VO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/dcheley/Desktop/projx/trainr_bio/app/views/users/new.html.erb:5: syntax error, unexpected tLABEL
+...=  form_for(@user, url: action: "create") do |f| @output_buf...
+...                        ^~~~~~~
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/users/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+...r(@user, url: action: "create") do |f| @output_buffer.safe_a...
+...                              ^
+/Users/dcheley/Desktop/projx/trainr_bio/app/views/users/new.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/users/new.html.erb:5: syntax error, unexpected tLABEL
+app/views/users/new.html.erb:5: syntax error, unexpected ')', expecting keyword_end
+app/views/users/new.html.erb:50: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=%2F5kVd5TSn60wTiyYdWUgIYel%2BVO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:45:01 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/5kVd5TSn60wTiyYdWUgIYel+VO43c6kBNXTn1fs6FlUlwrEiO5V02Cye1YC7EAUqFcBmkhBdiEoyct5WgKzZA==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 92ms (Views: 87.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=%2BaVgAB4dLITw5hegOKxVLzLq33TLpEeCt57vpApW0GZSq3%2BzAiHm%2BqAaQG5PJTUaHRgnvTs4%2FwebgvdCB7iLWw%3D%3D&user%5Brole%5D=0&user%5Brole%5D=1&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:45:09 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+aVgAB4dLITw5hegOKxVLzLq33TLpEeCt57vpApW0GZSq3+zAiHm+qAaQG5PJTUaHRgnvTs4/webgvdCB7iLWw==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 219ms (Views: 212.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:45:37 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 163ms (Views: 160.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=TLc1%2Bc5VhuI5b8YqWkHSh7rmHeIMnzIJsuBxHQkJ%2B8TnuSpK0mlMnGmTkeQtyLKylRTlK%2FwDioye%2FGn7BOeg%2BQ%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=fasd%40ca.ca&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:45:47 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLc1+c5VhuI5b8YqWkHSh7rmHeIMnzIJsuBxHQkJ+8TnuSpK0mlMnGmTkeQtyLKylRTlK/wDioye/Gn7BOeg+Q==", "user"=>{"role"=>"0", "email"=>"fasd@ca.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 149ms (Views: 145.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=TLc1%2Bc5VhuI5b8YqWkHSh7rmHeIMnzIJsuBxHQkJ%2B8TnuSpK0mlMnGmTkeQtyLKylRTlK%2FwDioye%2FGn7BOeg%2BQ%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=fasd%40ca.ca&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:46:49 -0500
+  [1m[35m (40.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TLc1+c5VhuI5b8YqWkHSh7rmHeIMnzIJsuBxHQkJ+8TnuSpK0mlMnGmTkeQtyLKylRTlK/wDioye/Gn7BOeg+Q==", "user"=>{"role"=>"0", "email"=>"fasd@ca.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 717ms (Views: 618.2ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/" for ::1 at 2020-02-11 18:47:05 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 224ms (Views: 189.5ms | ActiveRecord: 22.5ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:47:05 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:47:07 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 135ms (Views: 123.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:47:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/..." for ::1 at 2020-02-11 18:47:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:47:10 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 548ms (Views: 542.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:47:10 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/..." for ::1 at 2020-02-11 18:47:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:47:14 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (87.2ms)
+Completed 200 OK in 478ms (Views: 443.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:47:14 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:48:32 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 133ms (Views: 124.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:48:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:49:00 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 81ms (Views: 77.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:49:00 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:49:08 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:49:08 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-02-11 18:49:29 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 77ms (Views: 73.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/..." for ::1 at 2020-02-11 18:49:29 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2020-02-11 18:49:30 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:49:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new?utf8=%E2%9C%93&authenticity_token=w2WYJ4OtsfnJ5ruTnKMitFKWOahJExpbh9QJEyZs28StsO%2FzRWNCZLH44AiTIPs0M%2FdF6pKx%2BxbGr%2BtSjnbuNg%3D%3D&user%5Brole%5D=0&user%5Bemail%5D=test2%402.com&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=submit" for ::1 at 2020-02-11 18:49:36 -0500
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w2WYJ4OtsfnJ5ruTnKMitFKWOahJExpbh9QJEyZs28StsO/zRWNCZLH44AiTIPs0M/dF6pKx+xbGr+tSjnbuNg==", "user"=>{"role"=>"0", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 153ms (Views: 149.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:50:36 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 201ms (Views: 196.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:51:33 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 85ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 18:51:46 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qJtZRi8neyeYBEYdTVnrbMjLhLcmvPIInXe9SV5ou44DlUb1MxuxWcj4EdM60ItZ5zl8ftYgSo2xa6WvU4bgsw==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (35.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@2.com"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 515ms (Views: 117.4ms | ActiveRecord: 38.3ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 18:52:21 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0TC3m2QD6c/sGzI1DPferLSaeKkAmliamk7ZXIMvDY56PqgoeD8jsbznZft7fr6Zm2iAYPAG4B+2UsG6jsFWsw==", "user"=>{"role"=>"1", "email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@2.com"], ["LIMIT", 1]]
+  [1m[35mSQL (45.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test2@2.com"], ["password_digest", "$2a$12$TrAbUI686/ZOstYTiQAzG.WJ7VluTR3AO.CWnUMbSKX2gVxf5Eunm"], ["created_at", "2020-02-11 23:52:21.922147"], ["updated_at", "2020-02-11 23:52:21.922147"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 526ms (ActiveRecord: 50.4ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-11 18:52:22 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 103ms (Views: 91.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 18:52:22 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:52:22 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 77ms (ActiveRecord: 3.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+  [1m[36mUser Load (22.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Started GET "/users/profile.js" for ::1 at 2020-02-11 18:52:22 -0500
+Completed 404 Not Found in 198ms (ActiveRecord: 22.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (31.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 136ms (ActiveRecord: 119.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 18:52:24 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:43:in `load_user'
+Started GET "/users" for ::1 at 2020-02-11 18:56:38 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (63.7ms)
+Completed 200 OK in 197ms (Views: 184.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-11 18:56:43 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 86ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/..." for ::1 at 2020-02-11 18:56:43 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2020-02-11 18:56:48 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXSS0iqxWowplicfkTqNhy4BDBKi3PrttN1tySB0T/3ToeUG7H+pEVGIfISeuVQHT2BwUHl+G6D1po+IiG56Dw==", "user"=>{"role"=>"0", "email"=>"test3@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test3@3.com"], ["password_digest", "$2a$12$MPBMdlzltdMJysysMmGPXukaWUHskj3XewNk.KLHYSOaGsko7PuNW"], ["created_at", "2020-02-11 23:56:49.298964"], ["updated_at", "2020-02-11 23:56:49.298964"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 604ms (ActiveRecord: 2.4ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<UsersController:0x00007fe3635efbe8>
+Did you mean?  @user):
+  
+app/controllers/users_controller.rb:12:in `create'
+Started POST "/users" for ::1 at 2020-02-11 19:00:04 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXSS0iqxWowplicfkTqNhy4BDBKi3PrttN1tySB0T/3ToeUG7H+pEVGIfISeuVQHT2BwUHl+G6D1po+IiG56Dw==", "user"=>{"role"=>"0", "email"=>"test3@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 418ms (Views: 98.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2020-02-11 19:00:13 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3xB7fSEHd27WgtkPFRC9nYy7NxgEUBGKe3gZExZoPeh0HmTOPTu9EIZ+jsFimd2oo0nP0fTMqQ9XZAH1G4Zm1Q==", "user"=>{"role"=>"0", "email"=>"test4@4.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"submit"}
+Unpermitted parameter: :role
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@4.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "test4@4.com"], ["password_digest", "$2a$12$QFgXDs2CAGrDAlAXszj2eO3cWW6KS2wDxOn0MoY6wg9DwAcYTmbtm"], ["created_at", "2020-02-12 00:00:13.427705"], ["updated_at", "2020-02-12 00:00:13.427705"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 343ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/4" for ::1 at 2020-02-11 19:00:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.2ms)
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 90ms (Views: 82.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-11 19:00:13 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 19:00:13 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 73ms (ActiveRecord: 10.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:44:in `load_user'
+  [1m[36mUser Load (27.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 130ms (ActiveRecord: 27.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:44:in `load_user'
+Started GET "/users/profile.js" for ::1 at 2020-02-11 19:00:13 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:44:in `load_user'
+Started GET "/users/profile.css" for ::1 at 2020-02-11 19:00:15 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:44:in `load_user'
+Started GET "/users/" for ::1 at 2020-02-11 19:00:39 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (19.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 128ms (Views: 119.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-11 19:00:39 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/..." for ::1 at 2020-02-11 19:00:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 92ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:44:in `load_user'

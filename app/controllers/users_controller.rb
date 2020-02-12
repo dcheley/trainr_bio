@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new
@@ -24,7 +25,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-
+    if current_user != @user
+      redirect_to :index, flash[:notice] = "You're not authorized to view this page"
+    end
   end
 
   def update

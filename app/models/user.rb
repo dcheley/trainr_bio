@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   validates :email, presence: true
+  validates :email, uniqueness: true
 
   has_many :studios, through: :user_studios
 
