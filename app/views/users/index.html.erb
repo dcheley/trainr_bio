@@ -22,5 +22,10 @@
       </div>
       <div class="col-2"></div>
     <% end %>
+    <% if @users.empty? %>
+      <div class="col-12">
+        <h2 class="text-center">No results found.</h2>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -8,4 +8,8 @@ class User < ApplicationRecord
   scope :basic, -> { where(role: 0) }
 
   has_secure_password
+
+  def self.search(search)
+    where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%")
+  end
 end

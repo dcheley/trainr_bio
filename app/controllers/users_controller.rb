@@ -20,7 +20,13 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    if !params[:search].blank?
+      @users = User.search(params[:search]).order("first_name ASC")
+    # elsif !params[:category].blank?
+    #   @users = users.where(category: params[:category]).order("category ASC")
+    else
+      @users = User.all.order("first_name ASC")
+    end
   end
 
   def edit
