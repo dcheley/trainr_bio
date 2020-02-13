@@ -1,14 +1,26 @@
 <%= render 'layouts/navbar' %>
 
+<%= flash[:notice] %>
+
 <div class="container text-center">
-  <% @users.each do |instructor| %>
-    <div class="card" style="">
-    <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= instructor.email %></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="row">
+    <% @users.each do |instructor| %>
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="card mb-3">
+        <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
+              <h5 class="card-title"><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
+            <% else %>
+              <h5 class="card-title">N/A</h5>
+            <% end %>
+            <p class="card-text"><%= instructor.description %></p>
+            <a href="#" class="btn btn-primary">Profile</a>
+          </div>
+        </div>
       </div>
-    </div>
-  <% end %>
+      <div class="col-2"></div>
+    <% end %>
+  </div>
 </div>

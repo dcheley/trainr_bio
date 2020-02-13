@@ -8,6 +8,7 @@
 
   <body>
 		<%= render 'layouts/navbar' %>
+		<%= flash[:notice] %>
     <div class="card-container">
 	    <span class="pro">Heart
 			<!-- <img> find heart icon -->
@@ -22,17 +23,13 @@
 	    />
 			<% if !@user.first_name.nil? || !@user.last_name.nil? %>
 		    <h3><%= @user.first_name + ' ' + @user.last_name %></h3>
+			<% else %>
+			 <h3>N/A</h3>
 			<% end %>
 	    <p>Yoga Teacher</p>
-			<% if !@user.description.nil? %>
-				<p><%= @user.description %></p>
-			<% end %>
-			<% if !@user.location.nil?%>
-			  <p><%= @user.location %></p>
-			<% end %>
-			<% if !@user.phone.nil? %>
-			  <p><%= @user.phone %></p>
-			<% end %>
+			<p><%= @user.description %></p>
+		  <p><%= @user.location %></p>
+		  <p><%= @user.phone %></p>
 	    <div class="buttons">
 	      <button class="primary">Check In</button>
 	      <button class="primary ghost">Social</button>
