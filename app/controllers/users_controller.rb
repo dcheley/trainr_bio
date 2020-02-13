@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
   end
 
   def index
@@ -26,12 +25,16 @@ class UsersController < ApplicationController
 
   def edit
     if current_user != @user
-      redirect_to :index, flash[:notice] = "You're not authorized to view this page"
+      redirect_to :index, notice: "Not authorized."
     end
   end
 
   def update
-
+    if @user.update_attributes(user_params)
+      redirect_to user_path(@user), notice: "Account updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy

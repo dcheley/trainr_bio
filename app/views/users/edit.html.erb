@@ -1,3 +1,96 @@
-<h1>Account Settings</h1>
+<%= render 'layouts/navbar' %>
 
-<%= render 'form' %>
+<div class="container text-center">
+  <h1 class="mb-3">Account Settings</h1>
+
+  <div class="row mb-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <%= form_for(@user, url: { action: "update" }) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label 'I am an instructor' %>
+          <%= f.check_box :role %>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :first_name, placeholder: "First Name", required: true, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :phone, placeholder: "Phone", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.email_field :email, placeholder: "Email", required: true, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "form-control" %>
+            </div>
+            <!-- TODO: Gmaps -->
+            <div class="form-group">
+              <%= f.text_field :location, placeholder: "Location", required: true, class: "form-control"  %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <!-- TODO: file upload field -->
+            <div class="form-group">
+              <%= f.text_area :description, placeholder: "Description", required: true, rows: 3, class: "form-control"  %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :img_url, placeholder: "Image (NOT WORKING YET)", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.text_field :instragram_url, placeholder: "Instagram url", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :website_url, placeholder: "Website url", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <%= f.text_field :facebook_url, placeholder: "Facebook url", class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :tik_tok_url, placeholder: "TikTok url", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <%= f.submit "submit", class: 'btn submit' %>
+      <% end %>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

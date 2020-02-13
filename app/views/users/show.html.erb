@@ -12,6 +12,7 @@
 	    <span class="pro">Heart
 			<!-- <img> find heart icon -->
 			</span>
+			<!-- if else show image -->
 	    <img
 	        class="round"
 					width="200px"
@@ -19,16 +20,14 @@
 	        src="profile.jpg"
 	        alt="user"
 	    />
-	    <h3>James Jun</h3>
-	    <h6>Toronto</h6>
+	    <h3><%= @user.first_name + ' ' + @user.last_name %></h3>
 	    <p>Yoga Teacher</p>
+			<p><%= @user.description %></p>
+		  <p><%= @user.location %></p>
+		  <p><%= @user.phone %></p>
 	    <div class="buttons">
-	      <button class="primary">
-	          Check In
-	      </button>
-	      <button class="primary ghost">
-	          Social
-	      </button>
+	      <button class="primary">Check In</button>
+	      <button class="primary ghost">Social</button>
 	    </div>
 
 	    <!-- add icons here from the 'check ins' -->
@@ -119,9 +118,6 @@
 	    <div>
 	    	<h7>Offerings</h7>
 	    </div><br><br>
-
-	    <!-- adding spacing -->
-	     <span style="display:block; height: 1000px;"></span>
     </div>
 
     <p><cite>trainr.bio 2020</cite><p>
