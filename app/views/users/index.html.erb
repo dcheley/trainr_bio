@@ -16,7 +16,7 @@
               <h5 class="card-title">N/A</h5>
             <% end %>
             <p class="card-text"><%= instructor.description %></p>
-            <a href="#" class="btn btn-primary">Profile</a>
+            <%= link_to "Profile", user_url(instructor), class:"btn btn-primary" %>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_path(@user), notice: "Welcome!"
     else
       render :new
     end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     # elsif !params[:category].blank?
     #   @users = users.where(category: params[:category]).order("category ASC")
     else
-      @users = User.all.order("first_name ASC")
+      @users = User.where(role: 1).order("first_name ASC")
     end
   end
 
@@ -44,7 +44,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
   end
 
   private
@@ -57,7 +56,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
       :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
-      :password, :password_confirmation
+      :password, :password_confirmation, :role
     )
   end
 end

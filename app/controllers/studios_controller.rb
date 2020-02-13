@@ -6,15 +6,21 @@ class StudiosController < ApplicationController
   end
 
   def create
+    @studio = Studio.new(studio_params)
 
+    if @studio.save
+      session[:studio_id] = @studio.id
+      redirect_to studio_path(@studio), notice: "Studio created!"
+    else
+      render :new
+    end
   end
 
   def show
-
   end
 
   def index
-    @studio = Studio.all
+    @studios = Studio.all
   end
 
   def edit
@@ -22,7 +28,11 @@ class StudiosController < ApplicationController
   end
 
   def update
-
+    if @studio.update_attributes(studio_params)
+      redirect_to studio_path(@studio), notice: "Studio details updated!"
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -32,10 +42,10 @@ class StudiosController < ApplicationController
   private
 
   def load_studio
-    @user = Studio.find(params[:id])
+    @studio = Studio.find(params[:id])
   end
 
   def studio_params
-    params.require(:user).permit(:name, :phone, :location, :img_url, :website_url)
+    params.require(:studio).permit(:name, :phone, :location, :img_url, :website_url)
   end
 end
