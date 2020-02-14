@@ -13692,3 +13692,832 @@ Completed 404 Not Found in 233ms (ActiveRecord: 97.5ms)
 ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
   
 app/controllers/users_controller.rb:55:in `load_user'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvent (20200214173446)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.9ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200214173446"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvent (20200214173446)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (44.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "start_time" timestamp, "end_time" timestamp, "recurring" integer DEFAULT 0, "trainer_id" integer, "trainee_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_trainer_id" ON "events"  ("trainer_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_trainee_id" ON "events"  ("trainee_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214173446"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-14 14:01:08 -0500
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (74.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (171.6ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  Rendered users/index.html.erb within layouts/application (180.4ms)
+Completed 200 OK in 1689ms (Views: 1492.6ms | ActiveRecord: 132.6ms)
+
+
+Started GET "/..." for ::1 at 2020-02-14 14:01:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/..." for ::1 at 2020-02-14 14:01:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2020-02-14 14:03:33 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 436ms (Views: 379.7ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-14 14:03:34 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-14 14:03:34 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/..." for ::1 at 2020-02-14 14:03:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/profile.css" for ::1 at 2020-02-14 14:03:34 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (68.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 74ms (ActiveRecord: 68.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (61.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 273ms (ActiveRecord: 143.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (28.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 298ms (ActiveRecord: 112.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+Started GET "/users/2" for ::1 at 2020-02-14 14:04:06 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (3.1ms)
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 93ms (Views: 83.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-14 14:04:07 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.js" for ::1 at 2020-02-14 14:04:07 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-14 14:04:07 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 10ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (56.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 56.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (30.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 102ms (ActiveRecord: 30.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+Started GET "/events/new" for ::1 at 2020-02-14 14:07:13 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (235.6ms)
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 10.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `datetime' for #<ActionView::Helpers::FormBuilder:0x00007fc0389d1868>
+Did you mean?  datetime_field):
+    28: 
+    29:         <div class="form-group">
+    30:           <%= f.label "End time", class: "form-label" %>
+    31:           <%= f.datetime :end_time, required: true, class: "form-control" %>
+    32:         </div>
+    33: 
+    34:         <%= f.submit "submit", class: 'btn submit' %>
+  
+app/views/events/new.html.erb:31:in `block in _app_views_events_new_html_erb___3732052564376306547_70231732401340'
+app/views/events/new.html.erb:7:in `_app_views_events_new_html_erb___3732052564376306547_70231732401340'
+Started GET "/events/new" for ::1 at 2020-02-14 14:07:33 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 93ms (Views: 89.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:08:50 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 79ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:15:14 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 7.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `' for #<Event:0x00007fc033f34aa8>):
+    23: 
+    24:         <div class="form-group">
+    25:           <%= f.label "Start date", class: "form-label" %>
+    26:           <%= f.date_field params[:start_date], required: true, class: "form-control" %>
+    27:         </div>
+    28: 
+    29:         <div class="form-group">
+  
+app/views/events/new.html.erb:26:in `block in _app_views_events_new_html_erb___3732052564376306547_70231770677740'
+app/views/events/new.html.erb:7:in `_app_views_events_new_html_erb___3732052564376306547_70231770677740'
+Started GET "/events/new" for ::1 at 2020-02-14 14:15:46 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_date' for #<Event:0x00007fc03905b878>
+Did you mean?  start_time):
+    23: 
+    24:         <div class="form-group">
+    25:           <%= f.label "Start date", class: "form-label" %>
+    26:           <%= f.date_field :start_date, required: true, class: "form-control" %>
+    27:         </div>
+    28: 
+    29:         <div class="form-group">
+  
+app/views/events/new.html.erb:26:in `block in _app_views_events_new_html_erb___3732052564376306547_70231783559520'
+app/views/events/new.html.erb:7:in `_app_views_events_new_html_erb___3732052564376306547_70231783559520'
+Started GET "/events/new" for ::1 at 2020-02-14 14:19:28 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `start_date' for #<Event:0x00007fc03a870bc0>
+Did you mean?  start_time):
+    43: 
+    44:         <!-- <div class="form-group">
+    45:           <%= f.label "Start date", class: "form-label" %>
+    46:           <%= f.date_field :start_date, required: true, class: "form-control" %>
+    47:         </div>
+    48: 
+    49:         <div class="form-group">
+  
+app/views/events/new.html.erb:46:in `block in _app_views_events_new_html_erb___3732052564376306547_70231780448920'
+app/views/events/new.html.erb:7:in `_app_views_events_new_html_erb___3732052564376306547_70231780448920'
+Started GET "/events/new" for ::1 at 2020-02-14 14:19:43 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 117ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:21:35 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:22:11 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 208ms (Views: 205.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:22:37 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 54.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:25:16 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 62ms (Views: 59.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:25:37 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:29:45 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:29:57 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLO6AvMjbr6t8xhNjW7vlXSWOEoMrbmWwmrmea7NauHxHXTCfWUqDUFVgtmLov5FqyjH3UKiXxnisKrtbNJ/0g==", "event"=>{"recurring"=>"0"}, "date"=>"2020-02-14", "time"=>"01:00", "commit"=>"submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/events_controller.rb:10:in `create'
+Started PUT "/__web_console/repl_sessions/bcbb3bda3951da8d48bf073e5143d964" for ::1 at 2020-02-14 14:30:03 -0500
+Started PUT "/__web_console/repl_sessions/bcbb3bda3951da8d48bf073e5143d964" for ::1 at 2020-02-14 14:30:08 -0500
+Started PUT "/__web_console/repl_sessions/bcbb3bda3951da8d48bf073e5143d964" for ::1 at 2020-02-14 14:30:22 -0500
+Started POST "/events" for ::1 at 2020-02-14 14:30:50 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lLO6AvMjbr6t8xhNjW7vlXSWOEoMrbmWwmrmea7NauHxHXTCfWUqDUFVgtmLov5FqyjH3UKiXxnisKrtbNJ/0g==", "event"=>{"recurring"=>"0"}, "date"=>"2020-02-14", "time"=>"01:00", "commit"=>"submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/events_controller.rb:10:in `create'
+Started PUT "/__web_console/repl_sessions/0adaee4a725e59772d41b881bf48459e" for ::1 at 2020-02-14 14:30:54 -0500
+Started PUT "/__web_console/repl_sessions/0adaee4a725e59772d41b881bf48459e" for ::1 at 2020-02-14 14:30:55 -0500
+Started GET "/events/new" for ::1 at 2020-02-14 14:30:58 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:31:09 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"63S+lyEiV8sqzE3G35pSRLk8258d/93KawGBbk075sGO2nBXr2QTeMZq11LZVkOUZoIkCFPwO0VL2836jyTz8g==", "event"=>{"recurring"=>"0"}, "start_date"=>"2020-02-14", "start_timeztime"=>"01:00", "end_date"=>"2020-02-14", "end_timeztime"=>"01:00", "commit"=>"submit"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/controllers/events_controller.rb:10:in `+'
+app/controllers/events_controller.rb:10:in `create'
+Started PUT "/__web_console/repl_sessions/792366bf9aeb2c24852c19c651249c3f" for ::1 at 2020-02-14 14:31:13 -0500
+Started PUT "/__web_console/repl_sessions/792366bf9aeb2c24852c19c651249c3f" for ::1 at 2020-02-14 14:31:13 -0500
+Started PUT "/__web_console/repl_sessions/792366bf9aeb2c24852c19c651249c3f" for ::1 at 2020-02-14 14:31:15 -0500
+Started GET "/events/new" for ::1 at 2020-02-14 14:31:30 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 64ms (Views: 61.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:31:41 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X7zy27kqrYMhTtNT6ndpv/pVftIYaxctQ97YiTDWkIE6EjwbN2zpMM3oScfsu3hvJeuBRVZk8aJjBJQd8smFsg==", "event"=>{"recurring"=>"0"}, "start_date"=>"2020-02-14", "start_timez"=>"01:00", "end_date"=>"2020-02-15", "end_timez"=>"01:00", "commit"=>"submit"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 119ms (Views: 94.2ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (41.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvent (20200214173446)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE "events"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20200214173446"]]
+  [1m[35m (46.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/events" for ::1 at 2020-02-14 14:40:13 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.7) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8115692404137957555)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvent (20200214173446)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "title" character varying, "start_time" time, "date" date, "duration" integer, "recurring" integer DEFAULT 0, "trainer_id" integer, "trainee_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_trainer_id" ON "events"  ("trainer_id")[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_trainee_id" ON "events"  ("trainee_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200214173446"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8115692404137957555)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-02-14 14:41:37 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (24.7ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  Rendered users/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 365ms (Views: 324.4ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/..." for ::1 at 2020-02-14 14:41:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2" for ::1 at 2020-02-14 14:42:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 51ms (Views: 41.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users/profile.css" for ::1 at 2020-02-14 14:42:00 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+Started GET "/users/profile.js" for ::1 at 2020-02-14 14:42:00 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-14 14:42:00 -0500
+Started GET "/users/..." for ::1 at 2020-02-14 14:42:00 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  
+ActionController::RoutingError (No route matches [GET] "/users/..."):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 84ms (ActiveRecord: 35.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (32.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 80ms (ActiveRecord: 52.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+Started GET "/users/2" for ::1 at 2020-02-14 14:42:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered users/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 56ms (Views: 44.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/users/profile.jpg" for ::1 at 2020-02-14 14:42:27 -0500
+Started GET "/users/profile.js" for ::1 at 2020-02-14 14:42:27 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-14 14:42:27 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (44.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 53ms (ActiveRecord: 44.8ms)
+
+
+  
+  [1m[36mUser Load (46.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 54ms (ActiveRecord: 46.8ms)
+
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (70.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 80ms (ActiveRecord: 70.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+Started GET "/events/new" for ::1 at 2020-02-14 14:42:36 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (172.9ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `integer_field' for #<ActionView::Helpers::FormBuilder:0x00007ff8b018a2f8>):
+    33: 
+    34:         <div class="form-group">
+    35:           <%= f.label "Duration", class: "form-label" %>
+    36:           <%= f.integer_field :duration, required: true, class: "form-control" %>
+    37:         </div>
+    38: 
+    39:         <div class="form-group">
+  
+app/views/events/new.html.erb:36:in `block in _app_views_events_new_html_erb___1852332008234401962_70353041642280'
+app/views/events/new.html.erb:7:in `_app_views_events_new_html_erb___1852332008234401962_70353041642280'
+Started GET "/events/new" for ::1 at 2020-02-14 14:43:04 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 105ms (Views: 101.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:43:23 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjuXxKtEZyX9aRSECfQK5odqmTjPe5Squb8edqbT/Z6nlVkEJQIjlhHPjhAPOBs2WNRmr4F0ciWZZVLiZMzorQ==", "event"=>{"title"=>"Test", "date"=>"2020-02-14", "start_time"=>"01:00", "duration"=>"2", "recurring"=>"1"}, "commit"=>"submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 147ms (Views: 123.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events" for ::1 at 2020-02-14 14:44:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/events/new" for ::1 at 2020-02-14 14:44:20 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 93ms (Views: 89.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:44:30 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ilPAWU6p/jxHENuwVLu7H17KUl9vjR4dSngVFj4027rv/Q6ZwO+6j6u2QSRSd6rPgXStyCGC+JJqolmC/CvOiQ==", "event"=>{"title"=>"Test", "date"=>"2020-02-14", "start_time"=>"01:00", "duration"=>"2", "recurring"=>"1", "trainer_id"=>"2"}, "commit"=>"submit"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 167ms (Views: 149.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-14 14:46:27 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 104ms (Views: 84.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:46:36 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3b7/LO7fhmYFx8dh22w56QptTJ/S1LK1evwG1Ac73yG4EDHsYJnC1elhXfXdoCg51dOzCJzbVDpaJkpAxSTKEg==", "event"=>{"title"=>"Test", "date"=>"2020-02-14", "start_time"=>"01:00", "duration"=>"2", "recurring"=>"1", "trainer_id"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 78ms (Views: 65.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/events" for ::1 at 2020-02-14 14:47:33 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Pt/SQrHxWm8yv975pgRvwB+Capf0mfXplKjoQMA4HOdVbGJhIGB2lBsZe/gVABv38D2PRHdgViGiO81wR/1QA==", "event"=>{"title"=>"Test", "date"=>"2020-02-14", "start_time"=>"01:00:00.000", "duration"=>"2", "recurring"=>"1", "trainer_id"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (49.4ms)[0m  [1m[32mINSERT INTO "events" ("title", "start_time", "date", "duration", "recurring", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Test"], ["start_time", "01:00:00"], ["date", "2020-02-14"], ["duration", 2], ["recurring", 1], ["trainer_id", 2], ["created_at", "2020-02-14 19:47:33.141060"], ["updated_at", "2020-02-14 19:47:33.141060"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 52.8ms)
+
+
+  
+NoMethodError (undefined method `trainer' for #<Event:0x00007ff8a9c0b0a8>
+Did you mean?  trainer_id):
+  
+app/controllers/events_controller.rb:12:in `create'
+Started PUT "/__web_console/repl_sessions/d07d30f24ef7561ebdf02854742fc3cd" for ::1 at 2020-02-14 14:47:37 -0500
+Started PUT "/__web_console/repl_sessions/d07d30f24ef7561ebdf02854742fc3cd" for ::1 at 2020-02-14 14:47:37 -0500
+Started PUT "/__web_console/repl_sessions/d07d30f24ef7561ebdf02854742fc3cd" for ::1 at 2020-02-14 14:47:39 -0500
+Started PUT "/__web_console/repl_sessions/d07d30f24ef7561ebdf02854742fc3cd" for ::1 at 2020-02-14 14:47:40 -0500
+Started PUT "/__web_console/repl_sessions/d07d30f24ef7561ebdf02854742fc3cd" for ::1 at 2020-02-14 14:47:51 -0500
+Started POST "/events" for ::1 at 2020-02-14 14:48:37 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+Pt/SQrHxWm8yv975pgRvwB+Capf0mfXplKjoQMA4HOdVbGJhIGB2lBsZe/gVABv38D2PRHdgViGiO81wR/1QA==", "event"=>{"title"=>"Test", "date"=>"2020-02-14", "start_time"=>"01:00:00.000", "duration"=>"2", "recurring"=>"1", "trainer_id"=>"2"}, "commit"=>"submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "events" ("title", "start_time", "date", "duration", "recurring", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["title", "Test"], ["start_time", "01:00:00"], ["date", "2020-02-14"], ["duration", 2], ["recurring", 1], ["trainer_id", 2], ["created_at", "2020-02-14 19:48:37.271620"], ["updated_at", "2020-02-14 19:48:37.271620"]]
+  [1m[35m (41.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 63ms (ActiveRecord: 45.3ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-14 14:48:37 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 124ms (Views: 83.7ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/users/profile.js" for ::1 at 2020-02-14 14:48:37 -0500
+Processing by UsersController#show as JS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.css" for ::1 at 2020-02-14 14:48:37 -0500
+Processing by UsersController#show as CSS
+  Parameters: {"id"=>"profile"}
+Started GET "/users/profile.jpg" for ::1 at 2020-02-14 14:48:37 -0500
+Processing by UsersController#show as JPEG
+  Parameters: {"id"=>"profile"}
+  [1m[36mUser Load (16.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 61ms (ActiveRecord: 16.4ms)
+
+
+Completed 404 Not Found in 58ms (ActiveRecord: 4.6ms)
+
+
+  
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'
+  [1m[36mUser Load (92.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 168ms (ActiveRecord: 92.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=profile):
+  
+app/controllers/users_controller.rb:55:in `load_user'

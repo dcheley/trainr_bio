@@ -16,8 +16,11 @@ ActiveRecord::Schema.define(version: 20200214173446) do
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string "title"
+    t.time "start_time"
+    t.date "date"
+    t.integer "duration"
+    t.integer "recurring", default: 0
     t.integer "trainer_id"
     t.integer "trainee_id"
     t.datetime "created_at", null: false

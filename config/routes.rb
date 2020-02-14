@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :studios
+  resources :events, only: [:new, :create, :update, :destroy]
 
   get 'login' => 'sessions#new', as: :login
   post 'login' => 'sessions#create'
