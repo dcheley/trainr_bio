@@ -16,7 +16,7 @@
             <h5 class="card-title"><%= s.name %></h5>
             <p class="card-text"><%= s.location %></p>
             <p class="card-text"><%= s.phone %></p>
-            <a href="#" class="btn btn-primary">Details</a>
+            <%= link_to "Details", studio_url(s), class: "btn btn-primary" %>
             <%= link_to "Edit", edit_studio_url(s) %>
           </div>
         </div>

@@ -22,14 +22,17 @@ class UsersController < ApplicationController
   def index
     if !params[:search].blank?
       @users = User.search(params[:search]).order("first_name ASC")
+      # @studios = Studio.search(params[:search])
     # elsif !params[:category].blank?
     #   @users = users.where(category: params[:category]).order("category ASC")
     else
       @users = User.where(role: 1).order("first_name ASC")
+      @studios = Studio.all.order("name ASC")
     end
   end
 
   def edit
+    @studios = Studio.all.order("name ASC")
     if current_user != @user
       redirect_to :index, notice: "Not authorized."
     end
