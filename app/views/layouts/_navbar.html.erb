@@ -1,29 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-  <a class="navbar-brand" href="/">LOGO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <a class="navbar-brand" href="/">trainr</a>
     <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0 ml-auto") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search by name", required: true, class: "form-control mr-sm-2" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by name", required: true, class: "form-control mr-sm-2", style: "width: 350px;" %>
       <%= submit_tag "Search", class:"btn btn-outline-success my-2 my-sm-0" %>
     <% end %>
-
     <% if current_user %>
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <%= link_to "Studios", studios_url, class: "nav-link" %>
+        <li class="dropdown">
+          <a class="" href="#" data-toggle="dropdown">
+            <%= image_tag('user.svg', height:'32', width:'32')%>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li class="dropdown-item">
+              <%= link_to "Studios", studios_url, class: "nav-link" %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to "Profile", user_url(current_user), class: "nav-link" %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to "Settings", edit_user_url(current_user), class: "nav-link" %>
+            </li>
+            <!-- <li class="dropdown-item">
+              <%# <%= link_to "Log Out", :logout, class: "nav-link" %> %>
+            </li> -->
+          </ul>
         </li>
-        <li class="nav-item">
-          <%= link_to "Profile", user_url(current_user), class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Settings", edit_user_url(current_user), class: "nav-link" %>
-        </li>
-        <!-- <li class="nav-item">
-          <%= link_to "Log Out", :logout, class: "nav-link" %>
-        </li> -->
       </ul>
     <% else %>
       <ul class="navbar-nav ml-auto">
@@ -35,5 +36,5 @@
         </li>
       </ul>
     <% end %>
-  </div>
+  <!-- </div> -->
 </nav>

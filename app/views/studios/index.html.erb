@@ -15,8 +15,11 @@
             <h5 class="card-title"><%= s.name %></h5>
             <p class="card-text"><%= s.location %></p>
             <p class="card-text"><%= s.phone %></p>
-            <%= link_to "Details", studio_url(s), class: "btn btn-primary" %>
+            <%= link_to "Profile", studio_url(s), class: "btn btn-primary" %>
             <%= link_to "Edit", edit_studio_url(s) %>
+            <%= button_to "Delete", { action: "destroy", id: s.id },
+              method: :delete, data: { confirm: "Are you sure?" },
+              class: "btn btn-danger" %>
           </div>
         </div>
       </div>

@@ -7,14 +7,6 @@
 body {
 	background-color: #add8e6;
 	font-family: Montserrat, sans-serif;
-
-	// display: flex;
-	// align-items: center;
-	// justify-content: center;
-	// flex-direction: column;
-
-	// min-height: 100vh;
-	// margin: 0;
 }
 
 h3 {
@@ -34,10 +26,10 @@ h7 {
   color: dark-grey;
 }
 
-p {
-	font-size: 14px;
-	line-height: 21px;
-}
+// p {
+// 	font-size: 14px;
+// 	line-height: 21px;
+// }
 
 .card-container {
 	background-color: #1F1A36;
@@ -83,6 +75,11 @@ button.primary {
 button.primary.ghost {
 	background-color: transparent;
 	color: #02899C;
+}
+
+.default-profile {
+	width: 200px;
+	height: 240px;
 }
 
 .skills {
@@ -131,10 +128,6 @@ footer a {
     text-decoration: none;
 }
 
-
-
-
-
 /* timeline */
 
 .timeline ul {
@@ -164,7 +157,6 @@ footer a {
 
 
 /* .bullet for timeline { */
-
         .bulletpink {
           width: .7em;
           height: .7em;
@@ -221,8 +213,6 @@ footer a {
         font-weight: 400;
         color: dark-grey;
       }
-
-
 
 
 /* schedule */

@@ -3,14 +3,20 @@
 <div class="container text-center">
   <%= flash[:notice] %>
 
-  <ul class="nav nav-tabs">
-    <li class="nav-item">
-      <a class="nav-link active" href="#1a" data-toggle="tab">Instructors</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#2a" data-toggle="tab">Studios</a>
-    </li>
-  </ul>
+  <div class="row">
+    <div class="col-2"></div>
+      <div class="col-8">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#1a" data-toggle="tab">Instructors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#2a" data-toggle="tab">Studios</a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-2"></div>
+  </div>
 
   <div class="tab-content clearfix">
     <div class="tab-pane active" id="1a">
@@ -59,7 +65,6 @@
                 <p class="card-text"><%= s.location %></p>
                 <p class="card-text"><%= s.phone %></p>
                 <%= link_to "Details", studio_url(s), class: "btn btn-primary" %>
-                <%= link_to "Edit", edit_studio_url(s) %>
               </div>
             </div>
           </div>
