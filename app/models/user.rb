@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates_length_of :description, maximum: 150
 
   has_many :studios, through: :user_studios
   has_many :events, foreign_key: 'trainer_id', class_name: 'trainer_events'

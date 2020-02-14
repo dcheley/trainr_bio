@@ -1,31 +1,80 @@
 <%= render 'layouts/navbar' %>
 
-<%= flash[:notice] %>
 <!-- tabs BOTH, Instructors, Studios -->
 <div class="container text-center">
-  <div class="row">
-    <% @users.each do |instructor| %>
-      <div class="col-2"></div>
-      <div class="col-8">
-        <div class="card mb-3">
-        <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
-              <h5 class="card-title"><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
-            <% else %>
-              <h5 class="card-title">N/A</h5>
-            <% end %>
-            <p class="card-text"><%= instructor.description %></p>
-            <%= link_to "Profile", user_url(instructor), class:"btn btn-primary" %>
-          </div>
+  <%= flash[:notice] %>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#1a" data-toggle="tab">Instructors</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#2a" data-toggle="tab">Studios</a>
+    </li>
+    <!-- <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li> -->
+  </ul>
+
+  <div class="tab-content clearfix">
+    <div class="tab-pane active" id="1a">
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h3>Instructors</h3>
         </div>
+        <% @users.each do |instructor| %>
+          <div class="col-2"></div>
+          <div class="col-8">
+            <div class="card mb-3">
+            <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
+                  <h5 class="card-title"><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
+                <% else %>
+                  <h5 class="card-title">N/A</h5>
+                <% end %>
+                <p class="card-text"><%= instructor.description %></p>
+                <%= link_to "Profile", user_url(instructor), class:"btn btn-primary" %>
+              </div>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        <% end %>
+        <% if @users.empty? %>
+          <div class="col-12">
+            <h4 class="text-center mb-3">No instructors found.</h4>
+          </div>
+        <% end %>
       </div>
-      <div class="col-2"></div>
-    <% end %>
-    <% if @users.empty? %>
-      <div class="col-12">
-        <h2 class="text-center">No results found.</h2>
+    </div>
+
+    <div class="tab-pane" id="2a">
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h3>Studios</h3>
+        </div>
+        <% @studios.each do |s| %>
+          <div class="col-2"></div>
+          <div class="col-8">
+            <div class="card mb-3">
+            <img class="card-img-top" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title"><%= s.name %></h5>
+                <p class="card-text"><%= s.location %></p>
+                <p class="card-text"><%= s.phone %></p>
+                <%= link_to "Details", studio_url(s), class: "btn btn-primary" %>
+                <%= link_to "Edit", edit_studio_url(s) %>
+              </div>
+            </div>
+          </div>
+          <div class="col-2"></div>
+        <% end %>
+        <% if @studios.empty? %>
+          <div class="col-12">
+            <h4 class="text-center mb-3">No studios found.</h4>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

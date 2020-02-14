@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def index
     if !params[:search].blank?
       @users = User.search(params[:search]).order("first_name ASC")
-      # @studios = Studio.search(params[:search])
+      @studios = Studio.search(params[:search]).order("name ASC")
     # elsif !params[:category].blank?
     #   @users = users.where(category: params[:category]).order("category ASC")
     else
