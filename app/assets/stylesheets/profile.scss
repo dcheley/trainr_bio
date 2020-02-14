@@ -87,9 +87,8 @@ button.primary.ghost {
 
 .skills {
 	background-color: #1F1A36;
-	text-align: left;
 	padding: 15px;
-	margin-top: 30px;
+	margin: auto;
 }
 
 .skills ul {
@@ -227,11 +226,14 @@ footer a {
 
 
 /* schedule */
-.scheduletitle {
-  font-size: 14px;
-  margin: auto;
-  width: 80%;
-  padding: 12px;
+.schedule {
+  font-size: 12px;
+  table {
+		margin: auto;
+	}
+	th {
+		padding: 16px;
+	}
 }
 
 /* Scrolling menu */

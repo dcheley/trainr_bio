@@ -4,8 +4,8 @@ class User < ApplicationRecord
   validates_length_of :description, maximum: 150
 
   has_many :studios, through: :user_studios
-  has_many :events, foreign_key: 'trainer_id', class_name: 'trainer_events'
-  has_many :events, foreign_key: 'trainee_id', class_name: 'trainee_events'
+  has_many :trainer_events, foreign_key: 'trainer_id', class_name: 'Event'
+  has_many :trainee_events, foreign_key: 'trainee_id', class_name: 'Event'
 
   scope :instructor, -> { where(role: 1) }
   scope :basic, -> { where(role: 0) }

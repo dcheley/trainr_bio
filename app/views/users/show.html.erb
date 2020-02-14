@@ -9,12 +9,10 @@
   <body>
 		<%= render 'layouts/navbar' %>
 		<div class="text-center"><%= flash[:notice] %></div>
-<!-- Show schedule times and days only if exist and gray out button if not -->
+
     <div class="card-container">
-	    <span class="pro">Heart
-			<!-- <img> find heart icon -->
-			</span>
-			<!-- if else show image -->
+	    <span class="pro">Heart<!-- <img> find heart icon --></span>
+		  <!-- if else show image -->
 	    <img
 	        class="round"
 					width="200px"
@@ -31,14 +29,15 @@
 			<p><%= @user.description %></p>
 		  <p><%= @user.location %></p>
 		  <p><%= @user.phone %></p>
+			<!-- Show schedule times and days only if exist and gray out button if not -->
 	    <div class="buttons">
 	      <button class="primary">Check In</button>
 	      <button class="primary ghost">Social</button>
 	    </div>
 
 	    <!-- add icons here from the 'check ins' -->
-	    <div class="skills">
-	      <h7>Known For</h7>
+	    <div class="skills mt-4">
+	      <p class="text-center">KNOWN FOR</p>
 	      <ul>
 	        <li>Yoga</li>
 	        <li>Pilates</li>
@@ -55,8 +54,11 @@
 	    </div><br><br>
 
 	    <!-- Schedule -->
-	    <div class="scheduletitle">
-	      <h7>Schedule</h7>
+	    <div class="schedule">
+				<% if current_user == @user %>
+					<p><%= link_to "Create Class", new_event_url %></p>
+				<% end %>
+	      <p>SCHEDULE</p>
 	    	<table>
 	    		<thread>
 	    			<tr>
@@ -67,24 +69,20 @@
 	    			</tr>
 	    		</thread>
 	    		<tbody>
-	    			<tr>
-	    				<td>Monday</td>
-	    				<td>7PM</td>
-	    				<td>Vinyasa L1</td>
-	    				<td>Ahimsa</td>
-	    			</tr>
-	    			<tr>
-	    				<td>Tuesday</td>
-	    				<td>7PM</td>
-	    				<td>Vinyasa L2</td>
-	    				<td>Ahimsa</td>
-	    			</tr>
+						<% @events.each do |event| %>
+		    			<tr>
+		    				<td><%= event.date.strftime('%a %_m/%-d') %></td>
+		    				<td><%= event.start_time.strftime('%l:%M%p') %></td>
+		    				<td>ADDRESS</td>
+		    				<td>STUDIO</td>
+		    			</tr>
+						<% end %>
 	    		</tbody>
-	    	</table><br><br>
+	    	</table>
 	    </div>
 
 	    <!-- History Timeline -->
-	    <div class="timeline">
+	    <div class="timeline mt-4">
 	    <h7>Timeline</h7>
 	      <ul>
 	        <li>
