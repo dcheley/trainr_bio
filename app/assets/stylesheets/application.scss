@@ -2,3 +2,13 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "profile";
+
+.grey-bottom-border {
+  border-bottom: 1px solid #d3d3d3 !important;
+}
+
+.no-border {
+  border: 0;
+  box-shadow: none;
+  // font-size: 11px;
+}
