@@ -2,6 +2,15 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "profile";
+@import "variables";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+}
 
 .grey-bottom-border {
   border-bottom: 1px solid #d3d3d3 !important;
@@ -10,5 +19,24 @@
 .no-border {
   border: 0;
   box-shadow: none;
-  // font-size: 11px;
+}
+
+.main-header {
+  font-size: $font-size-9;
+  font-weight: bold;
+}
+
+.footer-link {
+  display: block;
+  text-align: center;
+  color: $black;
+}
+
+.footer-link:hover {
+  color: $light-grey;
+  text-decoration: none;
+}
+
+#trainer-footer img {
+  margin: auto;
 }

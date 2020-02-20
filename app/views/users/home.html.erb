@@ -1,0 +1,7 @@
+<% if !current_user %>
+  <%= render 'layouts/navbar_home_logged_out.html.erb' %>
+<% else %>
+  <%= render 'layouts/navbar_home_logged_in.html.erb' %>
+<% end %>
+
+<%= render 'layouts/footer_trainee' %>

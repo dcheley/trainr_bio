@@ -1,14 +1,27 @@
-<%= render 'layouts/navbar' %>
+<% if !current_user %>
+  <%= render 'layouts/navbar_search_results_logged_out' %>
+  <%= render 'layouts/footer_trainee' %>
+<% else %>
+  <%= render 'layouts/navbar_search_results_logged_in' %>
+  <% if current_user.role == "trainer" %>
+    <%= render 'layouts/footer_trainer' %>
+  <% else %>
+    <%= render 'layouts/footer_trainee' %>
+  <% end %>
+<% end %>
 
 <div class="container text-center">
   <%= flash[:notice] %>
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-      <h3>Search Results</h3>
+
+  <% if !params[:search].blank? %>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <h3>Search Results</h3>
+      </div>
+      <div class="col-2"></div>
     </div>
-    <div class="col-2"></div>
-  </div>
+  <% end %>
 
   <div class="row">
     <div class="col-2"></div>

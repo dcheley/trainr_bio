@@ -5,7 +5,14 @@
 	</head>
 
   <body>
-		<%= render 'layouts/navbar' %>
+		<% if current_user && current_user != @user %>
+			<%= render 'layouts/navbar_public_trainer_profile' %>
+		<% elsif current_user == @user %>
+			<%= render 'layouts/navbar_my_trainer_profile' %>
+		<% else %>
+			<%= render 'layouts/navbar_logged_out_trainer_profile' %>
+		<% end %>
+
 		<div class="text-center"><%= flash[:notice] %></div>
 
     <div class="card-container">
@@ -78,7 +85,7 @@
 
 	    <!-- History Timeline -->
 	    <div class="timeline mt-4">
-	    <h7>Timeline</h7>
+	    <h6>Timeline</h6>
 	      <ul>
 	        <li>
 	          <div class="bulletpink"></div>
@@ -115,10 +122,14 @@
 
 	    <!-- Offerings -->
 	    <div>
-	    	<h7>Offerings</h7>
+	    	<h6>Offerings</h6>
 	    </div><br><br>
     </div>
 
-    <p><cite>trainr.bio 2020</cite><p>
+    <% if current_user && current_user.role == "trainer" %>
+			<%= render 'layouts/footer_trainer' %>
+		<% else %>
+			<%= render 'layouts/footer_trainee' %>
+		<% end %>
   </body>
 </html>
