@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy', as: :logout
 
   get 'home' => 'users#home', as: :home
+  post 'landing_email' => 'users#landing_email', as: :landing_email
+  get 'forgot_password' => 'users#forgot_password', as: :forgot_password
 end

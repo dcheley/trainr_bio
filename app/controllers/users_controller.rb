@@ -53,6 +53,17 @@ class UsersController < ApplicationController
   def home
   end
 
+  def landing_email
+    body = params[:comment]
+
+    UserMailer.landing_email(body).deliver_later
+
+    redirect_to :home, notice: "Thanks for the feedback!"
+  end
+
+  def forgot_password
+  end
+
   private
 
   def load_user

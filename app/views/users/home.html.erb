@@ -1,7 +1,75 @@
 <% if !current_user %>
   <%= render 'layouts/navbar_home_logged_out.html.erb' %>
+
+  <div class="container">
+    <%= flash[:notice] %>
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true, class: "form-control mr-sm-2 ml-auto", style: "width: 350px;" %>
+          <%= submit_tag "Go", class:"btn btn-outline-success my-2 my-sm-0 mr-auto" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-12">
+        <!-- Phone image with scroll displaying app -->
+        <%= image_tag("phone.svg", width: 400, height: 400)%>
+      </div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-12">
+        <%= link_to "Sign Up", new_user_url, class:'btn btn-primary round-btn' %>
+      </div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-12">
+        <%= link_to "Log In", :login, class:'btn btn-outline-primary round-btn' %>
+      </div>
+    </div>
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <p>trainr.bio 2020</p>
+      </div>
+    </div>
+    <!-- Use a better way to stop footer overlapping content later -->
+    <div style="height: 150px;"></div>
+  </div>
 <% else %>
   <%= render 'layouts/navbar_home_logged_in.html.erb' %>
+
+  <div class="container">
+    <p class="text-center"><%= flash[:notice] %></p>
+    <div class="row mb-5 text-center">
+      <div class="col-12">
+        <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true, class: "form-control mr-sm-2 ml-auto", style: "width: 350px;" %>
+          <%= submit_tag "Go", class:"btn btn-outline-success my-2 my-sm-0 mr-auto" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <%= form_tag :landing_email do %>
+          <div class="form-group">
+            <textarea class="form-control" placeholder="Write anyting." rows="5" name="comment"></textarea>
+          </div>
+          <%= submit_tag "Send", class:'btn btn-outline-primary' %>
+        <% end %>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-12">
+      </div>
+    </div>
+    <div class="row mb-3 text-center">
+      <div class="col-12">
+        <p>trainr.bio 2020</p>
+      </div>
+    </div>
+  </div>
 <% end %>
 
 <%= render 'layouts/footer_trainee' %>

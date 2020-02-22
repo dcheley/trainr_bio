@@ -1,135 +1,126 @@
-<!doctype html>
-<html lang="en">
-	<head>
-    <title>Profile</title>
-	</head>
+<% if current_user && current_user != @user %>
+	<%= render 'layouts/navbar_public_trainer_profile' %>
+<% elsif current_user == @user %>
+	<%= render 'layouts/navbar_my_trainer_profile' %>
+<% else %>
+	<%= render 'layouts/navbar_logged_out_trainer_profile' %>
+<% end %>
 
-  <body>
-		<% if current_user && current_user != @user %>
-			<%= render 'layouts/navbar_public_trainer_profile' %>
-		<% elsif current_user == @user %>
-			<%= render 'layouts/navbar_my_trainer_profile' %>
-		<% else %>
-			<%= render 'layouts/navbar_logged_out_trainer_profile' %>
+<div class="text-center"><%= flash[:notice] %></div>
+
+<div class="card-container">
+  <span class="pro">Heart<!-- <img> find heart icon --></span>
+	<% if @user.img_url.blank? %>
+	<%= image_tag('user.svg', class:'round', height:'220', width:'220')%>
+	<% else %>
+		<%= @user.img_url %>
+	<% end %>
+	<% if !@user.first_name.nil? || !@user.last_name.nil? %>
+    <h3><%= @user.first_name + ' ' + @user.last_name %></h3>
+	<% else %>
+	 <h3>N/A</h3>
+	<% end %>
+  <p>Yoga Teacher</p>
+	<p><%= @user.description %></p>
+  <p><%= @user.location %></p>
+  <p><%= @user.phone %></p>
+	<!-- Show schedule times and days only if exist and gray out button if not -->
+  <div class="buttons">
+    <button class="primary">Check In</button>
+    <button class="primary ghost">Social</button>
+  </div>
+
+  <!-- add icons here from the 'check ins' -->
+  <div class="skills mt-3">
+    <p class="text-center">KNOWN FOR</p>
+    <ul>
+      <li>Yoga</li>
+      <li>Pilates</li>
+      <li>Calisthenics</li>
+			<li>Relaxing</li>
+    </ul><br><br>
+  </div>
+
+  <!-- floating menu here -->
+  <div id="navbar">
+    <a href="#schedule">Schedule</a>
+    <a href="#history">History</a>
+    <a href="#offerings">Offerings</a>
+  </div><br><br>
+
+  <!-- Schedule -->
+  <div class="schedule">
+		<% if current_user == @user %>
+			<p><%= link_to "Create Class", new_event_url %></p>
 		<% end %>
-
-		<div class="text-center"><%= flash[:notice] %></div>
-
-    <div class="card-container">
-	    <span class="pro">Heart<!-- <img> find heart icon --></span>
-			<% if @user.img_url.blank? %>
-			<%= image_tag('user.svg', class:'round', height:'220', width:'220')%>
-			<% else %>
-				<%= @user.img_url %>
-			<% end %>
-			<% if !@user.first_name.nil? || !@user.last_name.nil? %>
-		    <h3><%= @user.first_name + ' ' + @user.last_name %></h3>
-			<% else %>
-			 <h3>N/A</h3>
-			<% end %>
-	    <p>Yoga Teacher</p>
-			<p><%= @user.description %></p>
-		  <p><%= @user.location %></p>
-		  <p><%= @user.phone %></p>
-			<!-- Show schedule times and days only if exist and gray out button if not -->
-	    <div class="buttons">
-	      <button class="primary">Check In</button>
-	      <button class="primary ghost">Social</button>
-	    </div>
-
-	    <!-- add icons here from the 'check ins' -->
-	    <div class="skills mt-3">
-	      <p class="text-center">KNOWN FOR</p>
-	      <ul>
-	        <li>Yoga</li>
-	        <li>Pilates</li>
-	        <li>Calisthenics</li>
-					<li>Relaxing</li>
-	      </ul><br><br>
-	    </div>
-
-	    <!-- floating menu here -->
-	    <div id="navbar">
-	      <a href="#schedule">Schedule</a>
-	      <a href="#history">History</a>
-	      <a href="#offerings">Offerings</a>
-	    </div><br><br>
-
-	    <!-- Schedule -->
-	    <div class="schedule">
-				<% if current_user == @user %>
-					<p><%= link_to "Create Class", new_event_url %></p>
+    <p>SCHEDULE</p>
+  	<table>
+  		<thread>
+  			<tr>
+  				<th>Day</th>
+  				<th>Time</th>
+  				<th>Class Name</th>
+  				<th>Studio</th>
+  			</tr>
+  		</thread>
+  		<tbody>
+				<% @events.each do |event| %>
+    			<tr>
+    				<td><%= event.date.strftime('%a %_m/%-d') %></td>
+    				<td><%= event.start_time.strftime('%l:%M%p') %></td>
+    				<td>ADDRESS</td>
+    				<td>STUDIO</td>
+    			</tr>
 				<% end %>
-	      <p>SCHEDULE</p>
-	    	<table>
-	    		<thread>
-	    			<tr>
-	    				<th>Day</th>
-	    				<th>Time</th>
-	    				<th>Class Name</th>
-	    				<th>Studio</th>
-	    			</tr>
-	    		</thread>
-	    		<tbody>
-						<% @events.each do |event| %>
-		    			<tr>
-		    				<td><%= event.date.strftime('%a %_m/%-d') %></td>
-		    				<td><%= event.start_time.strftime('%l:%M%p') %></td>
-		    				<td>ADDRESS</td>
-		    				<td>STUDIO</td>
-		    			</tr>
-						<% end %>
-	    		</tbody>
-	    	</table>
-	    </div>
+  		</tbody>
+  	</table>
+  </div>
 
-	    <!-- History Timeline -->
-	    <div class="timeline mt-4">
-	    <h6>Timeline</h6>
-	      <ul>
-	        <li>
-	          <div class="bulletpink"></div>
-	          <div class="date">2020</div>
-	          <div class="desc">
-	            <h5>Started Teaching @Ahimsa</h5>
-	          </div>
-	        </li>
-	        <li>
-	          <div class="bulletgreen"></div>
-	          <div class="date">2018</div>
-	          <div class="desc">
-	            <h5>Received Yoga Alliance Cert</h5>
-	          </div>
-	        </li>
-	        <li>
-	          <div class="bulletorange"></div>
-	          <div class="date">2016</div>
-	          <div class="desc">
-	            <h5>RYT 200</h5>
-	    				<h6>Yoga Tree</h6>
-	          </div>
-	        </li>
-	        <li>
-	          <div class="bulletgreen"></div>
-	          <div class="date">2014</div>
-	          <div class="desc">
-	            <h5>Started Practicing Yoga</h5>
-	            <h6>Youtube</h6>
-	          </div>
-	        </li>
-	      </ul><br><br>
-	    </div>
+  <!-- History Timeline -->
+  <div class="timeline mt-4">
+  <h6>Timeline</h6>
+    <ul>
+      <li>
+        <div class="bulletpink"></div>
+        <div class="date">2020</div>
+        <div class="desc">
+          <h5>Started Teaching @Ahimsa</h5>
+        </div>
+      </li>
+      <li>
+        <div class="bulletgreen"></div>
+        <div class="date">2018</div>
+        <div class="desc">
+          <h5>Received Yoga Alliance Cert</h5>
+        </div>
+      </li>
+      <li>
+        <div class="bulletorange"></div>
+        <div class="date">2016</div>
+        <div class="desc">
+          <h5>RYT 200</h5>
+  				<h6>Yoga Tree</h6>
+        </div>
+      </li>
+      <li>
+        <div class="bulletgreen"></div>
+        <div class="date">2014</div>
+        <div class="desc">
+          <h5>Started Practicing Yoga</h5>
+          <h6>Youtube</h6>
+        </div>
+      </li>
+    </ul><br><br>
+  </div>
 
-	    <!-- Offerings -->
-	    <div>
-	    	<h6>Offerings</h6>
-	    </div><br><br>
-    </div>
+  <!-- Offerings -->
+  <div>
+  	<h6>Offerings</h6>
+  </div><br><br>
+</div>
 
-    <% if current_user && current_user.role == "trainer" %>
-			<%= render 'layouts/footer_trainer' %>
-		<% else %>
-			<%= render 'layouts/footer_trainee' %>
-		<% end %>
-  </body>
-</html>
+<% if current_user && current_user.role == "trainer" %>
+	<%= render 'layouts/footer_trainer' %>
+<% else %>
+	<%= render 'layouts/footer_trainee' %>
+<% end %>

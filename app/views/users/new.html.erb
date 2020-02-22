@@ -1,8 +1,10 @@
+<%= render 'layouts/navbar_registration' %>
+
 <div class="container text-center">
   <div class="row mt-5 mb-5">
     <div class="col-2"></div>
     <div class="col-8">
-      <h1 class="mb-3">Sign Up</h1>
+      <h1 class="mb-5">sign up</h1>
 
       <%= form_for(@user, url: { action: "create" }) do |f| %>
         <% if @user.errors.any? %>
@@ -17,11 +19,6 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label 'I am an instructor' %>
-          <%= f.check_box :role %>
-        </div>
-
-        <div class="form-group">
           <%= f.email_field :email, placeholder: "Email", required: true, class: "form-control" %>
         </div>
 
@@ -33,7 +30,16 @@
           <%= f.password_field :password_confirmation, placeholder: "Confirm Password", required: true, class: "form-control" %>
         </div>
 
-        <%= f.submit "submit", class: 'btn submit' %>
+        <div class="form-group">
+          <%= f.label 'I am an instructor.' %>
+          <%= f.check_box :role %>
+        </div>
+
+        <%= f.submit "Next", class: 'btn btn-primary btn-block' %>
+
+        <div class="form-group mt-3">
+          <p>Already have an account? <%= link_to "Log In", login_path %></p>
+        </div>
       <% end %>
     </div>
     <div class="col-2"></div>
