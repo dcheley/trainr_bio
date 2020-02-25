@@ -12,6 +12,13 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require bootstrap
+//= require_tree .
+
+$(document).on('turbolinks:load', function () {
+  $('#searchTab a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+});

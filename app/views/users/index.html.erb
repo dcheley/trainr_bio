@@ -14,6 +14,14 @@
   <%= flash[:notice] %>
 
   <% if !params[:search].blank? %>
+    <% if !@users.empty? || @studios.empty? %>
+    <div class="row">
+      <div class="col-12">
+        <p class="text-left text-primary"><%= @users.length + @studios.length %> Result(s)</p>
+      </div>
+    </div>
+    <% end %>
+
     <div class="row">
       <div class="col-2"></div>
       <div class="col-8">
@@ -23,15 +31,15 @@
     </div>
   <% end %>
 
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-2"></div>
       <div class="col-8">
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
         <li class="nav-item">
-          <a class="nav-link active" href="#1a" data-toggle="tab">Instructors</a>
+          <a class="nav-link active" id="trainers-tab" href="#trainers" data-toggle="pill" role="tab" aria-controls="trainers" aria-selected="true">Trainrs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#2a" data-toggle="tab">Studios</a>
+          <a class="nav-link" id="studios-tab" href="#studios" data-toggle="pill" role="tab" aria-controls="studios" aria-selected="false">Studios</a>
         </li>
       </ul>
     </div>
@@ -39,63 +47,55 @@
   </div>
 
   <div class="tab-content clearfix">
-    <div class="tab-pane active" id="1a">
-      <div class="row">
-        <div class="col-12 mb-3">
-          <!-- <h3>Instructors</h3> -->
+    <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
+      <% @users.each do |instructor| %>
+        <div class="row mt-3 mb-3 pb-3 border-bottom">
+          <div class="col-4 my-auto">
+            <%= image_tag('user.svg', height: 64, width: 64, class:'') %>
+          </div>
+          <div class="col-4 my-auto">
+            <%= link_to user_url(instructor) do %>
+              <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
+                <h5 class=""><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
+              <% else %>
+                <h5 class="e">N/A</h5>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="col-4 my-auto">
+            <p class=""><%= instructor.location %></p>
+          </div>
+          <div class="divider"></div>
         </div>
-        <% @users.each do |instructor| %>
-          <div class="col-2"></div>
-          <div class="col-8">
-            <div class="card mb-3">
-            <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
-                  <h5 class="card-title"><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
-                <% else %>
-                  <h5 class="card-title">N/A</h5>
-                <% end %>
-                <p class="card-text"><%= instructor.description %></p>
-                <%= link_to "Profile", user_url(instructor), class:"btn btn-primary" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-2"></div>
-        <% end %>
-        <% if @users.empty? %>
-          <div class="col-12">
-            <h4 class="text-center mb-3">No instructors found.</h4>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
+      <% if @users.empty? %>
+        <div class="col-12">
+          <h4 class="mb-3">No instructors found.</h4>
+        </div>
+      <% end %>
     </div>
 
-    <div class="tab-pane" id="2a">
-      <div class="row">
-        <div class="col-12 mb-3">
-          <!-- <h3>Studios</h3> -->
+    <div class="tab-pane" id="studios" role="tabpanel" aria-labelledby="studios-tab">
+      <% @studios.each do |s| %>
+        <div class="row mt-3 mb-3 pb-3 border-bottom">
+          <div class="col-4 my-auto">
+            <%= image_tag('search.svg', height: 64, width: 64, class:'') %>
+          </div>
+          <div class="col-4 my-auto">
+            <h5><%= link_to s.name, studio_url(s) %></h5>
+          </div>
+          <div class="col-4 my-auto">
+            <p class=""><%= s.location %></p>
+            <p class=""><%= s.phone %></p>
+          </div>
+          <div class="divider"></div>
         </div>
-        <% @studios.each do |s| %>
-          <div class="col-2"></div>
-          <div class="col-8">
-            <div class="card mb-3">
-            <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"><%= s.name %></h5>
-                <p class="card-text"><%= s.location %></p>
-                <p class="card-text"><%= s.phone %></p>
-                <%= link_to "Details", studio_url(s), class: "btn btn-primary" %>
-              </div>
-            </div>
-          </div>
-          <div class="col-2"></div>
-        <% end %>
-        <% if @studios.empty? %>
-          <div class="col-12">
-            <h4 class="text-center mb-3">No studios found.</h4>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
+      <% if @studios.empty? %>
+        <div class="col-12">
+          <h4 class="mb-3">No studios found.</h4>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
