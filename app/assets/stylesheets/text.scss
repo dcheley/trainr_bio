@@ -1,0 +1,125 @@
+//Top Navbar Text (once per page for page title)
+h1 {
+  $fs4
+  $i
+  $b
+  .edit {
+    $abz
+  }
+}
+
+//Page Division Header
+h2 {}
+
+
+.h-branding {
+  $abz
+  .main { //main page
+    $fs0
+    $b
+  }
+  .user { //trainr profile page (user URL)
+    $fs5
+    $b
+  }
+  .footer { //trainr.bio 2020
+    $fs7
+    $i
+  }
+}
+
+.h-auth { //main header for signup/login
+  $abz
+  $fs5
+}
+
+.h-settings {
+  $fs7
+  .h {
+    $b
+  }
+}
+
+.h-trainr-name {
+  .lg { //trainr profile
+    $fs1
+  }
+  .md { //search results, mytrainr list, studio list
+    $fs4
+  }
+  .sm { //mytrainr schedule card
+    $fs6
+    $i
+    $b
+  }
+}
+
+.h-schedule {
+  .title { //date, day of week
+    $fs2
+  }
+  .time {
+    $fs6
+  }
+  .session-name {
+    $fs6
+    $i
+  }
+  .studio-name { //username with @
+    $fs8
+    $blue
+  }
+}
+
+.h-studio {
+  .title {
+    $fs3
+    $b
+  }
+  .address {
+    $fs7
+    $i
+  }
+  .url {
+    $abz
+    $fs5
+    $b
+  }
+}
+
+.h-trainr {
+  .h2 { //Today, About Me, Certifications, etc
+    $fs4
+    $i
+    $b
+  }
+  .p { //quick bio, offering text, bio text
+    $fs7
+  }
+  .h3 { //certification
+    $fs7
+    $i
+  }
+  .offering-title {
+    .lg {
+      $fs2
+      $i
+      $b
+    }
+    .regular {
+      $fs4
+      $i
+      $b
+    }
+  }
+}
+
+.popup {
+  $fs4
+  .blue {
+    $blue
+  }
+  .red {
+    $red
+  }
+}
