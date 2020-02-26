@@ -14,13 +14,17 @@
 
 <div class="card-container">
   // for each of the elements in studio.trainr[x] (from x=0 to x=5), display trainr card
-  <% $i = 0 %>
-  <% while $i < 6 do %>
-    <%= @user.img_url %>
-    <h3><%= @studio.trainr[$i].firstname %></h3>
-    <h3><%= @studio.trainr[$i].lastname %></h3>
-    <% $i++ %>
+  // @studio.trainrs = trainr.limit(6)
+  <% @studio.trainrs.first(6).each do |trainr| %>
+    <!-- <div class="col3"> -->
+      <%= trainr.img_url %>
+      <h3><%= trainr.firstname %></h3>
+      <h3><%= trainr.lastname %></h3>
+    <!-- </div> -->
   <% end %>
+  <div class="buttons">
+    <button class="secondary">show more</button>
+  </div>
 </div>
 
 <div class="card-container">
