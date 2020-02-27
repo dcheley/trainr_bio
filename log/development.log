@@ -35760,3 +35760,349 @@ Processing by StudiosController#show as HTML
 Completed 200 OK in 48ms (Views: 37.4ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/" for ::1 at 2020-02-27 12:25:04 -0500
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (44.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (642.9ms)
+  Rendered layouts/_footer_trainee.html.erb (8.4ms)
+  Rendered users/home.html.erb within layouts/application (812.6ms)
+Completed 200 OK in 949ms (Views: 835.3ms | ActiveRecord: 99.2ms)
+
+
+Started GET "/logout" for ::1 at 2020-02-27 12:25:13 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 12:25:13 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.3ms)
+  Rendered layouts/_footer_trainee.html.erb (5.4ms)
+  Rendered users/home.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 12:25:25 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.3ms)
+  Rendered layouts/_footer_trainee.html.erb (2.4ms)
+  Rendered users/home.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-02-27 12:25:49 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar_search_results_logged_out.html.erb (0.9ms)
+  Rendered layouts/_footer_trainee.html.erb (9.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  [1m[36mStudio Load (42.1ms)[0m  [1m[34mSELECT "studios".* FROM "studios" ORDER BY name ASC[0m
+  Rendered users/index.html.erb within layouts/application (105.4ms)
+Completed 200 OK in 149ms (Views: 80.2ms | ActiveRecord: 56.2ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-27 12:26:01 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-02-27 12:26:10 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-02-27 12:26:22 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZewUev0VlAW5Cf746Blet9wNhvTpLHAHY5e8ADwLyobYidR6JuXpLUcbW/mRgzSlyKUSchfcjbiXmCcFNwVoxw==", "email"=>"test2@2.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@2.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users
+Completed 302 Found in 269ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for ::1 at 2020-02-27 12:26:22 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_search_results_logged_in.html.erb (1.0ms)
+  Rendered layouts/_footer_trainee.html.erb (3.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  [1m[36mStudio Load (0.4ms)[0m  [1m[34mSELECT "studios".* FROM "studios" ORDER BY name ASC[0m
+  Rendered users/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 57ms (Views: 53.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-27 12:26:32 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_public_trainer_profile.html.erb (0.6ms)
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered layouts/_footer_trainee.html.erb (4.2ms)
+  Rendered users/show.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 83ms (Views: 48.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/users/2?class=nav-link" for ::1 at 2020-02-27 12:26:45 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"class"=>"nav-link", "id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_public_trainer_profile.html.erb (0.9ms)
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered layouts/_footer_trainee.html.erb (3.5ms)
+  Rendered users/show.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 60ms (Views: 48.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 12:26:52 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (2.7ms)
+  Rendered layouts/_footer_trainee.html.erb (17.9ms)
+  Rendered users/home.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 63ms (Views: 57.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2020-02-27 12:26:53 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  Rendered users/edit.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 54ms (Views: 36.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/1" for ::1 at 2020-02-27 12:27:02 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (0.7ms)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered layouts/_footer_trainee.html.erb (3.2ms)
+  Rendered users/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 83ms (Views: 56.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/logout" for ::1 at 2020-02-27 12:27:04 -0500
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 12:27:04 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.3ms)
+  Rendered layouts/_footer_trainee.html.erb (3.5ms)
+  Rendered users/home.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 43ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2020-02-27 12:27:12 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 50ms (Views: 47.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-27 12:27:19 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"66LTXinvoIU5WSzDnShRnefBQ2K3nGR98Cz9kF8zXzqdQqexUoyUA5jD6TFLJDu1DwWrMle6AjnwiEhrGK3KTw==", "user"=>{"email"=>"blah@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"0"}, "commit"=>"Next"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "blah@test.com"], ["LIMIT", 1]]
+  [1m[35mSQL (48.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "blah@test.com"], ["password_digest", "$2a$12$5SfFJe4mZ27f05LO2ePk8OHVOgansubg5uJyTyyJZ99CIcgdW3lBO"], ["role", 0], ["created_at", "2020-02-27 17:27:19.970290"], ["updated_at", "2020-02-27 17:27:19.970290"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 325ms (ActiveRecord: 53.0ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-27 12:27:20 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (0.7ms)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  Rendered layouts/_footer_trainee.html.erb (2.5ms)
+  Rendered users/show.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "blah@test.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "role" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["role", 1], ["updated_at", "2020-02-27 17:28:07.344981"], ["id", 3]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users/3" for ::1 at 2020-02-27 12:28:15 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (1.0ms)
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  Rendered layouts/_footer_trainee.html.erb (5.9ms)
+  Rendered users/show.html.erb within layouts/application (244.9ms)
+Completed 200 OK in 368ms (Views: 299.9ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/events" for ::1 at 2020-02-27 12:28:21 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-02-27 12:28:26 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_search_results_logged_in.html.erb (0.9ms)
+  Rendered layouts/_footer_trainee.html.erb (3.2ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" ORDER BY name ASC[0m
+  Rendered users/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 100ms (Views: 68.1ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/events" for ::1 at 2020-02-27 12:28:36 -0500
+Processing by EventsController#index as HTML
+  Rendering events/index.html.erb within layouts/application
+  Rendered events/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for ::1 at 2020-02-27 12:28:41 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (16.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_public_trainer_profile.html.erb (0.6ms)
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered layouts/_footer_trainee.html.erb (26.6ms)
+  Rendered users/show.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 83ms (Views: 63.1ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-27 12:28:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (0.6ms)
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  Rendered layouts/_footer_trainee.html.erb (4.8ms)
+  Rendered users/show.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 70ms (Views: 59.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-27 12:29:03 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 82ms (Views: 54.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/events/new" for ::1 at 2020-02-27 12:29:14 -0500
+Processing by EventsController#new as HTML
+  Rendering events/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered events/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 65ms (Views: 59.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events" for ::1 at 2020-02-27 12:29:27 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9r+zOuXRdoQw8zAjXYtLXGIQseZMmonTpNQk0i1exhj0RaegZqDaSVtQNawwyBeu+aO9qzgb4H/E5uKVCZPfYA==", "event"=>{"title"=>"Test", "date"=>"2020-02-27", "start_time"=>"02:02", "duration"=>"3", "recurring"=>"0", "trainer_id"=>"3"}, "commit"=>"submit"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.5ms)[0m  [1m[32mINSERT INTO "events" ("title", "start_time", "date", "duration", "trainer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Test"], ["start_time", "02:02:00"], ["date", "2020-02-27"], ["duration", 3], ["trainer_id", 3], ["created_at", "2020-02-27 17:29:27.051335"], ["updated_at", "2020-02-27 17:29:27.051335"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 58ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-27 12:29:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (0.6ms)
+  [1m[36mEvent Load (2.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  Rendered layouts/_footer_trainee.html.erb (3.8ms)
+  Rendered users/show.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 85ms (Views: 79.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 12:29:48 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (2.0ms)
+  Rendered layouts/_footer_trainee.html.erb (9.7ms)
+  Rendered users/home.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/edit" for ::1 at 2020-02-27 12:29:49 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.5ms)
+  Rendered users/edit.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 72ms (Views: 60.7ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/users/3" for ::1 at 2020-02-27 12:30:15 -0500
+Processing by UsersController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6C9JlQYjzNgG3IO3LExHXbzSbBWOl7p5j/kbBnmhADrKTtsDpQK+VfKZwtbqlXen2q2JHkFFxA0PIRBC6r6ktQ==", "user"=>{"first_name"=>"James", "last_name"=>"Jun", "username"=>"jamesjun", "description"=>"Greatest guy.", "website_url"=>"", "email"=>"blah@test.com", "phone"=>"", "location"=>""}, "commit"=>"SUBMIT", "id"=>"3"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (7.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "blah@test.com"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "phone" = $2, "location" = $3, "first_name" = $4, "last_name" = $5, "website_url" = $6, "description" = $7, "updated_at" = $8 WHERE "users"."id" = $9[0m  [["username", "jamesjun"], ["phone", ""], ["location", ""], ["first_name", "James"], ["last_name", "Jun"], ["website_url", ""], ["description", "Greatest guy."], ["updated_at", "2020-02-27 17:30:15.195330"], ["id", 3]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 28ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/users/3" for ::1 at 2020-02-27 12:30:15 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_navbar_my_trainer_profile.html.erb (0.8ms)
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  Rendered layouts/_footer_trainee.html.erb (5.4ms)
+  Rendered users/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 56ms (Views: 50.1ms | ActiveRecord: 3.3ms)
+
+
