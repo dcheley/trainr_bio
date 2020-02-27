@@ -3852,3 +3852,466 @@ Processing by UsersController#home as HTML
 Completed 200 OK in 80ms (Views: 76.1ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2020-02-27 18:28:18 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (1474.2ms)
+  Rendered users/home.html.erb within layouts/application (1558.6ms)
+Completed 500 Internal Server Error in 1581ms (ActiveRecord: 11.4ms)
+
+
+  
+ActionView::Template::Error (Autoprefixer doesn’t support Node v0.12.18. Update it.):
+    1: <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+    2:   <a class="navbar-brand ml-auto main-header" href="/">trainr.bio</a>
+    3:   <ul class="navbar-nav ml-auto">
+    4:     <%= link_to image_tag('gear.svg', height:'32', width:'32'), edit_user_url(current_user) %>
+    5:   </ul>
+    6: </nav>
+  
+app/views/layouts/_navbar_home_logged_in.html.erb:4:in `_app_views_layouts__navbar_home_logged_in_html_erb___1730821781611351474_70261660601620'
+app/views/users/home.html.erb:52:in `_app_views_users_home_html_erb___2138426120835604220_70261681358060'
+Started GET "/" for ::1 at 2020-02-27 18:28:46 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (2794.6ms)
+  Rendered layouts/_footer_trainee.html.erb (4.4ms)
+  Rendered users/home.html.erb within layouts/application (2894.7ms)
+Completed 200 OK in 3208ms (Views: 3185.4ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/users/13/edit" for ::1 at 2020-02-27 18:28:54 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (6.6ms)
+  Rendered users/edit.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 173ms (Views: 118.1ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-27 18:28:59 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oZPhx9t5Z5JidYhNqhSHoRDiO430vhVSG1tLbeo2UF5UndsAP0nbN8cXzGXqf0Fr5XtyZY0lfgY5Bhl0rwKpLw=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:28:59 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.4ms)
+  Rendered layouts/_footer_trainee.html.erb (4.6ms)
+  Rendered users/home.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 79ms (Views: 72.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:29:01 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.3ms)
+  Rendered layouts/_footer_trainee.html.erb (5.5ms)
+  Rendered users/home.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 56ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2020-02-27 18:29:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mStudio Load (180.7ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  Rendered layouts/_navbar_search_results_logged_out.html.erb (652.4ms)
+  Rendered users/index.html.erb within layouts/application (656.9ms)
+Completed 500 Internal Server Error in 671ms (ActiveRecord: 186.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00007f984d2fd248>:0x00007f9850161a30>
+Did you mean?  edit_user_path
+               new_event_path):
+     6:   <% end %>
+     7:   <ul class="navbar-nav ml-auto">
+     8:     <li class="nav-item">
+     9:       <%= link_to "Sign Up", new_user_path, class:"nav-link" %>
+    10:     </li>
+    11:     <li class="nav-item">
+    12:       <%= link_to "Log In", :login, class: "nav-link" %>
+  
+app/views/layouts/_navbar_search_results_logged_out.html.erb:9:in `_app_views_layouts__navbar_search_results_logged_out_html_erb___1493388301168317095_70146073887660'
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb__1941737810508389189_70146077692460'
+Started GET "/users/pre_launch_landing" for ::1 at 2020-02-27 18:29:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"pre_launch_landing"}
+  [1m[36mUser Load (27.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 166ms (ActiveRecord: 27.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=pre_launch_landing):
+  
+app/controllers/users_controller.rb:64:in `load_user'
+Started GET "/users" for ::1 at 2020-02-27 18:31:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mStudio Load (1.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.1ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.0ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Studio Load (0.1ms)[0m  [1m[34mSELECT  "studios".* FROM "studios" ORDER BY name ASC LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC LIMIT $2[0m  [["role", 1], ["LIMIT", 11]]
+  Rendered layouts/_navbar_search_results_logged_out.html.erb (1475.5ms)
+  Rendered users/index.html.erb within layouts/application (1513.1ms)
+Completed 500 Internal Server Error in 1580ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `login_path' for #<#<Class:0x00007f984d2fd248>:0x00007f984a21b350>):
+     9:       <%= link_to "Sign Up", new_user_registration_url, class:"nav-link" %>
+    10:     </li>
+    11:     <li class="nav-item">
+    12:       <%= link_to "Log In", :login, class: "nav-link" %>
+    13:     </li>
+    14:   </ul>
+    15: </nav>
+  
+app/views/layouts/_navbar_search_results_logged_out.html.erb:12:in `_app_views_layouts__navbar_search_results_logged_out_html_erb___1493388301168317095_70146040252720'
+app/views/users/index.html.erb:2:in `_app_views_users_index_html_erb__1941737810508389189_70146055251120'
+Started GET "/users" for ::1 at 2020-02-27 18:32:10 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar_search_results_logged_out.html.erb (1.7ms)
+  Rendered layouts/_footer_trainee.html.erb (9.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  [1m[36mStudio Load (0.6ms)[0m  [1m[34mSELECT "studios".* FROM "studios" ORDER BY name ASC[0m
+  Rendered users/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 98ms (Views: 93.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for ::1 at 2020-02-27 18:32:17 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered layouts/_navbar_search_results_logged_out.html.erb (2.9ms)
+  Rendered layouts/_footer_trainee.html.erb (10.3ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."role" = $1 ORDER BY first_name ASC[0m  [["role", 1]]
+  [1m[36mStudio Load (13.5ms)[0m  [1m[34mSELECT "studios".* FROM "studios" ORDER BY name ASC[0m
+  Rendered users/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 133ms (Views: 114.5ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/pre_launch_landing" for ::1 at 2020-02-27 18:32:24 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 83ms (Views: 80.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:33:07 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 121ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2020-02-27 18:33:28 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5rfyyilI9CPZAkjMm93qp4YMR9C7HUGIuyy7FFTGofZCyIAcMmCqerKyg9fF0jfQduSC8QihNeCCoTl6NzC+kw==", "user"=>{"email"=>"12345@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 356ms (Views: 83.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/users" for ::1 at 2020-02-27 18:33:41 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+TsLszKbAxP+2Jdc/2E/JoHl5fn+7OtaQlRcQ3wPV0eNN2xOCINXOi3F0wC78/GB0f6iv94dUK+3kb+rOESPrQ==", "user"=>{"email"=>"12345@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "12345@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-02-27 23:33:41.787417"], ["updated_at", "2020-02-27 23:33:41.787417"], ["email", "12345@gmail.com"], ["encrypted_password", "$2a$11$7w.552K1eaJEQGUXLLGA5um7CuhkP.rQ5gC5sCkQNYxFp629Ja2Rm"], ["confirmation_token", "gJJWgnS6jF1J4Uqzx-WT"], ["confirmation_sent_at", "2020-02-27 23:33:41.787613"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.1ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 351.1ms
+Sent mail to 12345@gmail.com (9.7ms)
+Date: Thu, 27 Feb 2020 18:33:42 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: 12345@gmail.com
+Message-ID: <5e5851d665677_664d3fcc24d4887c93326@Daniels-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome 12345@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=gJJWgnS6jF1J4Uqzx-WT">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/verification
+Completed 302 Found in 802ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/verification" for ::1 at 2020-02-27 18:33:42 -0500
+Processing by UsersController#verification as HTML
+  Rendering users/verification.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered users/verification.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=gJJWgnS6jF1J4Uqzx-WT%22%3EConfirm%20my%20account" for ::1 at 2020-02-27 18:34:15 -0500
+Processing by Users::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"gJJWgnS6jF1J4Uqzx-WT\">Confirm my account"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "gJJWgnS6jF1J4Uqzx-WT\">Confirm my account"], ["LIMIT", 1]]
+  [1m[36mUser Load (22.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "1463841912e60de2c1b314bae1631a8e888d343209e6d734a03d770e20ecf1bc"], ["LIMIT", 1]]
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.2ms)
+  Rendered devise/confirmations/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 1279ms (Views: 380.8ms | ActiveRecord: 28.5ms)
+
+
+Started GET "/users/confirmation?confirmation_token=gJJWgnS6jF1J4Uqzx-WT" for ::1 at 2020-02-27 18:35:03 -0500
+Processing by Users::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"gJJWgnS6jF1J4Uqzx-WT"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "gJJWgnS6jF1J4Uqzx-WT"], ["LIMIT", 1]]
+  [1m[35m (23.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-02-27 23:35:03.595503"], ["updated_at", "2020-02-27 23:35:03.620296"], ["id", 14]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (17.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2020-02-27 23:35:03.646515"], ["sign_in_count", 1], ["current_sign_in_at", "2020-02-27 23:35:03.628522"], ["last_sign_in_at", "2020-02-27 23:35:03.628522"], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 14]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/personal
+Completed 302 Found in 91ms (ActiveRecord: 53.2ms)
+
+
+Started GET "/after_signup/personal" for ::1 at 2020-02-27 18:35:03 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"personal"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering after_signup/personal.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (1.9ms)
+  Rendered after_signup/personal.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 133ms (Views: 129.8ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/after_signup/personal" for ::1 at 2020-02-27 18:35:12 -0500
+Processing by AfterSignupController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VFS6B8mMOdD6THSxGHO9DptLsfaABC7NRuqehUKIGaAgWN3685Rt+SlRMO1c4XOpy1D2sKD1lTizL31tBsPBSg==", "user"=>{"first_name"=>"James", "last_name"=>"Jun", "role"=>"1"}, "commit"=>"Next", "id"=>"personal"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (67.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "first_name" = $1, "last_name" = $2, "role" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["first_name", "James"], ["last_name", "Jun"], ["role", 1], ["updated_at", "2020-02-27 23:35:12.457651"], ["id", 14]]
+  [1m[35m (59.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/username
+Completed 302 Found in 148ms (ActiveRecord: 129.7ms)
+
+
+Started GET "/after_signup/username" for ::1 at 2020-02-27 18:35:12 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"username"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering after_signup/username.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.8ms)
+  Rendered after_signup/username.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 207ms (Views: 185.1ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/after_signup/username" for ::1 at 2020-02-27 18:35:18 -0500
+Processing by AfterSignupController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HZFw2QuSR0XQk6aD4mMk+Q7P8TOq4lM1xSod6KW95QlpnRckMYoTbAOO4t+m8epeXtS2dYoT6MAw7/4A4fY94w==", "user"=>{"username"=>"jamesjun"}, "commit"=>"Next", "id"=>"username"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (64.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "12345@gmail.com"], ["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "jamesjun"], ["updated_at", "2020-02-27 23:35:18.557941"], ["id", 14]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/wicked_finish
+Completed 302 Found in 117ms (ActiveRecord: 87.9ms)
+
+
+Started GET "/after_signup/wicked_finish" for ::1 at 2020-02-27 18:35:18 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"wicked_finish"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Wizard has finished, redirecting to finish_wizard_path: :pre_launch_reservation
+Redirected to http://localhost:3000/pre_launch_reservation
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/pre_launch_reservation" for ::1 at 2020-02-27 18:35:18 -0500
+Processing by UsersController#pre_launch_reservation as HTML
+  Rendering users/pre_launch_reservation.html.erb within layouts/application
+  Rendered users/pre_launch_reservation.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 215ms (Views: 205.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/landing_email" for ::1 at 2020-02-27 18:35:49 -0500
+Processing by UsersController#landing_email as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szq/3O5Eb1WU4wkdSdBujUS05DjovmXI0ja1XSQ9IxvHNtgh1Fw7fEf+TUENQqAqFK+jfshP3j0n81a1YHb78Q==", "comment"=>"Yoyo test 123", "commit"=>"Send"}
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 46698e6a-7c8a-4928-a68c-aeb98e5ca5e6) to Async(mailers) with arguments: "UserMailer", "landing_email", "deliver_now", "Yoyo test 123"
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6] Performing ActionMailer::DeliveryJob (Job ID: 46698e6a-7c8a-4928-a68c-aeb98e5ca5e6) from Async(mailers) with arguments: "UserMailer", "landing_email", "deliver_now", "Yoyo test 123"
+Redirected to http://localhost:3000/home
+Completed 302 Found in 148ms (ActiveRecord: 0.0ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6]   Rendering user_mailer/landing_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6]   Rendered user_mailer/landing_email.html.erb within layouts/mailer (0.8ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6] UserMailer#landing_email: processed outbound mail in 64.3ms
+Started GET "/home" for ::1 at 2020-02-27 18:35:50 -0500
+Processing by UsersController#home as HTML
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6] Sent mail to trainrbio@gmail.com (23.1ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6] Date: Thu, 27 Feb 2020 18:35:50 -0500
+From: trainrbio@gmail.com
+To: trainrbio@gmail.com
+Message-ID: <5e58525626374_664d3fcc25e5d6bc9346c@Daniels-MacBook-Pro.local.mail>
+Subject: Someone sent a message from the landing page!!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Yoyo test 123</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+[ActiveJob] [ActionMailer::DeliveryJob] [46698e6a-7c8a-4928-a68c-aeb98e5ca5e6] Performed ActionMailer::DeliveryJob (Job ID: 46698e6a-7c8a-4928-a68c-aeb98e5ca5e6) from Async(mailers) in 100.4ms
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (4.4ms)
+  Rendered layouts/_footer_trainee.html.erb (7.6ms)
+  Rendered users/home.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 177ms (Views: 160.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/verification" for ::1 at 2020-02-27 18:39:07 -0500
+Processing by UsersController#verification as HTML
+  Rendering users/verification.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (4.0ms)
+  Rendered users/verification.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 199ms (Views: 186.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pre_launch_reservation" for ::1 at 2020-02-27 18:39:13 -0500
+Processing by UsersController#pre_launch_reservation as HTML
+  Rendering users/pre_launch_reservation.html.erb within layouts/application
+  Rendered users/pre_launch_reservation.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/landing_email" for ::1 at 2020-02-27 18:39:17 -0500
+Processing by UsersController#landing_email as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1HD5I8j6/s/NqMy/jZMQIxV8J/mhU5IXLWoDoKs9fAqgfJ7e8uKq5h61iOPJAd6ERWdgv4GiKeLYr+BI73ak4A==", "comment"=>"test", "commit"=>"Send"}
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93] Performing ActionMailer::DeliveryJob (Job ID: b00a880a-4f7a-48bc-a183-9c4b3238bb93) from Async(mailers) with arguments: "UserMailer", "landing_email", "deliver_now", "test"
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: b00a880a-4f7a-48bc-a183-9c4b3238bb93) to Async(mailers) with arguments: "UserMailer", "landing_email", "deliver_now", "test"
+Redirected to http://localhost:3000/home
+Completed 302 Found in 59ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for ::1 at 2020-02-27 18:39:17 -0500
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93]   Rendering user_mailer/landing_email.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93]   Rendered user_mailer/landing_email.html.erb within layouts/mailer (0.9ms)
+Processing by UsersController#home as HTML
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93] UserMailer#landing_email: processed outbound mail in 129.8ms
+  Rendering users/home.html.erb within layouts/application
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93] Sent mail to trainrbio@gmail.com (8.3ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93] Date: Thu, 27 Feb 2020 18:39:17 -0500
+From: trainrbio@gmail.com
+To: trainrbio@gmail.com
+Message-ID: <5e5853254b027_664d3fcc25e5d6bc93518@Daniels-MacBook-Pro.local.mail>
+Subject: Someone sent a message from the landing page!!
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>test</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+[ActiveJob] [ActionMailer::DeliveryJob] [b00a880a-4f7a-48bc-a183-9c4b3238bb93] Performed ActionMailer::DeliveryJob (Job ID: b00a880a-4f7a-48bc-a183-9c4b3238bb93) from Async(mailers) in 156.33ms
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (2.5ms)
+  Rendered layouts/_footer_trainee.html.erb (9.6ms)
+  Rendered users/home.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 92ms (Views: 86.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/home" for ::1 at 2020-02-27 18:39:48 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (6.2ms)
+  Rendered layouts/_footer_trainee.html.erb (11.8ms)
+  Rendered users/home.html.erb within layouts/application (42.6ms)
+Completed 200 OK in 112ms (Views: 107.0ms | ActiveRecord: 1.2ms)
+
+
