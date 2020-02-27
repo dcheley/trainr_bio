@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200214173446) do
+ActiveRecord::Schema.define(version: 20200227182809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,15 +37,34 @@ ActiveRecord::Schema.define(version: 20200214173446) do
     t.string "website_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+  end
+
+  create_table "trainer_studios", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.integer "studio_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["studio_id"], name: "index_trainer_studios_on_studio_id"
+    t.index ["trainer_id"], name: "index_trainer_studios_on_trainer_id"
   end
 
   create_table "user_studios", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "studio_id"
+    t.integer "user_id"
+    t.integer "studio_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["studio_id"], name: "index_user_studios_on_studio_id"
     t.index ["user_id"], name: "index_user_studios_on_user_id"
+  end
+
+  create_table "user_trainers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trainer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trainer_id"], name: "index_user_trainers_on_trainer_id"
+    t.index ["user_id"], name: "index_user_trainers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
