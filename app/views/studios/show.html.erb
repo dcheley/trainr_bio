@@ -15,7 +15,7 @@
 <div class="card-container">
   // for each of the elements in studio.trainr[x] (from x=0 to x=5), display trainr card
   // @studio.trainrs = trainr.limit(6)
-  <% @studio.trainrs.first(6).each do |trainr| %>
+  <% @studio.trainers.first(6).each do |trainr| %>
     <!-- <div class="col3"> -->
       <%= trainr.img_url %>
       <h3><%= trainr.firstname %></h3>

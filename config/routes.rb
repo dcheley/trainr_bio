@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'home' => 'users#home', as: :home
   post 'landing_email' => 'users#landing_email', as: :landing_email
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
+  get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
 end
