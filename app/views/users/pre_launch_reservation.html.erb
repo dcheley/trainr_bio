@@ -1,0 +1,36 @@
+<div class="container text-center">
+  <div class="row mt-5 mb-5">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <h1 class="mb-5">trainr.bio</h1>
+
+      <p class="mt-2">
+        Your trainr URL is reserved! </p>
+      <p class="mt-2">
+        Please stay tuned for our launch email. </p>
+      <p> (coming spring 2020) </p>
+
+      <div class="mt-3">
+        <p><%= link_to "Our Instagram", "https://instagram.com/trainr.bio" %></p>
+      </div>
+
+
+      <p class="mt-5">
+        Leave us a comment </p>
+
+      <%= form_tag :landing_email do %>
+        <div class="form-group">
+          <textarea class="form-control rounded-0" placeholder="Write anything." rows="5" name="comment"></textarea>
+        </div>
+        <%= submit_tag "Send", class:'btn btn-outline-primary' %>
+      <% end %>
+
+      <button class="btn btn-secondary btn-block mt-2 mb-8">
+          SEND
+      </button>
+
+      <p class="footer"> trainr.bio 2020 </p>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>

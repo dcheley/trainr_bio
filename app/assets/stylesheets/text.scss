@@ -1,125 +1,125 @@
 //Top Navbar Text (once per page for page title)
 h1 {
-  $fs4
-  $i
-  $b
+  font-size: $font-size-6;
+  font-style: italic;
+  font-weight: bold;
   .edit {
-    $abz
+    font-family: $abz;
   }
 }
 
 //Page Division Header
-h2 {}
+// h2 {}
 
 
 .h-branding {
-  $abz
+  font-family: $abz;
   .main { //main page
-    $fs0
-    $b
+    font-size: $font-size-10;
+    font-style: italic;
   }
   .user { //trainr profile page (user URL)
-    $fs5
-    $b
+    font-size: $font-size-5;
+    font-style: italic;
   }
   .footer { //trainr.bio 2020
-    $fs7
-    $i
+    font-size: $font-size-3;
+    font-style: italic;
   }
 }
 
 .h-auth { //main header for signup/login
-  $abz
-  $fs5
+  font-family: $abz;
+  font-size: $font-size-5;
 }
 
 .h-settings {
-  $fs7
+  font-size: $font-size-3;
   .h {
-    $b
+    font-style: italic;
   }
 }
 
 .h-trainr-name {
   .lg { //trainr profile
-    $fs1
+    font-size: $font-size-9;
   }
   .md { //search results, mytrainr list, studio list
-    $fs4
+    font-size: $font-size-6;
   }
   .sm { //mytrainr schedule card
-    $fs6
-    $i
-    $b
+    font-size: $font-size-4;
+    font-style: italic;
+    font-style: italic;
   }
 }
 
 .h-schedule {
   .title { //date, day of week
-    $fs2
+    font-size: $font-size-8;
   }
   .time {
-    $fs6
+    font-size: $font-size-4;
   }
   .session-name {
-    $fs6
-    $i
+    font-size: $font-size-4;
+    font-style: italic;
   }
   .studio-name { //username with @
-    $fs8
-    $blue
+    font-size: $font-size-2;
+    color: $blue;
   }
 }
 
 .h-studio {
   .title {
-    $fs3
-    $b
+    font-size: $font-size-7;
+    font-style: italic;
   }
   .address {
-    $fs7
-    $i
+    font-size: $font-size-3;
+    font-style: italic;
   }
   .url {
-    $abz
-    $fs5
-    $b
+    font-family: $abz;
+    font-size: $font-size-5;
+    font-style: italic;
   }
 }
 
 .h-trainr {
   .h2 { //Today, About Me, Certifications, etc
-    $fs4
-    $i
-    $b
+    font-size: $font-size-6;
+    font-style: italic;
+    font-style: italic;
   }
   .p { //quick bio, offering text, bio text
-    $fs7
+    font-size: $font-size-3;
   }
   .h3 { //certification
-    $fs7
-    $i
+    font-size: $font-size-3;
+    font-style: italic;
   }
   .offering-title {
     .lg {
-      $fs2
-      $i
-      $b
+      font-size: $font-size-8;
+      font-style: italic;
+      font-style: italic;
     }
     .regular {
-      $fs4
-      $i
-      $b
+      font-size: $font-size-6;
+      font-style: italic;
+      font-weight: bold;
     }
   }
 }
 
 .popup {
-  $fs4
+  font-size: $font-size-6;
   .blue {
-    $blue
+    color: $blue;
   }
   .red {
-    $red
+    color: $red;
   }
 }
