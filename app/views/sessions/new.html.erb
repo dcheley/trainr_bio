@@ -5,9 +5,10 @@
     <div class="col-2"></div>
     <div class="col-8">
       <h1 class="mb-5">log in</h1>
+      <%= flash[:notice] %>
       <%= flash[:alert] %>
 
-      <%= form_tag login_path do %>
+      <%= form_tag new_user_session_url do %>
         <div class="form-group mt-3">
           <%= text_field_tag :email, params[:email], placeholder: 'Email', class: "form-control" %>
         </div>

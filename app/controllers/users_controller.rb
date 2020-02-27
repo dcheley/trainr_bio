@@ -1,21 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-
-    if @user.save
-      session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "Welcome!"
-    else
-      render :new
-    end
-  end
-
   def show
     @events = @user.trainer_events
   end
@@ -54,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def pre_launch_landing
-  end 
+  end
 
   def landing_email
     body = params[:comment]
@@ -65,6 +50,9 @@ class UsersController < ApplicationController
   end
 
   def forgot_password
+  end
+
+  def verification
   end
 
   private

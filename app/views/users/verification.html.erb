@@ -1,0 +1,20 @@
+<%= render 'layouts/navbar_registration' %>
+
+<div class="container text-center">
+  <div class="row mt-5 mb-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <p class="mb-5">Check your email & finish registration.</p>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group mt-3">
+            <p>Didn't receive the link? <%= link_to "Resend.", user_confirmation_path, data: { method: :post } %></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

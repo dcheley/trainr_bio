@@ -1,0 +1,62 @@
+<%= render 'layouts/navbar_registration' %>
+
+<div class="container text-center">
+  <div class="row mt-5 mb-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <p class="mb-5">Please enter name and email.</p>
+
+      <%= form_for(@user, url: wizard_path) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.text_field :first_name, placeholder: "First Name", required: true, class: "form-control" %>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <div class="form-group">
+              <%= f.label 'I am an instructor.' %>
+              <%= f.check_box :role %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <%= f.submit "Next", class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group mt-3">
+              <p>Already have an account? <%= link_to "Log In", new_user_session_url %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <%# <%= render "devise/shared/links" %>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

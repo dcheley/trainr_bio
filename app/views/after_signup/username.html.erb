@@ -1,0 +1,42 @@
+<%= render 'layouts/navbar_registration' %>
+
+<div class="container text-center">
+  <div class="row mt-5 mb-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <p class="mb-5">Choose a URL for your profile:</p>
+
+      <%= form_for(@user, url: wizard_path) do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="col-2 my-auto text-left">
+            <p>trainr.bio/</p>
+          </div>
+          <div class="col-10">
+            <div class="form-group">
+              <%= f.text_field :username, placeholder: "Username", required: true, class: "form-control", autofocus: true %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <%= f.submit "Next", class: 'btn btn-primary btn-block' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>

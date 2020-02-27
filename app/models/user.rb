@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and  :omniauthable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable,
+  :validatable, :confirmable, :registerable
+
   validates :email, presence: true
   validates :email, uniqueness: true
   validates_length_of :description, maximum: 150
@@ -9,8 +14,6 @@ class User < ApplicationRecord
 
   scope :instructor, -> { where(role: 1) }
   scope :basic, -> { where(role: 0) }
-
-  has_secure_password
 
   def self.search(search)
     where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%")
