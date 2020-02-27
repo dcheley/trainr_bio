@@ -39,6 +39,9 @@ class UsersController < ApplicationController
   end
 
   def pre_launch_landing
+    if current_user
+      redirect_to :pre_launch_reservation
+    end
   end
 
   def pre_launch_reservation
