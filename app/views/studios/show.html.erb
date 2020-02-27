@@ -1,5 +1,40 @@
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar_studio_profile' %>
 
-<div class="container text-center">
-  <%= flash[:notice] %>
+<div class="container text-center"><%= flash[:notice] %></div>
+
+<div class="card-container">
+  <h2><%= @studio.name %></h2>
+  <p><%= @studio.location %></p>
+
+  <!-- Show schedule times and days only if exist and gray out button if not -->
+  <div class="buttons">
+    <button class="primary">Studio Schedule</button>
+  </div>
 </div>
+
+<div class="card-container">
+  // for each of the elements in studio.trainr[x] (from x=0 to x=5), display trainr card
+  // @studio.trainrs = trainr.limit(6)
+  <% @studio.trainrs.first(6).each do |trainr| %>
+    <!-- <div class="col3"> -->
+      <%= trainr.img_url %>
+      <h3><%= trainr.firstname %></h3>
+      <h3><%= trainr.lastname %></h3>
+    <!-- </div> -->
+  <% end %>
+  <div class="buttons">
+    <button class="secondary">show more</button>
+  </div>
+</div>
+
+<div class="card-container">
+  <p> Loading ... </p>
+  //load map
+  <p> Could not find your location on the map, please send us an email so we can add it </p>
+</div>
+
+<% if current_user && current_user.role == "trainer" %>
+	<%= render 'layouts/footer_trainer' %>
+<% else %>
+	<%= render 'layouts/footer_trainee' %>
+<% end %>
