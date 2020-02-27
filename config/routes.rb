@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   post 'landing_email' => 'users#landing_email', as: :landing_email
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
+  get 'pre_launch_reservation' => 'users#pre_launch_reservation', as: :pre_launch_reservation
 end

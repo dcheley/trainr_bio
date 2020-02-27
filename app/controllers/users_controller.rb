@@ -54,7 +54,10 @@ class UsersController < ApplicationController
   end
 
   def pre_launch_landing
-  end 
+  end
+
+  def pre_launch_reservation
+  end
 
   def landing_email
     body = params[:comment]
