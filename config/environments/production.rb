@@ -64,7 +64,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
-  
+
   config.action_mailer.asset_host = 'http://trainrbio.herokuapp.com'
   config.action_mailer.default_url_options = { :host => 'http://trainrbio.herokuapp.com' }
 
@@ -73,7 +73,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => "587",
     :domain => "trainrbio.herokuapp.com",
-    :authentication => "plain",
+    :authentication => :plain,
     :enable_starttls_auto => true,
     :user_name => ENV['GMAIL_USERNAME'],
     :password => ENV['GMAIL_PASSWORD']
