@@ -52,7 +52,7 @@ class UsersController < ApplicationController
 
     UserMailer.landing_email(body).deliver_later
 
-    redirect_to :home, notice: "Thanks for the feedback!"
+    redirect_to :pre_launch_reservation, notice: "Thanks for the feedback!"
   end
 
   def forgot_password
