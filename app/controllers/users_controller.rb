@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  require 'sendgrid-ruby'
+  include SendGrid
+
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -50,7 +53,16 @@ class UsersController < ApplicationController
   def landing_email
     body = params[:comment]
 
-    UserMailer.landing_email(body).deliver_later
+    from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
+    to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
+    subject = 'Someone sent a message from the prelaunch site!!'
+    content = SendGrid::Content.new(type: 'text/plain', value: body)
+    mail = SendGrid::Mail.new(from, subject, to, content)
+
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+
+    # UserMailer.landing_email(body).deliver_later
 
     redirect_to :pre_launch_reservation, notice: "Thanks for the feedback!"
   end

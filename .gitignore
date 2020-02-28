@@ -3,3 +3,4 @@ log/*
 *.log
 .DS-Store
 *.sqlite3
+sendgrid.env
