@@ -75,7 +75,7 @@ Rails.application.configure do
     :domain => "trainrbio.herokuapp.com",
     :authentication => :plain,
     :enable_starttls_auto => true,
-    :user_name => "trainrbio",
+    :user_name => "apikey",
     :password => ENV['SENDGRID_API_KEY']
   }
 
