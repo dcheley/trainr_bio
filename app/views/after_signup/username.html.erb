@@ -4,7 +4,7 @@
   <div class="row mt-5 mb-5">
     <div class="col-2"></div>
     <div class="col-8">
-      <p class="mb-5">Choose a URL for your profile:</p>
+      <p class="mb-5 auth">Choose a URL for your profile:</p>
 
       <%= form_for(@user, url: wizard_path) do |f| %>
         <% if @user.errors.any? %>

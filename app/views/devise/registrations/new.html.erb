@@ -4,7 +4,7 @@
   <div class="row mt-5 mb-5">
     <div class="col-2"></div>
     <div class="col-8">
-      <p class="mb-5">Please enter name and email.</p>
+      <p class="mb-5 auth">Sign Up</p>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
@@ -34,7 +34,7 @@
         <!-- <div class="row">
           <div class="col-12">
             <div class="form-group">
-              <%# <%= f.label 'I am an instructor.' %> 
+              <%# <%= f.label 'I am an instructor.' %>
               <%# <%= f.check_box :role %>
             </div>
           </div>

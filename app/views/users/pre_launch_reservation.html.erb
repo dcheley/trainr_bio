@@ -2,7 +2,7 @@
   <div class="row mt-5 mb-5">
     <div class="col-1"></div>
     <div class="col-10">
-      <h1 class="mb-5">trainr.bio</h1>
+      <h1 class="mb-5 branding main">trainr.bio</h1>
 
       <p class="text-primary mb-3"><%= flash[:notice] %></p>
       <p class="text-primary mb-3"><%= flash[:alert] %></p>
@@ -10,23 +10,24 @@
       <p class="mt-2">
         Your trainr URL is reserved! </p>
       <p class="mt-2">
-        Please stay tuned for our launch email. </p>
-      <p> (coming spring 2020) </p>
+        Please stay tuned for our launch email. <br/>
+      (coming spring 2020) </p>
 
-      <div class="mt-3">
-        <p><%= link_to "Our Instagram", "https://instagram.com/trainr.bio" %></p>
+      <br\>
+      <div class="mt-5">
+        <%= link_to image_tag("instagram.svg", height:'33', width:'33' ), "https://instagram.com/trainr.bio" %>
       </div>
 
       <p class="mt-5">Leave us a comment</p>
 
       <%= form_tag :landing_email do %>
         <div class="form-group">
-          <textarea class="form-control rounded-0" placeholder="Write anything." rows="5" name="comment"></textarea>
+          <textarea class="form-control rounded-0  mx-3" placeholder="Write anything." rows="2" name="comment"></textarea>
         </div>
-        <%= submit_tag "Send", class:'btn btn-secondary btn-block' %>
+        <%= submit_tag "Send", class:'btn btn-dark mb-3 mx-3' %>
       <% end %>
 
-      <p class="footer"> trainr.bio 2020 </p>
+      <p class="branding footer mt-5 mx-5"> trainr.bio 2020 </p>
     </div>
     <div class="col-1"></div>
   </div>
