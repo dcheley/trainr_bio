@@ -71,7 +71,7 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtp.sendgrid.com",
-    :port => "465",
+    :port => "587",
     :domain => "trainrbio.herokuapp.com",
     :authentication => :plain,
     :enable_starttls_auto => true,
