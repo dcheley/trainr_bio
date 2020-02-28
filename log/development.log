@@ -4315,3 +4315,360 @@ Processing by UsersController#home as HTML
 Completed 200 OK in 112ms (Views: 107.0ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2020-02-27 18:45:18 -0500
+  [1m[35m (55.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#pre_launch_reservation as HTML
+  Rendering users/pre_launch_reservation.html.erb within layouts/application
+  Rendered users/pre_launch_reservation.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 458ms (Views: 448.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:45:28 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 78ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:45:33 -0500
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 93ms (ActiveRecord: 15.9ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:45:33 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:45:40 -0500
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:45:40 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:46:32 -0500
+Processing by UsersController#home as HTML
+  Rendering users/home.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navbar_home_logged_in.html.erb (2.7ms)
+  Rendered layouts/_footer_trainee.html.erb (474.6ms)
+  Rendered users/home.html.erb within layouts/application (540.4ms)
+Completed 500 Internal Server Error in 561ms (ActiveRecord: 8.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `events_url' for #<#<Class:0x00007fd86ff97488>:0x00007fd86ff958b8>):
+    4:       <%= image_tag("search.svg", width: "32", height: "32") %>
+    5:       <p class="mt-1">Search</p>
+    6:     <% end %>
+    7:     <%= link_to events_url, class: "footer-link" do %>
+    8:       <%= image_tag("calendar.svg", width: "32", height: "32") %>
+    9:       <p class="mt-1">Schedule</p>
+   10:     <% end %>
+  
+app/views/layouts/_footer_trainee.html.erb:7:in `_app_views_layouts__footer_trainee_html_erb__1606692594580596584_70283815765440'
+app/views/users/home.html.erb:97:in `_app_views_users_home_html_erb__1434822856770045170_70283784142400'
+Started GET "/" for ::1 at 2020-02-27 18:46:52 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 87ms (Views: 80.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:46:54 -0500
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 101ms (ActiveRecord: 31.7ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:46:54 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 98ms (Views: 92.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:47:57 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 53ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:48:08 -0500
+Processing by Users::RegistrationsController#new as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 51ms (ActiveRecord: 19.8ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:48:08 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 110ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/studios" for ::1 at 2020-02-27 18:48:54 -0500
+Processing by StudiosController#index as HTML
+  Rendering studios/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendered layouts/_navbar.html.erb (70.4ms)
+  [1m[36mStudio Load (0.7ms)[0m  [1m[34mSELECT "studios".* FROM "studios"[0m
+  Rendered studios/index.html.erb within layouts/application (80.1ms)
+Completed 200 OK in 145ms (Views: 114.6ms | ActiveRecord: 21.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-02-27 18:48:59 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s//7ymYjCUNjrKZNSZQXfY5gdOh+xlj94NbJhJNYUkzH85w3XDtdarCx4hENBtna3nszrl434wgVEyps1xOKpg=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:48:59 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 60ms (Views: 56.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:49:10 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:49:11 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 194ms (Views: 112.6ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:50:12 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 98ms (Views: 58.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-27 18:50:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 76ms (Views: 72.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:50:16 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 78ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-02-27 18:50:17 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 58ms (Views: 56.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:50:17 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:50:19 -0500
+  
+ActionController::RoutingError (undefined method `before_filter' for UsersController:Class
+Did you mean?  before_action):
+  
+app/controllers/users_controller.rb:3:in `<class:UsersController>'
+app/controllers/users_controller.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2020-02-27 18:51:29 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 67ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-02-27 18:51:31 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 160ms (Views: 66.2ms | ActiveRecord: 22.1ms)
+
+
+Started POST "/users" for ::1 at 2020-02-27 18:51:36 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dCeZ7B+Z35GM++iWOA81hfApFnwgN8dr/HQqCC+LJoKbhKKUSh/7hiWTtPStzwvLqoelA8TSxWa+wVZLNf2I+g==", "user"=>{"email"=>"test3@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 290ms (Views: 76.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for ::1 at 2020-02-27 18:51:42 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wtvEGbHRWAtg+syFw/BO3A/IXrcpOxhGaeajDDXIGIbrFfvh0Qdvsg7IvRjQpX7GwRXUNaA9d4J3hvF99lhWZA==", "user"=>{"email"=>"test333@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test333@3.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test333@3.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-02-27 23:51:42.516480"], ["updated_at", "2020-02-27 23:51:42.516480"], ["email", "test333@3.com"], ["encrypted_password", "$2a$11$veOH4LmkM0qzvifO82RdwetFMZnpOmABIhweK9FaRE4f.GjIHEja."], ["confirmation_token", "2HMZaZMJwzhP2yfozUQs"], ["confirmation_sent_at", "2020-02-27 23:51:42.516804"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.2ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 238.6ms
+Sent mail to test333@3.com (10.7ms)
+Date: Thu, 27 Feb 2020 18:51:42 -0500
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: test333@3.com
+Message-ID: <5e58560eeea63_70d13fec376252387355c@Daniels-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test333@3.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=2HMZaZMJwzhP2yfozUQs">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/verification
+Completed 302 Found in 626ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/verification" for ::1 at 2020-02-27 18:51:43 -0500
+Processing by UsersController#verification as HTML
+  Rendering users/verification.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered users/verification.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=2HMZaZMJwzhP2yfozUQs" for ::1 at 2020-02-27 18:51:56 -0500
+Processing by Users::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"2HMZaZMJwzhP2yfozUQs"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "2HMZaZMJwzhP2yfozUQs"], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[33mUPDATE "users" SET "confirmed_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["confirmed_at", "2020-02-27 23:51:56.489280"], ["updated_at", "2020-02-27 23:51:56.493016"], ["id", 15]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "sign_in_count" = $2, "current_sign_in_at" = $3, "last_sign_in_at" = $4, "current_sign_in_ip" = $5, "last_sign_in_ip" = $6 WHERE "users"."id" = $7[0m  [["updated_at", "2020-02-27 23:51:56.511832"], ["sign_in_count", 1], ["current_sign_in_at", "2020-02-27 23:51:56.510976"], ["last_sign_in_at", "2020-02-27 23:51:56.510976"], ["current_sign_in_ip", "::1/128"], ["last_sign_in_ip", "::1/128"], ["id", 15]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/personal
+Completed 302 Found in 58ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/after_signup/personal" for ::1 at 2020-02-27 18:51:56 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"personal"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering after_signup/personal.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.5ms)
+  Rendered after_signup/personal.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/after_signup/personal" for ::1 at 2020-02-27 18:52:05 -0500
+Processing by AfterSignupController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t4eG1T1r1Xj8J97zUjfIkUEGGdfhctmanrFnLb1cWm2eSbktXb3iwZIVr25BYviLj9uTVWh0tl6A0TVcfswUjw==", "user"=>{"first_name"=>"Yo", "last_name"=>"Acc", "role"=>"1"}, "commit"=>"Next", "id"=>"personal"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "test333@3.com"], ["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "users" SET "first_name" = $1, "last_name" = $2, "role" = $3, "updated_at" = $4 WHERE "users"."id" = $5[0m  [["first_name", "Yo"], ["last_name", "Acc"], ["role", 1], ["updated_at", "2020-02-27 23:52:05.663021"], ["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/username
+Completed 302 Found in 28ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/after_signup/username" for ::1 at 2020-02-27 18:52:05 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"username"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering after_signup/username.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (1.6ms)
+  Rendered after_signup/username.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 140ms (Views: 118.5ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/after_signup/username" for ::1 at 2020-02-27 18:52:08 -0500
+Processing by AfterSignupController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xR/ghonm525QtSHIti8eRG58FfXGmL0MjLjWw1hHShHs0d9+6TDQ1z6HUFWlei5eoKGfd0+e0siS2ISym9cE8w==", "user"=>{"username"=>"too"}, "commit"=>"Next", "id"=>"username"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (6.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "test333@3.com"], ["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "too"], ["updated_at", "2020-02-27 23:52:08.816014"], ["id", 15]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/after_signup/wicked_finish
+Completed 302 Found in 21ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/after_signup/wicked_finish" for ::1 at 2020-02-27 18:52:08 -0500
+Processing by AfterSignupController#show as HTML
+  Parameters: {"id"=>"wicked_finish"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Wizard has finished, redirecting to finish_wizard_path: :pre_launch_reservation
+Redirected to http://localhost:3000/pre_launch_reservation
+Completed 302 Found in 6ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/pre_launch_reservation" for ::1 at 2020-02-27 18:52:08 -0500
+Processing by UsersController#pre_launch_reservation as HTML
+  Rendering users/pre_launch_reservation.html.erb within layouts/application
+  Rendered users/pre_launch_reservation.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 98ms (Views: 96.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-02-27 18:52:12 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pre_launch_reservation
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/pre_launch_reservation" for ::1 at 2020-02-27 18:52:12 -0500
+Processing by UsersController#pre_launch_reservation as HTML
+  Rendering users/pre_launch_reservation.html.erb within layouts/application
+  Rendered users/pre_launch_reservation.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 103ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
