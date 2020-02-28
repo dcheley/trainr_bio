@@ -63,22 +63,20 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.asset_host = 'http://trainrbio.herokuapp.com'
+  config.action_mailer.asset_host = 'trainrbio.herokuapp.com'
 
-  config.action_mailer.default_url_options = { :host => 'http://trainrbio.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'trainrbio.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address => Rails.application.secrets.GMAIL_USERNAME,
+    :address => "smtp.gmail.co"m,
     :port => "587",
-    :domain => "gmail.com",
-    :user_name => Rails.application.secrets.GMAIL_USERNAME,
-    :password => Rails.application.secrets.GMAIL_PASSWORD,
+    :domain => "trainrbio.herokuapp.com",
     :authentication => "plain",
-    :enable_starttls_auto => true
+    :enable_starttls_auto => true,
+    :user_name => ENV['GMAIL_USERNAME'],
+    :password => ENV['GMAIL_PASSWORD']
   }
-
-  config.action_mailer.perform_caching = false
 
   config.action_mailer.perform_caching = false
 
