@@ -12,7 +12,7 @@ h1 {
 // h2 {}
 
 
-.h-branding {
+.branding { //trainr.bio
   font-family: $abz;
   .main { //main page
     font-size: $font-size-10;
@@ -28,19 +28,19 @@ h1 {
   }
 }
 
-.h-auth { //main header for signup/login
+.auth { //main header for signup/login
   font-family: $abz;
   font-size: $font-size-5;
 }
 
-.h-settings {
+.settings {
   font-size: $font-size-3;
   .h {
     font-style: italic;
   }
 }
 
-.h-trainr-name {
+.trainr-name {
   .lg { //trainr profile
     font-size: $font-size-9;
   }
@@ -54,7 +54,7 @@ h1 {
   }
 }
 
-.h-schedule {
+.schedule {
   .title { //date, day of week
     font-size: $font-size-8;
   }
@@ -71,7 +71,7 @@ h1 {
   }
 }
 
-.h-studio {
+.studio {
   .title {
     font-size: $font-size-7;
     font-style: italic;
@@ -87,7 +87,7 @@ h1 {
   }
 }
 
-.h-trainr {
+.trainr {
   .h2 { //Today, About Me, Certifications, etc
     font-size: $font-size-6;
     font-style: italic;
