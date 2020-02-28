@@ -4,6 +4,9 @@
     <div class="col-10">
       <h1 class="mb-5">trainr.bio</h1>
 
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+
       <p class="mt-2">
         Your trainr URL is reserved! </p>
       <p class="mt-2">
@@ -14,9 +17,7 @@
         <p><%= link_to "Our Instagram", "https://instagram.com/trainr.bio" %></p>
       </div>
 
-
-      <p class="mt-5">
-        Leave us a comment </p>
+      <p class="mt-5">Leave us a comment</p>
 
       <%= form_tag :landing_email do %>
         <div class="form-group">

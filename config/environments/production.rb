@@ -61,7 +61,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "trainr_bio_#{Rails.env}"
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.asset_host = 'http://trainrbio.herokuapp.com'
 
