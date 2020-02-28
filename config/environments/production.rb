@@ -60,12 +60,13 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "trainr_bio_#{Rails.env}"
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-
-  config.action_mailer.asset_host = 'trainrbio.herokuapp.com'
-
-  config.action_mailer.default_url_options = { :host => 'trainrbio.herokuapp.com' }
+  config.action_mailer.default :charset => "utf-8"
+  
+  config.action_mailer.asset_host = 'http://trainrbio.herokuapp.com'
+  config.action_mailer.default_url_options = { :host => 'http://trainrbio.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
