@@ -9,8 +9,17 @@
       <%= flash[:alert] %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-group mt-3">
-        <%= f.email_field :email, placeholder: 'Email', class: "form-control", autofocus: true, autocomplete: "email" %>
+
+      <div class="row">
+        <div class="col-9">
+          <div class="form-group mt-3">
+            <%= f.email_field :email, placeholder: 'Email', class: "form-control", autofocus: true, autocomplete: "email" %>
+            <%= f.email = f.email + "@gmail.com" =%>
+          </div>
+        </div>
+        <div class="col-3 my-auto text-right">
+          <p>@gmail.com</p>
+        </div>
       </div>
 
       <div class="form-group">
