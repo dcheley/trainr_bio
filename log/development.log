@@ -6204,3 +6204,299 @@ TypeError (no implicit conversion of nil into String):
 app/mailers/custom_mailer.rb:17:in `new'
 app/mailers/custom_mailer.rb:17:in `confirmation_instructions'
 app/controllers/users/registrations_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2020-03-03 15:36:57 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (332.0ms)
+Completed 200 OK in 720ms (Views: 699.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:37:08 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 162ms (Views: 105.6ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:37:20 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 105ms (Views: 103.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:37:32 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (4.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 160ms (Views: 157.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:37:46 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 167ms (Views: 165.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:38:04 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:39:05 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 89ms (Views: 87.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:39:56 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 97ms (Views: 95.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:40:18 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 138ms (Views: 136.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:40:36 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 80ms (Views: 78.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:40:44 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:41:43 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 86ms (Views: 85.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:41:55 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (4.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 124ms (Views: 122.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:42:08 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:42:42 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (6.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 145ms (Views: 143.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:42:59 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (3.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 279ms (Views: 276.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:11 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:44 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 57ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:43:45 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 132ms (Views: 130.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:48 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:43:50 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:43:54 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:43:56 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:44:06 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 72ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:45:08 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Missing partial users/_navbar_home_logged_out, application/_navbar_home_logged_out with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/dcheley/Desktop/projx/trainr_bio/app/views"
+  * "/Users/dcheley/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/devise-4.4.3/app/views"
+):
+    2:   <div class="row mt-5 mb-5">
+    3:     <div class="col-1"></div>
+    4:     <div class="col-10">
+    5:       <%= render 'navbar_home_logged_out' %>
+    6: 
+    7:       <p class="mt-2 mx-2">
+    8:         Do you teach group classes? <br/>
+  
+app/views/users/pre_launch_landing.html.erb:5:in `_app_views_users_pre_launch_landing_html_erb___2817110432867074617_70224736764660'
+Started GET "/" for ::1 at 2020-03-03 15:45:21 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.6ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 131ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:45:31 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.5ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:45:47 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (1.6ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:45:57 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.5ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 74ms (Views: 67.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:04 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.6ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 80ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:46:06 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 62ms (Views: 60.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:09 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.9ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:19 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.6ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 71ms (Views: 68.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:46:21 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 83ms (Views: 81.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 15:46:24 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered layouts/_navbar_home_logged_out.html.erb (0.3ms)
+  Rendered users/pre_launch_landing.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 15:46:27 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 178ms (Views: 172.7ms | ActiveRecord: 0.0ms)
+
+
