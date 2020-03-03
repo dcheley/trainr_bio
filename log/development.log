@@ -5740,3 +5740,104 @@ Processing by Users::ConfirmationsController#create as HTML
 Completed 200 OK in 80ms (Views: 52.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-03-03 13:20:49 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (742.9ms)
+Completed 200 OK in 922ms (Views: 884.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 13:20:52 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 128ms (Views: 73.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 13:20:57 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J+tC7jS7rkMDaHwxHIlrskwgkoRsR8RYrdgs+/PPo+jISHmWYT2KVKoAIFOJSVX8Fo4h+4iixlXvbVC46bkNkA==", "user"=>{"email"=>"test3@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[35m (39.8ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 334ms (Views: 61.0ms | ActiveRecord: 43.3ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 13:21:06 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vx06ZnqE3ZZu6ZLrLRH422wHka5eluczeE/+y8i12sKW0wWeGlLqLwDb43Y+RMjBotobLNeQiPdmL6y6CyWUIA==", "user"=>{"email"=>"test4@4.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@4.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@4.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-03-03 18:21:06.643958"], ["updated_at", "2020-03-03 18:21:06.643958"], ["email", "test4@4.com"], ["encrypted_password", "$2a$11$1yggILiDG1V55bkq4PpV..y04gF/vfCAUeTuOyHWYmhQ0Kw3ORS8G"], ["confirmation_token", "nv8VkmNfKXAQszv7w_HD"], ["confirmation_sent_at", "2020-03-03 18:21:06.644236"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+CustomMailer#confirmation_instructions: processed outbound mail in 0.5ms
+Completed 500 Internal Server Error in 378ms (ActiveRecord: 3.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/mailers/custom_mailer.rb:17:in `new'
+app/mailers/custom_mailer.rb:17:in `confirmation_instructions'
+app/controllers/users/registrations_controller.rb:14:in `create'
+Started POST "/users" for ::1 at 2020-03-03 13:21:18 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vx06ZnqE3ZZu6ZLrLRH422wHka5eluczeE/+y8i12sKW0wWeGlLqLwDb43Y+RMjBotobLNeQiPdmL6y6CyWUIA==", "user"=>{"email"=>"test4@4.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@4.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test4@4.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 258ms (Views: 59.8ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 13:21:43 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l0LntlRrAVBwRShd4se3GtUvGfiYSmis34p+y+s8wYu+jNhONL026R53WcDxkocAG/KTehFMB2jB6iy6KKyPaQ==", "user"=>{"email"=>"test5@5.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test5@5.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test5@5.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-03-03 18:21:43.439046"], ["updated_at", "2020-03-03 18:21:43.439046"], ["email", "test5@5.com"], ["encrypted_password", "$2a$11$JSbwal5jIvQQ/b6VuKqm9uWC3MNch/KydO58mwAItjc0FMJaCsKnO"], ["confirmation_token", "kGEPdzoxECGdE59V5CX9"], ["confirmation_sent_at", "2020-03-03 18:21:43.439225"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.8ms)
+CustomMailer#confirmation_instructions: processed outbound mail in 715.4ms
+Sent mail to test5@5.com (9.8ms)
+Date: Tue, 03 Mar 2020 13:21:44 -0500
+From: trainrbio@gmail.com
+Reply-To: trainrbio@gmail.com
+To: test5@5.com
+Message-ID: <5e5ea0382acd2_72e63fefeee71b7074658@Daniels-MacBook-Pro.local.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome test5@5.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=kGEPdzoxECGdE59V5CX9">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/verification
+Completed 302 Found in 899ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/verification" for ::1 at 2020-03-03 13:21:44 -0500
+Processing by UsersController#verification as HTML
+  Rendering users/verification.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered users/verification.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
