@@ -18,11 +18,11 @@
         <%= link_to image_tag("instagram.svg", height:'33', width:'33' ), "https://instagram.com/trainr.bio" %>
       </div>
 
-      <p class="mt-5">Leave us a comment</p>
+      <p class="mt-5">Have a comment or question?</p>
 
       <%= form_tag :landing_email do %>
         <div class="form-group">
-          <textarea class="form-control rounded-0  mx-3" placeholder="Write anything." rows="2" name="comment"></textarea>
+          <textarea class="form-control rounded-0  mx-3" placeholder="" rows="2" name="comment"></textarea>
         </div>
         <%= submit_tag "Send", class:'btn btn-dark mb-3 mx-3' %>
       <% end %>
