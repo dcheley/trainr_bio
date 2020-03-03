@@ -12,16 +12,84 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row text-center">
+    <div class="col-2"></div>
+    <div class="col-2">
+      <figure>
+        <img src="http://placehold.it/100?text=IMG" alt="">
+        <figcaption>Hello</figcaption>
+      </figure>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-2">
+      <figure>
+        <img src="http://placehold.it/100?text=IMG" alt="">
+        <figcaption>Hello</figcaption>
+      </figure>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-2">
+      <figure>
+        <img src="http://placehold.it/100?text=IMG" alt="">
+        <figcaption>Hello</figcaption>
+      </figure>
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-2"></div>
+    <% @studio.trainers.first(6).each_with_index do |trainr, i| %>
+      <!-- <div class="col3"> -->
+      <div class="col-2">
+        <figure>
+          <%= trainr.img_url %>
+          <figcaption>
+            <%= trainr.firstname %><br/>
+            <%= trainr.lastname %>
+          </figcaption>
+        </figure>
+      </div>
+      <% if i == 3 %>
+        <div class="col-2"></div>
+        </div><div class="row text-center">
+        <div class="col-2"></div>
+      <% else if i != 6 %>
+        <div class="col-1"></div>
+      <% end %>
+      <!-- </div> -->
+    <% end %>
+    <div class="col-2"></div>
+  </div>
+</div>
+
 <div class="card-container">
   // for each of the elements in studio.trainr[x] (from x=0 to x=5), display trainr card
   // @studio.trainrs = trainr.limit(6)
-  <% @studio.trainers.first(6).each do |trainr| %>
-    <!-- <div class="col3"> -->
-      <%= trainr.img_url %>
-      <h3><%= trainr.firstname %></h3>
-      <h3><%= trainr.lastname %></h3>
-    <!-- </div> -->
-  <% end %>
+  <div class="row text-center">
+    <div class="col-2"></div>
+    <% @studio.trainers.first(6).each_with_index do |trainr, i| %>
+      <!-- <div class="col3"> -->
+      <div class="col-2">
+        <%= trainr.img_url %>
+        <h3><%= trainr.firstname %></h3>
+        <h3><%= trainr.lastname %></h3>
+      </div>
+      <% if i == 3 %>
+        <div class="col-2"></div>
+        </div><div class="row text-center">
+        <div class="col-2"></div>
+      <% else if i != 6 %>
+        <div class="col-1"></div>
+      <% end %>
+      <!-- </div> -->
+    <% end %>
+    <div class="col-2"></div>
+  </div>
+
   <div class="buttons">
     <button class="secondary">show more</button>
   </div>
