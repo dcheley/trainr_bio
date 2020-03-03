@@ -4,10 +4,10 @@
   <div class="row mb-5">
     <div class="col-2"></div>
     <div class="col-8">
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
+      <p class="text-primary"><%= flash[:notice] %></p>
+      <p class="text-primary"><%= flash[:alert] %></p>
 
-      <p class="mb-5 auth">Resend confirmation instructions</p>
+      <p class="mt-3 mb-5 auth">Resend confirmation instructions</p>
 
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
         <%= devise_error_messages! %>
