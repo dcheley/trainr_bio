@@ -1,0 +1,42 @@
+.list-trainr { //mytrainr, search,
+  border-bottom: 1px solid $brand-color-3 !important;
+
+  .profile-img {
+    height: 80%;
+    width: 80%;
+  }
+  .name {
+
+  }
+  .location {
+
+  }
+  .number {
+
+  }
+  .favourite {
+    .active {
+
+    }
+  }
+}
+
+.list-studio-trainr { //studio profile list,
+  .profile-img {
+    height: 80%;
+    width: 80%;
+  }
+  .name {
+
+  }
+}
+
+
+.list-schedule { //manage schedule
+  .active {
+
+  }
+  .new {
+
+  }
+}
