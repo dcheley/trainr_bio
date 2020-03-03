@@ -6120,3 +6120,87 @@ TypeError (no implicit conversion of nil into String):
 app/mailers/custom_mailer.rb:17:in `new'
 app/mailers/custom_mailer.rb:17:in `confirmation_instructions'
 app/controllers/users/registrations_controller.rb:14:in `create'
+Started GET "/" for ::1 at 2020-03-03 14:30:57 -0500
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3178.1ms)
+Completed 200 OK in 3469ms (Views: 3454.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 14:31:17 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 239ms (Views: 170.5ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 14:31:25 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fUQpflAPTq2Lg4GM85UWNm5VCWZsQebiKff8lId3UkyS5xIGBYlquiLr3e5mVSh4NPu6GYik5O9rQoDXnQH8NA==", "user"=>{"email"=>"test2@2.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@2.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test2@2.com"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 328ms (Views: 65.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 14:31:28 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 82ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-03-03 14:31:30 -0500
+Processing by UsersController#pre_launch_landing as HTML
+  Rendering users/pre_launch_landing.html.erb within layouts/application
+  Rendered users/pre_launch_landing.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 103ms (Views: 96.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-03-03 14:32:14 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 491ms (Views: 416.2ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 14:32:28 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N8Gd7+dHTxaypjig26AUbUDb1V3Jg3I8hnrYqX23c6XYYqaXssFrARvOZMJOYCojGnVmIi1mcDHEz6TqZ8Hd3Q==", "user"=>{"email"=>"test3@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3@3.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered layouts/_navbar_registration.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 324ms (Views: 61.0ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users" for ::1 at 2020-03-03 14:32:35 -0500
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JFNvfkLo6jERuhnU4xUJDNnZ8s8KbM8l1HZGwRiCEGANnVCGIj7diH+IaEnwQDkWFwR4TYNqoOHKFhSw2xJegg==", "user"=>{"email"=>"test3333@3.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Next"}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3333@3.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test3333@3.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password", "confirmation_token", "confirmation_sent_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2020-03-03 19:32:35.220939"], ["updated_at", "2020-03-03 19:32:35.220939"], ["email", "test3333@3.com"], ["encrypted_password", "$2a$11$o53ThE.ynGzBMwnhzwzSOeC/dSmpXeQg.U5WkM1kYos/tsLl/SyX2"], ["confirmation_token", "8TRmEyQNViBEkuRG5bdB"], ["confirmation_sent_at", "2020-03-03 19:32:35.221196"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+CustomMailer#confirmation_instructions: processed outbound mail in 1.0ms
+Completed 500 Internal Server Error in 491ms (ActiveRecord: 3.7ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/mailers/custom_mailer.rb:17:in `new'
+app/mailers/custom_mailer.rb:17:in `confirmation_instructions'
+app/controllers/users/registrations_controller.rb:14:in `create'
