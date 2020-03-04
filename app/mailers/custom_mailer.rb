@@ -11,7 +11,7 @@ class CustomMailer < Devise::Mailer
     from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
     to = SendGrid::Email.new(email: @user.email)
     subject = "Click the confirmation link to verify your Trainrbio account."
-    content = SendGrid::Content.new(type: 'text/plain', value: "https://trainr.bio/users/confirmation?confirmation_token=#{@token}")
+    content = SendGrid::Content.new(type: 'text/plain', value: "https://www.trainr.bio/users/confirmation?confirmation_token=#{@token}")
     mail = SendGrid::Mail.new(from, subject, to, content)
 
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
