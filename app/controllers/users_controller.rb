@@ -55,7 +55,7 @@ class UsersController < ApplicationController
 
     from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
     to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    subject = 'Someone sent a message from the prelaunch site!!'
+    subject ="#{current_user.email} sent a message from the prelaunch site!"
     content = SendGrid::Content.new(type: 'text/plain', value: body)
     mail = SendGrid::Mail.new(from, subject, to, content)
 
