@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   }
 
   resources :users, only: [:show, :index, :edit, :update, :destroy]
-  # resources :studios
-  # resources :events
+  resources :studios
+  resources :events
+  resources :offers
   resources :after_signup
 
   # get 'home' => 'users#home', as: :home

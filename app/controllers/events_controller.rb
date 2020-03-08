@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
   before_action :load_event, only: [:edit, :update, :destroy]
 
+  def index
+  end
+  
   def new
     @event = Event.new
   end
