@@ -21,6 +21,12 @@
           <%= f.text_field :title, required: true, class: "form-control" %>
         </div>
 
+        <!-- add_column :events, :location, :string -->
+        <div class="form-group">
+          <%= f.label "Location", class: "form-label" %>
+          <%= f.text_field :location, required: true, class: "form-control" %>
+        </div>
+
         <div class="form-group">
           <%= f.label "Date", class: "form-label" %>
           <%= f.date_field :date, required: true, class: "form-control" %>
@@ -42,7 +48,7 @@
         </div>
 
         <%= f.hidden_field :trainer_id, value: current_user.id %>
-        
+
         <%= f.submit "submit", class: 'btn submit' %>
       <% end %>
     </div>

@@ -1,0 +1,45 @@
+<%= render 'layouts/navbar' %>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-12">
+      <%= image_tag(offering.img_url, class: "offering-pic") %>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row text-center">
+        <div class="col-12">
+          <h2> 1 on 1 Private Yoga Session </h2>
+          <br/><p> Description </p>
+        </div>
+      </div>
+      <!-- for each piece of offering.data -->
+        <% if offerings.expectations %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+          <div class="row text-center">
+            <div class="col-12">
+              <h3> What to Expect </h3>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-10"></div>
+              <p> This offering's expectation value </P>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <!-- end -->
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <%= link_to "Contact & Book", contact,  class: "btn btn-secondary mt-5 mb-5" %>
+</div>
+
+
+<% if current_user && current_user.role == "trainer" %>
+	<%= render 'layouts/footer_trainer' %>
+<% else %>
+	<%= render 'layouts/footer_trainee' %>
+<% end %>
