@@ -2,7 +2,7 @@
 <!-- < Add/Edit Offering -->
 <div class="container my-5">
 
-  <%= form_for(@offering, url: { action: "update" }) do |f| %>
+  <%= form_for(@offer, url: { action: "update" }) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>

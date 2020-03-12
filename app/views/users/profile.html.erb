@@ -1,0 +1,113 @@
+<%= render 'layouts/navbar' %>
+<!-- secondary navbar, Profile active -->
+
+<div class="container text-center"><%= flash[:notice] %></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <%= image_tag(@user.cover_img_url, class: "cover-pic") %>
+    </div>
+  </div>
+</div>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-6">
+          <%= image_tag(@user.profile_img_url, class: "profile-pic") %>
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4">
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <h2><% @user.first_name %>
+              <br/><% @user.last_name %></h2>
+              <br/><h3><% @user.headline %></h3>
+              <br/><p><% @user.location %></p>
+              <%= link_to "Star", new_user_registration_url,  class: "btn btn-dark mt-5 mb-5" %>
+              <%= link_to "Links", new_user_registration_url,  class: "btn btn-dark mt-5 mb-5" %>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <hr>
+      <p><% @user.description %></p>
+      <hr>
+      <br/>
+      <h4> Upcoming </h4>
+      <!-- full schedule -->
+      <% @user.events.first(10)each_with_index do |event, i| %>
+        <% if event[i].date != event[i-1].date %>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <h5> <% event[i].date %> </h5>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+        <div class="row text-center">
+          <div class="col-1"></div>
+          <div class="col-10">
+            <div class="row">
+              <h6>
+                <div class="col-1"></div>
+                <div class="col-3"><% event[i].start_time %></div>
+                <div class="col-1"></div>
+                <div class="col-3"><% event[i].title %></div>
+                <div class="col-1"></div>
+                <div class="col-3"><% event[i].location %></div>
+              </h6>
+            </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col-7">
+          <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary mt-5 mb-5" %>
+        </div>
+        <div class="col-2">
+          <%= image_tag("pray.png", class: "pray-icon") %>
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <!-- comments -->
+        </div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <!-- see more -->
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+
+
+
+<% if current_user && current_user.role == "trainer" %>
+	<%= render 'layouts/footer_trainer' %>
+<% else %>
+	<%= render 'layouts/footer_trainee' %>
+<% end %>

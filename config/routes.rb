@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
   get 'pre_launch_reservation' => 'users#pre_launch_reservation', as: :pre_launch_reservation
-  get 'trainers' => 'users#trainers', as: :trainers
   get 'verification' => 'users#verification', as: :verification
+  get 'mytrainers' => 'users#mytrainers', as: :mytrainers
+  get 'settings' => 'user#settings', as: :settings
+  get 'profile' => 'user#profile', as: :profile
+  get 'managetrainers' => 'studio#managetrainers', as: :managetrainers
 
   root to: 'users#pre_launch_landing'
 end

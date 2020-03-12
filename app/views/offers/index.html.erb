@@ -4,12 +4,12 @@
 <div class="container text-center"><%= flash[:notice] %></div>
 
 <div class="container">
-  <% @user.offerings.each do |offering| %>
+  <% @offers.each do |offer| %>
     <div class="row text-center">
       <div class="col-12">
         <figure>
-          <%= link_to image_tag(offering.img_url, class: "offering-pic"), offering.url %>
-          <figcaption>offering.title</figcaption>
+          <%= link_to image_tag(offer.img_url, class: "offer-pic"), offer.url %>
+          <figcaption><%= offer.title %></figcaption>
         </figure>
       </div>
     </div>

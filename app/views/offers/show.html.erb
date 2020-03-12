@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-12">
-      <%= image_tag(offering.img_url, class: "offering-pic") %>
+      <%= image_tag(offer.img_url, class: "offering-pic") %>
     </div>
   </div>
 </div>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <!-- for each piece of offering.data -->
-        <% if offerings.expectations %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+        <% if offer.expectations %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
           <div class="row text-center">
             <div class="col-12">
               <h3> What to Expect </h3>
