@@ -1,0 +1,26 @@
+<div class="container text-center">
+  <div class="row mt-5 mb-5">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <%= render 'layouts/navbar_home_logged_out' %>
+
+      <p class="text-primary mb-3"><%= flash[:notice] %></p>
+      <p class="text-primary mb-3"><%= flash[:alert] %></p>
+
+      <p class="auth">welcome to trainr.bio!</p>
+    </div>
+  </div>
+  <div class="col-1"></div>
+
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <%= link_to "Enter", home_url, class:"btn btn-primary btn-block" %>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+  <div class="row">
+    <p class="branding footer mt-5 ml-auto mr-auto">trainr.bio 2020</p>
+  </div>
+</div>

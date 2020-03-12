@@ -19,8 +19,7 @@ Rails.application.routes.draw do
   get 'home' => 'users#home', as: :home
   post 'landing_email' => 'users#landing_email', as: :landing_email
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
-  get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
-  get 'pre_launch_reservation' => 'users#pre_launch_reservation', as: :pre_launch_reservation
+  get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'users#settings', as: :settings

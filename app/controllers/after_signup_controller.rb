@@ -1,7 +1,7 @@
 class AfterSignupController < ApplicationController
   include Wicked::Wizard
 
-  steps :personal, :username
+  steps :personal
 
   def show
     @user = current_user
@@ -15,6 +15,6 @@ class AfterSignupController < ApplicationController
   end
 
   def finish_wizard_path
-    :pre_launch_reservation
+    :welcome
   end
 end

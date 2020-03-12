@@ -4,7 +4,7 @@
   <div class="row mt-5 mb-5">
     <div class="col-2"></div>
     <div class="col-8">
-      <p class="mb-5 auth">Enter your name.</p>
+      <p class="mb-5 auth">profile</p>
 
       <%= form_for(@user, url: wizard_path) do |f| %>
         <% if @user.errors.any? %>
@@ -27,6 +27,17 @@
           <div class="col-6">
             <div class="form-group">
               <%= f.text_field :last_name, placeholder: "Last", required: true, class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-3 my-auto text-left">
+            <p>trainr.bio/  </p>
+          </div>
+          <div class="col-9">
+            <div class="form-group">
+              <%= f.text_field :username, placeholder: "Username", required: true, class: "form-control", autofocus: true %>
             </div>
           </div>
         </div>
