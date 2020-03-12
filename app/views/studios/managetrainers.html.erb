@@ -1,0 +1,40 @@
+<%= render 'layouts/navbar_edit' %>
+<!-- < Add/Edit Studio Trainrs -->
+
+<div class="container my-5">
+  <div class="row mb-8">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <!-- search & add -->
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <% @my.trainers.each do |trainr| %>
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row text-center card-my-trainr">
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-2">
+            <%= link_to image_tag(trainr.img_url, class: "my-trainr-pic"), trainr.url %>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-5">
+            <%= trainr.firstname %><%= trainr.lastname %>
+            <br/><%= trainr.location %>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-1">
+            <%= image_tag("imagesx.gif", class: "x-icon") %>
+            <!-- add logic to remove trainr on click -->
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    <% end %>
+  </div>
+</div>

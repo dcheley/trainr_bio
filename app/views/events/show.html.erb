@@ -1,0 +1,43 @@
+<%= render 'layouts/navbar' %>
+<!-- secondary navbar, schedule active -->
+
+<!-- timerange selector ( This Week - Next Week ) -->
+
+<div class="container text-center"><%= flash[:notice] %></div>
+<!-- display timerange schedule -->
+<div class="container">
+  <% @events.first(10).each_with_index do |event, i| %>
+    <% if event[i].date != event[i-1].date %>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <h5> <% event[i].date %> </h5>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    <% end %>
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <h6>
+            <div class="col-1"></div>
+            <div class="col-3"><% event[i].start_time %></div>
+            <div class="col-1"></div>
+            <div class="col-3"><% event[i].title %></div>
+            <div class="col-1"></div>
+            <div class="col-3"><% event[i].location %></div>
+          </h6>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+  <!-- export timerange schedule -->
+</div>
+
+<% if current_user && current_user.role == "trainer" %>
+	<%= render 'layouts/footer_trainer' %>
+<% else %>
+	<%= render 'layouts/footer_trainee' %>
+<% end %>

@@ -1,7 +1,81 @@
-<%= render 'layouts/navbar' %>
+  <%= render 'layouts/navbar_edit' %>
+  <!-- < Add/Edit Studio -->
+  <div class="container my-5">
 
-<div class="container text-center">
-  <h1 class="mb-3">Studio Details</h1>
+    <%= form_for(@studio, url: { action: "update" }) do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <%= render 'form' %>
-</div>
+      <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col-10">
+          <div class="form-group">
+            <h6> Studio Username*: </h6>
+            <br/>
+            <%= f.text_field :username, placeholder: "username", class: "form-control no-border color-bottom-border" %>
+          </div>
+         </div>
+         <div class="col"></div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col-10">
+          <div class="form-group">
+            <h6> Studio Name*: </h6>
+            <br/>
+            <%= f.text_field :name, placeholder: "name", class: "form-control no-border color-bottom-border" %>
+          </div>
+         </div>
+         <div class="col"></div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col-10">
+          <div class="form-group">
+            <h6> Studio Address*: </h6>
+            <br/>
+            <%= f.text_field :location, placeholder: "location", class: "form-control no-border color-bottom-border" %>
+          </div>
+         </div>
+         <div class="col"></div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col"></div>
+        <div class="col-10">
+          <div class="form-group">
+            <h6> Studio Schedule URL: </h6>
+            <br/>
+            <%= f.text_field :url, placeholder: "url", class: "form-control no-border color-bottom-border" %>
+          </div>
+         </div>
+         <div class="col"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-8"></div>
+        <div class="col-3">
+          <%= f.submit 'Save', class: 'btn btn-secondary' %>
+        </div>
+        <div class="col"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="form-group mt-3">
+            <p><%= link_to "Add/Edit Instructors", new_studio_trainr %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
