@@ -19,7 +19,7 @@
   </div>
   <div class="tab-content clearfix">
     <div class="tab-pane active" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
-      <% if @events.empty?  %>
+      <% if @events.empty? || @events.nil?  %>
         <h4> No classes this week </h4>
       <% else %>
         <% @events.each_with_index do |event, i| %>
@@ -52,7 +52,7 @@
       <% end %>
     </div>
     <div class="tab-pane active" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
-      <% if @events_next_week.empty?  %>
+      <% if @events_next_week.empty? ||  @events_next_week.nil?   %>
         <h4> No classes this week </h4>
       <% else %>
         <% @events_next_week.each_with_index do |event, i| %>
