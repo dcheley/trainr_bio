@@ -36,6 +36,11 @@ class EventsController < ApplicationController
     redirect_to user_url(@event.trainer_id), notice: "Event deleted."
   end
 
+  def manage_events
+    @user = current_user
+    @events = current_user.events
+  end
+
   private
 
   def load_event
@@ -48,4 +53,5 @@ class EventsController < ApplicationController
       :trainer_id, :trainee_id
     )
   end
+
 end

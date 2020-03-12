@@ -1,0 +1,38 @@
+<%= render 'layouts/navbar_manage_events' %>
+
+<!-- select active date -->
+<!-- for each event on active date -->
+<% if !@events.empty? %>
+  <% @events.each do |event| %>
+    <div class="row">
+      <div class="col-2">
+        <div class="row">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <%= image_tag('recurring.png', height: 32, width: 32, class:'') %>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <div class="col-2">
+        <p>
+          <%= event.start_time %>
+          <br/> <%= event.duration %>
+        </p>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-3">
+        <p><%= event.title %></p>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-2">
+        <p><%= event.location %></p>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+<% end %>
+
+<% if current_user == @user %>
+  <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
+<% end %>

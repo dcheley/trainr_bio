@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :offers, only: [:index]
   end
 
-  # get 'home' => 'users#home', as: :home
+  get 'home' => 'users#home', as: :home
   post 'landing_email' => 'users#landing_email', as: :landing_email
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'users#settings', as: :settings
   get 'profile' => 'users#profile', as: :profile
-  get 'managetrainers' => 'studios#managetrainers', as: :managetrainers
+  get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
+  get 'manage_events' => 'studios#manage_events', as: :manage_events
 
   root to: 'users#home'
 end
