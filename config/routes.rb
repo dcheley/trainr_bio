@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   get 'pre_launch_reservation' => 'users#pre_launch_reservation', as: :pre_launch_reservation
   get 'verification' => 'users#verification', as: :verification
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
-  get 'settings' => 'user#settings', as: :settings
-  get 'profile' => 'user#profile', as: :profile
-  get 'managetrainers' => 'studio#managetrainers', as: :managetrainers
+  get 'settings' => 'users#settings', as: :settings
+  get 'profile' => 'users#profile', as: :profile
+  get 'managetrainers' => 'studios#managetrainers', as: :managetrainers
 
   root to: 'users#home'
 end

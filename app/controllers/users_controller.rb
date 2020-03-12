@@ -76,6 +76,11 @@ class UsersController < ApplicationController
   def verification
   end
 
+  def profile
+    @user = current_user
+    @events = @user.trainer_events.limit(6).order("date ASC")
+  end
+
   private
 
   def load_user

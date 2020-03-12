@@ -3,11 +3,11 @@
 <div class="container my-5">
 
   <%= form_for(@offer, url: { action: "update" }) do |f| %>
-    <% if @user.errors.any? %>
+    <% if @offer.errors.any? %>
       <div id="error_explanation">
-        <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+        <h5><%= pluralize(@offer.errors.count, "error") %> prohibited change!</h5>
         <ul>
-        <% @user.errors.full_messages.each do |msg| %>
+        <% @offer.errors.full_messages.each do |msg| %>
           <li class="error"><%= msg %></li>
         <% end %>
         </ul>

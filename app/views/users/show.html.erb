@@ -43,8 +43,8 @@
 
   <!-- floating menu here -->
   <div id="navbar">
-    <a href="#schedule">Schedule</a>
-    <a href="#history">History</a>
+		<%= link_to "Schedule", user_events_url(@user) %>
+    <a href="#history">Bio</a>
 		<%= link_to "Offerings", user_offers_url(@user) %>
   </div><br><br>
 

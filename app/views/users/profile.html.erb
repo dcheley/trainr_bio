@@ -41,7 +41,7 @@
       <br/>
       <h4> Upcoming </h4>
       <!-- full schedule -->
-      <% @user.events.first(10)each_with_index do |event, i| %>
+      <% @events.each_with_index do |event, i| %>
         <% if event[i].date != event[i-1].date %>
           <div class="row">
             <div class="col-1"></div>
