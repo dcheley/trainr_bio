@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200309182031) do
+ActiveRecord::Schema.define(version: 20200312193211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20200309182031) do
     t.index ["trainer_id"], name: "index_events_on_trainer_id"
   end
 
+  create_table "milestones", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.string "milestone"
+    t.integer "month"
+    t.integer "year"
+  end
+
   create_table "offers", force: :cascade do |t|
     t.string "title"
     t.string "location"
@@ -44,7 +51,17 @@ ActiveRecord::Schema.define(version: 20200309182031) do
     t.integer "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "cover_img_url"
+    t.string "category"
     t.index ["trainer_id"], name: "index_offers_on_trainer_id"
+  end
+
+  create_table "practice_categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "specialty_categories", force: :cascade do |t|
+    t.string "name"
   end
 
   create_table "studios", force: :cascade do |t|
@@ -114,8 +131,24 @@ ActiveRecord::Schema.define(version: 20200309182031) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "headline"
+    t.string "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_practice_categories", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.integer "practice_categories"
+    t.index ["practice_categories"], name: "index_users_practice_categories_on_practice_categories"
+    t.index ["trainer_id"], name: "index_users_practice_categories_on_trainer_id"
+  end
+
+  create_table "users_specialty_categories", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.integer "practice_categories"
+    t.index ["practice_categories"], name: "index_users_specialty_categories_on_practice_categories"
+    t.index ["trainer_id"], name: "index_users_specialty_categories_on_trainer_id"
   end
 
 end
