@@ -1,40 +1,108 @@
 <%= render 'layouts/navbar_weekly_schedule' %>
 <!-- secondary navbar, schedule active -->
 
-<!-- timerange selector ( This Week - Next Week ) -->
-
-<div class="container text-center"><%= flash[:notice] %></div>
-<!-- display timerange schedule -->
-<div class="container">
-  <% @events.first(10).each_with_index do |event, i| %>
-    <% if event[i].date != event[i-1].date %>
-      <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-          <h5> <% event[i].date %> </h5>
-        </div>
-        <div class="col-1"></div>
-      </div>
-    <% end %>
-    <div class="row text-center">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <div class="row">
-          <h6>
-            <div class="col-1"></div>
-            <div class="col-3"><% event[i].start_time %></div>
-            <div class="col-1"></div>
-            <div class="col-3"><% event[i].title %></div>
-            <div class="col-1"></div>
-            <div class="col-3"><% event[i].location %></div>
-          </h6>
-        </div>
-      </div>
-      <div class="col-1"></div>
+<div class="container text-center">
+  <!-- timerange selector ( This Week - Next Week ) -->
+  <div class="row mt-3">
+    <div class="col-2"></div>
+      <div class="col-8">
+      <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
+        <li class="nav-item">
+          <a class="nav-link active" id="this-week-tab" href="#this-week" data-toggle="pill" role="tab" aria-controls="this-week" aria-selected="true">This Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="next-week-tab" href="#next-week" data-toggle="pill" role="tab" aria-controls="next-week" aria-selected="false">Next Week</a>
+        </li>
+      </ul>
     </div>
-  <% end %>
-  <!-- export timerange schedule -->
+    <div class="col-2"></div>
+  </div>
+  <div class="tab-content clearfix">
+    <div class="tab-pane active" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
+      <% if @events.empty?  %>
+        <h4> No classes this week </h4>
+      <% else %>
+        <% @events.each_with_index do |event, i| %>
+          <% if event[i].date != event[i-1].date %>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10">
+                <h4> <% event[i].date %> </h4>
+              </div>
+              <div class="col-1"></div>
+            </div>
+          <% end %>
+          <div class="row text-center">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <div class="row">
+                <h5>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].start_time %></div>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].title %></div>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].location %></div>
+                </h5>
+              </div>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="tab-pane active" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
+      <% if @events_next_week.empty?  %>
+        <h4> No classes this week </h4>
+      <% else %>
+        <% @events_next_week.each_with_index do |event, i| %>
+          <% if event[i].date != event[i-1].date %>
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10">
+                <h4> <% event[i].date %> </h4>
+              </div>
+              <div class="col-1"></div>
+            </div>
+          <% end %>
+          <div class="row text-center">
+            <div class="col-1"></div>
+            <div class="col-10">
+              <div class="row">
+                <h5>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].start_time %></div>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].title %></div>
+                  <div class="col-1"></div>
+                  <div class="col-3"><% event[i].location %></div>
+                </h5>
+              </div>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <!-- display timerange schedule -->
+
+  <div class="row text-center">
+    <div class="col-2"></div>
+    <div class="col-2">
+      <% if current_user && current_user == @user %>
+        <p><%= link_to "Export", replacethis_url %></p>
+      <% end %>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-2">
+      <% if current_user && current_user == @user %>
+        <%= link_to "Edit Schedule", user_events_edit_url(@user) %>
+      <% end %>
+    </div>
+    <div class="col-2"></div>
 </div>
+
 
 <% if current_user && current_user.role == 1 %>
 	<%= render 'layouts/footer_trainer' %>

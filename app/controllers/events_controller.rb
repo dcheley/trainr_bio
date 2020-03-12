@@ -3,7 +3,12 @@ class EventsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @events = @user.trainer_events
+    start_of_week = Date.today
+    end_of_week = Date.today.end_of_week
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
+    start_of_next_week = end_of_week + 1.day
+    end_of_next_week = start_of_next_week + 6.days
+    @next_week_events = @user.trainer_events.where(date: start_of_next_week..end_of_next_week)
   end
 
   def new
