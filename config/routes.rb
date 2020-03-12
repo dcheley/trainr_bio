@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'user#settings', as: :settings
   get 'profile' => 'user#profile', as: :profile
-  get 'managetrainers' => 'studio#managetrainers', as: :managetrainers
+  get 'manage_trainers' => 'studio#manage_trainers', as: :manage_trainers
+  get 'manage_events' => 'studio#manage_events', as: :manage_events
 
   root to: 'users#home'
 end
