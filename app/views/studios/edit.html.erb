@@ -3,11 +3,11 @@
   <div class="container my-5">
 
     <%= form_for(@studio, url: { action: "update" }) do |f| %>
-      <% if @user.errors.any? %>
+      <% if @studio.errors.any? %>
         <div id="error_explanation">
-          <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+          <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
           <ul>
-          <% @user.errors.full_messages.each do |msg| %>
+          <% @studio.errors.full_messages.each do |msg| %>
             <li class="error"><%= msg %></li>
           <% end %>
           </ul>
@@ -56,7 +56,7 @@
           <div class="form-group">
             <h6> Studio Schedule URL: </h6>
             <br/>
-            <%= f.text_field :url, placeholder: "url", class: "form-control no-border color-bottom-border" %>
+            <%= f.text_field :website_url, placeholder: "url", class: "form-control no-border color-bottom-border" %>
           </div>
          </div>
          <div class="col"></div>
@@ -73,7 +73,10 @@
       <div class="row">
         <div class="col-12">
           <div class="form-group mt-3">
-            <p><%= link_to "Add/Edit Instructors", new_studio_trainr %></p>
+            <%= form_tag trainer_studios_url(current_user.id), method: :post do %>
+
+              <p>options for select</p>
+            <% end %>
           </div>
         </div>
       </div>
