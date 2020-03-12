@@ -45,7 +45,7 @@
   <div id="navbar">
     <a href="#schedule">Schedule</a>
     <a href="#history">History</a>
-    <a href="#offerings">Offerings</a>
+		<%= link_to "Offerings", user_offers_url(@user) %>
   </div><br><br>
 
   <!-- Schedule -->
@@ -68,7 +68,7 @@
     			<tr>
     				<td><%= event.date.strftime('%a %_m/%-d') %></td>
     				<td><%= event.start_time.strftime('%l:%M%p') %></td>
-    				<td>ADDRESS</td>
+    				<td><%= event.location %></td>
     				<td>STUDIO</td>
     			</tr>
 				<% end %>
@@ -119,7 +119,7 @@
   </div><br><br>
 </div>
 
-<% if current_user && current_user.role == "trainer" %>
+<% if current_user && current_user.role == 1 %>
 	<%= render 'layouts/footer_trainer' %>
 <% else %>
 	<%= render 'layouts/footer_trainee' %>

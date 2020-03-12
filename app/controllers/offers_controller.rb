@@ -2,6 +2,8 @@ class OffersController < ApplicationController
   before_action :load_offer, only: [:edit, :update, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
+    @offers = @user.offers
   end
 
   def new

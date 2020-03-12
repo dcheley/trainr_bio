@@ -11,12 +11,13 @@ class User < ApplicationRecord
   has_many :studios, through: :user_studios
   has_many :trainer_events, foreign_key: 'trainer_id', class_name: 'Event'
   has_many :trainee_events, foreign_key: 'trainee_id', class_name: 'Event'
+  has_many :offers, foreign_key: 'trainer_id'
 
-  scope :instructor, -> { where(role: 1) }
+  scope :trainer, -> { where(role: 1) }
   scope :basic, -> { where(role: 0) }
 
   def self.search(search)
     where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%")
-    .instructor
+    .trainer
   end
 end

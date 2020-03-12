@@ -2,8 +2,10 @@ class EventsController < ApplicationController
   before_action :load_event, only: [:edit, :update, :destroy]
 
   def index
+    @user = User.find(params[:user_id])
+    @events = @user.trainer_events
   end
-  
+
   def new
     @event = Event.new
   end
@@ -42,7 +44,8 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :title, :duration, :start_time, :date, :recurring, :trainer_id, :trainee_id
+      :title, :duration, :start_time, :date, :recurring, :location,
+      :trainer_id, :trainee_id
     )
   end
 end

@@ -4,19 +4,27 @@
 <div class="container text-center"><%= flash[:notice] %></div>
 
 <div class="container">
-  <% @offers.each do |offer| %>
+  <% if !@offers.empty? %>
+    <% @offers.each do |offer| %>
+      <div class="row text-center">
+        <div class="col-12">
+          <figure>
+            <%= link_to image_tag(offer.img_url, class: "offer-pic"), offer.url %>
+            <figcaption><%= offer.title %></figcaption>
+          </figure>
+        </div>
+      </div>
+    <% end %>
+  <% elsif current_user == @user %>
     <div class="row text-center">
       <div class="col-12">
-        <figure>
-          <%= link_to image_tag(offer.img_url, class: "offer-pic"), offer.url %>
-          <figcaption><%= offer.title %></figcaption>
-        </figure>
+        <%= link_to "Add New Offer", new_offer_url %>
       </div>
     </div>
   <% end %>
 </div>
 
-<% if current_user && current_user.role == "trainer" %>
+<% if current_user && current_user.role == 1 %>
 	<%= render 'layouts/footer_trainer' %>
 <% else %>
 	<%= render 'layouts/footer_trainee' %>

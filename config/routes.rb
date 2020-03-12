@@ -7,9 +7,14 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index, :edit, :update, :destroy]
   resources :studios
-  resources :events
-  resources :offers
+  resources :events, only: [:new, :create, :edit, :update, :destroy]
+  resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
+
+  resources :users, only: [:show] do
+    resources :events, only: [:index]
+    resources :offers, only: [:index]
+  end
 
   # get 'home' => 'users#home', as: :home
   post 'landing_email' => 'users#landing_email', as: :landing_email
@@ -17,10 +22,10 @@ Rails.application.routes.draw do
   get 'pre_launch_landing' => 'users#pre_launch_landing', as: :pre_launch_landing
   get 'pre_launch_reservation' => 'users#pre_launch_reservation', as: :pre_launch_reservation
   get 'verification' => 'users#verification', as: :verification
-  get 'mytrainers' => 'users#mytrainers', as: :mytrainers
+  get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'user#settings', as: :settings
   get 'profile' => 'user#profile', as: :profile
   get 'managetrainers' => 'studio#managetrainers', as: :managetrainers
 
-  root to: 'users#pre_launch_landing'
+  root to: 'users#home'
 end

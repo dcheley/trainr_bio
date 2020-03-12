@@ -4,11 +4,11 @@
       <%= image_tag("search.svg", width: "32", height: "32") %>
       <p class="mt-1">Search</p>
     <% end %>
-    <%= link_to events_url, class: "footer-link" do %>
+    <%= link_to user_events_url(current_user), class: "footer-link" do %>
       <%= image_tag("calendar.svg", width: "32", height: "32") %>
       <p class="mt-1">Schedule</p>
     <% end %>
-    <%= link_to trainers_path, class: "footer-link" do %>
+    <%= link_to my_trainers_path, class: "footer-link" do %>
       <%= image_tag("speed.svg", width: "32", height: "32") %>
       <p class="mt-1">My Trainrs</p>
     <% end %>

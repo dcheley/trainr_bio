@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   def pre_launch_reservation
   end
 
-  def trainers
+  def my_trainers
   end
 
   def landing_email

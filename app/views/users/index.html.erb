@@ -1,14 +1,14 @@
 <% if !current_user %>
   <%= render 'layouts/navbar_search_results_logged_out' %>
-  <%= render 'layouts/footer_trainee' %>
 <% else %>
   <%= render 'layouts/navbar_search_results_logged_in' %>
-  <% if current_user.role == "trainer" %>
-    <%= render 'layouts/footer_trainer' %>
-  <% else %>
+  <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
+  <% elsif current_user.role == 1 %>
+    <%= render 'layouts/footer_trainer' %>
   <% end %>
 <% end %>
+
 
 <div class="container text-center">
   <%= flash[:notice] %>
@@ -21,14 +21,6 @@
       </div>
     </div>
     <% end %>
-
-    <div class="row">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <h3>Search Results</h3>
-      </div>
-      <div class="col-2"></div>
-    </div>
   <% end %>
 
   <div class="row mt-3">
@@ -48,29 +40,29 @@
 
   <div class="tab-content clearfix">
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
-      <% @users.each do |instructor| %>
+      <% @users.each do |trainer| %>
         <div class="row mt-3 mb-3 pb-3 border-bottom">
           <div class="col-4 my-auto">
             <%= image_tag('user.svg', height: 64, width: 64, class:'') %>
           </div>
           <div class="col-4 my-auto">
-            <%= link_to user_url(instructor) do %>
-              <% if !instructor.first_name.nil? || !instructor.last_name.nil? %>
-                <h5 class=""><%= "#{instructor.first_name + ' ' + instructor.last_name}"%></h5>
+            <%= link_to user_url(trainer) do %>
+              <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
+                <h5 class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></h5>
               <% else %>
                 <h5 class="e">N/A</h5>
               <% end %>
             <% end %>
           </div>
           <div class="col-4 my-auto">
-            <p class=""><%= instructor.location %></p>
+            <p class=""><%= trainer.location %></p>
           </div>
           <div class="divider"></div>
         </div>
       <% end %>
       <% if @users.empty? %>
         <div class="col-12">
-          <h4 class="mb-3">No instructors found.</h4>
+          <h4 class="mt-3 mb-3">No trainers found.</h4>
         </div>
       <% end %>
     </div>

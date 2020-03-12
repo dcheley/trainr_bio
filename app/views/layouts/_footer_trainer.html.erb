@@ -12,7 +12,7 @@
       <%= image_tag("plus.svg", width: "32", height: "32") %>
       <p class="mt-1">New Class</p>
     <% end %>
-    <%= link_to events_url, class: "footer-link" do %>
+    <%= link_to user_events_url(current_user), class: "footer-link" do %>
       <%= image_tag("calendar.svg", width: "32", height: "32") %>
       <p class="mt-1">Schedule</p>
     <% end %>
