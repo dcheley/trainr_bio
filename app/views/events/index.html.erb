@@ -24,6 +24,26 @@
           <h4> No classes this week </h4>
         </div>
       <% else %>
+      <table>
+        <thread>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Class Name</th>
+            <th>Studio</th>
+          </tr>
+        </thread>
+        <tbody>
+          <% @events.each do |event| %>
+            <tr>
+              <th><%= event.date.strftime('%a %_m/%-d') %></th>
+              <td><%= event.start_time.strftime('%l:%M%p') %></td>
+              <td><%= event.location %></td>
+              <td>STUDIO</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
         <% $previous_date = 0 %>
         <% @events.each do |event| %>
           <% if event.date != @previous_date %>
