@@ -38,7 +38,7 @@
             <% @events.each do |event| %>
               <tr>
                 <% if event.date != @previous_date %>
-                  <th><%= event.date.strftime('%a %_m/%-d') %></th><br/>
+                  <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
                   <% @previous_date = event.date %>
                 <% end %>
                 <td><%= event.start_time.strftime('%l:%M%p') %></td>
