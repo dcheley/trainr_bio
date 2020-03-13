@@ -35,10 +35,11 @@
               <% @previous_date = event.date %>
             <% end %>
             <div class="row text-center">
-              <div class="col"></div>
+              <div class="col-1"></div>
               <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
               <div class="col"><%= event.title %></div>
               <div class="col"><%= event.location %></div>
+              <div class="col-1"></div>
             </div>
         <% end %>
       <% end %>
@@ -60,10 +61,11 @@
             <% @previous_date = event.date %>
           <% end %>
           <div class="row text-center">
-            <div class="col"></div>
+            <div class="col-1"></div>
             <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
             <div class="col"><%= event.title %></div>
             <div class="col"><%= event.location %></div>
+            <div class="col-1"></div>
           </div>
         <% end %>
       <% end %>
@@ -76,14 +78,14 @@
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary round-btn' %></p>
+        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary round-btn btn-block' %></p>
       <% end %>
     </div>
     <div class="col-2"></div>
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <%= link_to "Edit", user_events_url(current_user), class:'btn btn-primary round-btn' %>
+        <%= link_to "Edit", user_events_url(current_user), class:'btn btn-primary round-btn btn-block' %>
       <% end %>
     </div>
     <div class="col-2"></div>
