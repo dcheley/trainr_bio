@@ -8,11 +8,11 @@
       <div class="col-8">
       <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
         <li class="nav-item">
-          <a class="toggle-link mr-1 ml-1 active" id="this-week-tab" href="#this-week" data-toggle="pill" role="tab" aria-controls="this-week" aria-selected="true">This Week</a>
+          <a class="schedule week-toggle mr-1 ml-1 active" id="this-week-tab" href="#this-week" data-toggle="pill" role="tab" aria-controls="this-week" aria-selected="true">This Week</a>
         </li>
         <p> - </p>
         <li class="nav-item">
-          <a class="toggle-link mr-1 ml-1" id="next-week-tab" href="#next-week" data-toggle="pill" role="tab" aria-controls="next-week" aria-selected="false">Next Week</a>
+          <a class="schedule week-toggle mr-1 ml-1" id="next-week-tab" href="#next-week" data-toggle="pill" role="tab" aria-controls="next-week" aria-selected="false">Next Week</a>
         </li>
       </ul>
     </div>
@@ -22,7 +22,7 @@
     <div class="tab-pane active mb-4" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
       <% if @events.empty?  %>
         <div class="text-center mt-4 mb-4">
-          <h4> No classes this week </h4>
+          <h4 class="schedule date"> No classes this week </h4>
         </div>
       <% else %>
         <% $previous_date = 0 %>
@@ -30,16 +30,16 @@
             <% if event.date != @previous_date %>
               <div class="row mt-4">
                 <div class="col">
-                  <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
+                  <h4 class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
                 </div>
               </div>
               <% @previous_date = event.date %>
             <% end %>
             <div class="row text-center">
               <div class="col-1"></div>
-              <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
-              <div class="col"><%= event.title %></div>
-              <div class="col"><%= event.location %></div>
+              <div class="col"><h4 class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></h4></div>
+              <div class="col"><h4 class="schedule session-name"><%= event.title %></h4></div>
+              <div class="col"><h4 class="schedule studio-name"><%= event.location %></h4></div>
               <div class="col-1"></div>
             </div>
         <% end %>
