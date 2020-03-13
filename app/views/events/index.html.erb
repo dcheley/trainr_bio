@@ -49,8 +49,10 @@
     </div>
     <div class="tab-pane mb-4" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
       <% if @events_next_week.empty?   %>
-      <div class="text-center mt-4 mb-4">
-        <h4 class="schedule date"> No classes this week </h4>
+      <div class="row text-center mt-4 mb-4">
+        <div class="col"></div>
+        <div class="col"><span class="schedule date"> No classes this week </span></div>
+        <div class="col"></div>
       </div>
       <% else %>
         <% $previous_date = 0 %>
