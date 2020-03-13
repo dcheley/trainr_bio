@@ -22,7 +22,7 @@
     <div class="tab-pane active mb-4" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
       <% if @events.empty?  %>
         <div class="text-center mt-4 mb-4">
-          <h4 class="schedule date"> No classes this week </h4>
+          <span class="schedule date"> No classes this week </span>
         </div>
       <% else %>
         <% $previous_date = 0 %>
@@ -30,16 +30,16 @@
             <% if event.date != @previous_date %>
               <div class="row mt-4">
                 <div class="col">
-                  <h4 class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
+                  <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
                 </div>
               </div>
               <% @previous_date = event.date %>
             <% end %>
             <div class="row text-center">
               <div class="col-1"></div>
-              <div class="col"><h4 class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></h4></div>
-              <div class="col"><h4 class="schedule session-name"><%= event.title %></h4></div>
-              <div class="col"><h4 class="schedule studio-name"><%= event.location %></h4></div>
+              <div class="col"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+              <div class="col"><span class="schedule session-name"><%= event.title %></span></div>
+              <div class="col"><span class="schedule studio-name"><%= event.location %></span></div>
               <div class="col-1"></div>
             </div>
         <% end %>
@@ -48,7 +48,7 @@
     <div class="tab-pane mb-4" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
       <% if @events_next_week.empty?   %>
       <div class="text-center mt-4 mb-4">
-        <h4> No classes this week </h4>
+        <h4 class="schedule date"> No classes this week </h4>
       </div>
       <% else %>
         <% $previous_date = 0 %>
@@ -56,16 +56,16 @@
           <% if event.date != @previous_date %>
             <div class="row mt-4">
               <div class="col">
-                <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
+                <h4 class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
               </div>
             </div>
             <% @previous_date = event.date %>
           <% end %>
           <div class="row text-center">
             <div class="col-1"></div>
-            <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
-            <div class="col"><%= event.title %></div>
-            <div class="col"><%= event.location %></div>
+            <div class="col"><h4 class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></h4></div>
+            <div class="col"><h4 class="schedule session-name"><%= event.title %></h4></div>
+            <div class="col"><h4 class="schedule studio-name"><%= event.location %></h4></div>
             <div class="col-1"></div>
           </div>
         <% end %>
