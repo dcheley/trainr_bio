@@ -27,7 +27,7 @@
         <% $previous_date = 0 %>
         <% @events.each do |event| %>
             <% if event.date != @previous_date %>
-              <div class="row">
+              <div class="row mt-3">
                 <div class="col-1"></div>
                 <div class="col-10">
                   <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
@@ -50,31 +50,22 @@
         <h4> No classes this week </h4>
       </div>
       <% else %>
-        <% @events_next_week.each_with_index do |event, i| %>
-          <% if event[i].date != event[i-1].date %>
-            <div class="row">
+        <% $previous_date = 0 %>
+        <% @events_next_week.each do |event| %>
+          <% if event.date != @previous_date %>
+            <div class="row mt-3">
               <div class="col-1"></div>
               <div class="col-10">
-                <h4> <% event[i].date %> </h4>
+                <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
               </div>
               <div class="col-1"></div>
             </div>
+            <% @previous_date = event.date %>
           <% end %>
           <div class="row text-center">
-            <div class="col-1"></div>
-            <div class="col-10">
-              <div class="row">
-                <h5>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].start_time %></div>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].title %></div>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].location %></div>
-                </h5>
-              </div>
-            </div>
-            <div class="col-1"></div>
+            <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
+            <div class="col"><%= event.title %></div>
+            <div class="col"><%= event.location %></div>
           </div>
         <% end %>
       <% end %>
@@ -106,35 +97,3 @@
 <% else %>
 	<%= render 'layouts/footer_trainee' %>
 <% end %>
-
-<!--
-<% $previous_date = 0 %>
-<% @events.each do |event| %>
-  <% if event.date != @previous_date %>
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <h4><% event.date.strftime("%a/%_m/%d") %> </h4>
-      </div>
-      <div class="col-1"></div>
-    </div>
-    <% @previous_date = event.date %>
-  <% end %>
-  <div class="row text-center">
-    <div class="col-1"></div>
-    <div class="col-10">
-      <div class="row">
-        <h5>
-          <div class="col-1"></div>
-          <div class="col-3"><% event.start_time %></div>
-          <div class="col-1"></div>
-          <div class="col-3"><% event.title %></div>
-          <div class="col-1"></div>
-          <div class="col-3"><% event.location %></div>
-        </h5>
-      </div>
-    </div>
-    <div class="col-1"></div>
-  </div>
-<% end %>
--->
