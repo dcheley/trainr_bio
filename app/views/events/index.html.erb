@@ -22,7 +22,7 @@
     <div class="tab-pane active mb-4" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
       <% if @events.empty?  %>
         <div class="text-center mt-4 mb-4">
-          <p class="schedule date"> No classes this week </p>
+          <h4 class="schedule date"> No classes this week </h4>
         </div>
       <% else %>
         <% $previous_date = 0 %>
@@ -30,16 +30,16 @@
             <% if event.date != @previous_date %>
               <div class="row mt-4">
                 <div class="col">
-                  <p class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></p>
+                  <h4 class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
                 </div>
               </div>
               <% @previous_date = event.date %>
             <% end %>
             <div class="row text-center">
               <div class="col-1"></div>
-              <div class="col"><p class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></p></div>
-              <div class="col"><p class="schedule session-name"><%= event.title %></p></div>
-              <div class="col"><p class="schedule studio-name"><%= event.location %></p></div>
+              <div class="col"><h4 class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></h4></div>
+              <div class="col"><h4 class="schedule session-name"><%= event.title %></h4></div>
+              <div class="col"><h4 class="schedule studio-name"><%= event.location %></h4></div>
               <div class="col-1"></div>
             </div>
         <% end %>
