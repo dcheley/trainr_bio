@@ -91,7 +91,8 @@
     <div class="col-2"></div>
     <div class="col-2">
       <% if current_user && current_user == @user %>
-        <p><%= link_to "Export", replacethis_url %></p>
+          <!-- change url below -->  
+        <p><%= link_to "Export", user_events_edit_url(@user) %></p>
       <% end %>
     </div>
     <div class="col-4"></div>
