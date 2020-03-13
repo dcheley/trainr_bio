@@ -15,6 +15,12 @@ p {
 //Page Division Header
 // h2 {}
 
+.toggle-link {
+  font-size: $font-size-0;
+  .active {
+    color: $brand-color-2;
+  }
+}
 
 .branding { //trainr.bio
   font-family: $abz;
