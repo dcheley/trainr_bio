@@ -18,9 +18,9 @@
     <div class="col-2"></div>
   </div>
   <div class="tab-content clearfix">
-    <div class="tab-pane active mb-3" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
+    <div class="tab-pane active mb-4" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
       <% if @events.empty?  %>
-        <div class="text-center mt-3 mb-3">
+        <div class="text-center mt-4 mb-4">
           <h4> No classes this week </h4>
         </div>
       <% else %>
@@ -44,9 +44,9 @@
         <% end %>
       <% end %>
     </div>
-    <div class="tab-pane mb-3" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
+    <div class="tab-pane mb-4" id="next-week" role="tabpanel" aria-labelledby="next-week-tab">
       <% if @events_next_week.empty?   %>
-      <div class="text-center mt-3 mb-3">
+      <div class="text-center mt-4 mb-4">
         <h4> No classes this week </h4>
       </div>
       <% else %>
@@ -54,11 +54,11 @@
         <% @events_next_week.each do |event| %>
           <% if event.date != @previous_date %>
             <div class="row mt-4">
-              <div class="col-1"></div>
-              <div class="col-10">
+              <div class="col"></div>
+              <div class="col-11">
                 <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
               </div>
-              <div class="col-1"></div>
+              <div class="col"></div>
             </div>
             <% @previous_date = event.date %>
           <% end %>
