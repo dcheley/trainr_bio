@@ -14,6 +14,13 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :events, only: [:index]
     resources :offers, only: [:index]
+    resources :trainer_studios
+    resources :user_studios
+  end
+
+  resources :studios do
+    resources :trainer_studios
+    resources :user_studios
   end
 
   get 'home' => 'users#home', as: :home

@@ -1,7 +1,8 @@
 class Studio < ApplicationRecord
   validates :name, :location, presence: true
 
-  has_many :users, through: :user_studios
+  has_many :user_studios
+  has_many :trainer_studios
 
   def self.search(search)
     where("name ILIKE ?", "%#{search}%")

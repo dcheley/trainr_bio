@@ -1,28 +1,42 @@
-<%= render 'layouts/navbar' %>
+<%= render 'layouts/navbar_studios' %>
 
-<div class="container text-center">
-  <%= flash[:notice] %>
+<div class="container text-left">
+  <p cass="text-center text-primary"><%= flash[:notice] %></p>
   <div class="row">
-    <div class="col-12 mb-3">
-      <h3><%= link_to "Create Studio", new_studio_path %></h3>
+    <div class="col-12 mb-3 text-right">
+      <h3><%= link_to "Create Studio", new_studio_path, class: "btn btn-primary" %></h3>
     </div>
-    <% @studios.each do |s| %>
-      <div class="col-2"></div>
-      <div class="col-8">
-        <div class="card mb-3">
-        <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= s.name %></h5>
-            <p class="card-text"><%= s.location %></p>
-            <p class="card-text"><%= s.phone %></p>
-            <%= link_to "Profile", studio_url(s), class: "btn btn-primary" %>
-            <%= link_to "Edit", edit_studio_url(s) %>
-            <%= button_to "Delete", { action: "destroy", id: s.id },
-              method: :delete, data: { confirm: "Are you sure?" },
-              class: "btn btn-danger" %>
-          </div>
-        </div>
-      </div>
-      <div class="col-2"></div>
-    <% end %>
   </div>
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-6"><p>Studio Name</p></div>
+    <div class="col-4"><p>Location</p></div>
+  </div>
+  <% @studios.each do |s| %>
+    <div class="row mt-3 mb-3 pb-3 border-bottom">
+      <div class="col-2 my-auto">
+        <%= button_to "X", { action: "destroy", id: s.id },
+          method: :delete, data: { confirm: "Are you sure?" },
+          class: "btn btn-danger" %>
+      </div>
+      <div class="col-6 my-auto">
+        <h5><%= link_to "#{s.name}", studio_url(s) %><h5>
+        <p class="">@<%= s.website_url %></p>
+      </div>
+      <div class="col-2 my-auto">
+        <%= s.location %>
+      </div>
+      <div class="col-2 my-auto">
+        <%= link_to "Edit", edit_studio_url(s) %>
+      </div>
+      <div class="divider"></div>
+    </div>
+  <% end %>
+  <% if @studios.empty? %>
+  <div class="row text-center">
+    <div class="col-12">
+      <h4 class="mt-3 mb-3">No studios found.</h4>
+    </div>
+  </div>
+  <% end %>
+</div>

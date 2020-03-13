@@ -1,18 +1,18 @@
-<nav class="navbar navbar-light bg-light fixed-bottom pt-4" id="trainer-footer">
-  <div class="container">
-    <%= link_to users_url, class: "footer-link" do %>
-      <%= image_tag("search.svg", width: "32", height: "32") %>
-      <p class="mt-1">Search</p>
-    <% end %>
-    <%= link_to user_events_url(current_user), class: "footer-link" do %>
-      <%= image_tag("calendar.svg", width: "32", height: "32") %>
-      <p class="mt-1">Schedule</p>
-    <% end %>
-    <%= link_to my_trainers_path, class: "footer-link" do %>
-      <%= image_tag("speed.svg", width: "32", height: "32") %>
-      <p class="mt-1">My Trainrs</p>
-    <% end %>
+<div class="bg-light fixed-bottom" id="trainer-footer">
+  <div class="container my-auto">
+    <div class="row">
+      <div class="col-6 divider-right">
+        <%= link_to users_url, class: "footer-link" do %>
+          <%= image_tag("search.svg", width: "20", height: "20") %>
+          <p class="mt-1 mb-1">Search</p>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <%= link_to my_trainers_path, class: "footer-link" do %>
+          <%= image_tag("speed.svg", width: "20", height: "20") %>
+          <p class="mt-1 mb-1">Trainrs</p>
+        <% end %>
+      </div>
+    </div>
   </div>
-</nav>
-
-<%# Make schedule and my trainrs redirect to sign up for new users %>
+</div>
