@@ -1,9 +1,9 @@
 <%= render 'layouts/navbar_weekly_schedule' %>
 <!-- secondary navbar, schedule active -->
 
-<div class="container text-center">
+<div class="container">
   <!-- timerange selector ( This Week - Next Week ) -->
-  <div class="row mt-3">
+  <div class="row text-center mt-3">
     <div class="col-2"></div>
       <div class="col-8">
       <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
@@ -38,12 +38,20 @@
             <% @events.each do |event| %>
               <tr>
                 <% if event.date != @previous_date %>
-                  <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
+                  <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-10">
+                      <h4><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
+                    </div>
+                    <div class="col-1"></div>
+                  </div>
                   <% @previous_date = event.date %>
                 <% end %>
-                <td><%= event.start_time.strftime('%l:%M%p') %></td>
-                <td><%= event.title %></td>
-                <td><%= event.location %></td>
+                <div class="row text-center">
+                  <div class="col"><td><%= event.start_time.strftime('%l:%M%p') %></td></div>
+                  <div class="col"><td><%= event.title %></td></div>
+                  <div class="col"><td><%= event.location %></td></div>
+                </div>
               </tr>
             <% end %>
           </tbody>
