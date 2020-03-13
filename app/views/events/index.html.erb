@@ -96,14 +96,14 @@
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <p><%= link_to "Export", user_events_url(current_user) %></p>
+        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary btn-block round-btn' %></p>
       <% end %>
     </div>
     <div class="col-2"></div>
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <%= link_to "Edit Schedule", user_events_url(current_user) %>
+        <%= link_to "Edit Schedule", user_events_url(current_user), class:'btn btn-primary btn-block round-btn' %>
       <% end %>
     </div>
     <div class="col-2"></div>
