@@ -85,7 +85,7 @@
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <%= link_to "Edit Schedule", user_events_url(current_user), class:'btn btn-primary round-btn' %>
+        <%= link_to "Edit", user_events_url(current_user), class:'btn btn-primary round-btn' %>
       <% end %>
     </div>
     <div class="col-2"></div>
