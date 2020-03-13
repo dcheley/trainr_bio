@@ -36,10 +36,15 @@
               </div>
               <% @previous_date = event.date %>
             <% end %>
-            <div class="row text-center ml-5">
-              <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
-              <div class="col"><%= event.title %></div>
-              <div class="col"><%= event.location %></div>
+            <div class="row">
+              <div class="col"></div>
+              <div class="col-11">
+                <div class="row text-center ml-5">
+                  <div class="col"><%= event.start_time.strftime('%l:%M%p') %></div>
+                  <div class="col"><%= event.title %></div>
+                  <div class="col"><%= event.location %></div>
+              </div>
+              <div class="col"></div>
             </div>
         <% end %>
       <% end %>
