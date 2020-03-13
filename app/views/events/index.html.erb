@@ -80,14 +80,14 @@
 
   <div class="row text-center mt-5 mb-3">
     <div class="col"></div>
-    <div class="col-4">
+    <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
         <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary btn-sm btn-block' %></p>
       <% end %>
     </div>
     <div class="col"></div>
-    <div class="col-4">
+    <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
         <%= link_to "Edit", user_events_url(current_user), class:'btn btn-primary btn-sm btn-block' %>
