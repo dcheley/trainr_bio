@@ -24,15 +24,17 @@
           <h4> No classes this week </h4>
         </div>
       <% else %>
-        <% @events.each_with_index do |event, i| %>
-          <% if event[i].date != event[i-1].date %>
+        <% $previous_date = 0 %>
+        <% @events.each do |event| %>
+          <% if event.date != @previous_date %>
             <div class="row">
               <div class="col-1"></div>
               <div class="col-10">
-                <h4> <% event[i].date %> </h4>
+                <h4> <% event.date %> </h4>
               </div>
               <div class="col-1"></div>
             </div>
+            <% @previous_date = event.date %>
           <% end %>
           <div class="row text-center">
             <div class="col-1"></div>
@@ -40,11 +42,11 @@
               <div class="row">
                 <h5>
                   <div class="col-1"></div>
-                  <div class="col-3"><% event[i].start_time %></div>
+                  <div class="col-3"><% event.start_time %></div>
                   <div class="col-1"></div>
-                  <div class="col-3"><% event[i].title %></div>
+                  <div class="col-3"><% event.title %></div>
                   <div class="col-1"></div>
-                  <div class="col-3"><% event[i].location %></div>
+                  <div class="col-3"><% event.location %></div>
                 </h5>
               </div>
             </div>
@@ -96,14 +98,14 @@
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary btn-block round-btn' %></p>
+        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary round-btn' %></p>
       <% end %>
     </div>
     <div class="col-2"></div>
     <div class="col-3">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <%= link_to "Edit Schedule", user_events_url(current_user), class:'btn btn-primary btn-block round-btn' %>
+        <%= link_to "Edit Schedule", user_events_url(current_user), class:'btn btn-primary round-btn' %>
       <% end %>
     </div>
     <div class="col-2"></div>
