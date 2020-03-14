@@ -11,6 +11,14 @@ class EventsController < ApplicationController
     @events_next_week = @user.trainer_events.where(date: start_of_next_week..end_of_next_week)
   end
 
+  def manage_events
+    @user = current_user
+    # @events = current_user.events
+    start_of_period = Date.today
+    end_of_period = Date.today + 6.days
+    @events =  @user.trainer_events.where(date: start_of_period..end_of_period)
+  end
+
   def new
     @event = Event.new
   end
@@ -39,11 +47,6 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to user_url(@event.trainer_id), notice: "Event deleted."
-  end
-
-  def manage_events
-    @user = current_user
-    @events = current_user.events
   end
 
   private
