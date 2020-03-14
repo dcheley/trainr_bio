@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get 'settings' => 'users#settings', as: :settings
   get 'profile' => 'users#profile', as: :profile
   get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
-  get 'manage_events' => 'studios#manage_events', as: :manage_events
+  get 'manage_events' => 'events#manage_events', as: :manage_events
 
   root to: 'users#home'
 end
