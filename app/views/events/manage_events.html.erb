@@ -7,10 +7,10 @@
   <div class="row text-center mt-3">
     <div class="col-4"><p><%= Date.today.strftime('%^b') %></p></div>
     <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
-      <% (Date.today..(Date.today + 6)).each do |date| %>
+      <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
         <div class="col-1">
           <li class="nav-item">
-            <% if date = Date.today %>
+            <% if i = 0 %>
               <a class="schedule week-toggle mr-1 ml-1 active" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
             <% else %>
               <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
@@ -21,8 +21,8 @@
     </ul>
   </div>
   <div class="tab-content clearfix">
-    <% (Date.today..(Date.today + 6)).each do |date| %>
-      <% if date = Date.today %>
+    <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
+      <% if i = 0 %>
         <div class="tab-pane mb-4 active" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
       <% else %>
         <div class="tab-pane mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
