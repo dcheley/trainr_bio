@@ -23,7 +23,7 @@
   <div class="tab-content clearfix">
     <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
       <% if i < 1 %>
-        <div class="tab-pane mb-4 active" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
+        <div class="tab-pane active mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
       <% else %>
         <div class="tab-pane mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
       <% end %>
