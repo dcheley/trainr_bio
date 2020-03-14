@@ -7,18 +7,18 @@
   <!-- timerange selector ( This Week - Next Week ) -->
   <div class="row text-center mt-3">
     <div class="col-3"><p><%= Date.today.strftime('%^b') %></p></div>
-    <% (Date.today..(Date.today + 6)).each do |date| %>
-      <div class="col-1">
-        <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
+    <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
+      <% (Date.today..(Date.today + 6)).each do |date| %>
+        <div class="col-1">
           <li class="nav-item">
             <a class="schedule week-toggle mr-1 ml-1 active" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
           </li>
-        </ul>
-      </div>
-    <% end %>
+        </div>
+      <% end %>
+    </ul>
   </div>
-  <% (Date.today..(Date.today + 6)).each do |date| %>
-    <div class="tab-content clearfix">
+  <div class="tab-content clearfix">
+    <% (Date.today..(Date.today + 6)).each do |date| %>
       <div class="tab-pane active mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
         <% if @events.empty?  %>
           <div class="row text-center mt-4 mb-4">
@@ -40,8 +40,8 @@
           <% end %>
         <% end %>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <div class="row text-center mt-5 mb-3">
