@@ -13,7 +13,7 @@
             <% if i < 1 %>
               <a class="schedule week-toggle mr-1 ml-1 active" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
             <% else %>
-              <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
+              <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="false"><%= date.strftime('%a /%d') %></a>
             <% end %>
           </li>
         </div>
