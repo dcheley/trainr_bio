@@ -6,7 +6,7 @@
 <div class="container">
   <!-- timerange selector ( This Week - Next Week ) -->
   <div class="row text-center mt-3">
-    <div class="col"><% @events.date.strftime('%^b') %></div>
+    <div class="col"><% Date.today.strftime('%^b') %></div>
     <% (Date.today..(Date.today + 6)).each do |date| %>
       <div class="col">
         <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
