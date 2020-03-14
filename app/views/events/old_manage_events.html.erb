@@ -2,37 +2,61 @@
 
 <!-- select active date -->
 <!-- for each event on active date -->
-<% if !@events.empty? %>
-  <% @events.each do |event| %>
-    <div class="row">
-      <div class="col-2">
-        <div class="row">
-          <div class="col-4"></div>
-          <div class="col-4">
-            <%= image_tag('recurring.png', height: 32, width: 32, class:'') %>
-          </div>
-          <div class="col-4"></div>
-        </div>
-      </div>
-      <div class="col-2">
-        <p>
-          <%= event.start_time %>
-          <br/> <%= event.duration %>
-        </p>
-      </div>
-      <div class="col-1"></div>
-      <div class="col-3">
-        <p><%= event.title %></p>
-      </div>
-      <div class="col-1"></div>
-      <div class="col-2">
-        <p><%= event.location %></p>
-      </div>
-      <div class="col-1"></div>
-    </div>
-  <% end %>
-<% end %>
 
-<% if current_user == @user %>
-  <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
-<% end %>
+<div class="container">
+  <div class="row text-center mt-3">
+    <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
+    <ul class="nav nav-tabs">
+      <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
+        <div class="col-1">
+          <li>
+            <% if i < 1 %>
+              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
+            <% else %>
+              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
+            <% end %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
+      <% if i < 1 %>
+        <div id="<%= date %>" class="tab-pane fade in active">
+      <% else %>
+        <div id="<%= date %>" class="tab-pane fade">
+      <% end %>
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes scheduled this week </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == date %>
+              <div class="row text-center mt-3">
+                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="row text-center mt-5 mb-3">
+  <div class="col"></div>
+  <div class="col-5">
+    <% if current_user && current_user == @user %>
+      <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
+    <% end %>
+  </div>
+  <div class="col"></div>
+</div>

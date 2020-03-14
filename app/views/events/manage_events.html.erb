@@ -2,52 +2,34 @@
 
 <!-- select active date -->
 <!-- for each event on active date -->
-
 <div class="container">
-  <div class="row text-center mt-3">
-    <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
-    <ul class="nav nav-tabs">
-      <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
-        <div class="col-1">
-          <li>
-            <% if i < 1 %>
-              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
-            <% else %>
-              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
-            <% end %>
-          </li>
-        </div>
-      <% end %>
-    </ul>
-  </div>
+  <h2>Dynamic Tabs</h2>
+  <p>To make the tabs toggleable, add the data-toggle="tab" attribute to each link. Then add a .tab-pane class with a unique ID for every tab and wrap them inside a div element with class .tab-content.</p>
+
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+    <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+  </ul>
+
   <div class="tab-content">
-    <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
-      <% if i < 1 %>
-        <div id="<%= date %>" class="tab-pane fade in active">
-      <% else %>
-        <div id="<%= date %>" class="tab-pane fade">
-      <% end %>
-        <% if @events.empty?  %>
-          <div class="row text-center mt-4 mb-4">
-            <div class="col"></div>
-            <div class="col"><span class="schedule date"> No classes scheduled this week </span></div>
-            <div class="col"></div>
-          </div>
-        <% else %>
-          <% @events.each do |event| %>
-            <% if event.date == date %>
-              <div class="row text-center mt-3">
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    <% end %>
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <h3>Menu 1</h3>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
   </div>
 </div>
 
