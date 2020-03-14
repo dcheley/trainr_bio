@@ -10,7 +10,7 @@
       <% (Date.today..(Date.today + 6)).each do |date| %>
         <div class="col-1">
           <li class="nav-item">
-            <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
+            <a class="schedule week-toggle mr-1 ml-1 active" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
           </li>
         </div>
       <% end %>
@@ -18,7 +18,7 @@
   </div>
   <div class="tab-content clearfix">
     <% (Date.today..(Date.today + 6)).each do |date| %>
-      <div class="tab-pane mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
+      <div class="tab-pane mb-4 active" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
         <% if @events.empty?  %>
           <div class="row text-center mt-4 mb-4">
             <div class="col"></div>
