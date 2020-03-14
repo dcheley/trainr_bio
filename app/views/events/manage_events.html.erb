@@ -6,26 +6,28 @@
 <div class="container">
   <div class="row text-center mt-3">
     <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
-    <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
+    <ul class="nav nav-tabs" role="tablist">
       <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
         <div class="col-1">
-          <li class="nav-item">
-            <% if i < 1 %>
-              <a class="schedule week-toggle mr-1 ml-1 active" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
-            <% else %>
-              <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="pill" role="tab" aria-controls="<%= date %>" aria-selected="false"><%= date.strftime('%a /%d') %></a>
-            <% end %>
-          </li>
+          <% if i < 1 %>
+            <li class="nav-item active">
+              <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="tab" role="tab" aria-controls="<%= date %>" aria-selected="true"><%= date.strftime('%a /%d') %></a>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <a class="schedule week-toggle mr-1 ml-1" id="<%= date %>-tab" href="#<%= date %>" data-toggle="tab" role="tab" aria-controls="<%= date %>" aria-selected="false"><%= date.strftime('%a /%d') %></a>
+            </li>
+          <% end %>
         </div>
       <% end %>
     </ul>
   </div>
-  <div class="tab-content clearfix">
+  <div class="tab-content">
     <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
       <% if i < 1 %>
-        <div class="tab-pane active mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
+        <div class="tab-pane fade in active mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
       <% else %>
-        <div class="tab-pane mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
+        <div class="tab-pane fade mb-4" id="<%= date %>" role="tabpanel" aria-labelledby="<%= date %>-tab">
       <% end %>
         <% if @events.empty?  %>
           <div class="row text-center mt-4 mb-4">
