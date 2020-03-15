@@ -3,17 +3,19 @@
 <!-- select active date -->
 <!-- for each event on active date -->
 <div class="container">
-  <ul class="nav nav-tabs">
-    <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
-    <!-- damn ruby not letting me put the href and id as variables...  -->
-    <div class="col-1"><li class="active"><a data-toggle="tab" href="#tab"><%= Date.today.strftime('%a /%d') %></a></li>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab1"><%= (Date.today+1).strftime('%a /%d') %></a></li></div>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab2"><%= (Date.today+2).strftime('%a /%d') %></a></li></div>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab3"><%= (Date.today+3).strftime('%a /%d') %></a></li></div>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab4"><%= (Date.today+4).strftime('%a /%d') %></a></li></div>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab5"><%= (Date.today+5).strftime('%a /%d') %></a></li></div>
-    <div class="col-1"><li><a data-toggle="tab" href="#tab6"><%= (Date.today+6).strftime('%a /%d') %></a></li></div>
-  </ul>
+  <div class="row text-center">
+    <ul class="nav nav-tabs">
+      <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
+      <!-- damn ruby not letting me put the href and id as variables...  -->
+      <div class="col-1"><li class="active"><a data-toggle="tab" href="#tab"><%= Date.today.strftime('%a /%d') %></a></li>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab1"><%= (Date.today+1).strftime('%a /%d') %></a></li></div>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab2"><%= (Date.today+2).strftime('%a /%d') %></a></li></div>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab3"><%= (Date.today+3).strftime('%a /%d') %></a></li></div>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab4"><%= (Date.today+4).strftime('%a /%d') %></a></li></div>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab5"><%= (Date.today+5).strftime('%a /%d') %></a></li></div>
+      <div class="col-1"><li><a data-toggle="tab" href="#tab6"><%= (Date.today+6).strftime('%a /%d') %></a></li></div>
+    </ul>
+  </div>
 
   <div class="tab-content">
     <div id="tab" class="tab-pane fade in active">
