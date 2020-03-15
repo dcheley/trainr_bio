@@ -11,9 +11,9 @@
         <div class="col-1">
           <li>
             <% if i < 1 %>
-              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
+              <a data-toggle="tab" href="#<%=i%>"><%= date.strftime('%a /%d') %></a>
             <% else %>
-              <a data-toggle="tab" href="#<%= date %>"><%= date.strftime('%a /%d') %></a>
+              <a data-toggle="tab" href="#<%=i%>"><%= date.strftime('%a /%d') %></a>
             <% end %>
           </li>
         </div>
@@ -23,9 +23,9 @@
   <div class="tab-content">
     <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
       <% if i < 1 %>
-        <div id="<%= date %>" class="tab-pane fade in active">
+        <div id="<%=i%>" class="tab-pane fade in active">
       <% else %>
-        <div id="<%= date %>" class="tab-pane fade">
+        <div id="<%=i%>" class="tab-pane fade">
       <% end %>
         <% if @events.empty?  %>
           <div class="row text-center mt-4 mb-4">
