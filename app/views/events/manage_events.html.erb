@@ -4,7 +4,7 @@
 <!-- for each event on active date -->
 <div class="container">
   <div class="row text-center">
-    <ul>
+    <ul class="nav nav-pills justify-content-center"
       <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
       <!-- damn ruby not letting me put the href and id as variables...  -->
       <div class="col-1"><li class="active"><a data-toggle="tab" href="#tab"><%= Date.today.strftime('%a /%d') %></a></li>
@@ -17,7 +17,7 @@
     </ul>
   </div>
 
-  <div class="tab-content">
+  <div class="tab-content clearfix">
     <div id="tab" class="tab-pane fade in active">
       <% @events.each do |event| %>
         <% if event.date == Date.today %>
