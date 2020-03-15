@@ -46,7 +46,8 @@
         <% @events.each do |event| %>
           <% if event.date == Date.today %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <!-- may need to type ""== true" after recurring -->
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -69,7 +70,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+1) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -92,7 +93,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+2) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -115,7 +116,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+3) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -138,7 +139,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+4) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -161,7 +162,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+5) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -184,7 +185,7 @@
         <% @events.each do |event| %>
           <% if event.date == (Date.today+6) %>
             <div class="row text-center mt-3">
-              <% if event.recurring %>
+              <% if event.recurring == true %>
                 <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <% end %>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
