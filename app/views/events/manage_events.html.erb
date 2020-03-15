@@ -2,7 +2,7 @@
 
 
 <div class="container">
-  <!-- timerange selector ( This Week - Next Week ) -->
+  
   <div class="row text-center mt-3">
     <div class="col-1"></div>
     <div class="col-3"><p><%= Date.today.strftime('%^b') %></p></div>
@@ -33,7 +33,7 @@
     </div>
     <div class="col-1"></div>
   </div>
-  
+
   <div class="tab-content clearfix">
     <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
       <% if @events.empty?  %>
