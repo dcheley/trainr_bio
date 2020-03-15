@@ -23,55 +23,41 @@
       <% if @events.empty?  %>
         <div class="row text-center mt-4 mb-4">
           <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes this week </span></div>
+          <div class="col"><span class="schedule date"> No classes today </span></div>
           <div class="col"></div>
         </div>
       <% else %>
-        <% $previous_date = 0 %>
         <% @events.each do |event| %>
-            <% if event.date != @previous_date %>
-              <div class="row mt-4">
-                <div class="col">
-                  <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
-                </div>
-              </div>
-              <% @previous_date = event.date %>
-            <% end %>
-            <div class="row text-center">
-              <div class="col-1"></div>
-              <div class="col"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"></div>
+          <% if event.date == Date.today %>
+            <div class="row text-center mt-3">
+              <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
             </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
     <div class="tab-pane mb-4" id="day1" role="tabpanel" aria-labelledby="day1-tab">
-      <% if @events.empty?   %>
-      <div class="row text-center mt-4 mb-4">
-        <div class="col"></div>
-        <div class="col"><span class="schedule date"> No classes this week </span></div>
-        <div class="col"></div>
-      </div>
+      <% if @events.empty?  %>
+        <div class="row text-center mt-4 mb-4">
+          <div class="col"></div>
+          <div class="col"><span class="schedule date"> No classes today </span></div>
+          <div class="col"></div>
+        </div>
       <% else %>
-        <% $previous_date = 0 %>
         <% @events.each do |event| %>
-          <% if event.date != @previous_date %>
-            <div class="row mt-4">
-              <div class="col">
-                <h4 class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></h4>
-              </div>
+          <% if event.date == (Date.today+1) %>
+            <div class="row text-center mt-3">
+              <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
             </div>
-            <% @previous_date = event.date %>
           <% end %>
-          <div class="row text-center">
-            <div class="col-1"></div>
-            <div class="col"><h4 class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></h4></div>
-            <div class="col"><h4 class="schedule session-name"><%= event.title %></h4></div>
-            <div class="col"><h4 class="schedule studio-name"><%= event.location %></h4></div>
-            <div class="col-1"></div>
-          </div>
         <% end %>
       <% end %>
     </div>
