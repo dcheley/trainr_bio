@@ -4,34 +4,109 @@
 <!-- for each event on active date -->
 <div class="container">
   <ul class="nav nav-tabs">
-
-    <li class="active"><a data-toggle="tab" href="#0"><%= Date.today.strftime('%a /%d') %></a></li>
-    <li><a data-toggle="tab" href="#menu1">Menu 3</a></li>
-    <li><a data-toggle="tab" href="#menu2"><%= (Date.today+1).strftime('%a /%d') %></a></li>
-    <% ((Date.today + 1)..(Date.today + 6)).each_with_index do |date, i| %>
-      <li><a data-toggle="tab" href="#<%=i%>"><%= date.strftime('%a /%d') %></a></li>
-    <% end %>
+    <div class="col-2"><p><%= Date.today.strftime('%^b') %></p></div>
+    <!-- damn ruby not letting me put the href and id as variables...  -->
+    <div class="col-1"><li class="active"><a data-toggle="tab" href="#tab"><%= Date.today.strftime('%a /%d') %></a></li>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab1"><%= (Date.today+1).strftime('%a /%d') %></a></li></div>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab2"><%= (Date.today+2).strftime('%a /%d') %></a></li></div>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab3"><%= (Date.today+3).strftime('%a /%d') %></a></li></div>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab4"><%= (Date.today+4).strftime('%a /%d') %></a></li></div>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab5"><%= (Date.today+5).strftime('%a /%d') %></a></li></div>
+    <div class="col-1"><li><a data-toggle="tab" href="#tab6"><%= (Date.today+6).strftime('%a /%d') %></a></li></div>
   </ul>
 
   <div class="tab-content">
-    <div id="0" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div id="tab" class="tab-pane fade in active">
+      <% @events.each do |event| %>
+        <% if event.date == Date.today %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="tab1" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 1) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    <div id="tab2" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 2) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-    <% ((Date.today + 1)..(Date.today + 6)).each_with_index do |date, i| %>
-      <div id="<%=i%>" class="tab-pane fade">
-        <h3>Menu 3</h3>
-        <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-      </div>
-    <% end %>
+    <div id="tab3" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 3) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="tab4" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 4) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="tab5" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 5) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="tab6" class="tab-pane fade">
+      <% @events.each do |event| %>
+        <% if event.date == (Date.today + 6) %>
+          <div class="row text-center mt-3">
+            <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
+            <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
