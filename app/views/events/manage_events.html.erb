@@ -2,7 +2,7 @@
 
 
 <div class="container">
-  
+
   <div class="row text-center mt-3">
     <div class="col-1"></div>
     <div class="col-3"><p><%= Date.today.strftime('%^b') %></p></div>
@@ -86,7 +86,7 @@
         </div>
       <% else %>
         <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
+          <% if event.date == (Date.today+2) %>
             <div class="row text-center mt-3">
               <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -107,7 +107,7 @@
         </div>
       <% else %>
         <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
+          <% if event.date == (Date.today+3) %>
             <div class="row text-center mt-3">
               <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -128,7 +128,7 @@
         </div>
       <% else %>
         <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
+          <% if event.date == (Date.today+4) %>
             <div class="row text-center mt-3">
               <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -149,7 +149,7 @@
         </div>
       <% else %>
         <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
+          <% if event.date == (Date.today+5) %>
             <div class="row text-center mt-3">
               <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
@@ -170,7 +170,7 @@
         </div>
       <% else %>
         <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
+          <% if event.date == (Date.today+6) %>
             <div class="row text-center mt-3">
               <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
               <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
