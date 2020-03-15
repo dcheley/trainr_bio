@@ -5,14 +5,14 @@
 <div class="container">
   <ul class="nav nav-tabs">
 
-    <li class="active"><a data-toggle="tab" href="#<%= Date.today %>"><%= Date.today.strftime('%a /%d') %></a></li>
+    <li class="active"><a data-toggle="tab" href="#<%= Date.today.strftime('%d') %>"><%= Date.today.strftime('%a /%d') %></a></li>
     <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
     <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
     <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
   </ul>
 
   <div class="tab-content">
-    <div id="<%= Date.today %>" class="tab-pane fade in active">
+    <div id="<%= Date.todayDate.today.strftime('%d') %>" class="tab-pane fade in active">
       <h3>HOME</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
