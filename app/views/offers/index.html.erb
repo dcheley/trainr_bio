@@ -37,7 +37,8 @@
                 <% end %>
                 <%= offer.title %>
                 <% if current_user && current_user == @user %>
-                  <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), offer.url %>
+                  <!-- change below to "link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer.url)"  -->
+                  <%= image_tag('edit.png', height: 11, width: 11, class:'') %>
                 <% end %>
               </figcaption>
             </figure>
