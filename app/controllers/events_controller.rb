@@ -14,9 +14,9 @@ class EventsController < ApplicationController
   def manage_events
     @user = current_user
     # @events = current_user.events
-    start_of_period = Date.today
-    end_of_period = Date.today + 6.days
-    @events =  @user.trainer_events.where(date: start_of_period..end_of_period)
+    start_of_week = Date.today.start_of_week
+    end_of_week = Date.today.end_of_week
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
   end
 
   def new
