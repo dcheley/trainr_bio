@@ -4,6 +4,7 @@
 
 //Top Navbar Text (once per page for page title)
 h1 {
+  font-size: 1em;
   font-weight: bold;
   .nav-user { //trainr profile page (user URL)
     font-size: $font-size-3;
@@ -16,6 +17,7 @@ h1 {
 
 //Page Division Header
 h2 {
+  font-size: 0.8em;
   .nav-secondary {
     font-size: $font-size-0;
     font-style: italic;
