@@ -3,6 +3,7 @@
 <% else %>
   <%= render 'layouts/navbar_manage_events' %>
 
+
   <div class="container">
 
     <div class="row text-center mt-3">
@@ -38,17 +39,17 @@
 
     <div class="tab-content clearfix">
       <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
+        <!-- should change the "@events" to @events.thisday, and say "No classes this DAY"  -->
         <% if @events.empty?  %>
           <div class="row text-center mt-4 mb-4">
             <div class="col"></div>
-            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"><span class="schedule date"> No classes this week </span></div>
             <div class="col"></div>
           </div>
         <% else %>
           <% @events.each do |event| %>
             <% if event.date == Date.today %>
               <div class="row text-center mt-3">
-                <!-- may need to change the ""== true" after recurring to another value -->
                 <div class="col-1">
                   <% if event.recurring == 1 %>
                     <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>

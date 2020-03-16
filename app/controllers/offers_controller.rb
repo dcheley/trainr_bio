@@ -6,6 +6,11 @@ class OffersController < ApplicationController
     @offers = @user.offers
   end
 
+  def manage_offers
+    @user = current_user
+    @offers = @user.offers
+  end
+
   def new
     @offer = Offer.new
   end
