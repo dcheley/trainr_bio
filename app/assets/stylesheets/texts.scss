@@ -16,10 +16,6 @@ h1 {
   }
 }
 
-p {
-  font-size: 1em;
-}
-
 //Page Division Header
 h2 {
   font-size: 1em;
@@ -28,6 +24,12 @@ h2 {
     font-style: italic;
   }
 }
+
+p {
+  font-size: 1em;
+}
+
+
 
 .toggle-link {
   font-size: $font-size-0;

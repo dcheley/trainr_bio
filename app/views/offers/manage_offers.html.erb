@@ -18,9 +18,9 @@
 
     <% if @offers.empty? %>
       <div class="row text-center mt-4 mb-4">
-        <div class="col"></div>
-        <div class="col"><span class="schedule date"> No offers to show. </span></div>
-        <div class="col"></div>
+        <div class="col-2"></div>
+        <div class="col-8"><span class="schedule date"> No offers to show. </span></div>
+        <div class="col-2"></div>
       </div>
     <% else %>
       <% @offers.each do |offer| %>
