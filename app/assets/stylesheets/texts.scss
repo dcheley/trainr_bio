@@ -1,3 +1,7 @@
+:root {
+    font-size: 16px;
+}
+
 //Top Navbar Text (once per page for page title)
 h1 {
   font-size: $font-size-6;
@@ -9,11 +13,12 @@ h1 {
 }
 
 p {
-  font-size: 88%;
+  font-size: 1em;
 }
 
 //Page Division Header
 h2 {
+  font-size: 1em;
   .nav-secondary {
     font-size: $font-size-8;
     font-style: italic;
