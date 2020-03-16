@@ -4,9 +4,13 @@
 
 //Top Navbar Text (once per page for page title)
 h1 {
-  font-size: $font-size-6;
+  font-size: 1em;
   font-style: italic;
   font-weight: bold;
+  .nav-user { //trainr profile page (user URL)
+    font-size: $font-size-5;
+    font-style: italic;
+  }
   .edit {
     font-family: $abz;
   }
@@ -20,7 +24,7 @@ p {
 h2 {
   font-size: 1em;
   .nav-secondary {
-    font-size: $font-size-8;
+    font-size: $font-size-3;
     font-style: italic;
   }
 }
@@ -33,10 +37,6 @@ h2 {
   font-family: $abz;
   .main { //main page
     font-size: $font-size-10;
-    font-style: italic;
-  }
-  .user { //trainr profile page (user URL)
-    font-size: $font-size-5;
     font-style: italic;
   }
   .footer { //trainr.bio 2020
