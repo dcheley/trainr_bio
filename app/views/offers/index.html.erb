@@ -31,7 +31,7 @@
               <%= image_tag('cover.jpg', height: 31.5, width: 85, class:'') %>
               <figcaption>
                 <% if current_user && current_user == @user %>
-                  <% if event.recurring == 1 %>
+                  <% if offer.status == 1 %>
                     <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
                   <% end %>
                 <% end %>
