@@ -5,7 +5,8 @@ class OffersController < ApplicationController
     @user = User.find(params[:user_id])
     @offers = @user.offers
   end
-    @offer = Offer.find(params[:user_id])
+  @user = User.find(params[:user_id])
+  @offers = @user.offers
   def show
 
   end
