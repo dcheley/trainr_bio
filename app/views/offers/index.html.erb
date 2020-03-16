@@ -9,7 +9,8 @@
       <div class="row text-center">
         <div class="col-12">
           <figure>
-            <%= link_to image_tag(offer.cover_img_url, class: "offer-pic"), offer.url %>
+            <!-- change below to "link_to image_tag(offer.coverimg_url, class: "offer-pic"), offer.url"  -->
+            <%= image_tag('cover.jpg', height: 31.5, width: 85, class:'') %>
             <figcaption><%= offer.title %></figcaption>
           </figure>
         </div>
