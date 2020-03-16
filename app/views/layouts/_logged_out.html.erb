@@ -1,0 +1,43 @@
+<%= render 'layouts/navbar_home_logged_out' %>
+
+<div class="container text-center">
+  <p class="mb-5"><%= flash[:notice] %></p>
+  <p class="mb-5"><%= flash[:alert] %></p>
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <!-- Phone image with scroll displaying app -->
+      <p>Own your profile. In minutes. For Free.</p>
+      <%= image_tag("example.png", width: 175, height: 350)%>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+      <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true, class: "form-control mr-sm-2 ml-auto", style: "width: 200px;" %>
+        <%= submit_tag "Go", class:"btn btn-outline-success my-2 my-sm-0 mr-auto" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <%= link_to "Sign Up", new_user_registration_url, class:'btn btn-primary btn-block round-btn' %>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <%= link_to "Log In", new_user_session_url, class:'btn btn-outline-primary btn-block round-btn' %>
+    </div>
+    <div class="col-4"></div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-12">
+      <p>trainr.bio 2020</p>
+    </div>
+  </div>
+  <!-- Use a better way to stop footer overlapping content later -->
+  <div style="height: 150px;"></div>
+</div>
