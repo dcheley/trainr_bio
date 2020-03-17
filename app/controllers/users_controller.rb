@@ -77,7 +77,9 @@ class UsersController < ApplicationController
 
   def bio
     @user = current_user
-    @offers = @user.offers
+    @practices = @user.practice_categories
+    @specialties = @user.specialty_categories
+    @milestones = @user.milestones
   end
 
   private
