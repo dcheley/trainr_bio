@@ -8,7 +8,8 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-          <%= image_tag(@user.cover_img_url, class: "cover-pic") %>
+        <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic")"  -->
+        <%= image_tag('cover.jpg', height: 63, width: 170, class:'') %>
       </div>
     </div>
   </div>
@@ -43,33 +44,32 @@
         <br/>
         <h4> Upcoming </h4>
         <!-- full schedule -->
-        <% @events.each_with_index do |event, i| %>
-          <% if event[i].date != event[i-1].date %>
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-10">
-                <h5> <% event[i].date %> </h5>
-              </div>
-              <div class="col-1"></div>
+          <% if @events.empty?  %>
+            <div class="row text-center mt-4 mb-4">
+              <div class="col"></div>
+              <div class="col"><span class="schedule date"> No classes this week </span></div>
+              <div class="col"></div>
             </div>
+          <% else %>
+            <% $previous_date = 0 %>
+            <% @events.each do |event| %>
+                <% if event.date != @previous_date %>
+                  <div class="row mt-4">
+                    <div class="col">
+                      <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
+                    </div>
+                  </div>
+                  <% @previous_date = event.date %>
+                <% end %>
+                <div class="row text-center">
+                  <div class="col-1"></div>
+                  <div class="col"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                  <div class="col"><span class="schedule session-name"><%= event.title %></span></div>
+                  <div class="col"><span class="schedule studio-name"><%= event.location %></span></div>
+                  <div class="col-1"></div>
+                </div>
+            <% end %>
           <% end %>
-          <div class="row text-center">
-            <div class="col-1"></div>
-            <div class="col-10">
-              <div class="row">
-                <h6>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].start_time %></div>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].title %></div>
-                  <div class="col-1"></div>
-                  <div class="col-3"><% event[i].location %></div>
-                </h6>
-              </div>
-            </div>
-            <div class="col-1"></div>
-          </div>
-        <% end %>
       </div>
       <div class="col-1"></div>
     </div>
