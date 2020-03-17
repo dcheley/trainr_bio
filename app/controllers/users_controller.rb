@@ -77,8 +77,9 @@ class UsersController < ApplicationController
 
   def bio
     @user = current_user
-    @practices = @user.practice_categories
-    @specialties = @user.specialty_categories
+    # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
+    @practices = @user.users_practice_categories
+    @specialties = @user.users_specialty_categories
     @milestones = @user.milestones
   end
 
