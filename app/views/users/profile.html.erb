@@ -1,4 +1,8 @@
-<%= render 'layouts/navbar' %>
+<% if !current_user %>
+  <%= render 'layouts/logged_out' %>
+<% else %>
+  <%= render 'layouts/navbar_profile' %>
+  <%= render 'layouts/navbar_secondary' %>
 <!-- secondary navbar, Profile active -->
 
 <div class="container text-center"><%= flash[:notice] %></div>
