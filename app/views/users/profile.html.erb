@@ -22,12 +22,14 @@
       </div>
       <div class="col-1"></div>
       <div class="col-3">
-        <h2><% @user.first_name %>
-        <br/><% @user.last_name %></h2>
-        <br/><h3><% @user.headline %></h3>
-        <br/><p>🏠<% @user.location %></p>
-        <%= link_to "☆", new_user_registration_url,  class: "btn btn-sm btn-dark" %>
-        <%= link_to "🔗", new_user_registration_url,  class: "btn btn-sm btn-dark" %>
+        <div class="row"><% @user.first_name %></div>
+        <div class="row"><% @user.last_name %></div>
+        <div class="row"><% @user.headline %></div>
+        <div class="row">🏠<% @user.location %></div>
+        <div class="row">
+          <div class="col-6"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
+          <div class="col-6"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm  btn-block" %></div>
+        </div>
       </div>
       <div class="col-1"></div>
     </div>
