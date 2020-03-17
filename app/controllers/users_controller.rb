@@ -76,7 +76,7 @@ class UsersController < ApplicationController
   end
 
   def bio
-    @user = User.find(params[:user_id])
+    @user = current_user
     @offers = @user.offers
   end
 
