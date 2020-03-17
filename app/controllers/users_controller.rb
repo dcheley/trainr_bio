@@ -75,6 +75,10 @@ class UsersController < ApplicationController
     @events = @user.trainer_events.limit(6).order("date ASC")
   end
 
+  def bio
+    @user = current_user
+  end
+
   private
 
   def load_user
