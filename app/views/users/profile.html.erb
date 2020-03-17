@@ -25,10 +25,10 @@
           </div>
           <div class="col-1"></div>
           <div class="col-3">
-            <div class="row"><% @user.first_name %></div>
-            <div class="row"><% @user.last_name %></div>
-            <div class="row"><% @user.headline %></div>
-            <div class="row">🏠<% @user.location %></div>
+            <div class="row">firstname:<% @user.first_name %></div>
+            <div class="row">lastname:<% @user.last_name %></div>
+            <div class="row">headline: <% @user.headline %></div>
+            <div class="row">🏠locaion: <% @user.location %></div>
             <div class="row">
               <div class="col-6"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
               <div class="col-6"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm  btn-block" %></div>
@@ -41,7 +41,7 @@
 
         <div class="row">
           <div class="col-1"></div>
-          <div class="col-10"><p><% @user.description %></p></div>
+          <div class="col-10"><p>description: <% @user.description %></p></div>
           <div class="col-1"></div>
         </div>
 
