@@ -4,8 +4,8 @@
   <%= render 'layouts/navbar_profile' %>
   <%= render 'layouts/navbar_secondary' %>
 
-  <div class="tab-content clearfix">
-    <div class="tab-pane mb-4" id="bio" role="tabpanel" aria-labelledby="bio-tab">
+  <!-- <div class="tab-content clearfix">
+    <div class="tab-pane mb-4" id="bio" role="tabpanel" aria-labelledby="bio-tab"> -->
       <div class="container">
         <div class="row text-center mt-5 mb-3">
           <div class="col-2"></div>
@@ -47,8 +47,8 @@
           <% end %>
         <% end %>
       </div>
-    </div>
-  </div>
+    <!-- </div>
+  </div> -->
 
   <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
