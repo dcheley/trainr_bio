@@ -16,35 +16,36 @@
   <div class="container text-center">
     <div class="row">
       <div class="col-1"></div>
+      <div class="col-6">
+        <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
+        <%= image_tag('cover.jpg', height: 31.5, width: 85, class:'') %>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-3">
+        <h2><% @user.first_name %>
+        <br/><% @user.last_name %></h2>
+        <br/><h3><% @user.headline %></h3>
+        <br/><p>🏠<% @user.location %></p>
+        <%= link_to "☆", new_user_registration_url,  class: "btn btn-sm btn-dark" %>
+        <%= link_to "🔗", new_user_registration_url,  class: "btn btn-sm btn-dark" %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10"><p><% @user.description %></p></div>
+      <div class="col-1"></div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-1"></div>
       <div class="col-10">
-        <div class="row">
-          <div class="col-6">
-            <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
-            <%= image_tag('cover.jpg', height: 31.5, width: 85, class:'') %>
-          </div>
-          <div class="col-2"></div>
-          <div class="col-4">
-            <div class="row">
-              <div class="col-1"></div>
-              <div class="col-10">
-                <h2><% @user.first_name %>
-                <br/><% @user.last_name %></h2>
-                <br/><h3><% @user.headline %></h3>
-                <br/><p><% @user.location %></p>
-                <%= link_to "Star", new_user_registration_url,  class: "btn btn-dark mt-5 mb-5" %>
-                <%= link_to "Links", new_user_registration_url,  class: "btn btn-dark mt-5 mb-5" %>
-              </div>
-              <div class="col-1"></div>
-            </div>
-          </div>
-          <div class="col-1"></div>
-        </div>
-        <hr>
-        <p><% @user.description %></p>
-        <hr>
-        <br/>
         <h4> Upcoming </h4>
-        <!-- full schedule -->
           <% if @events.empty?  %>
             <div class="row text-center mt-4 mb-4">
               <div class="col"></div>
@@ -74,6 +75,9 @@
       </div>
       <div class="col-1"></div>
     </div>
+
+    <hr>
+
     <div class="row">
       <div class="col-1"></div>
       <div class="col-10">
