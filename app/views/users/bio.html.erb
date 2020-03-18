@@ -65,14 +65,8 @@
           <div class="row text-center">
             <div class="col-1"></div>
             <div class="col-10">
-              <% @milestones.each do |milestone| %>
-                <div class="row text-center">
-                  <div class="col-2"></div>
-                  <div class="col-2"><p><%= milestone.year %></p></div>
-                  <div class="col-1"></div>
-                  <div class="col-6"><p><%= milestone.milestone %></p></div>
-                  <div class="col-1"></div>
-                </div>
+              <% @specialties.each do |specialty| %>
+                <p><%= specialty.name %> </p>
               <% end %>
             </div>
             <div class="col-1"></div>
@@ -87,7 +81,17 @@
           </div>
           <div class="row text-center">
             <div class="col-1"></div>
-            <div class="col-10"><%= @user.bio %></div>
+            <div class="col-10">
+              <% @milestones.each do |milestone| %>
+                <div class="row text-center">
+                  <div class="col-2"></div>
+                  <div class="col-2"><p><%= milestone.year %></p></div>
+                  <div class="col-1"></div>
+                  <div class="col-6"><p><%= milestone.milestone %></p></div>
+                  <div class="col-1"></div>
+                </div>
+              <% end %>
+            </div>
             <div class="col-1"></div>
           </div>
         </div>
