@@ -13,7 +13,7 @@ class OffersController < ApplicationController
 
   def manage_offers
     @user = current_user
-    @offers = @user.offers
+    @offer = @user.offers
   end
 
   def new
