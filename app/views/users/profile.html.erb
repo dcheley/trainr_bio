@@ -8,7 +8,7 @@
   <div class="container text-center"><%= flash[:notice] %></div>
   <!-- <div class="tab-content clearfix">
     <div class="tab-pane active mb-4" id="profile" role="tabpanel" aria-labelledby="profile-tab"> -->
-      <div class="container">
+      <div class="container text-center">
         <div class="row">
           <div class="col-12">
             <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic")"  -->
@@ -21,7 +21,7 @@
           <div class="col-1"></div>
           <div class="col-6">
             <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
-            <%= image_tag('cover.jpg', height: 31.5, width: 85, class:'') %>
+            <%= image_tag('cover.jpg', height: 88, width: 88, class:'') %>
           </div>
           <div class="col-1"></div>
           <div class="col-3">
@@ -89,10 +89,10 @@
             <div class="row">
               <div class="col-2"></div>
               <div class="col-7">
-                <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary mt-5 mb-5" %>
+                <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block mt-5 mb-5" %>
               </div>
               <div class="col-2">
-                <%= image_tag("pray.jfif", height: 11, width: 11, class:'') %>
+                <%= image_tag("pray.jfif", height: 33, width: 33, class:'') %>
               </div>
               <div class="col-1"></div>
             </div>
