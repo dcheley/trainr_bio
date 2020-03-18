@@ -13,7 +13,7 @@ class OffersController < ApplicationController
 
   def manage_offers
     @user = current_user
-    @offer = @user.offers
+    @offer = @user.offers #need id of specific offer
   end
 
   def new
