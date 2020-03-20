@@ -3,7 +3,20 @@ class EventsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @events = @user.trainer_events
+    start_of_week = Date.today
+    end_of_week = Date.today.end_of_week
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
+    start_of_next_week = end_of_week + 1.day
+    end_of_next_week = start_of_next_week + 6.days
+    @events_next_week = @user.trainer_events.where(date: start_of_next_week..end_of_next_week)
+  end
+
+  def manage_events
+    @user = current_user
+    # @events = current_user.events
+    start_of_week = Date.today.end_of_week - 6.days
+    end_of_week = Date.today.end_of_week
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
   end
 
   def new
@@ -34,11 +47,6 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     redirect_to user_url(@event.trainer_id), notice: "Event deleted."
-  end
-
-  def manage_events
-    @user = current_user
-    @events = current_user.events
   end
 
   private

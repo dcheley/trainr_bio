@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :index, :edit, :update, :destroy]
   resources :studios
-  resources :events, only: [:new, :create, :edit, :update, :destroy]
+  resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
 
@@ -31,8 +31,11 @@ Rails.application.routes.draw do
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'users#settings', as: :settings
   get 'profile' => 'users#profile', as: :profile
+  get 'bio' => 'users#bio', as: :bio
   get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
-  get 'manage_events' => 'studios#manage_events', as: :manage_events
+  get 'manage_events' => 'events#manage_events', as: :manage_events
+  get 'manage_offers' => 'offers#manage_offers', as: :manage_offers
+
 
   root to: 'users#home'
 end

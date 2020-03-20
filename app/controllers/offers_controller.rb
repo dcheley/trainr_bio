@@ -6,6 +6,16 @@ class OffersController < ApplicationController
     @offers = @user.offers
   end
 
+  def show
+    @user = current_user
+    @offers = @user.offers
+  end
+
+  def manage_offers
+    @user = current_user
+    @offer = @user.offers #need id of specific offer
+  end
+
   def new
     @offer = Offer.new
   end

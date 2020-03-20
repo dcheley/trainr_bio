@@ -75,6 +75,14 @@ class UsersController < ApplicationController
     @events = @user.trainer_events.limit(6).order("date ASC")
   end
 
+  def bio
+    @user = current_user
+    # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
+    @milestones = @user.milestones
+    @practices = @user.users_practice_categories
+    @specialties = @user.users_specialty_categories
+  end
+
   private
 
   def load_user

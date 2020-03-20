@@ -16,7 +16,7 @@
       <div class="col">
         <%= link_to new_event_url, class: "footer-link" do %>
           <%= image_tag("plus.svg", width: "20", height: "20") %>
-          <p class="mt-1 mb-1">New Class</p>
+          <p class="mt-1 mb-1">Session</p>
         <% end %>
       </div>
       <div class="col">
@@ -26,7 +26,7 @@
         <% end %>
       </div>
       <div class="col">
-        <%= link_to user_url(1), class: "footer-link" do %>
+        <%= link_to user_url(current_user), class: "footer-link" do %>
           <%= image_tag("finger-print.svg", width: "20", height: "20") %>
           <p class="mt-1 mb-1">Trainr.bio</p>
         <% end %>

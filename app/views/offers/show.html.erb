@@ -3,40 +3,161 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-12">
-      <%= image_tag(offer.img_url, class: "offering-pic") %>
+      <!-- change below to "image_tag(offer.cover_img_url, class: "offering-pic")"  -->
+      <%= image_tag('cover.jpg', height: 63, width: 170, class:'') %>
     </div>
   </div>
 </div>
+
 <hr>
+
 <div class="container">
+
   <div class="row text-center">
     <div class="col-1"></div>
     <div class="col-10">
-      <div class="row text-center">
-        <div class="col-12">
-          <h2> 1 on 1 Private Yoga Session </h2>
-          <br/><p> Description </p>
-        </div>
-      </div>
-      <!-- for each piece of offering.data -->
-        <% if offer.expectations %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-          <div class="row text-center">
-            <div class="col-12">
-              <h3> What to Expect </h3>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-10"></div>
-              <p> This offering's expectation value </P>
-            <div class="col-1"></div>
-          </div>
-        <% end %>
-      <!-- end -->
+      <h2> <%= @offer.title %> </h2>
+      <br/><p> <%= @offer.category %> </p>
+      <br/><p> <%= @offer.description %> </p>
     </div>
     <div class="col-1"></div>
   </div>
-  <%= link_to "Contact & Book", contact,  class: "btn btn-secondary mt-5 mb-5" %>
-</div>
 
+  <% if !@offer.date.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Date/Time </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.date %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.expectations.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> What to Expect </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.expectations %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.highlights.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Highlights </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.highlights %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.duration.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Duration </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.duration %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.location.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Location </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.location %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.cost.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Cost </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.cost %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <% if !@offer.other.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="row">
+          <div class="col-12">
+            <h2> Other Info </h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-12">
+            <p> <%= @offer.other %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+
+  <%= link_to "Contact & Book", booking_url,  class: "btn btn-secondary mt-5 mb-5" %>
+</div>
 
 <% if current_user && current_user.role == 1 %>
 	<%= render 'layouts/footer_trainer' %>

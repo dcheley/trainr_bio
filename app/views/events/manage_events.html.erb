@@ -1,205 +1,236 @@
-<%= render 'layouts/navbar_manage_events' %>
+<% if !current_user %>
+  <%= render 'layouts/logged_out' %>
+<% else %>
+  <%= render 'layouts/navbar_manage_events' %>
 
 
-<div class="container">
+  <div class="container">
 
-  <div class="row text-center mt-3">
-    <div class="col-1"></div>
-    <div class="col-3 my-auto"><p><%= Date.today.strftime('%^b') %><br/>Week 1</p></div>
-    <div class="col-7 my-auto">
-      <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1 active" id="day-tab" href="#day" data-toggle="pill" role="tab" aria-controls="day" aria-selected="true"><%= Date.today.strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day1-tab" href="#day1" data-toggle="pill" role="tab" aria-controls="day1" aria-selected="false"><%= (Date.today+1).strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day2-tab" href="#day2" data-toggle="pill" role="tab" aria-controls="day2" aria-selected="false"><%= (Date.today+2).strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day3-tab" href="#day3" data-toggle="pill" role="tab" aria-controls="day3" aria-selected="false"><%= (Date.today+3).strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day4-tab" href="#day4" data-toggle="pill" role="tab" aria-controls="day4" aria-selected="false"><%= (Date.today+4).strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day5-tab" href="#day5" data-toggle="pill" role="tab" aria-controls="day5" aria-selected="false"><%= (Date.today+5).strftime('%a /%d') %></a>
-        </li>
-        <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1" id="day6-tab" href="#day6" data-toggle="pill" role="tab" aria-controls="day6" aria-selected="false"><%= (Date.today+6).strftime('%a /%d') %></a>
-        </li>
-      </ul>
+    <div class="row text-center mt-3">
+      <div class="col-1"></div>
+      <div class="col-3 my-auto"><p><%= Date.today.strftime('%^b') %><br/>Week 1</p></div>
+      <div class="col-7 my-auto">
+        <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1 active" id="day-tab" href="#day" data-toggle="pill" role="tab" aria-controls="day" aria-selected="true"><%= Date.today.strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day1-tab" href="#day1" data-toggle="pill" role="tab" aria-controls="day1" aria-selected="false"><%= (Date.today+1).strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day2-tab" href="#day2" data-toggle="pill" role="tab" aria-controls="day2" aria-selected="false"><%= (Date.today+2).strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day3-tab" href="#day3" data-toggle="pill" role="tab" aria-controls="day3" aria-selected="false"><%= (Date.today+3).strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day4-tab" href="#day4" data-toggle="pill" role="tab" aria-controls="day4" aria-selected="false"><%= (Date.today+4).strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day5-tab" href="#day5" data-toggle="pill" role="tab" aria-controls="day5" aria-selected="false"><%= (Date.today+5).strftime('%a /%d') %></a>
+          </li>
+          <li class="nav-item">
+            <a class="schedule week-toggle mr-1 ml-1" id="day6-tab" href="#day6" data-toggle="pill" role="tab" aria-controls="day6" aria-selected="false"><%= (Date.today+6).strftime('%a /%d') %></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-1"></div>
     </div>
-    <div class="col-1"></div>
+
+    <div class="tab-content clearfix">
+      <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
+        <!-- should change the "@events" to @events.thisday, and say "No classes this DAY"  -->
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes this week </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == Date.today %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day1" role="tabpanel" aria-labelledby="day1-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+1) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day2" role="tabpanel" aria-labelledby="day2-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+2) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day3" role="tabpanel" aria-labelledby="day3-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+3) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day4" role="tabpanel" aria-labelledby="day4-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+4) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day5" role="tabpanel" aria-labelledby="day5-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+5) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="tab-pane mb-4" id="day6" role="tabpanel" aria-labelledby="day6-tab">
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col"></div>
+            <div class="col"><span class="schedule date"> No classes today </span></div>
+            <div class="col"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == (Date.today+6) %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
+                </div>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <!-- display timerange schedule -->
+
+    <div class="row text-center mt-5 mb-3">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <% if current_user && current_user == @user %>
+          <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
+        <% end %>
+      </div>
+      <div class="col-2"></div>
+    </div>
   </div>
 
-  <div class="tab-content clearfix">
-    <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == Date.today %>
-            <div class="row text-center mt-3">
-              <!-- may need to change the ""== true" after recurring to another value -->
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day1" role="tabpanel" aria-labelledby="day1-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+1) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day2" role="tabpanel" aria-labelledby="day2-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+2) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day3" role="tabpanel" aria-labelledby="day3-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+3) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day4" role="tabpanel" aria-labelledby="day4-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+4) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day5" role="tabpanel" aria-labelledby="day5-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+5) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="tab-pane mb-4" id="day6" role="tabpanel" aria-labelledby="day6-tab">
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes today </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% @events.each do |event| %>
-          <% if event.date == (Date.today+6) %>
-            <div class="row text-center mt-3">
-              <% if event.recurring == 1 %>
-                <div class="col-1"><%= image_tag('recurring.png', height: 11, width: 11, class:'') %></div>
-              <% end %>
-              <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-              <div class="col-1"><%= image_tag('edit.png', height: 11, width: 11, class:'') %></div>
-            </div>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <!-- display timerange schedule -->
-
-<% if current_user == @user %>
-  <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% elsif current_user.role == 1 %>
+    <%= render 'layouts/footer_trainer' %>
+  <% end %>
 <% end %>
