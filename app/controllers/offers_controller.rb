@@ -1,5 +1,5 @@
 class OffersController < ApplicationController
-  before_action :load_offer, only: [:edit, :update, :destroy]
+  before_action :load_offer, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = User.find(params[:user_id])
@@ -8,7 +8,6 @@ class OffersController < ApplicationController
 
   def show
     @user = current_user
-    @offers = @user.offers
   end
 
   def manage_offers

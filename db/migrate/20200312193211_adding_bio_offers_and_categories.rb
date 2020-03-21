@@ -10,24 +10,26 @@ class AddingBioOffersAndCategories < ActiveRecord::Migration[5.1]
 
     create_table :milestones  do |t|
       t.integer :trainer_id
-      t.string :milestone
+      t.string  :milestone
       t.integer :month
       t.integer :year
     end
 
-    create_table :users_practice_categories  do |t|
-      t.integer :trainer_id, index: true
+    create_table :user_practice_categories  do |t|
+      t.integer :user_id, index: true
       t.integer :practice_categories, index: true
     end
 
-    create_table :users_specialty_categories  do |t|
-      t.integer :trainer_id, index: true
+    create_table :user_specialty_categories  do |t|
+      t.integer :user_id, index: true
       t.integer :practice_categories, index: true
     end
 
-		add_column :users, :headline, :string
-    add_column :users, :bio, :string
+		add_column :users,  :headline, :string
     add_column :offers, :cover_img_url, :string
     add_column :offers, :category, :string
+    add_column :users,  :bio, :text
+    add_column :offers, :expectations, :text
+    add_column :offers, :highlights, :text
 	end
 end

@@ -10,12 +10,15 @@ Rails.application.routes.draw do
   resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
+  resources :bios, only: [:edit, :create, :update, :destroy]
 
   resources :users, only: [:show] do
     resources :events, only: [:index]
     resources :offers, only: [:index]
     resources :trainer_studios
     resources :user_studios
+    get 'profile' => 'users#profile', as: :profile
+    get 'bio' => 'users#bio', as: :bio
   end
 
   resources :studios do
@@ -30,12 +33,8 @@ Rails.application.routes.draw do
   get 'verification' => 'users#verification', as: :verification
   get 'my_trainers' => 'users#my_trainers', as: :my_trainers
   get 'settings' => 'users#settings', as: :settings
-  get 'profile' => 'users#profile', as: :profile
-  get 'bio' => 'users#bio', as: :bio
   get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
   get 'manage_events' => 'events#manage_events', as: :manage_events
   get 'manage_offers' => 'offers#manage_offers', as: :manage_offers
-
-
   root to: 'users#home'
 end

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @events = @user.trainer_events
+    @bio = @user.bio
   end
 
   def index
@@ -79,8 +80,8 @@ class UsersController < ApplicationController
     @user = current_user
     # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
     @milestones = @user.milestones
-    @practices = @user.users_practice_categories
-    @specialties = @user.users_specialty_categories
+    @practices = @user.user_practice_categories
+    @specialties = @user.user_specialty_categories
   end
 
   private

@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20200312193211) do
     t.datetime "updated_at", null: false
     t.string "cover_img_url"
     t.string "category"
+    t.text "expectations"
+    t.text "highlights"
     t.index ["trainer_id"], name: "index_offers_on_trainer_id"
   end
 
@@ -82,6 +84,20 @@ ActiveRecord::Schema.define(version: 20200312193211) do
     t.datetime "updated_at", null: false
     t.index ["studio_id"], name: "index_trainer_studios_on_studio_id"
     t.index ["trainer_id"], name: "index_trainer_studios_on_trainer_id"
+  end
+
+  create_table "user_practice_categories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "practice_categories"
+    t.index ["practice_categories"], name: "index_user_practice_categories_on_practice_categories"
+    t.index ["user_id"], name: "index_user_practice_categories_on_user_id"
+  end
+
+  create_table "user_specialty_categories", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "practice_categories"
+    t.index ["practice_categories"], name: "index_user_specialty_categories_on_practice_categories"
+    t.index ["user_id"], name: "index_user_specialty_categories_on_user_id"
   end
 
   create_table "user_studios", force: :cascade do |t|
@@ -132,23 +148,9 @@ ActiveRecord::Schema.define(version: 20200312193211) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.string "headline"
-    t.string "bio"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "users_practice_categories", force: :cascade do |t|
-    t.integer "trainer_id"
-    t.integer "practice_categories"
-    t.index ["practice_categories"], name: "index_users_practice_categories_on_practice_categories"
-    t.index ["trainer_id"], name: "index_users_practice_categories_on_trainer_id"
-  end
-
-  create_table "users_specialty_categories", force: :cascade do |t|
-    t.integer "trainer_id"
-    t.integer "practice_categories"
-    t.index ["practice_categories"], name: "index_users_specialty_categories_on_practice_categories"
-    t.index ["trainer_id"], name: "index_users_specialty_categories_on_trainer_id"
   end
 
 end

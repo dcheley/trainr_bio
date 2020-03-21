@@ -23,7 +23,7 @@
     <div class="col-1"></div>
   </div>
 
-  <% if !@offer.date.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.date.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -42,7 +42,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.expectations.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.expectations.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -61,7 +61,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.highlights.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.highlights.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -80,7 +80,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.duration.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.duration.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -99,7 +99,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.location.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.location.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -118,7 +118,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.cost.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.cost.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">
@@ -137,7 +137,7 @@
     </div>
   <% end %>
 
-  <% if !@offer.other.empty? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
+  <% if !@offer.other.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10">

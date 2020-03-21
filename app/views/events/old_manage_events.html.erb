@@ -11,7 +11,7 @@
         <div class="col-1">
           <li>
             <% if i < 1 %>
-              <a data-toggle="tab" href="#<%=i%>"><%= date.strftime('%a /%d') %></a>
+              <a data-toggle="tab active" href="#<%=i%>"><%= date.strftime('%a /%d') %></a>
             <% else %>
               <a data-toggle="tab" href="#<%=i%>"><%= date.strftime('%a /%d') %></a>
             <% end %>

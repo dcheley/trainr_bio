@@ -28,18 +28,16 @@
             <div class="row text-center">
               <div class="col-12">
                 <figure>
-                  <!-- change below to "link_to image_tag(offer.cover_img_url, class: "offer-pic"), show_offer_url(offer.url)"  -->
-                  <%= image_tag('cover.jpg', height: 63, width: 170, class:'') %>
+                  <%= link_to image_tag("cover.jpg", class: "offer-pic"), offer_url(offer) %>
                   <figcaption>
                     <% if current_user && current_user == @user %>
                       <% if offer.status == 1 %>
-                        <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                        <%= image_tag('private.svg', height: 11, width: 11, class:'') %>
                       <% end %>
                     <% end %>
                     <%= offer.title %>
                     <% if current_user && current_user == @user %>
-                      <!-- change below to "link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer.url)"  -->
-                      <%= image_tag('edit.png', height: 11, width: 11, class:'') %>
+                      <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer) %>
                     <% end %>
                   </figcaption>
                 </figure>
