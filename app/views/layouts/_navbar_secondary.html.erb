@@ -1,9 +1,7 @@
 <div class="container">
-  <div class="row text-center">
+  <div class="row text-center mt-1 mb-1">
     <div class="col-4">
-      <%= link_to user_profile_url(@user), class: "footer-link" do %>
-        <p class="mt-1 mb-1">PROFILE</p>
-      <% end %>
+      <%= link_to "PROFILE", user_profile_url(@user),  class: "btn btn-dark btn-block" %>
     </div>
     <div class="col-4">
       <%= link_to user_offers_url(@user), class: "footer-link" do %>
