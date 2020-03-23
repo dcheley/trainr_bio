@@ -5,10 +5,10 @@ class EventsController < ApplicationController
     @user = User.find(params[:user_id])
     start_of_week = Date.today
     end_of_week = Date.today.end_of_week
-    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week).order("date ASC")
     start_of_next_week = end_of_week + 1.day
     end_of_next_week = start_of_next_week + 6.days
-    @events_next_week = @user.trainer_events.where(date: start_of_next_week..end_of_next_week)
+    @events_next_week = @user.trainer_events.where(date: start_of_next_week..end_of_next_week).order("date ASC")
   end
 
   def manage_events
@@ -16,7 +16,7 @@ class EventsController < ApplicationController
     # @events = current_user.events
     start_of_week = Date.today.beginning_of_week
     end_of_week = Date.today.end_of_week
-    @events = @user.trainer_events.where(date: start_of_week..end_of_week)
+    @events = @user.trainer_events.where(date: start_of_week..end_of_week).order("date ASC")
   end
 
   def new

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
   resources :bios, only: [:edit, :create, :update, :destroy]
+  resources :trainer_studios, only: [:create, :destroy]
+  resources :user_studios, only: [:create, :destroy]
 
   resources :users, only: [:show] do
     resources :events, only: [:index]

@@ -1,0 +1,109 @@
+<!-- < Add/Edit Offering -->
+<div class="container my-5">
+  <%= form_for(@offer, url: { action: params[:action] == "edit" ? "update" : "create" }) do |f| %>
+    <% if @offer.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@offer.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+        <% @offer.errors.full_messages.each do |msg| %>
+          <li class="error"><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Title*:</h6>
+          <%= f.text_field :title, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <!-- Offering Type -->
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Short Description*:</h6>
+          <%= f.text_area :description, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Duration*:</h6>
+          <%= f.text_field :duration, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+    <!-- Date/Time -->
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Location*:</h6>
+          <br/>
+          <%= f.text_field :location, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Cost*:</h6>
+          <br/>
+          <%= f.text_field :cost, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Other Info:</h6>
+          <br/>
+          <%= f.text_field :other, placeholder: "", class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Booking URL or Contact Info:</h6>
+          <br/>
+          <%= f.text_field :booking_url, placeholder: "", class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+
+    <%= f.hidden_field :trainer_id, value: current_user.id %>
+
+    <!-- Hide Offering -->
+
+    <div class="row">
+      <div class="col-8"></div>
+      <div class="col-3">
+        <%= f.submit 'Save', class: 'btn btn-secondary' %>
+      </div>
+      <div class="col"></div>
+    </div>
+  <% end %>
+</div>

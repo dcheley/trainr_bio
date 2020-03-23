@@ -1,83 +1,58 @@
 <%= render 'layouts/navbar_studio_profile' %>
 
-<div class="container text-center"><%= flash[:notice] %></div>
+<div class="container text-center">
+  <%= flash[:notice] %>
 
-<div class="card-container">
-  <h2><%= @studio.name %></h2>
-  <p><%= @studio.location %></p>
+  <div class="row">
+    <div class="col-12">
+      <h1><%= @studio.name %></h1>
+      <p><%= @studio.location %></p>
 
-  <!-- Show schedule times and days only if exist and gray out button if not -->
-  <div class="buttons">
-    <button class="primary">Studio Schedule</button>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row text-center">
-    <div class="col-2"></div>
-    <div class="col-2">
-      <figure>
-        <img src="http://placehold.it/100?text=IMG" alt="">
-        <figcaption>Hello</figcaption>
-      </figure>
-    </div>
-    <div class="col-1"></div>
-    <div class="col-2">
-      <figure>
-        <img src="http://placehold.it/100?text=IMG" alt="">
-        <figcaption>Hello</figcaption>
-      </figure>
-    </div>
-    <div class="col-1"></div>
-    <div class="col-2">
-      <figure>
-        <img src="http://placehold.it/100?text=IMG" alt="">
-        <figcaption>Hello</figcaption>
-      </figure>
-    </div>
-    <div class="col-2"></div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row text-center">
-    <div class="col-2"></div>
-    <!-- for each of the elements in studio.trainr[x] (@studio.trainrs = trainr.limit(6)), display trainr card -->
-    <% @studio.trainers.each_with_index do |trainr, i| %>
-      <!-- <div class="col3"> -->
-      <div class="col-2">
-        <figure>
-          <%= image_tag(trainr.img_url, class: "profile-pic-md") %>
-          <figcaption>
-            <%= trainr.firstname %><br/>
-            <%= trainr.lastname %>
-          </figcaption>
-        </figure>
+      <!-- Show schedule times and days only if exist and gray out button if not -->
+      <div class="buttons">
+        <%= link_to image_tag('calendar.svg', class:'icon-link'), edit_studio_url(@studio) %>
       </div>
-      <% if i == 3 %>
-        <div class="col-2"></div>
-        </div><div class="row text-center">
-        <div class="col-2"></div>
-      <% elsif i != 6 %>
-        <div class="col-1"></div>
+
+      <div class="color-bottom-border mt-3"></div>
+    </div>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1 class="text-center">Instructors</h1>
+    </div>
+
+    <% if !@studio.trainer_studios.empty? %>
+      <% @studio.trainer_studios.each_with_index do |trainr| %>
+        <div class="col-4">
+          <%= image_tag(trainr.img_url, class: "profile-pic-md") %>
+
+          <p class=""><%= trainr.firstname %></p>
+          <p class=""><%= trainr.lastname %></p>
+        </div>
       <% end %>
-      <!-- </div> -->
+    <% else %>
+      <div class="col-12">
+        <p class="">No instructors found.</p>
+      </div>
     <% end %>
-    <div class="col-2"></div>
-  </div>
-  <div class="buttons">
-    <button class="secondary">show more</button>
-  </div>
-</div>
 
-<div class="card-container">
-  <p> Loading ... </p>
-  //load map
-  <p> Could not find your location on the map, please send us an email so we can add it </p>
-</div>
+    <div class="col-12">
+      <div class="color-bottom-border mt-3"></div>
+    </div>
+  </div>
 
-<% if current_user && current_user.role == 1 %>
-	<%= render 'layouts/footer_trainer' %>
-<% elsif current_user && current_user.role == 0 %>
-	<%= render 'layouts/footer_trainee' %>
-<% end %>
+  <div class="row mt-5">
+    <div class="col-12">
+      <h1>Location</h1>
+      <p>Loading ...</p>
+      <p>Could not find your location on the map, please send us an email so we can add it</p>
+    </div>
+  </div>
+
+  <% if current_user && current_user.role == 1 %>
+  	<%= render 'layouts/footer_trainer' %>
+  <% elsif current_user && current_user.role == 0 %>
+  	<%= render 'layouts/footer_trainee' %>
+  <% end %>
+</div>

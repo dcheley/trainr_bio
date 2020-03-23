@@ -27,7 +27,7 @@
           <div class="col"></div>
         </div>
       <% else %>
-        <% $previous_date = 0 %>
+        <% @previous_date = 0 %>
         <% @events.each do |event| %>
             <% if event.date != @previous_date %>
               <div class="row mt-4">
@@ -55,7 +55,7 @@
         <div class="col"></div>
       </div>
       <% else %>
-        <% $previous_date = 0 %>
+        <% @previous_date = 0 %>
         <% @events_next_week.each do |event| %>
           <% if event.date != @previous_date %>
             <div class="row mt-4">

@@ -1,37 +1,100 @@
 <div class="row mb-5">
   <div class="col-2"></div>
   <div class="col-8">
-    <%= form_for(@studio, url: { action: params[:action] == "edit" ? "update" : "create" }) do |f| %>
-      <% if @studio.errors.any? %>
-        <div id="error_explanation">
-          <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
-          <ul>
-          <% @studio.errors.full_messages.each do |msg| %>
-            <li class="error"><%= msg %></li>
-          <% end %>
-          </ul>
+    <!-- < Add/Edit Studio -->
+    <div class="container my-5 text-center">
+      <%= form_for(@studio, url: { action: params[:action] == "edit" ? "update" : "create" }) do |f| %>
+        <% if @studio.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+            <% @studio.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Username*:</h6>
+              <br/>
+              <%= f.text_field :username, placeholder: "Username", class: "form-control no-border color-bottom-border", required: true %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Name*:</h6>
+              <br/>
+              <%= f.text_field :name, placeholder: "Name", class: "form-control no-border color-bottom-border", required: true %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Address*:</h6>
+              <br/>
+              <%= f.text_field :location, placeholder: "15 Front St.", class: "form-control no-border color-bottom-border", required: true %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Phone:</h6>
+              <br/>
+              <%= f.text_field :phone, placeholder: "416-123-456", class: "form-control no-border color-bottom-border" %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Studio Schedule URL:</h6>
+              <br/>
+              <%= f.text_field :website_url, placeholder: "example.com", class: "form-control no-border color-bottom-border" %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-8"></div>
+          <div class="col-3">
+            <%= f.submit 'Save', class: 'btn btn-secondary' %>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group mt-3">
+              <%= form_tag trainer_studios_url(current_user.id), method: :post do %>
+
+                <p>options for select</p>
+              <% end %>
+            </div>
+          </div>
         </div>
       <% end %>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <%= f.text_field :name, placeholder: "Name", required: true, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.text_field :location, placeholder: "Location", required: true, class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.text_field :phone, placeholder: "Phone", class: "form-control" %>
-          </div>
-          <div class="form-group">
-            <%= f.text_field :website_url, placeholder: "Website", class: "form-control" %>
-          </div>
-        </div>
-      </div>
-
-      <%= f.submit "submit", class: 'btn btn-secondary' %>
-    <% end %>
+    </div>
   </div>
   <div class="col-2"></div>
 </div>
