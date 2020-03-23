@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def show
-    @events = @user.trainer_events
+    @events = @user.trainer_events.order("date ASC")
     @bio = @user.bio
   end
 
