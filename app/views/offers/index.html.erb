@@ -5,54 +5,50 @@
   <%= render 'layouts/navbar_secondary' %>
 
   <div class="container text-center">
-    <!-- <div class="tab-content clearfix">
-      <div class="tab-pane mb-4" id="offering" role="tabpanel" aria-labelledby="offering-tab"> -->
-        <div class="row mt-5 mb-3">
-          <div class="col-2"></div>
-          <div class="col-8">
-            <% if current_user && current_user == @user %>
-              <%= link_to "+ Add New Offering", new_offer_url,  class: "btn btn-primary mt-5 mb-5" %>
-            <% end %>
-          </div>
-          <div class="col-2"></div>
-        </div>
-
-        <% if @offers.empty? %>
-          <div class="row mt-4 mb-4">
-            <div class="col-2"></div>
-            <div class="col-8"><span class="schedule date"> No offers to show. </span></div>
-            <div class="col-2"></div>
-          </div>
-        <% else %>
-          <% @offers.each do |offer| %>
-            <div class="row">
-              <div class="col-12">
-                <figure>
-                  <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block", height: 88, width: 142), offer_url(offer) %>
-                  <figcaption>
-                    <div class="row">
-                      <div class="col-2">
-                        <% if current_user && current_user == @user %>
-                          <% if offer.status == 1 %>
-                            <%= image_tag('private.svg', height: 11, width: 11, class:'') %>
-                          <% end %>
-                        <% end %>
-                      </div>
-                      <div class="col-8"><%= offer.title %></div>
-                      <div class="col-2">
-                        <% if current_user && current_user == @user %>
-                          <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer) %>
-                        <% end %>
-                      </div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          <% end %>
+    <div class="row mt-3 mb-3">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <% if current_user && current_user == @user %>
+          <%= link_to "+ Add New Offering", new_offer_url,  class: "btn btn-primary mt-5 mb-5" %>
         <% end %>
-      <!-- </div>
-    </div> -->
+      </div>
+      <div class="col-2"></div>
+    </div>
+
+    <% if @offers.empty? %>
+      <div class="row mt-4 mb-4">
+        <div class="col-2"></div>
+        <div class="col-8"><span class="schedule date"> No offers to show. </span></div>
+        <div class="col-2"></div>
+      </div>
+    <% else %>
+      <% @offers.each do |offer| %>
+        <div class="row">
+          <div class="col-12">
+            <figure>
+              <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block"), offer_url(offer) %>
+              <figcaption>
+                <div class="row">
+                  <div class="col-2">
+                    <% if current_user && current_user == @user %>
+                      <% if offer.status == 1 %>
+                        <%= image_tag('private.svg', height: 11, width: 11, class:'') %>
+                      <% end %>
+                    <% end %>
+                  </div>
+                  <div class="col-8"><%= offer.title %></div>
+                  <div class="col-2">
+                    <% if current_user && current_user == @user %>
+                      <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer) %>
+                    <% end %>
+                  </div>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <% if current_user.role == 0 %>
