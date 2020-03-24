@@ -24,7 +24,7 @@ class StudiosController < ApplicationController
   end
 
   def edit
-
+    @trainers = User.where(role: 1).order("first_name ASC")
   end
 
   def update
