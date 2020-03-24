@@ -1,0 +1,2 @@
+class UserSpecialtyCategoriesController < ApplicationController
+end

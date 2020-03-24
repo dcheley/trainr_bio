@@ -1,0 +1,2 @@
+class UserPracticeCategoriesController < ApplicationController
+end
