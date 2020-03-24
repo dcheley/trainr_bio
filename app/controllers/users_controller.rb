@@ -49,16 +49,22 @@ class UsersController < ApplicationController
   end
 
   def landing_email
-    body = params[:comment]
-
-    from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    subject ="#{current_user.email} sent a message from the prelaunch site!"
-    content = SendGrid::Content.new(type: 'text/plain', value: body)
-    mail = SendGrid::Mail.new(from, subject, to, content)
-
-    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    SendgridService::Email.call(
+      params[:comment],
+      SendGrid::Email.new(email: 'trainrbio@gmail.com'),
+      SendGrid::Email.new(email: 'trainrbio@gmail.com'),
+      "#{current_user.email} sent a message from the prelaunch site!")
+    )
+    # body = params[:comment]
+    #
+    # from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
+    # to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
+    # subject ="#{current_user.email} sent a message from the prelaunch site!"
+    # content = SendGrid::Content.new(type: 'text/plain', value: body)
+    # mail = SendGrid::Mail.new(from, subject, to, content)
+    #
+    # sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    # response = sg.client.mail._('send').post(request_body: mail.to_json)
 
     # UserMailer.landing_email(body).deliver_later
 
