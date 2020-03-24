@@ -6,3 +6,4 @@ log/*
 sendgrid.env
 secrets.yml
 .env
+app/db/schema.rb
