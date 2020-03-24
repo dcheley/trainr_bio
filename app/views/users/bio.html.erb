@@ -4,104 +4,103 @@
   <%= render 'layouts/navbar_profile' %>
   <%= render 'layouts/navbar_secondary' %>
 
-  <!-- <div class="tab-content clearfix">
-    <div class="tab-pane mb-4" id="bio" role="tabpanel" aria-labelledby="bio-tab"> -->
-      <div class="container">
-        <div class="row text-center mt-5 mb-3">
-          <div class="col-2"></div>
-          <div class="col-8">
-            <% if current_user && current_user == @user && !current_user.bio.nil? %>
-              <%= link_to "Update Bio", edit_bio_url(@bio),  class: "btn btn-primary mt-5 mb-5" %>
-            <% end %>
-          </div>
-          <div class="col-2"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-12">
-            <%= image_tag('milan.jpg', height: 213.4, width: 320, class:'') %>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-1"></div>
-          <div class="col-8">swipefeedback</div>
-          <div class="col-1"><%= image_tag('edit.png', height: 21, width: 21, class:'') %></div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">About Me</div>
-          <div class="col-1"></div>
-        </div>
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10"><%= @user.bio %></div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="color-bottom-border mt-5 mb-5"></div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">I teach</div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">
-            <% @practices.each do |practice| %>
-              <p><%= practice.name %> </p>
-            <% end %>
-          </div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">I focus on</div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">
-            <% @specialties.each do |specialty| %>
-              <p><%= specialty.name %> </p>
-            <% end %>
-          </div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="color-bottom-border mt-5 mb-5"></div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">Certifications & Experience</div>
-          <div class="col-1"></div>
-        </div>
-
-        <div class="row text-center">
-          <div class="col-1"></div>
-          <div class="col-10">
-            <% @milestones.each do |milestone| %>
-              <div class="row text-center">
-                <div class="col-2"></div>
-                <div class="col-2"><p><%= milestone.year %></p></div>
-                <div class="col-1"></div>
-                <div class="col-6"><p><%= milestone.milestone %></p></div>
-                <div class="col-1"></div>
-              </div>
-            <% end %>
-          </div>
-          <div class="col-1"></div>
-        </div>
+  <div class="container">
+    <div class="row text-center mt-5 mb-3">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <% if current_user && current_user == @user && !current_user.bio.nil? %>
+          <%= link_to "Update Bio", edit_bio_url(@bio),  class: "btn btn-primary mt-5 mb-5" %>
+        <% end %>
       </div>
-    <!-- </div>
-  </div> -->
+      <div class="col-2"></div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-12">
+        <%= image_tag('milan.jpg', height: 213.4, width: 320, class:'') %>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-1"></div>
+      <div class="col-8">swipefeedback</div>
+      <div class="col-1"><%= image_tag('edit.png', height: 21, width: 21, class:'') %></div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10">About Me</div>
+      <div class="col-1"></div>
+    </div>
+    <div class="row text-center">
+      <div class="col-1"></div>
+      <div class="col-10"><%= @user.bio %></div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="color-bottom-border mt-5 mb-5"></div>
+
+    <% if !@practices.empty? %>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">I teach</div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <% @practices.each do |practice| %>
+            <p><%= practice.name %> </p>
+          <% end %>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    <% end %>
+
+    <% if !@specialties.empty? %>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">I focus on</div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <% @specialties.each do |specialty| %>
+            <p><%= specialty.name %> </p>
+          <% end %>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    <% end %>
+
+    <div class="color-bottom-border mt-5 mb-5"></div>
+
+    <% if !@milestones.empty? %>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">Certifications & Experience</div>
+        <div class="col-1"></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <% @milestones.each do |milestone| %>
+            <div class="row text-center">
+              <div class="col-2"></div>
+              <div class="col-2"><p><%= milestone.year %></p></div>
+              <div class="col-1"></div>
+              <div class="col-6"><p><%= milestone.milestone %></p></div>
+              <div class="col-1"></div>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-1"></div>
+      </div>
+    <% end %>
+  </div>
 
   <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
