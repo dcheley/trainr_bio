@@ -47,6 +47,6 @@ class StudiosController < ApplicationController
   end
 
   def studio_params
-    params.require(:studio).permit(:name, :phone, :location, :img_url, :website_url)
+    params.require(:studio).permit(:name, :phone, :location, :img_url, :website_url, :username)
   end
 end

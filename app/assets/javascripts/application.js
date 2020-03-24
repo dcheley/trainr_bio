@@ -17,8 +17,10 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
+
   $('#searchTab a').on('click', function (e) {
     e.preventDefault()
     $(this).tab('show')
-  })
+  });
+  
 });

@@ -1,8 +1,8 @@
 class TrainerStudiosController < ApplicationController
   def create
-    @trainer_studio = TrainerStudioService::Build.call(params)
+    @trainer_studio = TrainerStudio.new(trainer_id: params[:trainer_id], studio_id: params[:studio_id])
     if @trainer_studio.save
-      flash[:notice] = 'Added Trainr to studio'
+      flash[:notice] = 'Added trainr to studio'
       redirect_to edit_studio_url(params[:studio_id])
     else
       flash[:alert] = "You can't register for the same studio twice!"

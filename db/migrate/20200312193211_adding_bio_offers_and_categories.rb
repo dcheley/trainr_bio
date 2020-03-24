@@ -17,12 +17,12 @@ class AddingBioOffersAndCategories < ActiveRecord::Migration[5.1]
 
     create_table :user_practice_categories  do |t|
       t.integer :user_id, index: true
-      t.integer :practice_categories, index: true
+      t.integer :practice_category_id, index: true
     end
 
     create_table :user_specialty_categories  do |t|
       t.integer :user_id, index: true
-      t.integer :practice_categories, index: true
+      t.integer :specialty_category_id, index: true
     end
 
 		add_column :users,  :headline, :string

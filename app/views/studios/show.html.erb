@@ -1,11 +1,12 @@
 <%= render 'layouts/navbar_studio_profile' %>
 
 <div class="container text-center">
-  <%= flash[:notice] %>
+  <p class="mb-3"><%= flash[:notice] %></p>
 
   <div class="row">
     <div class="col-12">
       <h1><%= @studio.name %></h1>
+      <%# <%= image_tag @studio.img_url %> 
       <p><%= @studio.location %></p>
 
       <!-- Show schedule times and days only if exist and gray out button if not -->
