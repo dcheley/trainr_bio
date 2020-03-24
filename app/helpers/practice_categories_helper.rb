@@ -1,0 +1,2 @@
+module PracticeCategoriesHelper
+end

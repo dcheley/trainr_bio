@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :user_studios
     get 'profile' => 'users#profile', as: :profile
     get 'bio' => 'users#bio', as: :bio
+    get 'edit_bio' => 'users#edit_bio', as: :edit_bio
   end
 
   resources :studios do

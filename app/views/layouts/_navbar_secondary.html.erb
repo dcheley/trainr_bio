@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="row text-center mt-3">
-    <div class="col-4">
+  <div class="row text-center">
+    <div class="col-4" style="border-style: solid;">
       <%= link_to user_profile_url(@user), class: "footer-link" do %>
-        <p class="mt-1 mb-1">PROFILE</p>
+        <p class="mt-1 mb-2">PROFILE</p>
       <% end %>
     </div>
-    <div class="col-4">
+    <div class="col-4" style="border-style: solid;">
       <%= link_to user_offers_url(@user), class: "footer-link" do %>
-        <p class="mt-1 mb-1">OFFERINGS</p>
+        <p class="mt-1 mb-2">OFFERINGS</p>
       <% end %>
     </div>
-    <div class="col-4">
+    <div class="col-4" style="border-style: solid;">
       <%= link_to user_bio_url(@user), class: "footer-link" do %>
-        <p class="mt-1 mb-1">BIO</p>
+        <p class="mt-1 mb-2">BIO</p>
       <% end %>
     </div>
   </div>

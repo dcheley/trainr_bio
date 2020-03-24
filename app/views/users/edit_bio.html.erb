@@ -1,0 +1,103 @@
+<%= render 'layouts/navbar_edit' %>
+<!-- < Add/Edit Offering -->
+<div class="container my-5">
+
+  <%= form_for(@user, url: { action: "update" }) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="error"><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="container my-5">
+      <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-10"><h3> About Me*: </h3></div>
+        <div class="col-1"></div>
+     </div>
+      <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-10"><%= f.text_field :bio, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+        <div class="col-1"></div>
+      </div>
+    </div>
+
+    <div class="container my-5" id="practice">
+      <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-10"><h3> I Practice: </h3></div>
+        <div class="col-1"></div>
+     </div>
+     <% if !@practices.empty? %>
+       <% @practices.each do |practice| %>
+          <div class="row mb-3">
+            <div class="col-1"></div>
+            <div class="col-10"><%= f.text_field :user_practice_categories, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="row">
+        <%=button_to "add practice area", create_user_practice_category %>
+      </div>
+    </div>
+
+    <div class="container my-5" id="specialty">
+      <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-10"><h3> I'm Known For: </h3></div>
+        <div class="col-1"></div>
+     </div>
+     <% if !@specialties.empty? %>
+       <% @specialties.each do |specialty| %>
+          <div class="row mb-3">
+            <div class="col-1"></div>
+            <div class="col-10"><%= f.text_field :user_specialty_categories, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="row">
+        <%=button_to "add specialty", create_user_specialty_category %>
+      </div>
+    </div>
+
+    <div class="container my-5" id="experience">
+      <div class="row mb-3">
+        <div class="col-1"></div>
+        <div class="col-10"><h3> Certs & Experience: </h3></div>
+        <div class="col-1"></div>
+      </div>
+      <% if !@milestones.empty? %>
+        <% @milestones.each do |milestone| %>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2"><%= f.select :milestone.month, 1..12 %></div>
+            <div class="col-2"><%= f.select :milestone.year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+            <div class="col-6"><%= f.text_field :milestone.milestone, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+            <div class="col-1"></div>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="row">
+        <%=button_to "add milestone", create_milestone %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-8"></div>
+      <div class="col-3">
+        <%= f.submit 'Save', class: 'btn btn-secondary' %>
+      </div>
+      <div class="col"></div>
+    </div>
+  <% end %>
+
+  <!-- Additional elements (See form_btn.js)- added by clicking buttons above -->
+
+</div>
