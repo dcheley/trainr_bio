@@ -88,15 +88,15 @@ ActiveRecord::Schema.define(version: 20200312193211) do
 
   create_table "user_practice_categories", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "practice_categories"
-    t.index ["practice_categories"], name: "index_user_practice_categories_on_practice_categories"
+    t.integer "practice_category_id"
+    t.index ["practice_category_id"], name: "index_user_practice_categories_on_practice_category_id"
     t.index ["user_id"], name: "index_user_practice_categories_on_user_id"
   end
 
   create_table "user_specialty_categories", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "practice_categories"
-    t.index ["practice_categories"], name: "index_user_specialty_categories_on_practice_categories"
+    t.integer "specialty_category_id"
+    t.index ["specialty_category_id"], name: "index_user_specialty_categories_on_specialty_category_id"
     t.index ["user_id"], name: "index_user_specialty_categories_on_user_id"
   end
 

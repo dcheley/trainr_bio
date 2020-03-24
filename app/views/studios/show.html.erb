@@ -1,11 +1,12 @@
 <%= render 'layouts/navbar_studio_profile' %>
 
 <div class="container text-center">
-  <%= flash[:notice] %>
+  <p class="mb-3"><%= flash[:notice] %></p>
 
   <div class="row">
     <div class="col-12">
       <h1><%= @studio.name %></h1>
+      <%# <%= image_tag @studio.img_url %> 
       <p><%= @studio.location %></p>
 
       <!-- Show schedule times and days only if exist and gray out button if not -->
@@ -19,16 +20,20 @@
 
   <div class="row mt-5">
     <div class="col-12">
-      <h1 class="text-center">Instructors</h1>
+      <h1 class="">Instructors</h1>
     </div>
 
     <% if !@studio.trainer_studios.empty? %>
-      <% @studio.trainer_studios.each_with_index do |trainr| %>
-        <div class="col-4">
-          <%= image_tag(trainr.img_url, class: "profile-pic-md") %>
+      <% @studio.trainer_studios.each_with_index do |trainer_studio| %>
+        <% trainr = User.find(trainer_studio.trainer_id) %>
 
-          <p class=""><%= trainr.firstname %></p>
-          <p class=""><%= trainr.lastname %></p>
+        <div class="col-4">
+          <%# <%= image_tag(trainr.img_url, class: "profile-pic-md") %>
+
+          <p class=""><%= "#{trainr.first_name} #{trainr.last_name}" %></p>
+          <%= form_tag trainer_studio_url(trainer_studio.id), method: :delete do %>
+            <%= submit_tag 'Remove', class:'btn btn-danger' %>
+          <% end %>
         </div>
       <% end %>
     <% else %>

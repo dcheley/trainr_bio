@@ -3,14 +3,17 @@
   <div class="col-8">
     <!-- < Add/Edit Studio -->
     <div class="container my-5 text-center">
-      <%= form_for(@studio, url: { action: params[:action] == "edit" ? "update" : "create" }) do |f| %>
+      <p class="text-primary mb-3"><%= flash[:notice] %></p>
+      <%= flash[:alert] %>
+
+      <%= form_for(@studio, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
         <% if @studio.errors.any? %>
           <div id="error_explanation">
             <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
             <ul>
-            <% @studio.errors.full_messages.each do |msg| %>
-              <li class="error"><%= msg %></li>
-            <% end %>
+              <% @studio.errors.full_messages.each do |msg| %>
+                <li class="error"><%= msg %></li>
+              <% end %>
             </ul>
           </div>
         <% end %>
@@ -75,6 +78,19 @@
            <div class="col"></div>
         </div>
 
+        <div class="row mb-3">
+          <div class="col"></div>
+          <div class="col-10">
+            <div class="form-group">
+              <h6>Avatar image:</h6>
+              <br/>
+              <%= f.file_field :img_url, class: "form-control no-border color-bottom-border" %>
+            </div>
+           </div>
+           <div class="col"></div>
+        </div>
+
+
         <div class="row">
           <div class="col-8"></div>
           <div class="col-3">
@@ -83,18 +99,10 @@
           <div class="col"></div>
         </div>
 
-        <div class="row">
-          <div class="col-12">
-            <div class="form-group mt-3">
-              <%= form_tag trainer_studios_url(current_user.id), method: :post do %>
-
-                <p>options for select</p>
-              <% end %>
-            </div>
-          </div>
-        </div>
       <% end %>
     </div>
   </div>
   <div class="col-2"></div>
 </div>
+<script src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/widget.js"></script>
+<script src="https://raw.githubusercontent.com/blueimp/jQuery-File-Upload/master/js/jquery.fileupload.js"></script>

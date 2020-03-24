@@ -1,8 +1,8 @@
 class UserStudiosController < ApplicationController
   def create
-    @user_studio = UserStudioService::Build.call(params)
+    @user_studio = UserStudio.new(user_id: params[:user_id], studio_id: params[:studio_id])
     if @user_studio.save
-      flash[:success] = 'Added to favorites'
+      flash[:success] = 'Added studio to your favorites'
       redirect_to listing_path(params[:listing_id])
     else
       flash[:error] = "You can't favorite the same listing twice!"
