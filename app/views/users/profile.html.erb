@@ -28,11 +28,9 @@
         <div class="row text-center mt-2">headline<% @user.headline %></div>
         <div class="row text-center">🏠 location<% @user.location %></div>
         <div class="row mt-2">
-          <div class="col-1"></div>
-          <div class="col-4"><%= link_to "star", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
+          <div class="col-5"><%= link_to "star", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
           <div class="col-2"></div>
-          <div class="col-4"><%= link_to "link", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
-          <div class="col-1"></div>
+          <div class="col-5"><%= link_to "link", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
         </div>
       </div>
     </div>
@@ -47,39 +45,37 @@
 
     <hr>
 
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-9"><p>Upcoming</p></div>
-      </div>
-      <div class="row text-center">
-        <div class="col-8"></div>
-        <div class="col-4 text-right"><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></div>
-      </div>
-      <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes this week </span></div>
-          <div class="col"></div>
-        </div>
-      <% else %>
-        <% $previous_date = 0 %>
-        <% @events.each do |event| %>
-            <% if event.date != @previous_date %>
-              <div class="row mt-4">
-                <div class="col">
-                  <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
-                </div>
-              </div>
-              <% @previous_date = event.date %>
-            <% end %>
-            <div class="row">
-              <div class="col-4 text-center"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-              <div class="col-4"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col-4 text-right"><span class="schedule studio-name"><%= event.location %></span></div>
-            </div>
-        <% end %>
-      <% end %>
+    <div class="row text-center">
+      <div class="col-9"><p>Upcoming</p></div>
     </div>
+    <div class="row text-center">
+      <div class="col-8"></div>
+      <div class="col-4 text-right"><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></div>
+    </div>
+    <% if @events.empty?  %>
+      <div class="row text-center mt-4 mb-4">
+        <div class="col"></div>
+        <div class="col"><span class="schedule date"> No classes this week </span></div>
+        <div class="col"></div>
+      </div>
+    <% else %>
+      <% $previous_date = 0 %>
+      <% @events.each do |event| %>
+          <% if event.date != @previous_date %>
+            <div class="row mt-4">
+              <div class="col">
+                <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
+              </div>
+            </div>
+            <% @previous_date = event.date %>
+          <% end %>
+          <div class="row">
+            <div class="col-4 text-center"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+            <div class="col-4"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-4 text-right"><span class="schedule studio-name"><%= event.location %></span></div>
+          </div>
+      <% end %>
+    <% end %>
 
     <hr>
 
