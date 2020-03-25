@@ -20,7 +20,7 @@
       <div class="col-1"></div>
       <div class="col-6">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
-        <%= image_tag('profile.png', height: 166, width: 166, class:'') %>
+        <%= image_tag('profile.png', height: 138, width: 138, class:'') %>
       </div>
       <div class="col-1"></div>
       <div class="col-3">
@@ -47,10 +47,12 @@
     <hr>
 
     <div class="container">
-      <div class="row text-center"><p> Upcoming </p></div>
       <div class="row text-center">
-        <div class="col-9"></div>
-        <div class="col-3"><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></div>
+        <div class="col-9"><p>Upcoming</p></div>
+      </div>
+      <div class="row text-center">
+        <div class="col-8"></div>
+        <div class="col-4 text-right"><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></div>
       </div>
       <% if @events.empty?  %>
         <div class="row text-center mt-4 mb-4">
@@ -91,7 +93,7 @@
       </div>
       <div class="col-1"></div>
     </div>
-    
+
   </div>
 
   <% if current_user && current_user.role == 1 %>
