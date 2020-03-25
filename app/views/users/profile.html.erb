@@ -71,7 +71,7 @@
           <% end %>
           <div class="row">
             <div class="col-4 text-center"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-            <div class="col-4"><span class="schedule session-name"><%= event.title %></span></div>
+            <div class="col-4 text-center"><span class="schedule session-name"><%= event.title %></span></div>
             <div class="col-4 text-right"><span class="schedule studio-name"><%= event.location %></span></div>
           </div>
       <% end %>
