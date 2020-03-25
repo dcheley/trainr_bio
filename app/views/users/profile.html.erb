@@ -29,8 +29,11 @@
         <div class="row mt-2">headline<% @user.headline %></div>
         <div class="row">🏠 location<% @user.location %></div>
         <div class="row mt-2">
-          <div class="col"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
-          <div class="col"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
+          <div class="col-1"></div>
+          <div class="col-4"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
+          <div class="col-2"></div>
+          <div class="col-4"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
+          <div class="col-1"></div>
         </div>
       </div>
       <div class="col-1"></div>
