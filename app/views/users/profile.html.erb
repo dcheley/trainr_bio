@@ -53,7 +53,7 @@
       <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></u></div>
     </div>
     <% if @events.empty?  %>
-      <div class="row text-center mt-4 mb-4">
+      <div class="row text-center mt-3 mb-3">
         <div class="col"></div>
         <div class="col"><span class="schedule date"> No classes this week </span></div>
         <div class="col"></div>
@@ -62,7 +62,7 @@
       <% $previous_date = 0 %>
       <% @events.each do |event| %>
           <% if event.date != @previous_date %>
-            <div class="row mt-4">
+            <div class="row mt-1">
               <div class="col">
                 <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
               </div>
