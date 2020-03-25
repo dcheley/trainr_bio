@@ -27,12 +27,12 @@
         <div class="row text-center">Lastname<% @user.last_name %></div>
         <div class="row text-center mt-2">headline<% @user.headline %></div>
         <div class="row text-center">🏠 location<% @user.location %></div>
-        <div class="row mt-2">
-          <div class="col-5"><%= link_to "star", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
-          <div class="col-1"></div>
-          <div class="col-5"><%= link_to "link", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
-        </div>
       </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-5"><%= link_to "star", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
+      <div class="col-2"></div>
+      <div class="col-5"><%= link_to "link", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %></div>
     </div>
 
     <hr>
