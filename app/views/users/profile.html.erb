@@ -26,11 +26,11 @@
       <div class="col-3">
         <div class="row mt-3">Firstname<% @user.first_name %></div>
         <div class="row">Lastname<% @user.last_name %></div>
-        <div class="row mt-1">headline<% @user.headline %></div>
+        <div class="row mt-2">headline<% @user.headline %></div>
         <div class="row">🏠 location<% @user.location %></div>
         <div class="row mt-2">
-          <div class="col-6"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
-          <div class="col-6"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
+          <div class="col"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
+          <div class="col"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
         </div>
       </div>
       <div class="col-1"></div>
