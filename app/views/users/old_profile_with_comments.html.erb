@@ -91,7 +91,29 @@
       </div>
       <div class="col-1"></div>
     </div>
-    
+
+    <% if @comments.empty?  %>
+      <div class="row text-center mt-4 mb-4">
+        <div class="col-1"></div>
+        <div class="col-10"><span class="schedule date"> No comments yet, please leave one using the above button! </span></div>
+        <div class="col-1"></div>
+      </div>
+    <% else %>
+      <% @comments.each do |comment| %>
+        <div class="row">
+          <div class="col-1">pic</div>
+          <div class="col-10">This is where a comment will go</div>
+          <div class="col-1">♥</div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <%= link_to "See __ More", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    <% end %>
   </div>
 
   <% if current_user && current_user.role == 1 %>
