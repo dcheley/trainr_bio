@@ -6,7 +6,7 @@
       <p class="text-primary mb-3"><%= flash[:notice] %></p>
       <%= flash[:alert] %>
 
-      <%= form_for(@studio, html: { class: 'directUpload', data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } }) do |f| %>
+      <%= form_for(@studio) do |f| %>
         <% if @studio.errors.any? %>
           <div id="error_explanation">
             <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
@@ -84,7 +84,7 @@
             <div class="form-group">
               <h6>Avatar image:</h6>
               <br/>
-              <%= f.file_field :img_url, class: "form-control no-border color-bottom-border" %>
+              <%= f.file_field :avatar, class: "form-control no-border color-bottom-border" %>
             </div>
            </div>
            <div class="col"></div>

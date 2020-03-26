@@ -39,5 +39,6 @@ Rails.application.routes.draw do
   get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
   get 'manage_events' => 'events#manage_events', as: :manage_events
   get 'manage_offers' => 'offers#manage_offers', as: :manage_offers
+  
   root to: 'users#home'
 end

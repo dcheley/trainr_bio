@@ -2,8 +2,8 @@
   <%= render 'layouts/navbar_home_logged_out' %>
 
   <div class="container text-center">
-    <p class="mb-5"><%= flash[:notice] %></p>
-    <p class="mb-5"><%= flash[:alert] %></p>
+    <p class="text-primary mb-5"><%= flash[:notice] %></p>
+    <p class="text-danger mb-5"><%= flash[:alert] %></p>
 
     <div class="row mb-4">
       <div class="col-12">
@@ -42,12 +42,13 @@
     <!-- Use a better way to stop footer overlapping content later -->
     <div style="height: 150px;"></div>
   </div>
+  
 <% else %>
   <%= render 'layouts/navbar_home_logged_in.html.erb' %>
 
   <div class="container text-center">
-    <p class="mb-5"><%= flash[:notice] %></p>
-    <p class="mb-5"><%= flash[:alert] %></p>
+    <p class="text-primary mb-5"><%= flash[:notice] %></p>
+    <p class="text-danger mb-5"><%= flash[:alert] %></p>
 
     <div class="row mb-5">
       <div class="col-12">

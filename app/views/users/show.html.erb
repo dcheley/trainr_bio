@@ -10,10 +10,10 @@
 
 <div class="card-container">
   <span class="pro">Heart<!-- <img> find heart icon --></span>
-	<% if @user.img_url.blank? %>
-	<%= image_tag('user.svg', class:'round', height:'220', width:'220')%>
+	<% if @user.avatar.attachment.nil? %>
+	  <%= image_tag('user.svg', class:'round', height:'220', width:'220')%>
 	<% else %>
-		<%= @user.img_url %>
+		<%= image_tag @user.avatar.service_url, class:'round', height:'220', width:'220' %>
 	<% end %>
 	<% if !@user.first_name.nil? || !@user.last_name.nil? %>
     <h3><%= @user.first_name + ' ' + @user.last_name %></h3>

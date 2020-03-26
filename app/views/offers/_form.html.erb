@@ -1,6 +1,6 @@
 <!-- < Add/Edit Offering -->
 <div class="container my-5">
-  <%= form_for(@offer, url: { action: params[:action] == "edit" ? "update" : "create" }) do |f| %>
+  <%= form_for(@offer) do |f| %>
     <% if @offer.errors.any? %>
       <div id="error_explanation">
         <h5><%= pluralize(@offer.errors.count, "error") %> prohibited change!</h5>
@@ -89,6 +89,18 @@
           <h6>Booking URL or Contact Info:</h6>
           <br/>
           <%= f.text_field :booking_url, placeholder: "", class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Image:</h6>
+          <br/>
+          <%= f.file_field :avatar, class: "form-control no-border color-bottom-border" %>
         </div>
        </div>
        <div class="col"></div>

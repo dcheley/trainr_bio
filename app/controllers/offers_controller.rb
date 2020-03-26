@@ -21,6 +21,7 @@ class OffersController < ApplicationController
 
   def create
     @offer = Offer.new(offer_params)
+    attach_image
 
     if @offer.save
       redirect_to user_path(@offer.trainer_id), notice: "Offer created!"
@@ -33,6 +34,8 @@ class OffersController < ApplicationController
   end
 
   def update
+    attach_image
+    
     if @offer.update_attributes(offer_params)
       redirect_to user_url(@offer.trainer_id), notice: "Offer details updated!"
     else
@@ -56,5 +59,9 @@ class OffersController < ApplicationController
       :title, :description, :duration, :start_time, :date, :location,
       :trainer_id, :cost, :booking_url, :status, :other
     )
+  end
+
+  def attach_image
+    @offer.avatar.attach(params[:offer][:avatar])
   end
 end

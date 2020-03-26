@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  require 'sendgrid-ruby'
-  include SendGrid
-
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -23,12 +20,15 @@ class UsersController < ApplicationController
 
   def edit
     @studios = Studio.all.order("name ASC")
+    
     if current_user != @user
       redirect_to :index, notice: "Not authorized."
     end
   end
 
   def update
+    @user.avatar.attach(params[:user][:avatar])
+
     if @user.update_attributes(user_params)
       redirect_to user_path(@user), notice: "Account updated!"
     else
@@ -49,26 +49,18 @@ class UsersController < ApplicationController
   end
 
   def landing_email
-    SendgridService::Email.call(
+    SendGridService::Email.new(
+      'trainrbio@gmail.com',
+      'trainrbio@gmail.com',
+      "#{current_user.email} sent a message from the prelaunch site!",
+      'text/plain',
+      nil,
       params[:comment],
-      SendGrid::Email.new(email: 'trainrbio@gmail.com'),
-      SendGrid::Email.new(email: 'trainrbio@gmail.com'),
-      "#{current_user.email} sent a message from the prelaunch site!")
-    )
-    # body = params[:comment]
-    #
-    # from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    # to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    # subject ="#{current_user.email} sent a message from the prelaunch site!"
-    # content = SendGrid::Content.new(type: 'text/plain', value: body)
-    # mail = SendGrid::Mail.new(from, subject, to, content)
-    #
-    # sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    # response = sg.client.mail._('send').post(request_body: mail.to_json)
+    ).send_email
 
     # UserMailer.landing_email(body).deliver_later
 
-    redirect_to :pre_launch_reservation, notice: "Thanks for the feedback!"
+    redirect_to root_url, notice: "Thanks for the feedback!"
   end
 
   def forgot_password

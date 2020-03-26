@@ -7,9 +7,9 @@
       <div id="error_explanation">
         <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
         <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li class="error"><%= msg %></li>
-        <% end %>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
         </ul>
       </div>
     <% end %>

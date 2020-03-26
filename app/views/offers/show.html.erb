@@ -3,8 +3,11 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-12">
-      <!-- change below to "image_tag(offer.cover_img_url, class: "offering-pic")"  -->
-      <%= image_tag('cover.jpg', height: 63, width: 170, class:'') %>
+      <% if @offer.avatar.attachment.nil? %>
+        <%= image_tag("cover.jpg", height: 63, width: 170, class: "") %>
+      <% else %>
+        <%= image_tag(@offer.avatar.service_url, class: "") %>
+      <% end %>
     </div>
   </div>
 </div>
@@ -12,13 +15,12 @@
 <hr>
 
 <div class="container">
-
   <div class="row text-center">
     <div class="col-1"></div>
     <div class="col-10">
-      <h2> <%= @offer.title %> </h2>
-      <br/><p> <%= @offer.category %> </p>
-      <br/><p> <%= @offer.description %> </p>
+      <h2><%= @offer.title %></h2><br/>
+      <p><%= @offer.category %></p><br/>
+      <p><%= @offer.description %></p>
     </div>
     <div class="col-1"></div>
   </div>
@@ -156,7 +158,7 @@
     </div>
   <% end %>
 
-  <%= link_to "Contact & Book", booking_url,  class: "btn btn-secondary mt-5 mb-5" %>
+  <%= link_to "Contact & Book", new_event_url,  class: "btn btn-secondary mt-5 mb-5" %>
 </div>
 
 <% if current_user && current_user.role == 1 %>

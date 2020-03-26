@@ -1,12 +1,17 @@
 <%= render 'layouts/navbar_studio_profile' %>
 
 <div class="container text-center">
-  <p class="mb-3"><%= flash[:notice] %></p>
+  <p class="text-primary mb-3"><%= flash[:notice] %></p>
+  <p class="text-danger mb-3"><%= flash[:alert] %></p>
 
   <div class="row">
     <div class="col-12">
       <h1><%= @studio.name %></h1>
-      <%# <%= image_tag @studio.img_url %> 
+      <% if @studio.avatar.attachment.nil? %>
+        <%= image_tag('milan.jpg', class:'round', height:'220', width:'320')%>
+      <% else %>
+        <%= image_tag @studio.avatar.service_url, class:'round mt-3 mb-3', height:'220', width:'320' %>
+      <% end %>
       <p><%= @studio.location %></p>
 
       <!-- Show schedule times and days only if exist and gray out button if not -->
@@ -28,8 +33,11 @@
         <% trainr = User.find(trainer_studio.trainer_id) %>
 
         <div class="col-4">
-          <%# <%= image_tag(trainr.img_url, class: "profile-pic-md") %>
-
+          <% if trainr.avatar.attachment.nil? %>
+        	  <%= image_tag('user.svg', class: "profile-pic-md") %>
+          <% else %>
+            <%= image_tag(trainr.avatar.service_url, class: "profile-pic-md") %>
+          <% end %>
           <p class=""><%= "#{trainr.first_name} #{trainr.last_name}" %></p>
           <%= form_tag trainer_studio_url(trainer_studio.id), method: :delete do %>
             <%= submit_tag 'Remove', class:'btn btn-danger' %>
