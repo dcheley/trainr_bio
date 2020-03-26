@@ -1,10 +1,6 @@
 class MilestonesController < ApplicationController
   before_action :load_milestone, only: [:edit, :update, :destroy]
 
-  def new
-    @milestone = Milestone.new
-  end
-
   def create
     @milestone = Milestone.new(offer_params)
 

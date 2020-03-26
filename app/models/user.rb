@@ -14,6 +14,8 @@ class User < ApplicationRecord
   has_many :trainer_studios
   has_many :trainer_events, foreign_key: 'trainer_id', class_name: 'Event'
   has_many :trainee_events, foreign_key: 'trainee_id', class_name: 'Event'
+  has_many :trainers, through: :trainer_events
+  has_many :trainees, through: :trainee_events
   has_many :offers, foreign_key: 'trainer_id'
   has_many :milestones, foreign_key: 'trainer_id'
   has_many :user_practice_categories

@@ -83,14 +83,14 @@
     <div class="col-4">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <p><%= link_to "Export", user_events_url(current_user), class:'btn btn-outline-primary btn-sm btn-block' %></p>
+        <p><%= link_to "Export", user_events_url(@user), class:'btn btn-outline-primary btn-sm btn-block' %></p>
       <% end %>
     </div>
     <div class="col"></div>
     <div class="col-4">
       <% if current_user && current_user == @user %>
           <!-- change url below -->
-        <%= link_to "Edit", manage_events_url, class:'btn btn-primary btn-sm btn-block' %>
+        <%= link_to "Edit", user_manage_events_url(@user), class:'btn btn-primary btn-sm btn-block' %>
       <% end %>
     </div>
     <div class="col"></div>

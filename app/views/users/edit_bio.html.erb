@@ -2,7 +2,7 @@
 <!-- < Add/Edit Offering -->
 <div class="container my-5">
 
-  <%= form_for(@user, url: { action: "update" }) do |f| %>
+  <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
         <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
@@ -63,7 +63,8 @@
         <% end %>
       <% end %>
       <div class="row">
-        <%=button_to "add specialty", create_user_specialty_category %>
+        <%# SELECT %>
+        <%= button_to "add specialty", user_specialty_category %>
       </div>
     </div>
 
