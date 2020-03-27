@@ -2,8 +2,6 @@
   <%= render 'layouts/logged_out' %>
 <% else %>
   <%= render 'layouts/navbar_manage_events' %>
-
-
   <div class="container">
     <div class="row text-center mt-3">
       <div class="col-1"></div>
@@ -20,6 +18,7 @@
             </li>
           <% end %>
         </ul>
+      </div>
       <div class="col-1"></div>
     </div>
 
@@ -30,43 +29,39 @@
         <% else %>
           <div class="tab-pane mb-4" id=<%= "day#{i}" %> role="tabpanel" aria-labelledby= <%= "day#{i}-tab" %>>
         <% end %>
-          <% if @events.empty?  %>
-            <div class="row text-center mt-4 mb-4">
-              <div class="col"></div>
-              <div class="col"><span class="schedule date"> No classes scheduled this week </span></div>
-              <div class="col"></div>
-            </div>
-          <% else %>
-            <% @events.each do |event| %>
-              <% if event.date == date %>
-                <div class="row text-center mt-3">
-                  <div class="col-1">
-                    <% if event.recurring == 1 %>
-                      <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
-                    <% end %>
-                  </div>
-                  <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-                  <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-                  <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-                  <div class="col-1"><%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_event_url(event) %></div>
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col-4"></div>
+            <div class="col-4"><span class="schedule date"> No classes scheduled this week </span></div>
+            <div class="col-4"></div>
+          </div>
+        <% else %>
+          <% @events.each do |event| %>
+            <% if event.date == date %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_event_url(event) %></div>
+              </div>
             <% end %>
           <% end %>
+        <% end %>
         </div>
       <% end %>
     </div>
 
-    <!-- display timerange schedule -->
-
     <div class="row text-center mt-5 mb-3">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <% if current_user && current_user == @user %>
-          <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
-        <% end %>
+      <div class="col-4"></div>
+      <div class="col-4">
+        <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
       </div>
-      <div class="col-2"></div>
+      <div class="col-4"></div>
     </div>
   </div>
 
