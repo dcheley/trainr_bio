@@ -14,10 +14,10 @@ class EventsController < ApplicationController
   def manage_events
     @user = current_user
     # @events = current_user.events
-    start_of_period = Date.today.beginning_of_week
+    start_of_period = Date.today
     end_of_period = Date.today.beginning_of_week + 28.days
     @events = @user.trainer_events.where(date: start_of_period..end_of_period).order("date ASC")
-    @week0 = @events.where(date: Date.today.beginning_of_week..Date.today.end_of_week).order("date ASC")
+    @week0 = @events.where(date: Date.today..Date.today.end_of_week).order("date ASC")
     @week1 = @events.where(date: (Date.today.beginning_of_week+7)..(Date.today.end_of_week+7)).order("date ASC")
     @week2 = @events.where(date: (Date.today.beginning_of_week+14)..(Date.today.end_of_week+14)).order("date ASC")
     @week3 = @events.where(date: (Date.today.beginning_of_week+21)..(Date.today.end_of_week+21)).order("date ASC")
