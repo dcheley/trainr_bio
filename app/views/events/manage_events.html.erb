@@ -5,9 +5,9 @@
   <div class="container">
     <div class="row text-center mt-3">
       <div class="col-1"><p><br/><</p></div>
-      <div class="col-3 my-auto"><p><%= Date.today.strftime('%^b') %><br/>Week 1</p></div>
+      <div class="col-2 my-auto"><p><%= Date.today.strftime('%^b') %><br/>Week 1</p></div>
       <div class="col-1"><p><br/>></p></div>
-      <div class="col-7 my-auto">
+      <div class="col-8 my-auto">
         <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
           <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
             <li class="nav-item">
