@@ -10,13 +10,13 @@
           Week of
           <br/>
           «
-          <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b /%d') %>
+          <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
           »
         </p>
       </div>
       <div class="col-7 my-auto">
         <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
-          <% ((Date.today + (7 * $week))..(Date.today + 6 + (7 * $week))).each_with_index do |date, i| %>
+          <% ((Date.today + (7 * $week)).beginning_of_week..(Date.today + (7 * $week)).end_of_week).each_with_index do |date, i| %>
             <li class="nav-item">
               <% if i < 1 %>
                 <a class="schedule week-toggle mr-1 ml-1 active" id=<%= "day-tab" %> href=<%= "#day" %> data-toggle="pill" role="tab" aria-controls="day" aria-selected="true"><%= date.strftime('%a /%d') %></a>
@@ -30,7 +30,7 @@
     </div>
 
     <div class="tab-content clearfix">
-      <% ((Date.today + (7 * $week))..(Date.today + 6 + (7 * $week))).each_with_index do |date, i| %>
+      <% ((Date.today + (7 * $week)).beginning_of_week..(Date.today + (7 * $week)).end_of_week).each_with_index do |date, i| %>
         <% if i < 1 %>
           <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
         <% else %>
