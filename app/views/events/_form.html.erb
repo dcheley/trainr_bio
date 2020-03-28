@@ -15,19 +15,19 @@
           </div>
         <% end %>
 
-        <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control no-border grey-bottom-border" %>
+        <%= f.text_field :title, required: true, placeholder: "Class Title", class: "no-border grey-bottom-border" %>
 
         <%= image_tag("location.png", height:'11', width:'11' ) %>
-        <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control no-border" %>
+        <%= f.text_field :location, required: true, placeholder: "Studio", class: "no-border" %>
 
         <%= image_tag("date.png", height:'11', width:'11' ) %>
-        <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control no-border" %>
+        <%= f.date_field :date, required: true, placeholder: Date.today, class: "no-border" %>
 
         <%= image_tag("time.png", height:'11', width:'11' ) %>
-        <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control no-border" %>
+        <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "no-border" %>
 
         <%= image_tag("duration.svg", height:'11', width:'11' ) %>
-        <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control no-border" %>
+        <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "no-border" %>
 
         <div class="form-group">
           <%= f.check_box :recurring %>
