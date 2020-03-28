@@ -9,9 +9,9 @@
         <p>
           Week of
           <br/>
-          <button onclick="decrement()"> « </button>
+          <button onclick="decrement(<%$week%>)"> « </button>
           <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
-          <button onclick="increment()"> » </button>
+          <button onclick="increment(<%$week%>)"> » </button>
         </p>
       </div>
       <div class="col-7 my-auto">
@@ -80,10 +80,10 @@
 <% end %>
 
 <script>
-  function decrement() {
-    <%j @week = @week - 1 %>;
+  function decrement(x) {
+    x --;
   }
-  function increment() {
-    <%j @week = @week + 1 %>;
+  function increment(x) {
+    x ++;
   }
 </script>
