@@ -15,30 +15,19 @@
           </div>
         <% end %>
 
-        <div class="form-group">
-          <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control no-border grey-bottom-border" %>
-        </div>
+        <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control no-border grey-bottom-border" %>
 
-        <!-- add_column :events, :location, :string -->
-        <div class="form-group">
-          <%= image_tag("location.png", height:'8', width:'8' ) %>
-          <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control no-border" %>
-        </div>
+        <%= image_tag("location.png", height:'11', width:'11' ) %>
+        <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control no-border" %>
 
-        <div class="form-group">
-          <%= image_tag("date.png", height:'8', width:'8' ) %>
-          <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control no-border" %>
-        </div>
+        <%= image_tag("date.png", height:'11', width:'11' ) %>
+        <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control no-border" %>
 
-        <div class="form-group">
-          <%= image_tag("time.png", height:'8', width:'8' ) %>
-          <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control no-border" %>
-        </div>
+        <%= image_tag("time.png", height:'11', width:'11' ) %>
+        <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control no-border" %>
 
-        <div class="form-group">
-          <%= image_tag("duration.svg", height:'8', width:'8' ) %>
-          <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control no-border" %>
-        </div>
+        <%= image_tag("duration.svg", height:'11', width:'11' ) %>
+        <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control no-border" %>
 
         <div class="form-group">
           <%= f.check_box :recurring %>
