@@ -9,8 +9,9 @@
         <p>
           Week of
           <br/>
-          <button onclick="decrement(<%$week%>)"> « </button>
           <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
+          <br/>
+          <button onclick="decrement(<%$week%>)"> « </button>
           <button onclick="increment(<%$week%>)"> » </button>
         </p>
       </div>
