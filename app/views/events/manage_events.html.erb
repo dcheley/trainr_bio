@@ -5,7 +5,7 @@
   <div class="container">
     <% $week = 0 %>
     <div class="row text-center">
-      <div class="col-5 my-auto">
+      <div class="col-5">
         <p>
           Week of
           <br/>
@@ -15,7 +15,7 @@
           <button onclick="increment(<%$week%>)"> » </button>
         </p>
       </div>
-      <div class="col-7 my-auto">
+      <div class="col-7">
         <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
           <% ((Date.today + (7 * $week)).beginning_of_week..(Date.today + (7 * $week)).end_of_week).each_with_index do |date, i| %>
             <li class="nav-item">
