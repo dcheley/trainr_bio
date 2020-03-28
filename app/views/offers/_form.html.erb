@@ -13,97 +13,93 @@
     <% end %>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Title*:</h6>
-          <%= f.text_field :title, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
-        </div>
-      </div>
-      <div class="col"></div>
+      <div class="col-1"></div>
+      <div class="col-3"><%= f.label "Title*", class: "form-label" %></div>
+      <div class="col-7"><%= f.text_field :title, placeholder: "", class: "form-control no-border color-bottom-border", required: true %></div>
+      <div class="col-1"></div>
     </div>
 
     <!-- Offering Type -->
+
+    <div class="row mb-1">
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.label "Short Description*", class: "form-label" %></div>
+      <div class="col-1"></div>
+    </div>
     <div class="row mb-3">
-      <div class="col"></div>
+      <div class="col-1"></div>
       <div class="col-10">
-        <div class="form-group">
-          <h6>Short Description*:</h6>
-          <%= f.text_area :description, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
-        </div>
+        <%= f.text_area :description, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
       </div>
-      <div class="col"></div>
+      <div class="col-1"></div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Duration*:</h6>
-          <%= f.text_field :duration, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
-        </div>
-       </div>
-       <div class="col"></div>
+      <div class="col-1"></div>
+      <div class="col-3"><%= f.label "Duration", class: "form-label" %></div>
+      <div class="col-7"><%= f.text_field :duration, placeholder: "", class: "form-control no-border color-bottom-border", required: true %></div>
+      <div class="col-1"></div>
     </div>
+
     <!-- Date/Time -->
+    
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Location*:</h6>
-          <br/>
-          <%= f.text_field :location, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
-        </div>
-       </div>
-       <div class="col"></div>
+      <div class="col-1"></div>
+      <div class="col-3"><%= f.label "Location*", class: "form-label" %></div>
+      <div class="col-7"><%= f.text_field :location, placeholder: "", class: "form-control no-border color-bottom-border", required: true %></div>
+      <div class="col-1"></div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Cost*:</h6>
-          <br/>
-          <%= f.text_field :cost, placeholder: "", class: "form-control no-border color-bottom-border", required: true %>
-        </div>
-       </div>
-       <div class="col"></div>
+      <div class="col-1"></div>
+      <div class="col-3"><%= f.label "Cost*", class: "form-label" %></div>
+      <div class="col-7"><%= f.text_field :cost, placeholder: "", class: "form-control no-border color-bottom-border", required: true %></div>
+      <div class="col-1"></div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.label "Other Info", class: "form-label" %></div>
+      <div class="col-1"></div>
+    </div>
     <div class="row mb-3">
-      <div class="col"></div>
+      <div class="col-1"></div>
       <div class="col-10">
-        <div class="form-group">
-          <h6>Other Info:</h6>
-          <br/>
-          <%= f.text_field :other, placeholder: "", class: "form-control no-border color-bottom-border" %>
-        </div>
-       </div>
-       <div class="col"></div>
+        <%= f.text_field :other, placeholder: "", class: "form-control no-border color-bottom-border" %>
+      </div>
+      <div class="col-1"></div>
     </div>
 
-    <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Booking URL or Contact Info:</h6>
-          <br/>
-          <%= f.text_field :booking_url, placeholder: "", class: "form-control no-border color-bottom-border" %>
-        </div>
-       </div>
-       <div class="col"></div>
+    <div class="row mb-1">
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.label "Booking URL or Contact Email", class: "form-label" %></div>
+      <div class="col-1"></div>
     </div>
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <%= f.text_field :booking_url, placeholder: "", class: "form-control no-border color-bottom-border" %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
 
     <%= f.hidden_field :trainer_id, value: current_user.id %>
 
-    <!-- Hide Offering -->
+    <!--
+
+    Upload Cover photo
+    Hide Offering
+    Delete Offering
+
+    -->
 
     <div class="row">
       <div class="col-8"></div>
       <div class="col-3">
         <%= f.submit 'Save', class: 'btn btn-secondary' %>
       </div>
-      <div class="col"></div>
+      <div class="col-1"></div>
     </div>
   <% end %>
 </div>
