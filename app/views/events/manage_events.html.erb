@@ -9,9 +9,9 @@
         <p>
           Week of
           <br/>
-          <button onclick="myFunction()"> « </button>
+          <button onclick="decrement()"> « </button>
           <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
-          <button onclick="myFunction()"> » </button>
+          <button onclick="increment()"> » </button>
         </p>
       </div>
       <div class="col-7 my-auto">
@@ -78,3 +78,12 @@
     <%= render 'layouts/footer_trainer' %>
   <% end %>
 <% end %>
+
+<script>
+  function decrement() {
+    <%j @week = @week - 1 %>;
+  }
+  function increment() {
+    <%j @week = @week + 1 %>;
+  }
+</script>
