@@ -10,6 +10,11 @@ h1 {
     font-size: $font-size-3;
     font-style: italic;
   }
+  .title {
+      font-size: $font-size-8;
+      font-weight: bold;
+      font-style: italic;
+  }
   .edit {
     font-family: $abz;
   }
@@ -69,11 +74,6 @@ p {
     font-size: $font-size-4;
     font-style: italic;
   }
-}
-
-.title {
-    font-size: $font-size-8;
-    font-weight: bold;
 }
 
 .schedule {

@@ -37,13 +37,13 @@
         </div>
 
         <div class="form-group">
-          <%= f.label 'Recurring class?' %>
+          <%= f.label 'Repeat Weekly?' %>
           <%= f.check_box :recurring %>
         </div>
 
         <%= f.hidden_field :trainer_id, value: current_user.id %>
 
-        <%= f.submit "Submit", class: 'btn btn-primary' %>
+        <%= f.submit "Save", class: 'btn btn-primary' %>
       <% end %>
     </div>
     <div class="col-2"></div>
