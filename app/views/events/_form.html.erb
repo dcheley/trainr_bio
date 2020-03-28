@@ -16,29 +16,29 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control" %>
+          <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control no-border grey-bottom-border" %>
         </div>
 
         <!-- add_column :events, :location, :string -->
         <div class="form-group">
-          <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control" %>
+          <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control no-border" %>
         </div>
 
         <div class="form-group">
-          <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control" %>
+          <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control no-border" %>
         </div>
 
         <div class="form-group">
-          <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control" %>
+          <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control no-border" %>
         </div>
 
         <div class="form-group">
-          <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control" %>
+          <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control no-border" %>
         </div>
 
         <div class="form-group">
-          <%= f.label 'Repeat Weekly?' %>
           <%= f.check_box :recurring %>
+          <%= f.label 'Repeat Weekly?' %>
         </div>
 
         <%= f.hidden_field :trainer_id, value: current_user.id %>
