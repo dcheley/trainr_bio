@@ -15,7 +15,7 @@
           </div>
         <% end %>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-1"></div>
           <div class="col-10">
             <%= f.text_field :title, required: true, placeholder: "Class Title", class: "no-border grey-bottom-border" %>
@@ -23,7 +23,7 @@
           <div class="col-1"></div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-1"><%= image_tag("location.png", height:'11', width:'11' ) %></div>
           <div class="col-10">
             <%= f.text_field :location, required: true, placeholder: "Studio", class: "no-border" %>
@@ -31,7 +31,7 @@
           <div class="col-1"></div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-1"><%= image_tag("date.png", height:'11', width:'11' ) %></div>
           <div class="col-10">
             <%= f.date_field :date, required: true, placeholder: Date.today, class: "no-border" %>
@@ -39,21 +39,23 @@
           <div class="col-1"></div>
         </div>
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-1"><%= image_tag("time.png", height:'11', width:'11' ) %></div>
           <div class="col-4">
             <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "no-border" %>
           </div>
           <div class="col-1"><%= image_tag("duration.svg", height:'11', width:'11' ) %></div>
-          <div class="col-5">            
+          <div class="col-5">
             <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "no-border" %>
           </div>
           <div class="col-1"></div>
         </div>
 
-        <div class="form-group">
-          <%= f.check_box :recurring %>
-          <%= f.label 'Repeat Weekly?' %>
+        <div class="row mt-3">
+          <div class="form-group">
+            <%= f.check_box :recurring %>
+            <%= f.label 'Repeat Weekly?' %>
+          </div>
         </div>
 
         <%= f.hidden_field :trainer_id, value: current_user.id %>
