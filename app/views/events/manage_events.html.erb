@@ -9,9 +9,9 @@
         <p>
           Week of
           <br/>
-          «
+          <button onclick="myFunction()"> « </button>
           <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
-          »
+          <button onclick="myFunction()"> » </button>
         </p>
       </div>
       <div class="col-7 my-auto">
