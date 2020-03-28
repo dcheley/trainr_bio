@@ -16,28 +16,23 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label "", class: "form-label" %>
           <%= f.text_field :title, required: true, placeholder: "Class Title", class: "form-control" %>
         </div>
 
         <!-- add_column :events, :location, :string -->
         <div class="form-group">
-          <%= f.label "", class: "form-label" %>
           <%= f.text_field :location, required: true, placeholder: "Studio", class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label "", class: "form-label" %>
           <%= f.date_field :date, required: true, placeholder: Date.today, class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label "", class: "form-label" %>
           <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label "", class: "form-label" %>
           <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "form-control" %>
         </div>
 
