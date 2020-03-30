@@ -2,15 +2,22 @@
   <%= render 'layouts/logged_out' %>
 <% else %>
   <%= render 'layouts/navbar_manage_events' %>
-
-
   <div class="container">
-    <div class="row text-center mt-3">
-      <div class="col-1"></div>
-      <div class="col-3 my-auto"><p><%= Date.today.strftime('%^b') %><br/>Week 1</p></div>
-      <div class="col-7 my-auto">
+    <% $week = 0 %>
+    <div class="row text-center">
+      <div class="col-5">
+        <p>
+          Week of
+          <br/>
+          <%= (Date.today + (7 * $week)).beginning_of_week.strftime('%^b %d') %>
+          <br/>
+          <button onclick="decrement(<%$week%>)"> « </button>
+          <button onclick="increment(<%$week%>)"> » </button>
+        </p>
+      </div>
+      <div class="col-7">
         <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
-          <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
+          <% ((Date.today + (7 * $week)).beginning_of_week..(Date.today + (7 * $week)).end_of_week).each_with_index do |date, i| %>
             <li class="nav-item">
               <% if i < 1 %>
                 <a class="schedule week-toggle mr-1 ml-1 active" id=<%= "day-tab" %> href=<%= "#day" %> data-toggle="pill" role="tab" aria-controls="day" aria-selected="true"><%= date.strftime('%a /%d') %></a>
@@ -20,53 +27,49 @@
             </li>
           <% end %>
         </ul>
-      <div class="col-1"></div>
+      </div>
     </div>
 
     <div class="tab-content clearfix">
-      <% (Date.today..(Date.today + 6)).each_with_index do |date, i| %>
+      <% ((Date.today + (7 * $week)).beginning_of_week..(Date.today + (7 * $week)).end_of_week).each_with_index do |date, i| %>
         <% if i < 1 %>
           <div class="tab-pane active mb-4" id="day" role="tabpanel" aria-labelledby="day-tab">
         <% else %>
-          <div class="tab-pane mb-4" id=<%= "day#{i}" %> role="tabpanel" aria-labelledby= <%= "day#{i}-tab" %>>
+          <div class="tab-pane mb-4" id=<%= "day#{i}" %> role="tabpanel" aria-labelledby=<%= "day#{i}-tab" %>>
         <% end %>
-          <% if @events.empty?  %>
-            <div class="row text-center mt-4 mb-4">
-              <div class="col"></div>
-              <div class="col"><span class="schedule date"> No classes scheduled this week </span></div>
-              <div class="col"></div>
-            </div>
-          <% else %>
-            <% @events.each do |event| %>
-              <% if event.date == date %>
-                <div class="row text-center mt-3">
-                  <div class="col-1">
-                    <% if event.recurring == 1 %>
-                      <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
-                    <% end %>
-                  </div>
-                  <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
-                  <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
-                  <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
-                  <div class="col-1"><%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_event_url(event) %></div>
+        <% if @events.empty?  %>
+          <div class="row text-center mt-4 mb-4">
+            <div class="col-4"></div>
+            <div class="col-4"><span class="schedule date"> No classes scheduled for this period </span></div>
+            <div class="col-4"></div>
+          </div>
+        <% else %>
+          <% @week0.each do |event| %>
+            <% if event.date == date %>
+              <div class="row text-center mt-3">
+                <div class="col-1">
+                  <% if event.recurring == 1 %>
+                    <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+                  <% end %>
                 </div>
-              <% end %>
+                <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+                <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+                <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+                <div class="col-1"><%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_event_url(event) %></div>
+              </div>
             <% end %>
           <% end %>
+        <% end %>
         </div>
       <% end %>
     </div>
 
-    <!-- display timerange schedule -->
-
     <div class="row text-center mt-5 mb-3">
-      <div class="col-2"></div>
-      <div class="col-8">
-        <% if current_user && current_user == @user %>
-          <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
-        <% end %>
+      <div class="col-4"></div>
+      <div class="col-4">
+        <%= link_to "Add a Class", new_event_url,  class: "btn btn-primary mt-5 mb-5" %>
       </div>
-      <div class="col-2"></div>
+      <div class="col-4"></div>
     </div>
   </div>
 
@@ -76,3 +79,12 @@
     <%= render 'layouts/footer_trainer' %>
   <% end %>
 <% end %>
+
+<script>
+  function decrement(x) {
+    x --;
+  }
+  function increment(x) {
+    x ++;
+  }
+</script>

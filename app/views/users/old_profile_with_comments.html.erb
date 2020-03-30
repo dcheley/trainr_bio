@@ -1,0 +1,124 @@
+<% if !current_user %>
+  <%= render 'layouts/logged_out' %>
+<% else %>
+  <%= render 'layouts/navbar_profile' %>
+  <%= render 'layouts/navbar_secondary' %>
+
+  <div class="container text-center"><%= flash[:notice] %></div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-12">
+        <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic", height: 84, width: 226.7)"  -->
+        <%= image_tag('cover.jpg', class:'btn-block') %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-6">
+        <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
+        <%= image_tag('profile.png', height: 166, width: 166, class:'') %>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-3">
+        <div class="row mt-3">Firstname<% @user.first_name %></div>
+        <div class="row">Lastname<% @user.last_name %></div>
+        <div class="row mt-1">headline<% @user.headline %></div>
+        <div class="row">🏠 location<% @user.location %></div>
+        <div class="row mt-2">
+          <div class="col-6"><%= link_to "☆", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
+          <div class="col-6"><%= link_to "🔗", new_user_registration_url,  class: "btn btn-dark btn-sm mx-2" %></div>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10"><p>description: <% @user.description %></p></div>
+      <div class="col-1"></div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+      <div class="row text-center"><p> Upcoming </p></div>
+      <div class="row text-center">
+        <div class="col-9"></div>
+        <div class="col-3"><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></div>
+      </div>
+      <% if @events.empty?  %>
+        <div class="row text-center mt-4 mb-4">
+          <div class="col"></div>
+          <div class="col"><span class="schedule date"> No classes this week </span></div>
+          <div class="col"></div>
+        </div>
+      <% else %>
+        <% $previous_date = 0 %>
+        <% @events.each do |event| %>
+            <% if event.date != @previous_date %>
+              <div class="row mt-4">
+                <div class="col">
+                  <span class="schedule date"><%= event.date.strftime('%a %_m/%-d') %><br/></span>
+                </div>
+              </div>
+              <% @previous_date = event.date %>
+            <% end %>
+            <div class="row">
+              <div class="col-4 text-center"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+              <div class="col-4"><span class="schedule session-name"><%= event.title %></span></div>
+              <div class="col-4 text-right"><span class="schedule studio-name"><%= event.location %></span></div>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-6">
+        <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-2">
+        <%= image_tag("pray.jfif", height: 22, width: 22, class:'') %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <% if @comments.empty?  %>
+      <div class="row text-center mt-4 mb-4">
+        <div class="col-1"></div>
+        <div class="col-10"><span class="schedule date"> No comments yet, please leave one using the above button! </span></div>
+        <div class="col-1"></div>
+      </div>
+    <% else %>
+      <% @comments.each do |comment| %>
+        <div class="row">
+          <div class="col-1">pic</div>
+          <div class="col-10">This is where a comment will go</div>
+          <div class="col-1">♥</div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <%= link_to "See __ More", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if current_user && current_user.role == 1 %>
+  	<%= render 'layouts/footer_trainer' %>
+  <% else %>
+  	<%= render 'layouts/footer_trainee' %>
+  <% end %>
+<% end %>

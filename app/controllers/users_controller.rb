@@ -78,18 +78,18 @@ class UsersController < ApplicationController
     @user = current_user
     # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
     # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones
-    @practices = @user.user_practice_categories
-    @specialties = @user.user_specialty_categories
+    @milestones = @user.milestones.order("year DESC")
+    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
+    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
   end
 
   def edit_bio
     @user = current_user
     # @practices = Practice_categories.where(trainer_id: user).order("name ASC")
     # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones
-    @practices = @user.user_practice_categories
-    @specialties = @user.user_specialty_categories
+    @milestones = @user.milestones.order("year DESC")
+    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
+    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
   end
 
   private
