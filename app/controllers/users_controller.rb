@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   def edit
     @studios = Studio.all.order("name ASC")
-    
+
     if current_user != @user
       redirect_to :index, notice: "Not authorized."
     end
@@ -70,26 +70,22 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    @user = User.find(params[:user_id])
     @events = @user.trainer_events.limit(6).order("date ASC")
   end
 
   def bio
-    @user = current_user
-    # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
-    # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones.order("year DESC")
-    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
-    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
+    @user = User.find(params[:user_id])
+    @milestones = @user.milestones.order("year ASC")
+    @practices = UserPracticeCategory.where(user_id: @user.id).order("name ASC")
+    @specialties = UserSpecialtyCategory.where(user_id: @user.id).order("name ASC")
   end
 
   def edit_bio
     @user = current_user
-    # @practices = Practice_categories.where(trainer_id: user).order("name ASC")
-    # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones.order("year DESC")
-    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
-    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
+    @milestones = Milestone.new
+    @practices = PracticeCategory.all.order("name ASC")
+    @specialties = SpecialtyCategory.all.order("name ASC")
   end
 
   private

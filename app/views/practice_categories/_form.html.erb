@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5 mb-5">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <%= form_for(@practice) do |f| %>
+        <% if @practice.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(@practice.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+            <% @practice.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: "Practice name", class: "no-border color-bottom-border", required: true %>
+        <%= f.submit "Save", class: "btn btn-secondary" %>
+      <% end %>
+    <div class="col-1"></div>
+  </div>
+</div>
+
+<%= render 'layouts/footer_trainer' %>
