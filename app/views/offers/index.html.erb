@@ -21,32 +21,30 @@
       </div>
     <% else %>
       <% @offers.each do |offer| %>
-        <div class="container" style="border-style: solid;">
-          <figure>
+        <figure style="border-style: solid;">
+          <div class="row">
+            <div class="col-12">
+              <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block"), offer_url(offer) %>
+            </div>
+          </div>
+          <figcaption>
             <div class="row">
-              <div class="col-12">
-                <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block"), offer_url(offer) %>
+              <div class="col-2">
+                <% if current_user && current_user == @user %>
+                  <% if offer.status == 1 %>
+                    <%= image_tag('private.svg', height: 11, width: 11, class:'') %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="col-8"><%= offer.title %></div>
+              <div class="col-2">
+                <% if current_user && current_user == @user %>
+                  <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer) %>
+                <% end %>
               </div>
             </div>
-            <figcaption>
-              <div class="row">
-                <div class="col-2">
-                  <% if current_user && current_user == @user %>
-                    <% if offer.status == 1 %>
-                      <%= image_tag('private.svg', height: 11, width: 11, class:'') %>
-                    <% end %>
-                  <% end %>
-                </div>
-                <div class="col-8"><%= offer.title %></div>
-                <div class="col-2">
-                  <% if current_user && current_user == @user %>
-                    <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_offer_url(offer) %>
-                  <% end %>
-                </div>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
+          </figcaption>
+        </figure>
         <br/>
       <% end %>
     <% end %>
