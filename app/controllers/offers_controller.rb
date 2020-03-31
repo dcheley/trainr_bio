@@ -34,8 +34,10 @@ class OffersController < ApplicationController
   end
 
   def update
-    attach_image
-    
+    if !params[:offer][:avatar]
+      attach_image
+    end
+
     if @offer.update_attributes(offer_params)
       redirect_to user_url(@offer.trainer_id), notice: "Offer details updated!"
     else
@@ -56,8 +58,8 @@ class OffersController < ApplicationController
 
   def offer_params
     params.require(:offer).permit(
-      :title, :description, :duration, :start_time, :date, :location,
-      :trainer_id, :cost, :booking_url, :status, :other
+      :title, :description, :duration, :start_time, :date, :location, :latitude,
+      :longitude, :trainer_id, :cost, :booking_url, :status, :other
     )
   end
 

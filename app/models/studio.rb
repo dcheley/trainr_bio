@@ -6,6 +6,9 @@ class Studio < ApplicationRecord
   has_many :user_studios
   has_many :trainer_studios
 
+  geocoded_by :location
+  after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
+
   def self.search(search)
     where("name ILIKE ?", "%#{search}%")
     # .user

@@ -27,7 +27,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.avatar.attach(params[:user][:avatar])
+    if !params[:user][:avatar].nil?
+      @user.avatar.attach(params[:user][:avatar])
+    end
 
     if @user.update_attributes(user_params)
       redirect_to user_path(@user), notice: "Account updated!"
@@ -98,7 +100,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
       :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
-      :password, :password_confirmation, :role
+      :password, :password_confirmation, :role, :latitude, :longitude
     )
   end
 end

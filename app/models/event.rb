@@ -6,4 +6,7 @@ class Event < ApplicationRecord
 
   scope :recurring, -> { where(recurring: 1) }
   scope :one_time, -> { where(recurring: 0) }
+
+  geocoded_by :location
+  after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
 end
