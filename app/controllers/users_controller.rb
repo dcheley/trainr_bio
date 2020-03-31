@@ -79,8 +79,8 @@ class UsersController < ApplicationController
   def bio
     @user = User.find(params[:user_id])
     @milestones = @user.milestones.order("year ASC")
-    @practices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by {|p| p.practice_category.name }
-    @specialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by {|s| s.specialty_category.name }
+    @practices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by { |p| p.practice_category.name }
+    @specialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by { |s| s.specialty_category.name }
   end
 
   def edit_bio
