@@ -1,21 +1,18 @@
 class SpecialtyCategoriesController < ApplicationController
-  before_action :load_practice, only: [:edit, :update, :destroy]
-
-  def new
-    @specialty = SpecialtyCategory.new
-  end
+  before_action :load_specialty, only: [:edit, :update, :destroy]
 
   def create
-    @specialty = SpecialtyCategory.new(practice_category_params)
+    @specialty = SpecialtyCategory.new(specialty_category_params)
 
     if @specialty.save
-      redirect_to practice_categories_url, notice: "Specialty saved!"
+      redirect_to specialty_categories_url, notice: "Specialty saved!"
     else
-      render :new
+      render :index
     end
   end
 
   def index
+    @specialty = SpecialtyCategory.new
     @specialties = SpecialtyCategory.all.order("name ASC")
   end
 
@@ -23,8 +20,8 @@ class SpecialtyCategoriesController < ApplicationController
   end
 
   def update
-    if @specialty.update_attributes(practice_category_params)
-      redirect_to practice_categories_url, notice: "Specialty updated!"
+    if @specialty.update_attributes(specialty_category_params)
+      redirect_to specialty_categories_url, notice: "Specialty updated!"
     else
       render :edit
     end
@@ -32,7 +29,7 @@ class SpecialtyCategoriesController < ApplicationController
 
   def destroy
     @specialty.destroy
-    redirect_to practice_categories_url, notice: "Specialty deleted."
+    redirect_to specialty_categories_url, notice: "Specialty deleted."
   end
 
   private
@@ -41,5 +38,9 @@ class SpecialtyCategoriesController < ApplicationController
     params.require(:specialty_category).permit(
       :name
     )
+  end
+
+  def load_specialty
+    @specialty = SpecialtyCategory.find(params[:id])
   end
 end
