@@ -1,7 +1,4 @@
 class UsersController < ApplicationController
-  require 'sendgrid-ruby'
-  include SendGrid
-
   before_action :load_user, only: [:show, :edit, :update, :destroy]
 
   def show
@@ -23,12 +20,15 @@ class UsersController < ApplicationController
 
   def edit
     @studios = Studio.all.order("name ASC")
+
     if current_user != @user
       redirect_to :index, notice: "Not authorized."
     end
   end
 
   def update
+    @user.avatar.attach(params[:user][:avatar])
+
     if @user.update_attributes(user_params)
       redirect_to user_path(@user), notice: "Account updated!"
     else
@@ -49,20 +49,18 @@ class UsersController < ApplicationController
   end
 
   def landing_email
-    body = params[:comment]
-
-    from = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    to = SendGrid::Email.new(email: 'trainrbio@gmail.com')
-    subject ="#{current_user.email} sent a message from the prelaunch site!"
-    content = SendGrid::Content.new(type: 'text/plain', value: body)
-    mail = SendGrid::Mail.new(from, subject, to, content)
-
-    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    SendGridService::Email.new(
+      'trainrbio@gmail.com',
+      'trainrbio@gmail.com',
+      "#{current_user.email} sent a message from the prelaunch site!",
+      'text/plain',
+      nil,
+      params[:comment],
+    ).send_email
 
     # UserMailer.landing_email(body).deliver_later
 
-    redirect_to :pre_launch_reservation, notice: "Thanks for the feedback!"
+    redirect_to root_url, notice: "Thanks for the feedback!"
   end
 
   def forgot_password
@@ -72,26 +70,22 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = current_user
+    @user = User.find(params[:user_id])
     @events = @user.trainer_events.where(date: Date.today..Date.today.end_of_week+7).limit(6).order("date ASC")
   end
 
   def bio
-    @user = current_user
-    # @practices = Practice_categories.where(trainer_id: user).order("first_name ASC")
-    # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones.order("year DESC")
-    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
-    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
+    @user = User.find(params[:user_id])
+    @milestones = @user.milestones.order("year ASC")
+    @practices = UserPracticeCategory.where(user_id: @user.id).order("name ASC")
+    @specialties = UserSpecialtyCategory.where(user_id: @user.id).order("name ASC")
   end
 
   def edit_bio
     @user = current_user
-    # @practices = Practice_categories.where(trainer_id: user).order("name ASC")
-    # @milestones = milestones.where(trainer_id: user).order("year DESC")
-    @milestones = @user.milestones.order("year DESC")
-    @practices = PracticeCategories.where(trainer_id: user).order("name ASC")
-    @specialties = SpecialtyCategories.where(trainer_id: user).order("name ASC")
+    @milestones = Milestone.new
+    @practices = PracticeCategory.all.order("name ASC")
+    @specialties = SpecialtyCategory.all.order("name ASC")
   end
 
   private

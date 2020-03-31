@@ -7,6 +7,7 @@ class StudiosController < ApplicationController
 
   def create
     @studio = Studio.new(studio_params)
+    attach_image
 
     if @studio.save
       session[:studio_id] = @studio.id
@@ -28,6 +29,8 @@ class StudiosController < ApplicationController
   end
 
   def update
+    attach_image
+    
     if @studio.update_attributes(studio_params)
       redirect_to studio_path(@studio), notice: "Studio details updated!"
     else
@@ -48,5 +51,9 @@ class StudiosController < ApplicationController
 
   def studio_params
     params.require(:studio).permit(:name, :phone, :location, :img_url, :website_url, :username)
+  end
+
+  def attach_image
+    @studio.avatar.attach(params[:studio][:avatar])
   end
 end

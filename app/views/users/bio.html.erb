@@ -8,20 +8,24 @@
     <div class="row text-center mt-5 mb-3">
       <div class="col-2"></div>
       <div class="col-8">
-        <% if current_user && current_user == @user && !current_user.bio.nil? %>
-          <%= link_to "Update Bio", edit_bio_url(@bio),  class: "btn btn-primary mt-5 mb-5" %>
+        <% if current_user == @user %>
+          <%= link_to "Update Bio", user_edit_bio_url(@user),  class: "btn btn-primary mt-5 mb-5" %>
         <% end %>
       </div>
       <div class="col-2"></div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center mb-3">
       <div class="col-12">
-        <%= image_tag('milan.jpg', height: 213.4, width: 320, class:'') %>
+        <% if @user.avatar.attachment.nil? %>
+          <%= image_tag('user.svg', class:'round', height:'220', width:'220')%>
+        <% else %>
+          <%= image_tag @user.avatar.service_url, class:'round', height:'220', width:'220' %>
+        <% end %>
       </div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center mb-3">
       <div class="col-1"></div>
       <div class="col-1"></div>
       <div class="col-8">swipefeedback</div>
@@ -29,11 +33,12 @@
       <div class="col-1"></div>
     </div>
 
-    <div class="row text-center">
+    <div class="row text-center mb-3">
       <div class="col-1"></div>
       <div class="col-10">About Me</div>
       <div class="col-1"></div>
     </div>
+
     <div class="row text-center">
       <div class="col-1"></div>
       <div class="col-10"><%= @user.bio %></div>

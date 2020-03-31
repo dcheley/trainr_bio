@@ -1,0 +1,21 @@
+<div class="container text-center">
+  <div class="row mt-5">
+    <div class="col-12">
+      <h5>Manage Specialties</h5>
+
+      <% @specialties.each do |s| %>
+        <div class="row mt-5 mb-5">
+          <div class="col-1"></div>
+          <div class="col-10">
+          <%= link_to "#{p.name}", edit_specialty_category_url(s) %>
+          <%= button_to "X", { action: "destroy", id: s.id },
+            method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
+          <div class="col-1"></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/footer_trainer' %>
