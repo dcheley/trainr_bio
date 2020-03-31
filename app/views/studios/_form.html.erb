@@ -48,7 +48,7 @@
             <div class="form-group">
               <h6>Address*:</h6>
               <br/>
-              <%= f.text_field :location, placeholder: "15 Front St.", class: "form-control no-border color-bottom-border", required: true %>
+              <%= f.text_field :location, placeholder: "15 Front St.", class: "form-control no-border color-bottom-border", required: true, id: :autocomplete_address %>
             </div>
            </div>
            <div class="col"></div>
@@ -104,5 +104,5 @@
   </div>
   <div class="col-2"></div>
 </div>
-<script src="https://raw.githubusercontent.com/jquery/jquery-ui/master/ui/widget.js"></script>
-<script src="https://raw.githubusercontent.com/blueimp/jQuery-File-Upload/master/js/jquery.fileupload.js"></script>
+
+<%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>

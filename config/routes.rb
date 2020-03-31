@@ -43,7 +43,6 @@ Rails.application.routes.draw do
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
-  get 'settings' => 'users#settings', as: :settings
 
   root to: 'users#home'
 end

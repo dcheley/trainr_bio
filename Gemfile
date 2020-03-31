@@ -40,7 +40,10 @@ gem 'wicked'
 gem 'sendgrid-ruby'
 # Use S3 with ActiveStorage for image upload
 gem "aws-sdk-s3", require: false
+# Image resizing
 gem 'mini_magick', '~> 4.8'
+# Geocode addresses for Google APIs
+gem "geocoder"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

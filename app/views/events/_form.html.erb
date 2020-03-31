@@ -26,7 +26,7 @@
         <div class="row mb-3">
           <div class="col-1"><%= image_tag("location.png", height:'11', width:'11' ) %></div>
           <div class="col-10">
-            <%= f.text_field :location, required: true, placeholder: "Studio", class: "no-border" %>
+            <%= f.text_field :location, required: true, placeholder: "Studio", class: "no-border", id: :autocomplete_address %>
           </div>
           <div class="col-1"></div>
         </div>
@@ -72,3 +72,5 @@
     <div class="col-1"></div>
   </div>
 </div>
+
+<%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>

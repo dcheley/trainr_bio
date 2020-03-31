@@ -44,7 +44,7 @@
     <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-3"><%= f.label "Location*", class: "" %></div>
-      <div class="col-7"><%= f.text_field :location, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
+      <div class="col-7"><%= f.text_field :location, placeholder: "", class: "no-border color-bottom-border", required: true, id: :autocomplete_address %></div>
       <div class="col-1"></div>
     </div>
 
@@ -94,7 +94,6 @@
     <!--
     Hide Offering
     Delete Offering
-
     -->
 
     <div class="row">
@@ -106,3 +105,5 @@
     </div>
   <% end %>
 </div>
+
+<%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>
