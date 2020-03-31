@@ -29,8 +29,10 @@ class StudiosController < ApplicationController
   end
 
   def update
-    attach_image
-    
+    if !params[:studio][:avatar].nil?
+      attach_image
+    end
+
     if @studio.update_attributes(studio_params)
       redirect_to studio_path(@studio), notice: "Studio details updated!"
     else
@@ -50,7 +52,10 @@ class StudiosController < ApplicationController
   end
 
   def studio_params
-    params.require(:studio).permit(:name, :phone, :location, :img_url, :website_url, :username)
+    params.require(:studio).permit(
+      :name, :phone, :location, :img_url, :website_url, :username, :latitude,
+      :longitude
+    )
   end
 
   def attach_image

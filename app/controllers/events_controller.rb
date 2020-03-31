@@ -13,7 +13,6 @@ class EventsController < ApplicationController
 
   def manage_events
     @user = current_user
-    # @events = current_user.events
     start_of_period = Date.today
     end_of_period = Date.today.beginning_of_week + 28.days
     @events = @user.trainer_events.where(date: start_of_period..end_of_period).order("date ASC")
@@ -62,7 +61,7 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(
       :title, :duration, :start_time, :date, :recurring, :location,
-      :trainer_id, :trainee_id
+      :trainer_id, :trainee_id, :latitude, :longitude
     )
   end
 

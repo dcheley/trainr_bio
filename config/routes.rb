@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
   resources :milestones, only: [:create, :edit, :update, :destroy]
-  resources :practice_categories, only: [:new, :create, :index, :edit, :update, :destroy]
-  resources :specialty_categories, only: [:new, :create, :index, :edit, :update, :destroy]
+  resources :practice_categories, only: [:create, :index, :edit, :update, :destroy]
+  resources :specialty_categories, only: [:create, :index, :edit, :update, :destroy]
 
   resources :user_practice_categories, only: [:create, :destroy]
   resources :user_specialty_categories, only: [:create, :destroy]
@@ -43,7 +43,6 @@ Rails.application.routes.draw do
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
-  get 'settings' => 'users#settings', as: :settings
 
   root to: 'users#home'
 end

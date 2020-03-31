@@ -1,6 +1,8 @@
 <%= render 'layouts/navbar_edit' %>
 <!-- < Add/Edit Offering -->
 <div class="container my-5">
+  <p class="text-primary text-center"><%= flash[:notice] %></p>
+  <p class="text-danger text-center"><%= flash[:alert] %></p>
 
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
@@ -14,81 +16,16 @@
       </div>
     <% end %>
 
-    <div class="container my-5">
-      <div class="row mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h3> About Me*: </h3></div>
-        <div class="col-1"></div>
-     </div>
-      <div class="row mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><%= f.text_field :bio, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
-        <div class="col-1"></div>
-      </div>
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10"><h3>About Me*:</h3></div>
+      <div class="col-1"></div>
     </div>
 
-    <div class="container my-5" id="practice">
-      <div class="row mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h3>I Practice:</h3></div>
-        <div class="col-1"></div>
-     </div>
-     <% if !@practices.empty? %>
-       <div class="row">
-         <div class="col-12">
-           <div class="form-group mt-3">
-             <%= form_tag user_practice_categories_url(@user), method: :post do %>
-               <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
-               <%= hidden_field_tag "user_id", @user.id %>
-               <%= submit_tag "add practice area", class:"btn btn-secondary" %>
-             <% end %>
-           </div>
-         </div>
-       </div>
-      <% end %>
-    </div>
-
-    <div class="container my-5" id="specialty">
-      <div class="row mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h3>I'm Known For:</h3></div>
-        <div class="col-1"></div>
-      </div>
-      <% if !@specialties.empty? %>
-        <div class="row">
-          <div class="col-12">
-            <div class="form-group mt-3">
-              <%= form_tag user_specialty_categories_url(@user), method: :post do %>
-                <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
-                <%= hidden_field_tag "user_id", @user.id %>
-                <%= submit_tag "add specialty area", class:"btn btn-secondary" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="container my-5" id="experience">
-      <div class="row mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h3> Certs & Experience: </h3></div>
-        <div class="col-1"></div>
-      </div>
-      <% if !@milestones.empty? %>
-        <% form_for(@milestone) do |f| %>
-          <div class="row">
-            <div class="col-1"></div>
-            <div class="col-2"><%= f.select :month, 1..12 %></div>
-            <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-            <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
-            <div class="col-1"></div>
-          </div>
-          <div class="row">
-            <%= f.submit "add milestone", create_milestone %>
-          </div>
-        <% end %>
-      <% end %>
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.text_area :bio, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+      <div class="col-1"></div>
     </div>
 
     <div class="row">
@@ -99,7 +36,90 @@
       <div class="col"></div>
     </div>
   <% end %>
-
-  <!-- Additional elements (See form_btn.js)- added by clicking buttons above -->
-
 </div>
+
+<div class="container my-5" id="practice">
+  <div class="row mb-3">
+    <div class="col-1"></div>
+    <div class="col-10"><h3>I Practice:</h3></div>
+    <div class="col-1"></div>
+  </div>
+
+  <% if !@practices.empty? %>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group mt-3">
+          <%= form_tag user_practice_categories_url(@user), method: :post do %>
+            <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
+            <%= hidden_field_tag "user_id", @user.id %>
+            <%= submit_tag "add practice area", class:"btn btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container my-5" id="specialty">
+  <div class="row mb-3">
+    <div class="col-1"></div>
+    <div class="col-10"><h3>I'm Known For:</h3></div>
+    <div class="col-1"></div>
+  </div>
+
+  <% if !@specialties.empty? %>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group mt-3">
+          <%= form_tag user_specialty_categories_url(@user), method: :post do %>
+            <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
+            <%= hidden_field_tag "user_id", @user.id %>
+            <%= submit_tag "add specialty area", class:"btn btn-secondary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container my-5" id="experience">
+  <div class="row mb-3">
+    <div class="col-1"></div>
+    <div class="col-10"><h3> Certs & Experience: </h3></div>
+    <div class="col-1"></div>
+  </div>
+  <%= form_for(@milestone) do |f| %>
+    <% if @milestone.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@milestone.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+          <% @milestone.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-2"><%= f.select :month, 1..12 %></div>
+      <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+      <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+      <div class="col-1"></div>
+      <%= f.hidden_field :trainer_id, value: @user.id %>
+    </div>
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <%= f.submit "add milestone", class:"btn btn-secondary" %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  <% end %>
+</div>
+
+<!-- Additional elements (See form_btn.js)- added by clicking buttons above -->

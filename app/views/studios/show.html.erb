@@ -55,11 +55,16 @@
     </div>
   </div>
 
-  <div class="row mt-5">
+  <div class="row mt-5 mb-5">
     <div class="col-12">
-      <h1>Location</h1>
-      <p>Loading ...</p>
-      <p>Could not find your location on the map, please send us an email so we can add it</p>
+      <% if !@studio.latitude.nil? && !@studio.longitude.nil? %>
+        <p>
+          <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:medium%7Ccolor:red%7C#{@studio.latitude},#{@studio.longitude}&key=#{ENV['GOOGLE_API_SERVER_KEY']}", alt: "Map" %>
+        </p>
+        <p>
+          <%= @studio.location %>
+        </p>
+      <% end %>
     </div>
   </div>
 

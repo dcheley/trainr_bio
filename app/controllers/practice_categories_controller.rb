@@ -1,21 +1,18 @@
 class PracticeCategoriesController < ApplicationController
   before_action :load_practice, only: [:edit, :update, :destroy]
 
-  def new
-    @practice = PracticeCategory.new
-  end
-
   def create
     @practice = PracticeCategory.new(practice_category_params)
 
     if @practice.save
       redirect_to practice_categories_url, notice: "Practice saved!"
     else
-      render :new
+      render :index
     end
   end
 
   def index
+    @practice = PracticeCategory.new
     @practices = PracticeCategory.all.order("name ASC")
   end
 

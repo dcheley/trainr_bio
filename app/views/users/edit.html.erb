@@ -1,7 +1,6 @@
 <%= render 'layouts/navbar_edit' %>
 <!-- < Settings (edit trainr profile) -->
 <div class="container my-5">
-
   <%= form_for(@user, url: { action: "update" }) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -129,7 +128,7 @@
         <h6>City/Region</h6>
       </div>
       <div class="col-8">
-        <%= f.text_field :location, placeholder: "Location", class: "form-control no-border grey-bottom-border"  %>
+        <%= f.text_field :location, placeholder: "Location", class: "form-control no-border grey-bottom-border", id: :autocomplete_address  %>
       </div>
       <div class="col"></div>
     </div>
@@ -148,9 +147,11 @@
     <div class="row">
       <div class="col"></div>
       <div class="col-3">
-        <%= f.submit 'SUBMIT', class: 'btn btn-secondary' %>
+        <%= f.submit 'Save', class: 'btn btn-secondary' %>
       </div>
       <div class="col-8"></div>
     </div>
   <% end %>
 </div>
+
+<%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>

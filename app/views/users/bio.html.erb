@@ -48,16 +48,16 @@
     <div class="color-bottom-border mt-5 mb-5"></div>
 
     <% if !@practices.empty? %>
-      <div class="row text-center">
+      <div class="row text-center mb-3">
         <div class="col-1"></div>
-        <div class="col-10">I teach</div>
+        <div class="col-10"><h6>I teach</h6></div>
         <div class="col-1"></div>
       </div>
       <div class="row text-center">
         <div class="col-1"></div>
         <div class="col-10">
           <% @practices.each do |practice| %>
-            <p><%= practice.name %> </p>
+            <p><%= practice.practice_category.name %> </p>
           <% end %>
         </div>
         <div class="col-1"></div>
@@ -65,16 +65,16 @@
     <% end %>
 
     <% if !@specialties.empty? %>
-      <div class="row text-center">
+      <div class="row text-center mb-3">
         <div class="col-1"></div>
-        <div class="col-10">I focus on</div>
+        <div class="col-10"><h6>I focus on</h6></div>
         <div class="col-1"></div>
       </div>
       <div class="row text-center">
         <div class="col-1"></div>
         <div class="col-10">
           <% @specialties.each do |specialty| %>
-            <p><%= specialty.name %> </p>
+            <p><%= specialty.specialty_category.name %> </p>
           <% end %>
         </div>
         <div class="col-1"></div>
@@ -86,10 +86,10 @@
     <% if !@milestones.empty? %>
       <div class="row text-center">
         <div class="col-1"></div>
-        <div class="col-10">Certifications & Experience</div>
+        <div class="col-10"><h6>Certifications & Experience</h6></div>
         <div class="col-1"></div>
       </div>
-      <div class="row text-center">
+      <div class="row text-center mb-5">
         <div class="col-1"></div>
         <div class="col-10">
           <% @milestones.each do |milestone| %>

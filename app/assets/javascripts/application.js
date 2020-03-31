@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap
+//- require google_analytics
 //= require_tree .
 
 $(document).on('turbolinks:load', function () {
@@ -22,5 +23,5 @@ $(document).on('turbolinks:load', function () {
     e.preventDefault()
     $(this).tab('show')
   });
-  
+
 });

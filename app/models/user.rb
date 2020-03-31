@@ -24,6 +24,9 @@ class User < ApplicationRecord
   scope :trainer, -> { where(role: 1) }
   scope :basic, -> { where(role: 0) }
 
+  geocoded_by :location
+  after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }
+
   def self.search(search)
     where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%")
     .trainer
