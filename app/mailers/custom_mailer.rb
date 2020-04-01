@@ -12,7 +12,7 @@ class CustomMailer < Devise::Mailer
       "Click the confirmation link to verify your Trainrbio account.",
       'text/plain',
       "https://www.trainr.bio/users/confirmation?confirmation_token=#{@token}"
-    )
+    ).send_email
     # super
   end
 
@@ -26,7 +26,7 @@ class CustomMailer < Devise::Mailer
       "Click the link to reset your Trainrbio password.",
       'text/plain',
       "https://www.trainr.bio/users/password/edit?reset_password_token=#{@token}"
-    )
+    ).send_email
     # super
   end
 end
