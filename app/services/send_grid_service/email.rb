@@ -12,8 +12,8 @@ class SendGridService::Email
   end
 
   def send_email
-    sg_from = (SendGrid::Email.new(email: @from)).to_str
-    sg_to = (SendGrid::Email.new(email: @to)).to_str
+    sg_from = SendGrid::Email.new(email: @from)
+    sg_to = SendGrid::Email.new(email: @to)
 
     content = SendGrid::Content.new(type: @content_type, value: @body)
 
