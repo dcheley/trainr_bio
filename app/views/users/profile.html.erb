@@ -27,7 +27,11 @@
     <div class="row">
       <div class="col-6">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
-        <%= image_tag('profile.png', height: 111, width: 111, class:'') %>
+        <% if @user.avatar.attachment.nil? %>
+          <%= image_tag('profile.png', class:'btn-block')%>
+        <% else %>
+          <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
+        <% end %>
       </div>
       <div class="col-6">
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
