@@ -34,10 +34,10 @@
   </div>
 
   <% if !@offer.date.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Date/Time </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.date %> </p>
@@ -47,10 +47,10 @@
   <% end %>
 
   <% if !@offer.expectations.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> What to Expect </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.expectations %> </p>
@@ -60,10 +60,10 @@
   <% end %>
 
   <% if !@offer.highlights.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Highlights </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.highlights %> </p>
@@ -73,10 +73,10 @@
   <% end %>
 
   <% if !@offer.duration.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Duration </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.duration %> </p>
@@ -86,10 +86,10 @@
   <% end %>
 
   <% if !@offer.location.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Location </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.location %> </p>
@@ -99,10 +99,10 @@
   <% end %>
 
   <% if !@offer.cost.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Cost </h2></div>
     </div>
-    <div class="row mb-5 text-center">
+    <div class="row mb-3 text-center">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.cost %> </p>
@@ -112,10 +112,10 @@
   <% end %>
 
   <% if !@offer.other.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-2">
+    <div class="row my-1">
       <div class="col-12"><h2> Other Info </h2></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.other %> </p>
@@ -124,10 +124,10 @@
     </div>
   <% end %>
 
-  <div class="row my-2">
-    <div class="col-4"></div>
-    <div class="col-4"><%= link_to "Contact & Book", new_event_url,  class: "btn btn-secondary btn-block" %></div>
-    <div class="col-4"></div>
+  <div class="row my-1">
+    <div class="col-3"></div>
+    <div class="col-6"><%= link_to "Contact & Book", new_event_url,  class: "btn btn-secondary btn-block" %></div>
+    <div class="col-3"></div>
   </div>
 
 </div>
