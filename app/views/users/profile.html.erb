@@ -23,14 +23,13 @@
     </div>
   </div> -->
 
-  <div class="container  text-center">
+  <div class="container text-center">
     <div class="row">
-      <div class="col-5">
+      <div class="col-6">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
         <%= image_tag('profile.png', height: 111, width: 111, class:'') %>
       </div>
-      <div class="col-1"></div>
-      <div class="col-5">
+      <div class="col-6">
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
         <div class="row d-flex justify-content-center user-headline mt-2"><%= @user.headline %></div>
