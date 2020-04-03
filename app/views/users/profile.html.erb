@@ -23,18 +23,18 @@
     </div>
   </div> -->
 
-  <div class="container">
-    <div class="row text-center ">
+  <div class="container  text-center">
+    <div class="row">
       <div class="col-5">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
         <%= image_tag('profile.png', height: 111, width: 111, class:'') %>
       </div>
       <div class="col-1"></div>
       <div class="col-5">
-        <div class="row user-name mt-3"><p><%= @user.first_name %></p></div>
-        <div class="row user-name"><p><%= @user.last_name %></p></div>
-        <div class="row user-headline mt-2"><p><%= @user.headline %></p></div>
-        <div class="row user-location"><p>🏠<%= @user.location %></p></div>
+        <div class="row user-name mt-3"><%= @user.first_name %></div>
+        <div class="row user-name"><%= @user.last_name %></div>
+        <div class="row user-headline mt-2"><%= @user.headline %></div>
+        <div class="row user-location">🏠<%= @user.location %></div>
       </div>
     </div>
     <div class="row mt-2">
@@ -45,7 +45,7 @@
 
     <hr>
 
-    <div class="row text-center">
+    <div class="row">
       <div class="col-1"></div>
       <div class="col-10 user-description"><p><%= @user.description %></p></div>
       <div class="col-1"></div>
@@ -53,15 +53,15 @@
 
     <hr>
 
-    <div class="row text-center">
+    <div class="row">
       <div class="col-12"><p>Upcoming</p></div>
     </div>
-    <div class="row text-center">
+    <div class="row">
       <div class="col-8"></div>
-      <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "schedule" %></u></div>
+      <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></u></div>
     </div>
     <% if @events.empty?  %>
-      <div class="row text-center mt-3 mb-3">
+      <div class="row mt-3 mb-3">
         <div class="col"></div>
         <div class="col"><span class="schedule date"> No classes this week </span></div>
         <div class="col"></div>
