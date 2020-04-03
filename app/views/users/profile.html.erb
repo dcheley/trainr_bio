@@ -31,10 +31,10 @@
       </div>
       <div class="col-1"></div>
       <div class="col-5">
-        <div class="row user-name mt-3"><p><% @user.first_name %></p></div>
-        <div class="row user-name"><p><% @user.last_name %></p></div>
-        <div class="row user-headline mt-2"><p><% @user.headline %></p></div>
-        <div class="row user-location"><p>🏠<% @user.location %></p></div>
+        <div class="row user-name mt-3"><p><%= @user.first_name %></p></div>
+        <div class="row user-name"><p><%= @user.last_name %></p></div>
+        <div class="row user-headline mt-2"><p><%= @user.headline %></p></div>
+        <div class="row user-location"><p>🏠<%= @user.location %></p></div>
       </div>
     </div>
     <div class="row mt-2">
@@ -47,7 +47,7 @@
 
     <div class="row text-center">
       <div class="col-1"></div>
-      <div class="col-10"><p>description: <% @user.description %></p></div>
+      <div class="col-10"><p>description: <%= @user.description %></p></div>
       <div class="col-1"></div>
     </div>
 
@@ -58,7 +58,7 @@
     </div>
     <div class="row text-center">
       <div class="col-8"></div>
-      <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></u></div>
+      <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "schedule" %></u></div>
     </div>
     <% if @events.empty?  %>
       <div class="row text-center mt-3 mb-3">
