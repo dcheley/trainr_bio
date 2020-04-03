@@ -42,6 +42,11 @@
       <% @users.each do |trainer| %>
         <div class="row mt-3 mb-3 pb-3 border-bottom">
           <div class="col-4 my-auto">
+            <% if trainer.avatar.attachment.nil? %>
+              <%= image_tag('user.svg', height: 64, width: 64, class:'')%>
+            <% else %>
+              <%= image_tag(trainer.avatar.service_url, height: 64, width: 64, class:'')%>
+            <% end %>
             <%= image_tag('user.svg', height: 64, width: 64, class:'') %>
           </div>
           <div class="col-4 my-auto">
