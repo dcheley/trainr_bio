@@ -28,15 +28,11 @@
     </div>
 
     <div class="row mb-3">
-      <div class="col-1"></div>
-      <div class="col-10">About Me</div>
-      <div class="col-1"></div>
+      <div class="col-12">About Me</div>
     </div>
 
     <div class="row text-center">
-      <div class="col-1"></div>
-      <div class="col-10"><%= @user.bio %></div>
-      <div class="col-1"></div>
+      <div class="col-12"><%= @user.bio %></div>
     </div>
 
     <% if !@practices.empty? || !@specialties.empty? %>
@@ -45,35 +41,27 @@
 
     <% if !@practices.empty? %>
       <div class="row text-center mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h6>I teach</h6></div>
-        <div class="col-1"></div>
+        <div class="col-12"><h6>I teach</h6></div>
       </div>
       <div class="row text-center">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-12">
           <% @practices.each do |practice| %>
             <p><%= practice.practice_category.name %> </p>
           <% end %>
         </div>
-        <div class="col-1"></div>
       </div>
     <% end %>
 
     <% if !@specialties.empty? %>
       <div class="row text-center mb-3">
-        <div class="col-1"></div>
-        <div class="col-10"><h6>I focus on</h6></div>
-        <div class="col-1"></div>
+        <div class="col-12"><h6>I focus on</h6></div>
       </div>
       <div class="row text-center">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-12">
           <% @specialties.each do |specialty| %>
             <p><%= specialty.specialty_category.name %> </p>
           <% end %>
         </div>
-        <div class="col-1"></div>
       </div>
     <% end %>
 
@@ -81,13 +69,10 @@
       <div class="color-bottom-border mt-3 mb-3"></div>
 
       <div class="row text-center">
-        <div class="col-1"></div>
-        <div class="col-10"><h6>Certifications & Experience</h6></div>
-        <div class="col-1"></div>
+        <div class="col-12"><h6>Certifications & Experience</h6></div>
       </div>
       <div class="row text-center mb-5">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-12">
           <% @milestones.each do |milestone| %>
             <div class="row text-center">
               <div class="col-2"></div>
@@ -98,7 +83,6 @@
             </div>
           <% end %>
         </div>
-        <div class="col-1"></div>
       </div>
     <% end %>
   </div>
