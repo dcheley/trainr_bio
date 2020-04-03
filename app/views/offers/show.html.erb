@@ -18,9 +18,10 @@
       <% end %>
     </div>
   </div>
+  <hr>
 </div>
 
-<hr>
+
 
 <div class="container">
   <div class="row text-center">
@@ -35,7 +36,7 @@
 
   <% if !@offer.date.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Date/Time </h2></div>
+      <div class="col-12"><h3> Date/Time </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
@@ -48,7 +49,7 @@
 
   <% if !@offer.expectations.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> What to Expect </h2></div>
+      <div class="col-12"><h3> What to Expect </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
@@ -61,7 +62,7 @@
 
   <% if !@offer.highlights.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Highlights </h2></div>
+      <div class="col-12"><h3> Highlights </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
@@ -74,7 +75,7 @@
 
   <% if !@offer.duration.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Duration </h2></div>
+      <div class="col-12"><h3> Duration </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
@@ -87,7 +88,7 @@
 
   <% if !@offer.location.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Location </h2></div>
+      <div class="col-12"><h3> Location </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
@@ -100,7 +101,7 @@
 
   <% if !@offer.cost.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Cost </h2></div>
+      <div class="col-12"><h3> Cost </h3></div>
     </div>
     <div class="row mb-3 text-center">
       <div class="col-1"></div>
@@ -113,7 +114,7 @@
 
   <% if !@offer.other.blank? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
     <div class="row my-1">
-      <div class="col-12"><h2> Other Info </h2></div>
+      <div class="col-12"><h3> Other Info </h3></div>
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
