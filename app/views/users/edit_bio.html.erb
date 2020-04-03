@@ -81,7 +81,7 @@
         <div class="col-2"><%= f.select :month, 1..12 %></div>
         <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
         <div class="col-1"></div>
-        <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border" %></div>
+        <div class="col-5"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border" %></div>
         <%= f.hidden_field :trainer_id, value: @user.id %>
       </div>
       <div class="row my-2">
