@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
+  before_action :load_user_id, only: [:my_trainers]
 
   def show
     @events = @user.trainer_events.order("date ASC")
@@ -94,6 +95,10 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find(params[:id])
+  end
+
+  def load_user_id
+    @user = User.find(params[:user_id])
   end
 
   def user_params

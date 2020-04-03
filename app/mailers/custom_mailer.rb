@@ -7,8 +7,8 @@ class CustomMailer < Devise::Mailer
     @token = token
 
     SendGridService::Email.new(
-      SendGrid::Email.new(email: 'trainrbio@gmail.com'),
-      SendGrid::Email.new(email: @user.email),
+      'trainrbio@gmail.com',
+      @user.email,
       "Click the confirmation link to verify your Trainrbio account.",
       'text/plain',
       "https://www.trainr.bio/users/confirmation?confirmation_token=#{@token}"
@@ -21,8 +21,8 @@ class CustomMailer < Devise::Mailer
     @token = token
 
     SendgridService::Email.new(
-      Sendgrid::Email.new(email: 'trainrbio@gmail.com'),
-      Sendgrid::Email.new(email: @user.email),
+      'trainrbio@gmail.com',
+      @user.email,
       "Click the link to reset your Trainrbio password.",
       'text/plain',
       "https://www.trainr.bio/users/password/edit?reset_password_token=#{@token}"

@@ -26,6 +26,7 @@
 
 <div class="container">
   <div class="row text-center">
+    <% %>
     <% @user.trainers.each do |trainr| %>
       <div class="col-1"></div>
       <div class="col-10">
@@ -35,16 +36,16 @@
           </div>
           <div class="col-1"></div>
           <div class="col-2">
-            <%= link_to image_tag(trainr.img_url, class: "my-trainr-pic"), trainr.url %>
+            <%= link_to image_tag(trainr.avatar.service_url, class: "my-trainr-pic"), user_url(trainr) %>
           </div>
           <div class="col-1"></div>
           <div class="col-5">
-            <%= trainr.firstname %><%= trainr.lastname %>
+            <%= trainr.first_name %><%= trainr.last_name %>
             <br/><%= trainr.location %>
           </div>
           <div class="col-1"></div>
           <div class="col-1">
-            <%= image_tag("star.gif", class: "star-icon") %>
+            <%= image_tag("left-arrow.png", class: "star-icon", height: 32, width: 32) %>
           </div>
         </div>
       </div>
