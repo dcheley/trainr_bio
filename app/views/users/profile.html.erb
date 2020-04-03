@@ -24,17 +24,17 @@
   </div> -->
 
   <div class="container">
-    <div class="row">
+    <div class="row text-center ">
       <div class="col-5">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
         <%= image_tag('profile.png', height: 111, width: 111, class:'') %>
       </div>
       <div class="col-1"></div>
       <div class="col-5">
-        <div class="row text-center mt-3">Firstname<% @user.first_name %></div>
-        <div class="row text-center">Lastname<% @user.last_name %></div>
-        <div class="row text-center mt-2">headline<% @user.headline %></div>
-        <div class="row text-center">🏠 location<% @user.location %></div>
+        <div class="row mt-3"><% @user.first_name %></div>
+        <div class="row"><% @user.last_name %></div>
+        <div class="row mt-2"><% @user.headline %></div>
+        <div class="row">🏠<% @user.location %></div>
       </div>
     </div>
     <div class="row mt-2">
