@@ -45,7 +45,7 @@
             <%= image_tag('user.svg', height: 64, width: 64, class:'') %>
           </div>
           <div class="col-4 my-auto">
-            <%= link_to user_url(trainer) do %>
+            <%= link_to user_profile_url(trainer) do %>
               <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
                 <h5 class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></h5>
               <% else %>
