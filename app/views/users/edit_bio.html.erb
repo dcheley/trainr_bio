@@ -16,15 +16,14 @@
       </div>
     <% end %>
 
-    <div class="row mb-3">
+    <div class="row mb-1">
       <div class="col-1"></div>
-      <div class="col-10"><h3>About Me*:</h3></div>
+      <div class="col-10"><%= f.label "About Me*", class: "" %></div>
       <div class="col-1"></div>
     </div>
-
     <div class="row mb-3">
       <div class="col-1"></div>
-      <div class="col-10"><%= f.text_area :bio, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+      <div class="col-10"><%= f.text_area :bio, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
       <div class="col-1"></div>
     </div>
 
@@ -41,7 +40,7 @@
 <div class="container my-5" id="practice">
   <div class="row mb-3">
     <div class="col-1"></div>
-    <div class="col-10"><h3>I Practice:</h3></div>
+    <div class="col-10"><%= f.label "I Practice:", class: "" %></div>
     <div class="col-1"></div>
   </div>
 
@@ -65,7 +64,7 @@
 <div class="container my-5" id="specialty">
   <div class="row mb-3">
     <div class="col-1"></div>
-    <div class="col-10"><h3>I'm Known For:</h3></div>
+    <div class="col-10"><%= f.label "I'm Known For:", class: "" %></div>
     <div class="col-1"></div>
   </div>
 
@@ -89,7 +88,7 @@
 <div class="container my-5" id="experience">
   <div class="row mb-3">
     <div class="col-1"></div>
-    <div class="col-10"><h3> Certs & Experience: </h3></div>
+    <div class="col-10"><%= f.label "Certs & Experience:", class: "" %></div>
     <div class="col-1"></div>
   </div>
   <%= form_for(@milestone) do |f| %>
@@ -107,12 +106,12 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-2"><%= f.select :month, 1..12 %></div>
-      <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-      <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "form-control no-border color-bottom-border" %></div>
+      <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1).order("year DESC") %></div>
+      <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border" %></div>
       <div class="col-1"></div>
       <%= f.hidden_field :trainer_id, value: @user.id %>
     </div>
-    <div class="row">
+    <div class="row my-1">
       <div class="col-1"></div>
       <div class="col-10">
         <%= f.submit "add milestone", class:"btn btn-secondary" %>
