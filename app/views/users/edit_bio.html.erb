@@ -62,7 +62,7 @@
   </div>
 
   <div class="container my-3" id="experience">
-    <div class="row mb-3">
+    <div class="row mb-1">
       <div class="col-12"><%= f.label "Certs & Experience:", class: "" %></div>
     </div>
     <%= form_for(@milestone) do |f| %>
@@ -78,8 +78,8 @@
       <% end %>
 
       <div class="row">
-        <div class="col-1"><%= f.select :month, 1..12 %></div>
-        <div class="col-3"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+        <div class="col-2"><%= f.select :month, 1..12 %></div>
+        <div class="col-2"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
         <div class="col-1"></div>
         <div class="col-6"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border" %></div>
         <%= f.hidden_field :trainer_id, value: @user.id %>
