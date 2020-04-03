@@ -33,6 +33,20 @@ p {
   font-size: 1em;
 }
 
+.user-name-lg { //on trainr profile
+  font-size: $font-size-9;
+  text-align: center;
+}
+
+.user-headline{
+  font-size: $font-size-6;
+  text-align: center;
+}
+
+.user-location{
+  font-size: $font-size-3;
+  text-align: center;
+}
 
 
 .toggle-link {
