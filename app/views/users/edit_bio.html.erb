@@ -65,7 +65,7 @@
     <div class="row mb-1">
       <div class="col-12"><%= f.label "Certs & Experience:", class: "" %></div>
     </div>
-    <% if !@specialties.empty? %>
+    <% if !@milestones.empty? %>
       <% @milestones.each do |milestone| %>
         <%= form_for(milestone) do |x| %>
           <% if milestone.errors.any? %>
