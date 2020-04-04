@@ -41,7 +41,7 @@
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
       <hr>
       <% @users.each do |trainer| %>
-        <div class="row my-3 border-bottom">
+        <div class="row my-3">
           <div class="col-1"></div>
           <div class="col-2 my-auto">
             <% if trainer.avatar.attachment.nil? %>
@@ -75,6 +75,7 @@
           </div>
           <div class="col-1"></div>
         </div>
+        <hr>
       <% end %>
       <% if @users.empty? %>
         <div class="col-12">
