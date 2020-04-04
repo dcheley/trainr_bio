@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     if @user.update_attributes(user_params)
-      redirect_to user_path(@user), notice: "Account updated!"
+      redirect_to user_profile_path(@user), notice: "Account updated!"
     else
       render :edit
     end
@@ -106,7 +106,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
       :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
-      :password, :password_confirmation, :role, :latitude, :longitude
+      :password, :password_confirmation, :role, :latitude, :longitude, :bio
     )
   end
 end
