@@ -85,7 +85,7 @@
           <% @milestones.each do |milestone| %>
             <li>
               <div class="row text-center">
-                <div class="col-2">
+                <div class="col-1">
                   <div class="bulletgreen"></div>
                 </div>
                 <div class="col-2">
@@ -95,7 +95,10 @@
                 <div class="col-6">
                   <div class="desc"><%= milestone.milestone %></div>
                 </div>
-                <div class="col-1"></div>
+                <div class="col-1">
+                  <!-- if verified -->
+                    v
+                </div>
               </div>
             </li>
           <% end %>
