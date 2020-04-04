@@ -52,11 +52,20 @@
           </div>
           <div class="col-6 my-auto">
             <%= link_to user_profile_url(trainer) do %>
-              <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
-                <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
-              <% else %>
-                <p class="e">The Nameless One</p>
-              <% end %>
+              <div class="row">
+                <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
+                  <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
+                <% else %>
+                  <p class="e">The Nameless One</p>
+                <% end %>
+              </div>
+              <div class="row">
+                <% if !trainer.headline.nil? %>
+                  <p class=""><%= "#{trainer.headline}"%></p>
+                <% else %>
+                  <p class="e">Trainr</p>
+                <% end %>
+              </div>
             <% end %>
           </div>
           <div class="col-2 my-auto">
