@@ -46,7 +46,7 @@
 <% else %>
   <div class="container text-center">
     <div class="row my-3">
-      <div class="col-12"><h1 class="my-5 branding main">trainr.bio</h1></div>
+      <div class="col-12"><h1 class="branding main">trainr.bio</h1></div>
     </div>
 
     <p class="text-primary mb-5"><%= flash[:notice] %></p>
@@ -59,7 +59,7 @@
           <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true %>
         </div>
         <div class="col-2">
-          <%= submit_tag "Go", class:"btn btn-outline-success my-2 my-sm-0 mr-auto" %>
+          <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
         </div>
       <% end %>
       <div class="col-1"></div>
