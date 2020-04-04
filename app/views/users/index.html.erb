@@ -41,27 +41,29 @@
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
       <div class="divider"></div>
       <% @users.each do |trainer| %>
-        <div class="row mt-3 mb-3 pb-3 border-bottom">
-          <div class="col-4 my-auto">
+        <div class="row my-3 pb-3 border-bottom">
+          <div class="col-1"></div>
+          <div class="col-2 my-auto">
             <% if trainer.avatar.attachment.nil? %>
-              <%= image_tag('user.svg', height: 64, width: 64, class:'')%>
+              <%= image_tag('user.svg', height: 33, width: 33, class:'')%>
             <% else %>
-              <%= image_tag(trainer.avatar.service_url, height: 64, width: 64, class:'')%>
+              <%= image_tag(trainer.avatar.service_url, height: 33, width: 33, class:'')%>
             <% end %>
           </div>
-          <div class="col-4 my-auto">
+          <div class="col-6 my-auto">
             <%= link_to user_profile_url(trainer) do %>
               <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
-                <h5 class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></h5>
+                <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
               <% else %>
-                <h5 class="e">N/A</h5>
+                <p class="e">The Nameless One</p>
               <% end %>
             <% end %>
           </div>
-          <div class="col-4 my-auto">
+          <div class="col-2 my-auto">
             <p class=""><%= trainer.location %></p>
           </div>
-          <div class="divider"></div>
+          <div class="col-1"></div>
+          <!-- <div class="divider"></div> -->
         </div>
       <% end %>
       <% if @users.empty? %>
