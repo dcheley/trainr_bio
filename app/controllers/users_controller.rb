@@ -87,6 +87,7 @@ class UsersController < ApplicationController
   def edit_bio
     @user = current_user
     @milestone = Milestone.new
+    @milestones = Milestone.all.order("year ASC")
     @practices = PracticeCategory.all.order("name ASC")
     @specialties = SpecialtyCategory.all.order("name ASC")
   end
