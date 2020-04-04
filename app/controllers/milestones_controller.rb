@@ -18,7 +18,7 @@ class MilestonesController < ApplicationController
     if @milestone.update_attributes(milestone_params)
       redirect_to user_edit_bio_url(current_user), notice: "Milestone details updated!"
     else
-      render :edit
+      render template: "users/edit_bio"
     end
   end
 
@@ -30,7 +30,7 @@ class MilestonesController < ApplicationController
   private
 
   def load_milestone
-    @milestone = Milestone.find(params[:trainer_id])
+    @milestone = Milestone.find(params[:id])
   end
 
   def milestone_params
