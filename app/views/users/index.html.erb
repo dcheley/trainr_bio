@@ -57,14 +57,14 @@
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
                   <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
                 <% else %>
-                  <p class="e">The Nameless One</p>
+                  <p class="">The Nameless One</p>
                 <% end %>
               </div>
               <div class="row">
                 <% if !trainer.headline.nil? %>
                   <p class=""><%= "#{trainer.headline}"%></p>
                 <% else %>
-                  <p class="e">Trainr</p>
+                  <p class="">Trainr</p>
                 <% end %>
               </div>
             <% end %>
