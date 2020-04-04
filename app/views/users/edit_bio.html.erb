@@ -65,29 +65,50 @@
     <div class="row mb-1">
       <div class="col-12"><%= f.label "Certs & Experience:", class: "" %></div>
     </div>
-    <% @milestones.each do |milestone| %>
-      <%= form_for(milestone) do |x| %>
-        <% if milestone.errors.any? %>
-          <div id="error_explanation">
-            <h5><%= pluralize(milestone.errors.count, "error") %> prohibited change!</h5>
-            <ul>
-              <% milestone.errors.full_messages.each do |msg| %>
-                <li class="error"><%= msg %></li>
-              <% end %>
-            </ul>
+    <% if !@specialties.empty? %>
+      <% @milestones.each do |milestone| %>
+        <%= form_for(milestone) do |x| %>
+          <% if milestone.errors.any? %>
+            <div id="error_explanation">
+              <h5><%= pluralize(milestone.errors.count, "error") %> prohibited change!</h5>
+              <ul>
+                <% milestone.errors.full_messages.each do |msg| %>
+                  <li class="error"><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="row">
+            <div class="col-2"><%= x.select :month, 1..12 %></div>
+            <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+            <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block" %></div>
+            <%= f.hidden_field :trainer_id, value: @user.id %>
           </div>
         <% end %>
-        <div class="row">
-          <div class="col-2"><%= x.select :month, 1..12 %></div>
-          <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-          <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block" %></div>
-          <%= f.hidden_field :trainer_id, value: @user.id %>
-        </div>
       <% end %>
     <% end %>
-    <div class="row my-2">
-      <div class="col-12"><%= @milestone.submit "add milestone", class:"btn btn-secondary btn-sm" %></div>
-    </div>
+
+    <%= form_for(@milestone) do |x| %>
+      <% if @milestone.errors.any? %>
+        <div id="error_explanation">
+          <h5><%= pluralize(@milestone.errors.count, "error") %> prohibited change!</h5>
+          <ul>
+            <% @milestone.errors.full_messages.each do |msg| %>
+              <li class="error"><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-2"><%= x.select :month, 1..12 %></div>
+        <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+        <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block" %></div>
+        <%= f.hidden_field :trainer_id, value: @user.id %>
+      </div>
+      <div class="row my-2">
+        <div class="col-12"><%= f.submit "add milestone", class:"btn btn-secondary btn-sm" %></div>
+      </div>
+    <% end %>
 
     <div class="row">
       <div class="col-8"></div>
