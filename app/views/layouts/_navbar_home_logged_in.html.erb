@@ -1,13 +1,8 @@
 <div class="row my-3">
-  <div class="col-2">logo</div>
-  <div class="col-1"></div>
-  <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0") do %>
-    <div class="col-6">
-      <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true, class: "mr-2 ml-auto" %>
-    </div>
-    <div class="col-2">
+  <div class="col-12">
+    <%= form_tag(users_url, method: "get", id: "search", class:"form-inline my-2 my-lg-0") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by name or studio", required: true, class: "form-control mr-sm-2 ml-auto", style: "width: 200px;" %>
       <%= submit_tag "Go", class:"btn btn-outline-success my-2 my-sm-0 mr-auto" %>
-    </div>
-  <% end %>
-  <div class="col-1"></div>
+    <% end %>
+  </div>
 </div>
