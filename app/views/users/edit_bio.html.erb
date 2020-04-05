@@ -47,11 +47,9 @@
             <li><%= practice.practice_category.name %></li>
           </div>
           <div class="col-4">
-            <li>
-              <%= button_to "X", { action: "destroy", controller: "user_practice_categories", id: practice.id },
-              method: :delete, data: { confirm: "Are you sure?" },
-              class: "btn btn-danger" %>
-            </li>
+            <%= button_to "X", { action: "destroy", controller: "user_practice_categories", id: practice.id },
+            method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
           </div>
         </div>
       <% end %>
@@ -81,11 +79,9 @@
           <li><%= specialty.specialty_category.name %></li>
         </div>
         <div class="col-4">
-          <li>
-            <%= button_to "X", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
-            method: :delete, data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
-          </li>
+          <%= button_to "X", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
+          method: :delete, data: { confirm: "Are you sure?" },
+          class: "btn btn-danger" %>
         </div>
       </div>
     <% end %>
