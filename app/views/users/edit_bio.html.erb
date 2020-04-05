@@ -47,7 +47,11 @@
             <li><%= practice.practice_category.name %></li>
           </div>
           <div class="col-4">
-            <li><%= %></li>
+            <li>
+              <%= button_to "X", { action: "destroy", id: practice.id },
+              method: :delete, data: { confirm: "Are you sure?" },
+              class: "btn btn-danger" %>
+            </li>
           </div>
         </div>
       <% end %>
@@ -70,6 +74,22 @@
   </div>
 
   <% if !@specialties.empty? %>
+  <ul>
+    <% @myspecialties.each do |specialty| %>
+      <div class="row">
+        <div class="col-4">
+          <li><%= specialty.practice_category.name %></li>
+        </div>
+        <div class="col-4">
+          <li>
+            <%= button_to "X", { action: "destroy", id: specialty.id },
+            method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-danger" %>
+          </li>
+        </div>
+      </div>
+    <% end %>
+  </ul>
     <div class="row">
       <div class="col-12">
         <%= form_tag user_specialty_categories_url(@user), method: :post do %>
