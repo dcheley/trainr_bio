@@ -14,10 +14,10 @@ class UserPracticeCategoriesController < ApplicationController
     @user_practice_categories = UserPracticeCategory.find(params[:id])
     if @user_practice_categories.destroy
       flash[:success] = 'Removed from specialty categories'
-      redirect_to user_edit_bio_url(params[:user_id])
+      redirect_to user_edit_bio_url(current_user)
     else
       flash[:error] = 'Something went wrong'
-      redirect_to user_edit_bio_url(params[:user_id])
+      redirect_to user_edit_bio_url(current_user)
     end
   end
 end

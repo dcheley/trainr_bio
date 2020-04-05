@@ -16,10 +16,10 @@ class UserSpecialtyCategoriesController < ApplicationController
 
     if @user_specialty_categories.destroy
       flash[:notice] = 'Removed from specialty categories'
-      redirect_to user_edit_bio_url(params[:user_id])
+      redirect_to user_edit_bio_url(current_user)
     else
       flash[:error] = 'Something went wrong'
-      redirect_to user_edit_bio_url(params[:user_id])
+      redirect_to user_edit_bio_url(current_user)
     end
   end
 end
