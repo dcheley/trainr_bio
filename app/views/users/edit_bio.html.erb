@@ -48,7 +48,7 @@
           </div>
           <div class="col-4">
             <li>
-              <%= button_to "X", { action: "destroy", id: practice.id },
+              <%= button_to "X", { action: "user_practice_categories#destroy", id: practice.id },
               method: :delete, data: { confirm: "Are you sure?" },
               class: "btn btn-danger" %>
             </li>
@@ -82,7 +82,7 @@
         </div>
         <div class="col-4">
           <li>
-            <%= button_to "X", { action: "destroy", id: specialty.id },
+            <%= button_to "X", { action: "user_specialty_categories#destroy", id: specialty.id },
             method: :delete, data: { confirm: "Are you sure?" },
             class: "btn btn-danger" %>
           </li>
