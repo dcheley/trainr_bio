@@ -24,7 +24,7 @@ class MilestonesController < ApplicationController
 
   def destroy
     @milestone.destroy
-    redirect_to edit_bio_url, notice: "Milestone deleted."
+    redirect_to user_edit_bio_url(current_user), notice: "Milestone deleted."
   end
 
   private

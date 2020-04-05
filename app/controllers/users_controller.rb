@@ -88,7 +88,7 @@ class UsersController < ApplicationController
     @user = current_user
     @mypractices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by { |p| p.practice_category.name }
     @myspecialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by { |s| s.specialty_category.name }
-    @milestones = Milestone.all.order("year ASC")
+    @milestones = @user.milestones.order("year ASC")
     @milestone = Milestone.new
     @practices = PracticeCategory.all.order("name ASC")
     @specialties = SpecialtyCategory.all.order("name ASC")
