@@ -41,10 +41,10 @@
 
   <% if !@practices.empty? %>
     <ul>
-      <% @practices.each do |practice| %>
+      <% @mypractices.each do |practice| %>
         <div class="row">
           <div class="col-4">
-            <li><%= practice.practice_category.name %></li>
+            <li><%= practice.name %></li>
           </div>
           <div class="col-4">
             <li>
@@ -78,7 +78,7 @@
     <% @myspecialties.each do |specialty| %>
       <div class="row">
         <div class="col-4">
-          <li><%= specialty.specialty_category.name %></li>
+          <li><%= specialty.name %></li>
         </div>
         <div class="col-4">
           <li>
