@@ -40,6 +40,18 @@
   </div>
 
   <% if !@practices.empty? %>
+    <ul>
+      <% @practices.each do |practice| %>
+        <div class="row">
+          <div class="col-4">
+            <li><%= practice.practice_category.name %></li>
+          </div>
+          <div class="col-4">
+            <li><%= %></li>
+          </div>
+        </div>
+      <% end %>
+    </ul>
     <div class="row">
       <div class="col-12">
         <%= form_tag user_practice_categories_url(@user), method: :post do %>
@@ -74,7 +86,7 @@
   <div class="row mb-1">
     <div class="col-12">Certs & Experience: </div>
   </div>
-  <% if !@specialties.empty? %>
+  <% if !@milestones.empty? %>
     <% @milestones.each do |milestone| %>
       <%= form_for(milestone) do |x| %>
         <% if milestone.errors.any? %>
