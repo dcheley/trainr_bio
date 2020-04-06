@@ -80,18 +80,18 @@
         <div class="row mb-2">
           <div class="col-12"><h3>Certifications & Experience</h3></div>
         </div>
-        <ul>
-          <% @milestones.each do |milestone| %>
-            <li>
-              <div class="row">
+        <div class="row">
+          <ul>
+            <% @milestones.each do |milestone| %>
+              <li>
                 <div class="col-1"></div>
                 <div class="col-2"><p><%= milestone.year %></p></div>
                 <div class="col-8"><p><%= milestone.milestone %></p></div>
                 <div class="col-1"><!-- if verified --><p>v</p></div>
-              </div>
-            </li>
-          <% end %>
-        </ul>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     <% end %>
   </div>
