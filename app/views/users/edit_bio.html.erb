@@ -50,7 +50,7 @@
       <% @mypractices.each do |practice| %>
         <div class="row mb-1">
           <div class="col-2">
-            <%= button_to "X", { action: "destroy", controller: "user_practice_categories", id: practice.id },
+            <%= button_to "x", { action: "destroy", controller: "user_practice_categories", id: practice.id },
             method: :delete, data: { confirm: "Are you sure?" },
             class: "btn btn-sm btn-danger" %>
           </div>
@@ -84,7 +84,7 @@
       <% @myspecialties.each do |specialty| %>
         <div class="row mb-1">
           <div class="col-2">
-            <%= button_to "X", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
+            <%= button_to "x", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
             method: :delete, data: { confirm: "Are you sure?" },
             class: "btn btn-sm btn-danger" %>
           </div>
