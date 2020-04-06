@@ -29,7 +29,7 @@
   </div>
 
   <div class="container">
-    <div class="row mb-2 mx-2">
+    <div class="row mb-2 mx-1">
       <div class="col-12"><h3>About Me</h3></div>
     </div>
     <div class="row mb-2 mx-2">
@@ -47,7 +47,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ul  class="list-unstyled">
+            <ul>
               <% @practices.each do |practice| %>
                 <li><p><%= practice.practice_category.name %></p></li>
               <% end %>
@@ -63,7 +63,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ul  class="list-unstyled">
+            <ul>
               <% @specialties.each do |specialty| %>
                 <li><p><%= specialty.specialty_category.name %></p></li>
               <% end %>
@@ -90,7 +90,7 @@
                 <div class="col-2">
                   <div class="date"><%= milestone.year %></div>
                 </div>
-                <div class="col-5">
+                <div class="col-8">
                   <div class="date"><%= milestone.milestone %></div>
                 </div>
                 <div class="col-1">
