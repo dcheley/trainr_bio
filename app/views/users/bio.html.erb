@@ -18,7 +18,7 @@
     <div class="row my-1 text-center">
       <div class="col-1"></div>
       <div class="col-1"></div>
-      <div class="col-8">swipefeedback</div>
+      <div class="col-8"> ● ○ ○ </div>
       <div class="col-1">
         <% if current_user == @user %>
           <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(@user) %>
@@ -30,10 +30,10 @@
 
   <div class="container">
     <div class="row mb-2 mx-2">
-      <div class="col-12">About Me</div>
+      <div class="col-12"><h3>About Me<</h3>/div>
     </div>
-    <div class="row mb-2 mx-2 text-center">
-      <div class="col-12"><%= @user.bio %></div>
+    <div class="row mb-2 mx-2">
+      <div class="col-12"><p><%= @user.bio %></p></div>
     </div>
 
     <% if !@practices.empty? || !@specialties.empty? %>
@@ -85,18 +85,18 @@
             <li>
               <div class="row">
                 <div class="col-1">
-                  <div class="bulletgreen"></div>
+                  <div class="bulletgreen">○</div>
                 </div>
                 <div class="col-2">
                   <div class="date"><%= milestone.year %></div>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-5">
-                  <div class="desc"><%= milestone.milestone %></div>
+                  <div class="date"><%= milestone.milestone %></div>
                 </div>
                 <div class="col-1">
                   <!-- if verified -->
-                    v
+                  <div class="date"> v </div>
                 </div>
               </div>
             </li>

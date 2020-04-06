@@ -23,7 +23,7 @@
       <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
     </div>
     <%= f.hidden_field :trainer_id, value: @user.id %>
-    <div class="row mb-2 text-center">
+    <div class="row mb-2 text-right">
       <div class="col-12">
         <%= f.submit 'Save', class: 'btn btn-sm btn-secondary' %>
       </div>
@@ -42,7 +42,7 @@
         <%= form_tag user_practice_categories_url(@user), method: :post do %>
           <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
           <%= hidden_field_tag "user_id", @user.id %>
-          <%= submit_tag "Add Practice", class:"btn btn-secondary" %>
+          <%= submit_tag "Add Practice", class:"btn btn-sm btn-secondary" %>
         <% end %>
       </div>
     </div>
@@ -52,12 +52,13 @@
           <div class="col-2">
             <%= button_to "X", { action: "destroy", controller: "user_practice_categories", id: practice.id },
             method: :delete, data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
+            class: "btn btn-sm btn-danger" %>
           </div>
           <div class="col-1"></div>
-          <div class="col-9">
+          <div class="col-8">
             <li><%= practice.practice_category.name %></li>
           </div>
+          <div class="col-1"></div>
         </div>
       <% end %>
     </ul>
@@ -75,7 +76,7 @@
         <%= form_tag user_specialty_categories_url(@user), method: :post do %>
           <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
           <%= hidden_field_tag "user_id", @user.id %>
-          <%= submit_tag "Add Specialty", class:"btn btn-secondary" %>
+          <%= submit_tag "Add Specialty", class:"btn btn-sm btn-secondary" %>
         <% end %>
       </div>
     </div>
@@ -85,12 +86,13 @@
           <div class="col-2">
             <%= button_to "X", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
             method: :delete, data: { confirm: "Are you sure?" },
-            class: "btn btn-danger" %>
+            class: "btn btn-sm btn-danger" %>
           </div>
           <div class="col-1"></div>
-          <div class="col-9">
+          <div class="col-8">
             <li><%= specialty.specialty_category.name %></li>
           </div>
+          <div class="col-1"></div>
         </div>
       <% end %>
     </ul>
@@ -120,9 +122,9 @@
         <div class="col-7"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
         <%= f.hidden_field :trainer_id, value: @user.id %>
       </div>
-      <div class="row my-1">
+      <div class="row my-1 mb-2 text-right">
         <div class="col-12">
-          <%= f.submit "Add New Milestone", class:"btn btn-secondary btn-sm" %>
+          <%= f.submit "Add New Milestone", class:"btn btn-sm btn-secondary" %>
         </div>
       </div>
     <% end %>
@@ -143,14 +145,14 @@
           <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
           <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
         </div>
-        <div class="row my-1 text-center">
+        <div class="row my-1 mb-2 text-center">
           <div class="col-6">
             <%= button_to "Delete Milestone", { action: "destroy", id: milestone.id },
               method: :delete, data: { confirm: "Are you sure?" },
-              class: "btn btn-danger" %>
+              class: "btn btn-sm btn-danger" %>
           </div>
           <div class="col-6">
-            <%= x.submit "Update Milestone", class:"btn btn-secondary btn-sm" %>
+            <%= x.submit "Update Milestone", class:"btn btn-sm btn-secondary" %>
           </div>
         </div>
       <% end %>
