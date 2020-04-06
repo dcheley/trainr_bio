@@ -5,7 +5,7 @@
   <%= render 'layouts/navbar_secondary' %>
 
   <div class="container">
-    <div class="row text-center mt-2 mb-2">
+    <div class="row my-2 text-center">
       <div class="col-12">
         <% if @user.avatar.attachment.nil? %>
           <%= image_tag('user.svg', class:'btn-block')%>
@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="row text-center mt-1 mb-1">
+    <div class="row my-1 text-center">
       <div class="col-1"></div>
       <div class="col-1"></div>
       <div class="col-8">swipefeedback</div>
@@ -28,25 +28,24 @@
     </div>
   </div>
 
-  <div class="container mx-2">
-    <div class="row mb-3">
+  <div class="container">
+    <div class="row mb-2 mx-2">
       <div class="col-12">About Me</div>
     </div>
-
-    <div class="row text-center">
+    <div class="row mb-2 mx-2 text-center">
       <div class="col-12"><%= @user.bio %></div>
     </div>
 
     <% if !@practices.empty? || !@specialties.empty? %>
-      <div class="color-bottom-border mt-3 mb-3"></div>
+      <hr>
+      <!-- <div class="color-bottom-border my-2"></div> -->
     <% end %>
-
     <% if !@practices.empty? %>
-      <div class="mt-3">
-        <div class="row text-center mb-3">
+      <div class="bio-category my-3">
+        <div class="row mb-2">
           <div class="col-12"><h3>I teach</h3></div>
         </div>
-        <div class="row text-center">
+        <div class="row">
           <div class="col-12">
             <ul>
               <% @practices.each do |practice| %>
@@ -57,13 +56,12 @@
         </div>
       </div>
     <% end %>
-
     <% if !@specialties.empty? %>
-      <div class="mt-3">
-        <div class="row text-center mb-3">
+      <div class="bio-category my-3">
+        <div class="row mb-2">
           <div class="col-12"><h3>I focus on</h3></div>
         </div>
-        <div class="row text-center">
+        <div class="row">
           <div class="col-12">
             <ul>
               <% @specialties.each do |specialty| %>
@@ -76,15 +74,16 @@
     <% end %>
 
     <% if !@milestones.empty? %>
-      <div class="color-bottom-border mt-3 mb-3"></div>
-      <div class="timeline mt-4">
-        <div class="row text-center">
+      <hr>
+      <!-- <div class="color-bottom-border mt-3 mb-3"></div> -->
+      <div class="timeline my-3">
+        <div class="row mb-2">
           <div class="col-12"><h3>Certifications & Experience</h3></div>
         </div>
         <ul>
           <% @milestones.each do |milestone| %>
             <li>
-              <div class="row text-center">
+              <div class="row">
                 <div class="col-1">
                   <div class="bulletgreen"></div>
                 </div>
@@ -92,7 +91,7 @@
                   <div class="date"><%= milestone.year %></div>
                 </div>
                 <div class="col-1"></div>
-                <div class="col-6">
+                <div class="col-5">
                   <div class="desc"><%= milestone.milestone %></div>
                 </div>
                 <div class="col-1">
