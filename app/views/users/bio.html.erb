@@ -47,9 +47,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ul>
+            <ul  class="list-unstyled">
               <% @practices.each do |practice| %>
-                <li><%= practice.practice_category.name %></li>
+                <li><p><%= practice.practice_category.name %></p></li>
               <% end %>
             </ul>
           </div>
@@ -63,9 +63,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ul>
+            <ul  class="list-unstyled">
               <% @specialties.each do |specialty| %>
-                <li><%= specialty.specialty_category.name %></li>
+                <li><p><%= specialty.specialty_category.name %></p></li>
               <% end %>
             </ul>
           </div>
