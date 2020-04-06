@@ -80,7 +80,7 @@
         <div class="row mb-2">
           <div class="col-12"><h3>Certifications & Experience</h3></div>
         </div>
-        <ul>
+        <ul class="list-unstyled">
           <% @milestones.each do |milestone| %>
             <li>
               <div class="row">
@@ -90,7 +90,6 @@
                 <div class="col-2">
                   <div class="date"><%= milestone.year %></div>
                 </div>
-                <div class="col-1"></div>
                 <div class="col-5">
                   <div class="date"><%= milestone.milestone %></div>
                 </div>
