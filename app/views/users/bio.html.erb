@@ -84,19 +84,10 @@
           <% @milestones.each do |milestone| %>
             <li>
               <div class="row">
-                <div class="col-1">
-                  <div class="bulletgreen">○</div>
-                </div>
-                <div class="col-2">
-                  <div class="date"><%= milestone.year %></div>
-                </div>
-                <div class="col-8">
-                  <div class="date"><%= milestone.milestone %></div>
-                </div>
-                <div class="col-1">
-                  <!-- if verified -->
-                  <div class="date"> v </div>
-                </div>
+                <div class="col-1"><p>○</p></div>
+                <div class="col-2"><p><%= milestone.year %></p></div>
+                <div class="col-8"><p><%= milestone.milestone %></p></div>
+                <div class="col-1"><!-- if verified --><p>v</p></div>
               </div>
             </li>
           <% end %>
