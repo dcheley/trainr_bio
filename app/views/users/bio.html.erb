@@ -48,7 +48,7 @@
         <div class="row">
           <div class="col-12">
             <% @practices.each do |practice| %>
-              <div class="btn btn-sm btn-success"><p><%= practice.practice_category.name %></p></div>
+              <div class="btn btn-sm btn-success"><%= practice.practice_category.name %></div>
             <% end %>
           </div>
         </div>
@@ -62,7 +62,7 @@
         <div class="row">
           <div class="col-12">
             <% @specialties.each do |specialty| %>
-              <div class="btn btn-sm btn-info"><p><%= specialty.specialty_category.name %></p></div>
+              <div class="btn btn-sm btn-info"><%= specialty.specialty_category.name %></div>
             <% end %>
           </div>
         </div>
