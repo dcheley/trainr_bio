@@ -21,13 +21,13 @@
       </div>
     <% else %>
       <% @offers.each do |offer| %>
-        <figure my-2 style="border-style: solid;">
+        <figure my-2 py-0 style="border-style: solid; border-width: 1px;">
           <div class="row">
             <div class="col-12">
               <% if offer.avatar.attachment.nil? %>
-                <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block"), offer_url(offer) %>
+                <%= link_to image_tag("cover.jpg", class: "figure-img img-fluid rounded"), offer_url(offer) %>
               <% else %>
-                <%= link_to image_tag(offer.avatar.service_url, class: "offer-pic btn-block"), offer_url(offer) %>
+                <%= link_to image_tag(offer.avatar.service_url, class: "figure-img img-fluid rounded"), offer_url(offer) %>
               <% end %>
             </div>
           </div>
