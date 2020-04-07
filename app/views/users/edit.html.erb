@@ -14,15 +14,17 @@
     <% end %>
 
     <div class="row">
-      <div class="col-1"></div>
-      <div class="col-2">
-        <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/96/profile-icon.png" alt=""></img>
+      <div class="col-3">
+        <% if @user.avatar.attachment.nil? %>
+          <%= image_tag('user.svg', class:'btn-block')%>
+        <% else %>
+          <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
+        <% end %>
       </div>
       <div class="col-9">
-        <div class="row mb-3">
-          <div class="col-1"></div>
+        <div class="row mb-3 mx-2">
           <div class="col-3">
-            <h6>First Name</h6>
+            <p>First Name</p>
           </div>
           <div class="col-7">
             <div>
@@ -30,10 +32,9 @@
             </div>
           </div>
         </div>
-        <div class="row mb-3">
-          <div class="col-1"></div>
+        <div class="row mb-3 mx-2">
           <div class="col-3">
-            <h6>Last Name</h6>
+            <p>Last Name</p>
           </div>
           <div class="col-7">
             <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "form-control no-border grey-bottom-border " %>
@@ -42,7 +43,7 @@
         <div class="row mb-3">
           <div class="col-1"></div>
           <div class="col-3">
-            <h6>URL</h6>
+            <p>URL</p>
           </div>
           <div class="col-7">
             <%= f.text_field :username, placeholder: "trainr.bio/jamesjun", required: true, class: "form-control no-border grey-bottom-border" %>
@@ -53,18 +54,11 @@
 
     <hr>
 
-    <div class="row">
-      <div class="col-1"></div>
-        <div class="col-2">
-          <h6>Quick Bio</h6>
-        </div>
-        <div class="col-9">
-        <div class="row">
-          <div class="col-11">
-            <%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "form-control"  %>
-          </div>
-        </div>
-      </div>
+    <div class="row mb-2">
+      <div class="col-12"><%= f.label "About Me*" %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12"><%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "btn-block", required: true %></div>
     </div>
 
     <hr>
@@ -79,7 +73,7 @@
     <div class="row mb-3">
       <div class="col"></div>
       <div class="col-2">
-         <h6>Instagram</h6>
+         <p>Instagram</p>
       </div>
       <div class="col-5">
         <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button>
@@ -90,7 +84,7 @@
     <div class="row mb-3">
       <div class="col"></div>
       <div class="col-2">
-        <h6>Website</h6>
+        <p>Website</p>
       </div>
       <div class="col-8">
         <%= f.text_field :website_url, placeholder: "movewithjames.co", class: "form-control no-border grey-bottom-border" %>
@@ -101,7 +95,7 @@
     <div class="row">
       <div class="col"></div>
       <div class="col-2">
-        <h6> Email </h6>
+        <p> Email </p>
       </div>
       <div class="col-8">
         <%= f.email_field :email, placeholder: "movewithjames@gmail.com", required: true, class: "form-control no-border grey-bottom-border" %>
@@ -114,7 +108,7 @@
     <div class="row mb-3">
       <div class="col"></div>
       <div class="col-2">
-         <h6>Phone</h6>
+         <p>Phone</p>
        </div>
        <div class="col-8">
          <%= f.text_field :phone, placeholder: "647-809-3891", class: "form-control no-border grey-bottom-border" %>
@@ -125,7 +119,7 @@
     <div class="row mb-3">
       <div class="col"></div>
       <div class="col-2">
-        <h6>City/Region</h6>
+        <p>City/Region</p>
       </div>
       <div class="col-8">
         <%= f.text_field :location, placeholder: "Location", class: "form-control no-border grey-bottom-border", id: :autocomplete_address  %>
@@ -136,7 +130,7 @@
     <div class="row mb-3">
       <div class="col"></div>
       <div class="col-2">
-        <h6>Upload Image</h6>
+        <p>Upload Image</p>
       </div>
       <div class="col-8">
         <%= f.file_field :avatar %>
