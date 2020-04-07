@@ -55,14 +55,14 @@
             <%= link_to user_profile_url(trainer) do %>
               <div class="row">
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
-                  <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
+                  <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%><br/>
                 <% else %>
-                  <p class="">The Nameless One</p>
+                  <p class="">The Nameless One<br/>
                 <% end %>
                 <% if !trainer.headline.nil? %>
-                  <p class=""><%= "#{trainer.headline}"%></p>
+                  <%= "#{trainer.headline}"%></p>
                 <% else %>
-                  <p class="">Trainr</p>
+                  Trainr</p>
                 <% end %>
               </div>
             <% end %>
