@@ -41,15 +41,13 @@
 
         <div class="row mb-3">
           <div class="col-1"><%= image_tag("time.png", height:'11', width:'11' ) %></div>
-          <div class="col-4">
+          <div class="col-3">
             <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "no-border" %>
           </div>
-          <div class="col-1"></div>
           <div class="col-1"><%= image_tag("duration.svg", height:'11', width:'11' ) %></div>
-          <div class="col-4">
+          <div class="col-3">
             <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "no-border" %>
           </div>
-          <div class="col-1"></div>
 
         </div>
 
