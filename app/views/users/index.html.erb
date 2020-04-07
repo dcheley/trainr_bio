@@ -41,16 +41,16 @@
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
       <hr>
       <% @users.each do |trainer| %>
-        <div class="row my-3">
-          <div class="col-2">
+        <div class="row mx-2">
+          <div class="col-2 mt-1">
             <% if trainer.avatar.attachment.nil? %>
-              <%= image_tag('user.svg', height: 28, width: 28, class:'')%>
+              <%= image_tag('user.svg', height: 33, width: 33, class:'')%>
             <% else %>
               <%= image_tag(trainer.avatar.service_url, height: 28, width: 28, class:'')%>
             <% end %>
           </div>
           <div class="col-1"></div>
-          <div class="col-4 text-left">
+          <div class="col-4 mt-2 text-left">
             <%= link_to user_profile_url(trainer) do %>
               <div class="row">
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
@@ -67,7 +67,7 @@
             <% end %>
           </div>
           <div class="col-1"></div>
-          <div class="col-2 mt-1">
+          <div class="col-2 mt-3">
             <p class=""><%= trainer.location %></p>
           </div>
         </div>
