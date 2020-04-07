@@ -47,11 +47,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <ul>
-              <% @practices.each do |practice| %>
-                <li><p><%= practice.practice_category.name %></p></li>
-              <% end %>
-            </ul>
+            <% @practices.each do |practice| %>
+              <div class="btn btn-sm btn-secondary"><%= practice.practice_category.name %></div>
+            <% end %>
           </div>
         </div>
       </div>
