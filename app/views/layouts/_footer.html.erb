@@ -1,0 +1,9 @@
+<div class="mt-2">
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% elsif current_user.role == 1 %>
+    <%= render 'layouts/footer_trainer' %>
+  <% elsif current_user.role == 8 %>
+    <%= render 'layouts/footer_admin' %>
+  <% end %>
+</div>

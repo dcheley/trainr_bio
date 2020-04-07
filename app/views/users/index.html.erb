@@ -43,7 +43,7 @@
       <% @users.each do |trainer| %>
         <div class="row my-3">
           <div class="col-1"></div>
-          <div class="col-2 my-auto">
+          <div class="col-2">
             <% if trainer.avatar.attachment.nil? %>
               <%= image_tag('user.svg', height: 28, width: 28, class:'')%>
             <% else %>
@@ -51,9 +51,9 @@
             <% end %>
           </div>
           <div class="col-1"></div>
-          <div class="col-4 my-auto text-left">
+          <div class="col-4 text-left">
             <%= link_to user_profile_url(trainer) do %>
-              <div class="row">
+              <div class="row mt-1">
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
                   <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%><br/>
                 <% else %>
@@ -68,7 +68,7 @@
             <% end %>
           </div>
           <div class="col-1"></div>
-          <div class="col-2 my-auto">
+          <div class="col-2">
             <p class=""><%= trainer.location %></p>
           </div>
           <div class="col-1"></div>
