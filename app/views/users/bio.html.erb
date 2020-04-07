@@ -41,31 +41,29 @@
       <!-- <div class="color-bottom-border my-2"></div> -->
     <% end %>
     <% if !@practices.empty? %>
-      <div class="bio-category my-3">
+      <div class="my-3">
         <div class="row mb-2">
           <div class="col-12"><h3>I teach</h3></div>
         </div>
         <div class="row">
           <div class="col-12">
             <% @practices.each do |practice| %>
-              <div class="btn btn-sm btn-secondary"><%= practice.practice_category.name %></div>
+              <div class="btn btn-sm btn-success"><%= practice.practice_category.name %></div>
             <% end %>
           </div>
         </div>
       </div>
     <% end %>
     <% if !@specialties.empty? %>
-      <div class="bio-category my-3">
+      <div class="my-3">
         <div class="row mb-2">
           <div class="col-12"><h3>I focus on</h3></div>
         </div>
         <div class="row">
           <div class="col-12">
-            <ul>
-              <% @specialties.each do |specialty| %>
-                <li><p><%= specialty.specialty_category.name %></p></li>
-              <% end %>
-            </ul>
+            <% @specialties.each do |specialty| %>
+              <div class="btn btn-sm btn-info"><%= specialty.specialty_category.name %></div>
+            <% end %>
           </div>
         </div>
       </div>
