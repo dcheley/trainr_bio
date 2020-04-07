@@ -30,7 +30,7 @@
         <% if @user.avatar.attachment.nil? %>
           <%= image_tag('profile.png', class:'round btn-block')%>
         <% else %>
-          <%= image_tag(@user.avatar.service_url, class:'round btn-block')%>
+          <%= image_tag(@user.avatar.service_url, class:'round')%>
         <% end %>
       </div>
       <div class="col-6">
