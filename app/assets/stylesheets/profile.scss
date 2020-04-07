@@ -51,25 +51,22 @@ button.primary.ghost {
 	height: 240px;
 }
 
-.skills {
-	background-color: #1F1A36;
+.bio-category {
 	padding: 15px;
 	margin: auto;
-}
-
-.skills ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-
-.skills ul li {
-	border: 1px solid #2D2747;
-	border-radius: 2px;
-	display: inline-block;
-	font-size: 12px;
-	margin: 0 7px 7px 0;
-	padding: 7px;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	ul li {
+		border: 1px solid #2D2747;
+		border-radius: 2px;
+		display: inline-block;
+		font-size: 12px;
+		margin: 0 7px 7px 0;
+		padding: 7px;
+	}
 }
 
 footer {
