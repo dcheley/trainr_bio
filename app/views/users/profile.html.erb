@@ -8,7 +8,7 @@
     <div class="row mt-1 mb-1">
       <div class="col-12">
         <% if current_user == @user %>
-          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "btn btn-dark btn-block" %>
+          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "btn btn-sm btn-dark btn-block" %>
         <% end %>
       </div>
     </div>
@@ -36,8 +36,8 @@
       <div class="col-6">
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
-        <div class="row d-flex justify-content-center user-headline mt-2"><%= @user.headline %></div>
-        <div class="row d-flex justify-content-center user-location">🏠<%= @user.location %></div>
+        <div class="row d-flex justify-content-center user-headline mt-2"><p><%= @user.headline %><p></div>
+        <div class="row d-flex justify-content-center user-location"><p>🏠<%= @user.location %></p></div>
       </div>
     </div>
     <div class="row mt-2">
@@ -99,7 +99,9 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-6">
-        <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+        <% if !current_user %>
+          <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+        <% end %>
       </div>
       <div class="col-1"></div>
       <div class="col-2">
