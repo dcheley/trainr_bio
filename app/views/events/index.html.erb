@@ -41,7 +41,13 @@
               <div class="col-1"></div>
               <div class="col"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
               <div class="col"><span class="schedule session-name"><%= event.title %></span></div>
-              <div class="col"><span class="schedule studio-name"><%= event.location %></span></div>
+              <div class="col"><span class="schedule studio-name">
+                <% if event.location[0..3] == "http" || event.location[0..4] == "https" || event.location[0..2] == "www" %>
+                  <%= link_to event.location.truncate(13, omission: '...'), "http://#{event.location.sub(%r!^https?://!i, '')}", target: "_blank"  %>
+                <% else %>
+                  <%= event.location %>
+                <% end %>
+              </span></div>
               <div class="col-1"></div>
             </div>
         <% end %>
