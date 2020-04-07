@@ -1,6 +1,6 @@
 <%= render 'layouts/navbar_edit' %>
 <!-- < Settings (edit trainr profile) -->
-<div class="container my-5">
+<div class="container my-3">
   <%= form_for(@user, url: { action: "update" }) do |f| %>
     <% if @user.errors.any? %>
       <div id="error_explanation">
@@ -15,16 +15,21 @@
 
     <div class="row">
       <div class="col-3">
-        <% if @user.avatar.attachment.nil? %>
-          <%= image_tag('user.svg', class:'btn-block')%>
-        <% else %>
-          <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
-        <% end %>
+        <div class="row mb-2">
+          <% if @user.avatar.attachment.nil? %>
+            <%= image_tag('user.svg', class:'btn-block')%>
+          <% else %>
+            <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <%= f.file_field :avatar %>
       </div>
       <div class="col-9">
-        <div class="row mb-1 mx-2">
+        <div class="row">
           <div class="col-4">
-            <p>First Name</p>
+            <p>First</p>
           </div>
           <div class="col-7">
             <div>
@@ -32,15 +37,15 @@
             </div>
           </div>
         </div>
-        <div class="row mb-1 mx-2">
+        <div class="row">
           <div class="col-4">
-            <p>Last Name</p>
+            <p>Last</p>
           </div>
           <div class="col-7">
             <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "btn-block no-border grey-bottom-border " %>
           </div>
         </div>
-        <div class="row mb-1">
+        <div class="row">
           <div class="col-4">
             <p>URL</p>
           </div>
@@ -54,7 +59,7 @@
     <hr>
 
     <div class="row mb-2">
-      <div class="col-12"><%= f.label "About Me*" %></div>
+      <div class="col-12"><p>About Me</p></div>
     </div>
     <div class="row mb-2">
       <div class="col-12"><%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "btn-block", required: true %></div>
@@ -63,78 +68,65 @@
     <hr>
 
     <div class="row mb-3">
-      <div class="col-1"></div>
-      <div class="col-11">
-        <h5>Social Links</h5>
+      <div class="col-12">
+        <h3>Social Links</h3>
       </div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
          <p>Instagram</p>
       </div>
-      <div class="col-5">
+      <div class="col-9">
         <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button>
       </div>
-      <div class="col-4"></div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
         <p>Website</p>
       </div>
-      <div class="col-8">
-        <%= f.text_field :website_url, placeholder: "movewithjames.co", class: "form-control no-border grey-bottom-border" %>
+      <div class="col-9">
+        <%= f.text_field :website_url, placeholder: "movewithjames.co", class: "no-border grey-bottom-border" %>
       </div>
-      <div class="col"></div>
     </div>
 
     <div class="row">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
         <p> Email </p>
       </div>
-      <div class="col-8">
-        <%= f.email_field :email, placeholder: "movewithjames@gmail.com", required: true, class: "form-control no-border grey-bottom-border" %>
+      <div class="col-9">
+        <%= f.email_field :email, placeholder: "movewithjames@gmail.com", required: true, class: "no-border grey-bottom-border" %>
       </div>
-      <div class="col"></div>
     </div>
 
     <hr>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
          <p>Phone</p>
        </div>
-       <div class="col-8">
-         <%= f.text_field :phone, placeholder: "647-809-3891", class: "form-control no-border grey-bottom-border" %>
+       <div class="col-9">
+         <%= f.text_field :phone, placeholder: "647-809-3891", class: "no-border grey-bottom-border" %>
        </div>
-       <div class="col"></div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
         <p>City/Region</p>
       </div>
-      <div class="col-8">
-        <%= f.text_field :location, placeholder: "Location", class: "form-control no-border grey-bottom-border", id: :autocomplete_address  %>
+      <div class="col-9">
+        <%= f.text_field :location, placeholder: "Location", class: "no-border grey-bottom-border", id: :autocomplete_address  %>
       </div>
-      <div class="col"></div>
     </div>
 
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-2">
+      <div class="col-3">
         <p>Upload Image</p>
       </div>
-      <div class="col-8">
+      <div class="col-9">
         <%= f.file_field :avatar %>
       </div>
-      <div class="col"></div>
     </div>
 
     <div class="row">
