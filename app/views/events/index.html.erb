@@ -21,10 +21,10 @@
   <div class="tab-content clearfix">
     <div class="tab-pane active mb-4" id="this-week" role="tabpanel" aria-labelledby="this-week-tab">
       <% if @events.empty?  %>
-        <div class="row text-center mt-4 mb-4">
-          <div class="col"></div>
-          <div class="col"><span class="schedule date"> No classes this week </span></div>
-          <div class="col"></div>
+        <div class="row text-center my-3">
+          <div class="col-2"></div>
+          <div class="col-8"><span class="schedule date"> No classes this week </span></div>
+          <div class="col-2"></div>
         </div>
       <% else %>
         <% @previous_date = 0 %>

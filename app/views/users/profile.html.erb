@@ -64,10 +64,10 @@
       <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></u></div>
     </div>
     <% if @events.empty?  %>
-      <div class="row mt-3 mb-3">
-        <div class="col"></div>
-        <div class="col"><span class="schedule date"> No classes this week </span></div>
-        <div class="col"></div>
+      <div class="row my-3">
+        <div class="col-2"></div>
+        <div class="col-8"><span class="schedule date"> No classes this week </span></div>
+        <div class="col-2"></div>
       </div>
     <% else %>
       <% $previous_date = 0 %>
