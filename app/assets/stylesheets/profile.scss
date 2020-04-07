@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+.profile-pic {
+  border: 1px solid #000;
+  position: relative;
+  z-index: 1;
+  top: -21px;
+}
+
 .card-container {
 	background-color: #1F1A36;
 	border-radius: 5px;
