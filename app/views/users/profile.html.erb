@@ -25,7 +25,7 @@
       </div>
       <div class="col-6">
         <% if current_user == @user %>
-          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "profile-edit btn btn-sm btn-secondary btn-block" %>
+          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "profile-edit btn btn-sm btn-outline-secondary btn-block" %>
         <% end %>
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
