@@ -39,41 +39,37 @@
 
   <div class="tab-content clearfix">
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
-      <hr>
+      <div class="grey-bottom-border"></div>
       <% @users.each do |trainer| %>
-        <div class="row my-3">
-          <div class="col-1"></div>
-          <div class="col-2 my-auto">
+        <div class="row mt-3 mx-2">
+          <div class="col-2 mt-1">
             <% if trainer.avatar.attachment.nil? %>
-              <%= image_tag('user.svg', height: 28, width: 28, class:'')%>
+              <%= image_tag('user.svg', height: 27, width: 27, class:'')%>
             <% else %>
-              <%= image_tag(trainer.avatar.service_url, height: 28, width: 28, class:'')%>
+              <%= image_tag(trainer.avatar.service_url, height: 27, width: 27, class:'')%>
             <% end %>
           </div>
-          <div class="col-1"></div>
-          <div class="col-4 my-auto text-left">
+          <div class="col-6 mx-2 text-left">
             <%= link_to user_profile_url(trainer) do %>
               <div class="row">
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
-                  <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%></p>
+                  <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%><br/>
                 <% else %>
-                  <p class="">The Nameless One</p>
+                  <p class="">The Nameless One<br/>
                 <% end %>
                 <% if !trainer.headline.nil? %>
-                  <p class=""><%= "#{trainer.headline}"%></p>
+                  <%= "#{trainer.headline}"%></p>
                 <% else %>
-                  <p class="">Trainr</p>
+                  Trainr</p>
                 <% end %>
               </div>
             <% end %>
           </div>
-          <div class="col-1"></div>
           <div class="col-2 my-auto">
             <p class=""><%= trainer.location %></p>
           </div>
-          <div class="col-1"></div>
         </div>
-        <hr>
+        <div class="grey-bottom-border"></div>
       <% end %>
       <% if @users.empty? %>
         <div class="col-12">

@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     end
 
     if @user.update_attributes(user_params)
-      redirect_to user_path(@user), notice: "Account updated!"
+      redirect_to user_profile_path(@user), notice: "Account updated!"
     else
       render :edit
     end
@@ -86,8 +86,10 @@ class UsersController < ApplicationController
 
   def edit_bio
     @user = current_user
+    @mypractices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by { |p| p.practice_category.name }
+    @myspecialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by { |s| s.specialty_category.name }
+    @milestones = @user.milestones.order("year ASC")
     @milestone = Milestone.new
-    @milestones = Milestone.all.order("year ASC")
     @practices = PracticeCategory.all.order("name ASC")
     @specialties = SpecialtyCategory.all.order("name ASC")
   end
@@ -106,7 +108,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
       :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
-      :password, :password_confirmation, :role, :latitude, :longitude
+      :password, :password_confirmation, :role, :latitude, :longitude, :bio
     )
   end
 end

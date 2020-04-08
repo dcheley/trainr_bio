@@ -5,7 +5,7 @@
   <%= render 'layouts/navbar_secondary' %>
 
   <div class="container">
-    <div class="row text-center mt-2 mb-2">
+    <div class="row my-2 text-center">
       <div class="col-12">
         <% if @user.avatar.attachment.nil? %>
           <%= image_tag('user.svg', class:'btn-block')%>
@@ -15,10 +15,10 @@
       </div>
     </div>
 
-    <div class="row text-center mt-1 mb-1">
+    <div class="row my-1 text-center">
       <div class="col-1"></div>
       <div class="col-1"></div>
-      <div class="col-8">swipefeedback</div>
+      <div class="col-8"> ● ○ ○ </div>
       <div class="col-1">
         <% if current_user == @user %>
           <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(@user) %>
@@ -28,81 +28,62 @@
     </div>
   </div>
 
-  <div class="container mx-2">
-    <div class="row mb-3">
-      <div class="col-12">About Me</div>
+  <div class="container mb-5">
+    <div class="row mb-2 mx-1">
+      <div class="col-12"><h3>About Me</h3></div>
     </div>
-
-    <div class="row text-center">
-      <div class="col-12"><%= @user.bio %></div>
+    <div class="row mb-2 mx-2">
+      <div class="col-12"><p><%= @user.bio %></p></div>
     </div>
 
     <% if !@practices.empty? || !@specialties.empty? %>
-      <div class="color-bottom-border mt-3 mb-3"></div>
+      <hr>
+      <!-- <div class="color-bottom-border my-2"></div> -->
     <% end %>
-
     <% if !@practices.empty? %>
-      <div class="skills mt-3">
-        <div class="row text-center mb-3">
+      <div class="my-3">
+        <div class="row">
           <div class="col-12"><h3>I teach</h3></div>
         </div>
-        <div class="row text-center">
+        <div class="row">
           <div class="col-12">
-            <ul>
-              <% @practices.each do |practice| %>
-                <li><%= practice.practice_category.name %></li>
-              <% end %>
-            </ul>
+            <% @practices.each do |practice| %>
+              <div class="btn btn-sm btn-success"><%= practice.practice_category.name %></div>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
-
     <% if !@specialties.empty? %>
-      <div class="skills mt-3">
-        <div class="row text-center mb-3">
+      <div class="my-3">
+        <div class="row">
           <div class="col-12"><h3>I focus on</h3></div>
         </div>
-        <div class="row text-center">
+        <div class="row">
           <div class="col-12">
-            <ul>
-              <% @specialties.each do |specialty| %>
-                <li><%= specialty.specialty_category.name %></li>
-              <% end %>
-            </ul>
+            <% @specialties.each do |specialty| %>
+              <div class="btn btn-sm btn-info"><%= specialty.specialty_category.name %></div>
+            <% end %>
           </div>
         </div>
       </div>
     <% end %>
 
     <% if !@milestones.empty? %>
-      <div class="color-bottom-border mt-3 mb-3"></div>
-      <div class="timeline mt-4">
-        <div class="row text-center">
+      <hr>
+      <!-- <div class="color-bottom-border mt-3 mb-3"></div> -->
+      <div class="timeline my-3">
+        <div class="row mb-2">
           <div class="col-12"><h3>Certifications & Experience</h3></div>
         </div>
-        <ul>
           <% @milestones.each do |milestone| %>
-            <li>
-              <div class="row text-center">
-                <div class="col-1">
-                  <div class="bulletgreen"></div>
-                </div>
-                <div class="col-2">
-                  <div class="date"><%= milestone.year %></div>
-                </div>
-                <div class="col-1"></div>
-                <div class="col-6">
-                  <div class="desc"><%= milestone.milestone %></div>
-                </div>
-                <div class="col-1">
-                  <!-- if verified -->
-                    v
-                </div>
-              </div>
-            </li>
+            <div class="row">
+              <div class="col-1">○</div>
+              <div class="col-2"><p><%= milestone.year %></p></div>
+              <div class="col-7"><p><%= milestone.milestone %></p></div>
+              <div class="col-1"><!-- if verified, display checkmark --></div>
+            </div>
           <% end %>
-        </ul>
       </div>
     <% end %>
   </div>

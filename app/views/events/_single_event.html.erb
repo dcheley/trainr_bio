@@ -1,0 +1,11 @@
+<div class="row text-center mt-3">
+  <div class="col-1">
+    <% if event.recurring == 1 %>
+      <%= image_tag('recurring.png', height: 11, width: 11, class:'') %>
+    <% end %>
+  </div>
+  <div class="col-3"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
+  <div class="col-3"><span class="schedule session-name"><%= event.title %></span></div>
+  <div class="col-3"><span class="schedule studio-name"><%= event.location %></span></div>
+  <div class="col-1"><%= link_to image_tag('edit.png', height: 11, width: 11, class:''), edit_event_url(event) %></div>
+</div>

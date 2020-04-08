@@ -4,90 +4,108 @@
 <p class="text-primary text-center"><%= flash[:notice] %></p>
 <p class="text-danger text-center"><%= flash[:alert] %></p>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li class="error"><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="container my-3" id="about">
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@user.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row mb-2">
+      <div class="col-12"><%= f.label "About Me*" %></div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
+    </div>
+    <%= f.hidden_field :trainer_id, value: @user.id %>
+    <div class="row mb-2 text-right">
+      <div class="col-12">
+        <%= f.submit 'Save', class: 'btn btn-sm btn-secondary' %>
+      </div>
     </div>
   <% end %>
+  <hr>
+</div>
 
-  <div class="container my-3">
-    <div class="row mb-1">
-      <div class="col-12"><%= f.label "About Me*", class: "btn-block" %></div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
-    </div>
+<div class="container my-3" id="practice">
+  <div class="row mb-2">
+    <div class="col-12">I Practice: </div>
   </div>
-
-  <div class="container my-3" id="practice">
-    <div class="row mb-3">
-      <div class="col-12"><%= f.label "I Practice:", class: "" %></div>
-    </div>
-
-    <% if !@practices.empty? %>
-      <div class="row">
-        <div class="col-12">
-          <%= form_tag user_practice_categories_url(@user), method: :post do %>
-            <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
-            <%= hidden_field_tag "user_id", @user.id %>
-            <%= submit_tag "add practice area", class:"btn btn-secondary" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="container my-3" id="specialty">
-    <div class="row mb-3">
-      <div class="col-12"><%= f.label "I'm Known For:", class: "" %></div>
-    </div>
-
-    <% if !@specialties.empty? %>
-      <div class="row">
-        <div class="col-12">
-          <%= form_tag user_specialty_categories_url(@user), method: :post do %>
-            <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
-            <%= hidden_field_tag "user_id", @user.id %>
-            <%= submit_tag "add specialty area", class:"btn btn-secondary" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="container my-3" id="experience">
-    <div class="row mb-1">
-      <div class="col-12"><%= f.label "Certs & Experience:", class: "" %></div>
-    </div>
-    <% if !@specialties.empty? %>
-      <% @milestones.each do |milestone| %>
-        <%= form_for(milestone) do |x| %>
-          <% if milestone.errors.any? %>
-            <div id="error_explanation">
-              <h5><%= pluralize(milestone.errors.count, "error") %> prohibited change!</h5>
-              <ul>
-                <% milestone.errors.full_messages.each do |msg| %>
-                  <li class="error"><%= msg %></li>
-                <% end %>
-              </ul>
-            </div>
-          <% end %>
-          <div class="row">
-            <div class="col-2"><%= x.select :month, 1..12 %></div>
-            <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-            <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block" %></div>
-          </div>
+  <% if !@practices.empty? %>
+    <div class="row mb-2">
+      <div class="col-12">
+        <%= form_tag user_practice_categories_url(@user), method: :post do %>
+          <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
+          <%= hidden_field_tag "user_id", @user.id %>
+          <%= submit_tag "Add Practice", class:"btn btn-sm btn-secondary" %>
         <% end %>
+      </div>
+    </div>
+    <ul class="list-unstyled">
+      <% @mypractices.each do |practice| %>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= button_to "x", { action: "destroy", controller: "user_practice_categories", id: practice.id },
+            method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-sm btn-danger" %>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-8">
+            <li><%= practice.practice_category.name %></li>
+          </div>
+          <div class="col-1"></div>
+        </div>
       <% end %>
-    <% end %>
+    </ul>
+  <% end %>
+  <hr>
+</div>
 
-    <%= form_for(@milestone) do |x| %>
+<div class="container my-3" id="specialty">
+  <div class="row mb-2">
+    <div class="col-12">I'm Known for: </div>
+  </div>
+  <% if !@specialties.empty? %>
+    <div class="row mb-2">
+      <div class="col-12">
+        <%= form_tag user_specialty_categories_url(@user), method: :post do %>
+          <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
+          <%= hidden_field_tag "user_id", @user.id %>
+          <%= submit_tag "Add Specialty", class:"btn btn-sm btn-secondary" %>
+        <% end %>
+      </div>
+    </div>
+    <ul class="list-unstyled">
+      <% @myspecialties.each do |specialty| %>
+        <div class="row mb-1">
+          <div class="col-2">
+            <%= button_to "x", { action: "destroy", controller: "user_specialty_categories", id: specialty.id },
+            method: :delete, data: { confirm: "Are you sure?" },
+            class: "btn btn-sm btn-danger" %>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-8">
+            <li><%= specialty.specialty_category.name %></li>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      <% end %>
+    </ul>
+  <% end %>
+  <hr>
+</div>
+
+<div class="container my-3" id="experience">
+  <div class="row mb-2">
+    <div class="col-12">Certs & Experience: </div>
+  </div>
+  <% if !@milestones.empty? %>
+    <%= form_for(@milestone) do |f| %>
       <% if @milestone.errors.any? %>
         <div id="error_explanation">
           <h5><%= pluralize(@milestone.errors.count, "error") %> prohibited change!</h5>
@@ -98,26 +116,47 @@
           </ul>
         </div>
       <% end %>
-      <div class="row">
-        <div class="col-2"><%= x.select :month, 1..12 %></div>
-        <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-        <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block" %></div>
-        <%= x.hidden_field :trainer_id, value: @user.id %>
+      <div class="row my-1">
+        <div class="col-2"><%= f.select :month, 1..12 %></div>
+        <div class="col-3"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+        <div class="col-7"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
+        <%= f.hidden_field :trainer_id, value: @user.id %>
       </div>
-      <div class="row my-2">
-        <div class="col-12"><%= x.submit "add milestone", class:"btn btn-secondary btn-sm" %></div>
+      <div class="row my-1 mb-2 text-right">
+        <div class="col-12">
+          <%= f.submit "Add New Milestone", class:"btn btn-sm btn-secondary" %>
+        </div>
       </div>
     <% end %>
-
-    <%= f.hidden_field :trainer_id, value: @user.id %>
-    <div class="row">
-      <div class="col-8"></div>
-      <div class="col-3">
-        <%= f.submit 'Save', class: 'btn btn-secondary' %>
-      </div>
-      <div class="col-1"></div>
-    </div>
-  </div>
-<% end %>
-
+    <% @milestones.each do |milestone| %>
+      <%= form_for(milestone) do |x| %>
+        <% if milestone.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(milestone.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+              <% milestone.errors.full_messages.each do |msg| %>
+                <li class="error"><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="row my-1">
+          <div class="col-2"><%= x.select :month, 1..12 %></div>
+          <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+          <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
+        </div>
+        <div class="row my-1 mb-2 text-center">
+          <div class="col-6">
+            <%= button_to "Delete Milestone", { action: "destroy", id: milestone.id },
+              method: :delete, data: { confirm: "Are you sure?" },
+              class: "btn btn-sm btn-danger" %>
+          </div>
+          <div class="col-6">
+            <%= x.submit "Update Milestone", class:"btn btn-sm btn-secondary" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
 <!-- Additional elements (See form_btn.js)- added by clicking buttons above -->
