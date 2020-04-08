@@ -26,6 +26,14 @@
       <div class="col-8">
         <div class="row">
           <div class="col-3">
+            <p>URL</p>
+          </div>
+          <div class="col-9">
+            <%= f.text_field :username, placeholder: "trainr.bio/jamesjun", required: true, class: "btn-block no-border grey-bottom-border" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
             <p>First</p>
           </div>
           <div class="col-9">
@@ -44,10 +52,10 @@
         </div>
         <div class="row">
           <div class="col-3">
-            <p>URL</p>
+            <p>Header</p>
           </div>
           <div class="col-9">
-            <%= f.text_field :username, placeholder: "trainr.bio/jamesjun", required: true, class: "btn-block no-border grey-bottom-border" %>
+            <%= f.text_field :headline, placeholder: "Headline", required: true, class: "btn-block no-border grey-bottom-border " %>
           </div>
         </div>
       </div>
