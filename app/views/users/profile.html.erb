@@ -25,7 +25,9 @@
       </div>
       <div class="col-6">
         <% if current_user == @user %>
-          <%= link_to image_tag('edit.png', height: 11, width: 11, class:'text-right'), user_edit_bio_url(@user) %>
+          <div class="row d-flex justify-content-right">
+            <%= link_to image_tag('edit.png', height: 11, width: 11, class:'text-right'), user_edit_bio_url(@user) %>
+          </div>
         <% end %>
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
