@@ -55,7 +55,7 @@
             <p>Header</p>
           </div>
           <div class="col-9">
-            <%= f.text_field :headline, placeholder: "Headline", required: true, class: "btn-block no-border grey-bottom-border " %>
+            <%= f.text_field :headline, placeholder: "Headline", maxlength: "21", required: true, class: "btn-block no-border grey-bottom-border " %>
           </div>
         </div>
       </div>
@@ -64,7 +64,7 @@
     <hr>
 
     <div class="row mb-2">
-      <div class="col-12"><p>About Me</p></div>
+      <div class="col-12"><p>About</p></div>
     </div>
     <div class="row mb-2">
       <div class="col-12"><%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "btn-block", required: true %></div>

@@ -4,6 +4,16 @@
   <%= render 'layouts/navbar_profile' %>
   <%= render 'layouts/navbar_secondary' %>
 
+  <div class="container text-center">
+    <div class="row mt-1 mb-1">
+      <div class="col-12">
+        <% if current_user == @user %>
+          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "btn btn-sm btn-dark btn-block" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
   <!-- <div class="container text-center">
     <div class="row">
       <div class="col-12"> -->
@@ -24,9 +34,6 @@
         <% end %>
       </div>
       <div class="col-6">
-        <% if current_user == @user %>
-          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "profile-edit btn btn-sm btn-dark btn-block" %>
-        <% end %>
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
         <div class="row d-flex justify-content-center user-headline mt-2"><p><%= @user.headline %><p></div>
@@ -87,13 +94,45 @@
       <% end %>
     <% end %>
 
-    <hr class='mb-5'>
+    <hr>
 
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-6">
+        <% if !current_user %>
+          <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+        <% end %>
+      </div>
+      <div class="col-1"></div>
+      <div class="col-2">
+        <%= image_tag("pray.jfif", height: 22, width: 22, class:'') %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <% if @comments.empty?  %>
+      <div class="row text-center mt-4 mb-4">
+        <div class="col-1"></div>
+        <div class="col-10"><span class="schedule date"> No comments yet, please leave one using the above button! </span></div>
+        <div class="col-1"></div>
+      </div>
+    <% else %>
+      <% @comments.each do |comment| %>
+        <div class="row">
+          <div class="col-1">pic</div>
+          <div class="col-10">This is where a comment will go</div>
+          <div class="col-1">♥</div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+          <%= link_to "See " + @comments.count + " More", new_user_registration_url,  class: "btn btn-dark btn-sm btn-block" %>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    <% end %>
   </div>
 
-  <% if current_user && current_user.role == 1 %>
-  	<%= render 'layouts/footer_trainer' %>
-  <% else %>
-  	<%= render 'layouts/footer_trainee' %>
-  <% end %>
+  <%= render 'layouts/footer' %>
 <% end %>
