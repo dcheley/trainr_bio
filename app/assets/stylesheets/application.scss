@@ -12,6 +12,10 @@ body {
 	font-size: 16px;
 }
 
+.nav-splitter {
+	margin-top: 2px;
+}
+
 .grey-bottom-border {
   border-bottom: 1px solid #d3d3d3 !important;
 }
@@ -28,6 +32,13 @@ body {
 .main-header {
   font-size: $font-size-9;
   font-weight: bold;
+}
+
+.secondary-link {
+  display: block;
+  text-align: center;
+  color: $black;
+	font-size: 10px;
 }
 
 .footer-link {

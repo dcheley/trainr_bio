@@ -26,7 +26,7 @@
         <div class="row mb-3">
           <div class="col-1"><%= image_tag("location.png", height:'11', width:'11' ) %></div>
           <div class="col-10">
-            <%= f.text_field :location, required: true, placeholder: "12 Example St.", class: "no-border", id: :autocomplete_address %>
+            <%= f.text_field :location, required: true, placeholder: "Link or Studio", class: "no-border", id: :autocomplete_address %>
           </div>
           <div class="col-1"></div>
         </div>
@@ -41,11 +41,14 @@
 
         <div class="row mb-3">
           <div class="col-1"><%= image_tag("time.png", height:'11', width:'11' ) %></div>
-          <div class="col-4">
+          <div class="col-10">
             <%= f.time_field :start_time, required: true, placeholder: Time.now, class: "no-border" %>
           </div>
+          <div class="col-1"></div>
+        </div>
+        <div class="row mb-3">
           <div class="col-1"><%= image_tag("duration.svg", height:'11', width:'11' ) %></div>
-          <div class="col-5">
+          <div class="col-10">
             <%= f.number_field :duration, required: true, placeholder: "60 Mins", class: "no-border" %>
           </div>
           <div class="col-1"></div>

@@ -15,7 +15,7 @@
     <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-3"><%= f.label "Title*", class: "" %></div>
-      <div class="col-7"><%= f.text_field :title, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
+      <div class="col-7"><%= f.text_field :title, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
       <div class="col-1"></div>
     </div>
 
@@ -28,14 +28,14 @@
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
-      <div class="col-10"><%= f.text_area :description, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
+      <div class="col-10"><%= f.text_area :description, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
       <div class="col-1"></div>
     </div>
 
     <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-3"><%= f.label "Duration", class: "" %></div>
-      <div class="col-7"><%= f.text_field :duration, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
+      <div class="col-7"><%= f.text_field :duration, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
       <div class="col-1"></div>
     </div>
 
@@ -44,14 +44,14 @@
     <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-3"><%= f.label "Location*", class: "" %></div>
-      <div class="col-7"><%= f.text_field :location, placeholder: "", class: "no-border color-bottom-border", required: true, id: :autocomplete_address %></div>
+      <div class="col-7"><%= f.text_field :location, placeholder: "", class: "btn-block no-border color-bottom-border", required: true, id: :autocomplete_address %></div>
       <div class="col-1"></div>
     </div>
 
     <div class="row mb-3">
       <div class="col-1"></div>
       <div class="col-3"><%= f.label "Cost*", class: "" %></div>
-      <div class="col-7"><%= f.text_field :cost, placeholder: "", class: "no-border color-bottom-border", required: true %></div>
+      <div class="col-7"><%= f.text_field :cost, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
       <div class="col-1"></div>
     </div>
 
@@ -62,7 +62,7 @@
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
-      <div class="col-10"><%= f.text_area :other, placeholder: "", class: "no-border color-bottom-border" %></div>
+      <div class="col-10"><%= f.text_area :other, placeholder: "", class: "btn-block no-border color-bottom-border" %></div>
       <div class="col-1"></div>
     </div>
 
@@ -73,20 +73,19 @@
     </div>
     <div class="row mb-3">
       <div class="col-1"></div>
-      <div class="col-10"><%= f.text_field :booking_url, placeholder: "", class: "no-border color-bottom-border" %></div>
+      <div class="col-10"><%= f.text_field :booking_url, placeholder: "", class: "btn-block no-border color-bottom-border" %></div>
       <div class="col-1"></div>
     </div>
 
+    <div class="row mb-1">
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.label "Cover Photo*", class: "" %></div>
+      <div class="col-1"></div>
+    </div>
     <div class="row mb-3">
-      <div class="col"></div>
-      <div class="col-10">
-        <div class="form-group">
-          <h6>Upload Cover Photo:</h6>
-          <br/>
-          <%= f.file_field :avatar, class: "form-control no-border color-bottom-border", required: true %>
-        </div>
-       </div>
-       <div class="col"></div>
+      <div class="col-1"></div>
+      <div class="col-10"><%= f.file_field :avatar, class: "no-border", required: true %></div>
+      <div class="col-1"></div>
     </div>
 
     <%= f.hidden_field :trainer_id, value: current_user.id %>

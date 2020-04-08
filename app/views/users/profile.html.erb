@@ -8,7 +8,7 @@
     <div class="row mt-1 mb-1">
       <div class="col-12">
         <% if current_user == @user %>
-          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "btn btn-dark btn-block" %>
+          <%= link_to "Edit User Profile", edit_user_url(current_user),  class: "btn btn-sm btn-dark btn-block" %>
         <% end %>
       </div>
     </div>
@@ -18,7 +18,7 @@
     <div class="row">
       <div class="col-12"> -->
         <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic", height: 84, width: 226.7)"  -->
-        <%= image_tag('cover.jpg', class:'btn-block') %>
+        <%= image_tag('cover.jpg', class:'cover-img btn-block') %>
       <!-- </div>
     </div>
   </div> -->
@@ -28,16 +28,16 @@
       <div class="col-6">
         <!-- change below to "image_tag(@user.profile_img_url, class: "profile-pic")"  -->
         <% if @user.avatar.attachment.nil? %>
-          <%= image_tag('profile.png', class:'btn-block')%>
+          <%= image_tag('profile.png', class:'profile-pic round-btn btn-block')%>
         <% else %>
-          <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
+          <%= image_tag(@user.avatar.service_url, class:'profile-pic round-btn btn-block')%>
         <% end %>
       </div>
       <div class="col-6">
         <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
-        <div class="row d-flex justify-content-center user-headline mt-2"><%= @user.headline %></div>
-        <div class="row d-flex justify-content-center user-location">🏠<%= @user.location %></div>
+        <div class="row d-flex justify-content-center user-headline mt-2"><p><%= @user.headline %><p></div>
+        <div class="row d-flex justify-content-center user-location"><p>🏠<%= @user.location %></p></div>
       </div>
     </div>
     <div class="row mt-2">
@@ -57,17 +57,17 @@
     <hr>
 
     <div class="row">
-      <div class="col-12"><p>Upcoming</p></div>
+      <div class="col-12"><i>Upcoming</i></div>
     </div>
     <div class="row">
       <div class="col-8"></div>
       <div class="col-4 text-right"><u><%= link_to "Full Schedule", user_events_url(@user),  class: "footer-link" %></u></div>
     </div>
     <% if @events.empty?  %>
-      <div class="row mt-3 mb-3">
-        <div class="col"></div>
-        <div class="col"><span class="schedule date"> No classes this week </span></div>
-        <div class="col"></div>
+      <div class="row my-3">
+        <div class="col-2"></div>
+        <div class="col-8"><span class="schedule date"> No classes this week </span></div>
+        <div class="col-2"></div>
       </div>
     <% else %>
       <% $previous_date = 0 %>
@@ -83,7 +83,13 @@
           <div class="row">
             <div class="col-4 text-center"><span class="schedule time"><%= event.start_time.strftime('%l:%M%p') %></span></div>
             <div class="col-4 text-center"><span class="schedule session-name"><%= event.title %></span></div>
-            <div class="col-4 text-right"><span class="schedule studio-name"><%= event.location %></span></div>
+            <div class="col-4 text-right"><span class="schedule studio-name">
+              <% if event.location[0..3] == "http" || event.location[0..4] == "https" || event.location[0..2] == "www" %>
+                <%= link_to event.location.truncate(13, omission: '...'), "http://#{event.location.sub(%r!^https?://!i, '')}", target: "_blank"  %>
+              <% else %>
+                <%= event.location %>
+              <% end %>
+            </span></div>
           </div>
       <% end %>
     <% end %>
@@ -93,7 +99,9 @@
     <div class="row">
       <div class="col-2"></div>
       <div class="col-6">
-        <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+        <% if !current_user %>
+          <%= link_to "Leave Comment", new_user_registration_url,  class: "btn btn-primary btn-sm btn-block" %>
+        <% end %>
       </div>
       <div class="col-1"></div>
       <div class="col-2">
