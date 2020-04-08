@@ -17,10 +17,10 @@
       </div>
     <% end %>
     <div class="row mb-2">
-      <div class="col-12"><%= f.label "About Me*" %></div>
+      <div class="col-12"><%= f.label "About Me" %></div>
     </div>
     <div class="row mb-2">
-      <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "btn-block no-border color-bottom-border", required: true %></div>
+      <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "btn-block no-border color-bottom-border" %></div>
     </div>
     <%= f.hidden_field :trainer_id, value: @user.id %>
     <div class="row mb-2 text-right">

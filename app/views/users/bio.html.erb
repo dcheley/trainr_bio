@@ -29,12 +29,14 @@
   </div>
 
   <div class="container mb-5">
-    <div class="row mb-2 mx-1">
-      <div class="col-12"><h3>About Me</h3></div>
-    </div>
-    <div class="row mb-2 mx-2">
-      <div class="col-12"><p><%= @user.bio %></p></div>
-    </div>
+    <% if !@practices.empty? %>
+      <div class="row mb-2 mx-1">
+        <div class="col-12"><h3>About Me</h3></div>
+      </div>
+      <div class="row mb-2 mx-2">
+        <div class="col-12"><p><%= @user.bio %></p></div>
+      </div>
+    <% end %>
 
     <% if !@practices.empty? || !@specialties.empty? %>
       <hr>
