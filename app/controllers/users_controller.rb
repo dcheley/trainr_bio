@@ -32,6 +32,14 @@ class UsersController < ApplicationController
       @user.avatar.attach(params[:user][:avatar])
     end
 
+    if !params[:user][:cover].nil?
+      @user.cover.attach(params[:user][:cover])
+    end
+
+    if !params[:user][:bio_pic].nil?
+      @user.bio_pic.attach(params[:user][:bio_pic])
+    end
+
     if @user.update_attributes(user_params)
       redirect_to user_profile_path(@user), notice: "Account updated!"
     else
