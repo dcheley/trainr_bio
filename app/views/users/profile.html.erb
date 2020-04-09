@@ -61,9 +61,12 @@
       <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
       <div class="row d-flex justify-content-center mt-2"><p><%= @user.headline %></p></div>
       <div class="row d-flex justify-content-center"><p>🏠<%= @user.location %></p></div>
-      <% if !@user.website_url.empty? %>
-        <div class="row d-flex justify-content-center"><%= link_to "website", "https://#{@user.website_url}", target: :_blank,  class: "btn btn-dark btn-sm btn-block mx-3" %></div>
-      <% elsif !@user.instragram_url.nil? %>
+      <% if !@user.website_url.nil? %>
+        <% if !@user.website_url.empty? %>
+          <div class="row d-flex justify-content-center"><%= link_to "website", "https://#{@user.website_url}", target: :_blank,  class: "btn btn-dark btn-sm btn-block mx-3" %></div>
+        <% end %>
+      <% end %>
+      <% if !@user.instragram_url.nil? %>
         <div class="row d-flex justify-content-center"><%= link_to "instagram", "https://www.instagram.com/#{@user.instragram_url}", target: :_blank,  class: "btn btn-dark btn-sm btn-block mx-3" %></div>
       <% end %>
     </div>
