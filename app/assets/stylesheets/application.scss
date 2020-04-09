@@ -34,11 +34,31 @@ body {
   font-weight: bold;
 }
 
+.secondary-nav {
+	background: $white;
+	border-color: $black;
+	border-style: solid;
+	border-width: 1px;
+
+	.active {
+		background: $black;
+		border-color: $white;
+	}
+}
+
 .secondary-link {
-  display: block;
-  text-align: center;
-  color: $black;
+	display: block;
+	text-align: center;
+	color: $black;
 	font-size: 10px;
+
+	.active {
+		color: $white;
+	}
+}
+
+.secondary-link:hover {
+	background: $light-grey;
 }
 
 .footer-link {
