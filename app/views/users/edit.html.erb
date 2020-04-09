@@ -16,10 +16,10 @@
     <div class="row mx-2">
       <div class="col-4">
         <div class="row mb-2">
-          <% if @user.avatar[0].attachment.nil? %>
+          <% if @user.avatar.attachment.nil? %>
             <%= image_tag('user.svg', class:'btn-block')%>
           <% else %>
-            <%= image_tag(@user.avatar[0].service_url, class:'btn-block')%>
+            <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
           <% end %>
         </div>
       </div>
@@ -130,7 +130,7 @@
         <p>Upload Profile Picture</p>
       </div>
       <div class="col-9">
-        <%= f.file_field :avatar[0], class: "btn-sm" %>
+        <%= f.file_field :avatar, class: "btn-sm" %>
       </div>
     </div>
 

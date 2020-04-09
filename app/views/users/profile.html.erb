@@ -24,7 +24,7 @@
         <% if @user.avatar.attachment.nil? %>
           <%= image_tag('profile.png', class:'profile-pic round-btn btn-block')%>
         <% else %>
-          <%= image_tag(@user.avatar[0].service_url, class:'profile-pic round-btn btn-block')%>
+          <%= image_tag(@user.avatar.service_url, class:'profile-pic round-btn btn-block')%>
         <% end %>
       </div>
       <div class="col-6">
