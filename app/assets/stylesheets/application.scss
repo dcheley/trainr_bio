@@ -44,21 +44,21 @@ body {
 		background: $black;
 		border-color: $white;
 	}
+}
 
-	.secondary-link {
-	  display: block;
-	  text-align: center;
-	  color: $black;
-		font-size: 10px;
+.secondary-link {
+	display: block;
+	text-align: center;
+	color: $black;
+	font-size: 10px;
 
-		.active {
-			color: $white;
-		}
+	.active {
+		color: $white;
 	}
+}
 
-	.secondary-link:hover {
-		background: $light-grey;
-  }
+.secondary-link:hover {
+	background: $light-grey;
 }
 
 .footer-link {
