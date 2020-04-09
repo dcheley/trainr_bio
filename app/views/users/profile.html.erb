@@ -4,13 +4,13 @@
   <%= render 'layouts/navbar_profile' %>
 <% end %>
 
-<hr>
+<div class="grey-bottom-border"></div>
 
 <div class="container">
   <div class="row text-center">
     <div class="col-4" style="secondary-nav active">
       <%= link_to user_profile_url(@user), class: "secondary-link active" do %>
-        <b><u><p class="my-2">PROFILE</p></u></b>
+        <u><p class="my-2">PROFILE</p></u>
       <% end %>
     </div>
     <div class="col-4" style="secondary-nav">
