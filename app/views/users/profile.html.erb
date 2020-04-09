@@ -6,17 +6,17 @@
 
 <div class="container">
   <div class="row text-center">
-    <div class="col-4" style="border-style: solid; border-width: 1px;">
+    <div class="col-4" style="secondary-nav active">
       <%= link_to user_profile_url(@user), class: "secondary-link" do %>
         <p class="my-2">PROFILE</p>
       <% end %>
     </div>
-    <div class="col-4" style="border-style: solid; border-width: 1px;">
+    <div class="col-4" style="secondary-nav">
       <%= link_to user_offers_url(@user), class: "secondary-link" do %>
         <p class="my-2">OFFERINGS</p>
       <% end %>
     </div>
-    <div class="col-4" style="border-style: solid; border-width: 1px;">
+    <div class="col-4" style="secondary-nav">
       <%= link_to user_bio_url(@user), class: "secondary-link" do %>
         <p class="my-2">BIO</p>
       <% end %>

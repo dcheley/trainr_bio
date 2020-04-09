@@ -34,11 +34,25 @@ body {
   font-weight: bold;
 }
 
-.secondary-link {
-  display: block;
+.secondary-nav {
+	display: block;
+	background: $white;
   text-align: center;
-  color: $black;
 	font-size: 10px;
+	color: $black;
+	border-color: $black;
+	border-style: solid;
+	border-width: 1px;
+
+	.active {
+		background: $black;
+		border-color: $white;
+		color: $white;
+	}
+
+	:hover {
+		background: $light-grey;
+  }
 }
 
 .footer-link {
