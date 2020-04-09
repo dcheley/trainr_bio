@@ -37,9 +37,9 @@
         <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
         <div class="row d-flex justify-content-center user-headline mt-2"><p><%= @user.headline %><p></div>
         <div class="row d-flex justify-content-center user-location"><p>🏠<%= @user.location %></p></div>
-        <% if !@user.website_url.empty? %>
+        <% if !@user.website_url.nil? %>
           <div class="row d-flex justify-content-center"><%= link_to "website", @user.website_url,  class: "btn btn-dark btn-sm btn-block" %></div>
-        <% elsif !@user.instragram_url.empty? %>
+        <% elsif !@user.instragram_url.nil? %>
           <div class="row d-flex justify-content-center"><%= link_to "instagram", @user.instragram_url,  class: "btn btn-dark btn-sm btn-block" %></div>
         <% end %>
       </div>
