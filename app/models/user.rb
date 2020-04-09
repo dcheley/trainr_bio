@@ -5,6 +5,7 @@ class User < ApplicationRecord
     :validatable, :confirmable, :registerable
 
   has_one_attached :avatar
+  has_one_attached :cover
 
   validates :email, presence: true
   validates :email, uniqueness: true
