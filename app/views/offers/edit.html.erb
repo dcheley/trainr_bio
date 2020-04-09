@@ -1,3 +1,15 @@
 <%= render 'layouts/navbar_edit' %>
 
 <%= render 'form' %>
+
+<div class="container my-3" id="practice">
+  <div class="row mb-3">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <%= button_to "Delete Offer", { action: "destroy", controller: "offers", id: @offer.id },
+      method: :delete, data: { confirm: "Are you sure?" },
+      class: "btn btn-sm btn-danger" %>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
