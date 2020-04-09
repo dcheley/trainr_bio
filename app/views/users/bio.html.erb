@@ -4,6 +4,8 @@
   <%= render 'layouts/navbar_profile' %>
 <% end %>
 
+<hr>
+
 <div class="container">
   <div class="row text-center">
     <div class="col-4" style="secondary-nav">
@@ -18,7 +20,7 @@
     </div>
     <div class="col-4" style="secondary-nav active">
       <%= link_to user_bio_url(@user), class: "secondary-link active" do %>
-        <u><p class="my-2">BIO</p></u>
+        <b><u><p class="my-2">BIO</p></u></b>
       <% end %>
     </div>
   </div>
