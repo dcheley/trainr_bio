@@ -29,7 +29,7 @@
             <p>URL</p>
           </div>
           <div class="col-9">
-            <%= f.text_field :username, placeholder: "trainr.bio/jamesjun", required: true, class: "btn-block no-border grey-bottom-border" %>
+            <%= f.text_field :username, placeholder: "trainr.bio/username", required: true, class: "btn-block no-border grey-bottom-border" %>
           </div>
         </div>
         <div class="row">
@@ -64,7 +64,7 @@
     <hr>
 
     <div class="row mb-2">
-      <div class="col-12"><p>About Me</p></div>
+      <div class="col-12"><p>About</p></div>
     </div>
     <div class="row mb-2">
       <div class="col-12"><%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "btn-block", required: true %></div>
@@ -92,7 +92,7 @@
         <p>Website</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :website_url, placeholder: "movewithjames.co", class: "no-border grey-bottom-border" %>
+        <%= f.text_field :website_url, placeholder: "mypersonalsite.co", class: "no-border grey-bottom-border" %>
       </div>
     </div>
 
@@ -101,7 +101,7 @@
         <p> Email </p>
       </div>
       <div class="col-9">
-        <%= f.email_field :email, placeholder: "movewithjames@gmail.com", required: true, class: "no-border grey-bottom-border" %>
+        <%= f.email_field :email, placeholder: "myemail@gmail.com", required: true, class: "no-border grey-bottom-border" %>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
          <p>Phone</p>
        </div>
        <div class="col-9">
-         <%= f.text_field :phone, placeholder: "647-809-3891", class: "no-border grey-bottom-border" %>
+         <%= f.text_field :phone, placeholder: "416-xxx-xxxx", class: "no-border grey-bottom-border" %>
        </div>
     </div>
 
@@ -127,10 +127,19 @@
 
     <div class="row mb-3">
       <div class="col-3">
-        <p>Upload Image</p>
+        <p>Profile Picture</p>
       </div>
       <div class="col-9">
         <%= f.file_field :avatar, class: "btn-sm" %>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-3">
+        <p>Cover Photo</p>
+      </div>
+      <div class="col-9">
+        <%= f.file_field :cover, class: "btn-sm" %>
       </div>
     </div>
 

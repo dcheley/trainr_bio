@@ -4,6 +4,8 @@
 <p class="text-primary text-center"><%= flash[:notice] %></p>
 <p class="text-danger text-center"><%= flash[:alert] %></p>
 
+
+
 <div class="container my-3" id="about">
   <%= form_for(@user) do |f| %>
     <% if @user.errors.any? %>
@@ -16,6 +18,14 @@
         </ul>
       </div>
     <% end %>
+    <div class="row mb-3">
+      <div class="col-3">
+        <p>Bio Pic</p>
+      </div>
+      <div class="col-9">
+        <%= f.file_field :bio_pic, class: "btn-sm" %>
+      </div>
+    </div>
     <div class="row mb-2">
       <div class="col-12"><%= f.label "About Me" %></div>
     </div>

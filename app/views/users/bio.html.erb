@@ -7,10 +7,10 @@
   <div class="container">
     <div class="row my-2 text-center">
       <div class="col-12">
-        <% if @user.avatar.attachment.nil? %>
+        <% if @user.bio_pic.attachment.nil? %>
           <%= image_tag('user.svg', class:'btn-block')%>
         <% else %>
-          <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
+          <%= image_tag(@user.bio_pic.service_url, class:'btn-block')%>
         <% end %>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <div class="col-8"> ● ○ ○ </div>
       <div class="col-1">
         <% if current_user == @user %>
-          <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(@user) %>
+          <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(current_user) %>
         <% end %>
       </div>
       <div class="col-1"></div>
