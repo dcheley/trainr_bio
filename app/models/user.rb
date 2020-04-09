@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates :username, uniqueness: true
   validates_length_of :description, maximum: 150
 
   has_many :user_studios
