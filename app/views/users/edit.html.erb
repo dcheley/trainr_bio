@@ -83,7 +83,8 @@
          <p>Instagram</p>
       </div>
       <div class="col-9">
-        <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button>
+        <%= f.text_field :instragram_url, placeholder: "trainr.bio", class: "no-border grey-bottom-border" %>
+        <!-- <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button> -->
       </div>
     </div>
 
@@ -92,7 +93,7 @@
         <p>Website</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :website_url, placeholder: "mypersonalsite.co", class: "no-border grey-bottom-border" %>
+        <%= f.text_field :website_url, placeholder: "example.com", class: "no-border grey-bottom-border" %>
       </div>
     </div>
 
