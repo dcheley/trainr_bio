@@ -30,7 +30,7 @@
   <div class="row mb-2 text-center">
     <div class="col-12">
       <% if @user.bio_pic.attachment.nil? %>
-        <%= image_tag('user.svg', class:'btn-block')%>
+        <%= image_tag('upload.png', class:'btn-block')%>
       <% else %>
         <%= image_tag(@user.bio_pic.service_url, class:'btn-block')%>
       <% end %>
