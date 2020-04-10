@@ -31,7 +31,7 @@
     <div class="col-12"> -->
       <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic", height: 84, width: 226.7)"  -->
       <% if @user.cover.attachment.nil? %>
-        <%= image_tag('cover.jpg', class:'cover-img btn-block') %>
+        <%= image_tag('upload.png', class:'cover-img btn-block') %>
       <% else %>
         <%= image_tag(@user.cover.service_url, class:'cover-img btn-block')%>
       <% end %>
@@ -50,12 +50,10 @@
       <% end %>
     </div>
     <div class="col-6">
-      <% if current_user %>
-        <% if current_user == @user %>
-          <div class="row d-flex justify-content-end mx-1">
-            <%= link_to image_tag('edit.png', height: 11, width: 11, class:'text-right'), edit_user_url(current_user) %>
-          </div>
-        <% end %>
+      <% if current_user && current_user == @user %>
+        <div class="row d-flex justify-content-end mx-1">
+          <%= link_to image_tag('edit.png', height: 11, width: 11, class:'text-right'), edit_user_url(current_user) %>
+        </div>
       <% end %>
       <div class="row d-flex justify-content-center user-name-lg mt-3"><%= @user.first_name %></div>
       <div class="row d-flex justify-content-center user-name-lg"><%= @user.last_name %></div>
@@ -126,8 +124,10 @@
 
 </div>
 
-<% if current_user && current_user.role == 1 %>
-	<%= render 'layouts/footer_trainer' %>
-<% else %>
-	<%= render 'layouts/footer_trainee' %>
+<% if current_user %>
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% elsif current_user.role == 1 %>
+    <%= render 'layouts/footer_trainer' %>
+  <% end %>
 <% end %>
