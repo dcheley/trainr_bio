@@ -31,7 +31,7 @@
     <div class="col-12"> -->
       <!-- change below to "image_tag(@user.cover_img_url, class: "offer-pic", height: 84, width: 226.7)"  -->
       <% if @user.cover.attachment.nil? %>
-        <%= image_tag('cover.jpg', class:'cover-img btn-block') %>
+        <%= image_tag('upload.png', class:'cover-img btn-block') %>
       <% else %>
         <%= image_tag(@user.cover.service_url, class:'cover-img btn-block')%>
       <% end %>
