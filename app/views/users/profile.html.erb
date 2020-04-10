@@ -67,7 +67,9 @@
         <% end %>
       <% end %>
       <% if !@user.instragram_url.nil? %>
-        <div class="row d-flex justify-content-center"><%= link_to "instagram", "https://www.instagram.com/#{@user.instragram_url}", target: :_blank,  class: "btn btn-dark btn-sm btn-block mx-3" %></div>
+        <% if !@user.website_url.empty? %>
+          <div class="row d-flex justify-content-center"><%= link_to "instagram", "https://www.instagram.com/#{@user.instragram_url}", target: :_blank,  class: "btn btn-dark btn-sm btn-block mx-3" %></div>
+        <% end %>
       <% end %>
     </div>
   </div>
