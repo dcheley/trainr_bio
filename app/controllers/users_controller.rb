@@ -65,7 +65,6 @@ class UsersController < ApplicationController
       'trainrbio@gmail.com',
       "#{current_user.email} sent a message from the prelaunch site!",
       'text/plain',
-      nil,
       params[:comment],
     ).send_email
 
