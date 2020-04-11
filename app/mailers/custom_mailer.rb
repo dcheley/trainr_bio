@@ -20,7 +20,7 @@ class CustomMailer < Devise::Mailer
     @user = record
     @token = token
 
-    SendgridService::Email.new(
+    SendGridService::Email.new(
       'trainrbio@gmail.com',
       @user.email,
       "Click the link to reset your Trainrbio password.",
