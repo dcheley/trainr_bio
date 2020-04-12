@@ -93,11 +93,17 @@
             <% end %>
           </div>
           <div class="col-6 my-auto text-left">
-            <%= link_to studio.name, studio_url(s) %>
+            <% if !studio.name.nil? %>
+              <%= link_to studio.name, studio_url(s) %>
+            <% end %>
           </div>
           <div class="col-4 my-auto text-right">
-            <p class=""><%= studio.location %></p>
-            <p class=""><%= studio.phone %></p>
+            <% if !studio.location.nil? %>
+              <p class=""><%= studio.location %></p>
+            <% end %>
+            <% if !studio.phone.nil? %>
+              <p class=""><%= studio.phone %></p>
+            <% end %>
           </div>
         </div>
         <div class="grey-bottom-border"></div>
