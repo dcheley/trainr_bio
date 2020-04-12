@@ -42,7 +42,7 @@
     <div class="col-1"></div>
     <div class="col-8"> ● ○ ○ </div>
     <div class="col-1">
-      <% if current_user == @user %>
+      <% if current_user && current_user == @user %>
         <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(current_user) %>
       <% end %>
     </div>
@@ -122,8 +122,10 @@
   <% end %>
 </div>
 
-<% if current_user.role == 0 %>
-  <%= render 'layouts/footer_trainee' %>
-<% elsif current_user.role == 1 %>
-  <%= render 'layouts/footer_trainer' %>
+<% if current_user %>
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% elsif current_user.role == 1 %>
+    <%= render 'layouts/footer_trainer' %>
+  <% end %>
 <% end %>

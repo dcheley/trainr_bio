@@ -65,7 +65,6 @@ class UsersController < ApplicationController
       'trainrbio@gmail.com',
       "#{current_user.email} sent a message from the prelaunch site!",
       'text/plain',
-      nil,
       params[:comment],
     ).send_email
 
@@ -115,7 +114,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(
       :email, :username, :phone, :location, :first_name, :last_name, :img_url,
-      :instragram_url, :facebook_url, :website_url, :tik_tok_url, :description,
+      :instagram_url, :facebook_url, :website_url, :tik_tok_url, :description,
       :password, :password_confirmation, :role, :latitude, :longitude, :bio,
       :headline
     )
