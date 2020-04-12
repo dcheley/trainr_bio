@@ -16,7 +16,11 @@
 
       <!-- Show schedule times and days only if exist and gray out button if not -->
       <div class="buttons">
-        <%= link_to image_tag('calendar.svg', class:'icon-link'), @studio.website_url %>
+        <% if !@studio.website_url.nil? %>
+          <% if !@studio.website_url.empty? %>
+            <div class="row d-flex justify-content-center"><%= link_to image_tag('calendar.svg', class:'icon-link'), "https://#{@studio.website_url}", target: :_blank %></div>
+          <% end %>
+        <% end %>
       </div>
 
       <div class="color-bottom-border mt-3"></div>
