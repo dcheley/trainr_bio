@@ -131,8 +131,8 @@
       <div class="col-6"><%= f.text_field :accreditor, placeholder: "accreditor name", class: "no-border color-bottom-border btn-block", required: true %></div>
       <div class="col-6"><%= f.text_field :website_url, placeholder: "www.certwebsite.com", class: "no-border color-bottom-border btn-block", required: true %></div>
       <div class="col-12"><%= f.text_field :description, placeholder: "description", class: "no-border color-bottom-border btn-block", required: true %></div>
-      <div class="col-2"><%= image_tag("date.png", height:'11', width:'11' ) %></div>
-      <div class="col-10"><%= f.date_field :start_date, placeholder: Date.today, class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-1"><%= image_tag("date.png", height:'11', width:'11' ) %></div>
+      <div class="col-11"><%= f.date_field :start_date, placeholder: Date.today, class: "no-border color-bottom-border btn-block", required: true %></div>
       <div class="row mb-3">
         <div class="col-3">
           <p>Cert Pic</p>
@@ -169,7 +169,7 @@
         </div>
         <div class="row my-1 mb-2">
           <div class="col-6 text-left">
-            <%= x.submit "Update Certification", class:"btn btn-sm btn-secondary" %>
+            <%= f.submit "Update Certification", class:"btn btn-sm btn-secondary" %>
           </div>
       <% end %>
           <div class="col-6 text-right">
