@@ -38,7 +38,7 @@ class CertificationsController < ApplicationController
 
   def certification_params
     params.require(:certification).permit(
-      :trainer_id, :name, :level, :accreditor, :website_url, :description, :start_date, :end_date
+      :trainer_id, :certification, :name, :level, :accreditor, :website_url, :description, :start_date, :end_date
     )
   end
 end
