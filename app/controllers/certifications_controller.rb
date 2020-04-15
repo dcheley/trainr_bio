@@ -15,9 +15,9 @@ class CertificationsController < ApplicationController
   end
 
   def update
-    if !params[:certification][:cert_pic].nil?
-      @user.cert_pic.attach(params[:user][:cert_pic])
-    end
+    # if !params[:certification][:cert_pic].nil?
+    #   @user.cert_pic.attach(params[:user][:cert_pic])
+    # end
     if @certification.update_attributes(certification_params)
       redirect_to user_edit_bio_url(current_user), notice: "Certification details updated!"
     else
