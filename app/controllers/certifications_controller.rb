@@ -4,11 +4,11 @@ class CertificationsController < ApplicationController
   def create
     @certification = Certification.new(certification_params)
 
-    # if @certification.save
-    #   redirect_to user_edit_bio_url(current_user), notice: "Certification created!"
-    # else
+    if @certification.save
+      redirect_to user_edit_bio_url(current_user), notice: "Certification created!"
+    else
       render template: "users/edit_bio"
-    # end
+    end
   end
 
   def edit
