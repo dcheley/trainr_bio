@@ -87,6 +87,7 @@ class UsersController < ApplicationController
   def bio
     @user = User.find(params[:user_id])
     @milestones = @user.milestones.order("year ASC")
+    @certifications = @user.certifications.order("start_date ASC")
     @practices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by { |p| p.practice_category.name }
     @specialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by { |s| s.specialty_category.name }
   end
@@ -97,6 +98,8 @@ class UsersController < ApplicationController
     @myspecialties = UserSpecialtyCategory.where(user_id: @user.id).includes(:specialty_category).sort_by { |s| s.specialty_category.name }
     @milestones = @user.milestones.order("year ASC")
     @milestone = Milestone.new
+    @certifications = @user.certifications.order("start_date ASC")
+    @certification = Certification.new
     @practices = PracticeCategory.all.order("name ASC")
     @specialties = SpecialtyCategory.all.order("name ASC")
   end

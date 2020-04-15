@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :trainees, -> { distinct }, through: :trainee_events
   has_many :offers, foreign_key: 'trainer_id'
   has_many :milestones, foreign_key: 'trainer_id'
+  has_many :certifications, foreign_key: 'trainer_id'
   has_many :user_practice_categories
   has_many :user_specialty_categories
 

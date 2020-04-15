@@ -110,9 +110,81 @@
   <hr>
 </div>
 
+<div class="container my-3" id="certification">
+  <div class="row mb-2">
+    <div class="col-12">Certifications: </div>
+  </div>
+  <%= form_for(@certification) do |f| %>
+    <% if @certification.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@certification.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+          <% @certification.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="row my-3">
+      <div class="col-9"><%= f.text_field :name, placeholder: "Certification Name", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-3"><%= f.text_field :level, placeholder: "Level", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-6"><%= f.text_field :accreditor, placeholder: "accreditor name", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-6"><%= f.text_field :website_url, placeholder: "www.certwebsite.com", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-12"><%= f.text_field :description, placeholder: "description", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="col-2"><%= image_tag("date.png", height:'11', width:'11' ) %></div>
+      <div class="col-10"><%= f.date_field :start_date, placeholder: Date.today, class: "no-border color-bottom-border btn-block", required: true %></div>
+      <div class="row mb-3">
+        <div class="col-3">
+          <p>Cert Pic</p>
+        </div>
+        <div class="col-9">
+          <%= f.file_field :cert_pic, class: "btn-sm" %>
+        </div>
+      </div>
+      <%= f.hidden_field :trainer_id, value: @user.id %>
+      <div class="col-12 text-center"><%= f.submit "Add Certification", class:"btn btn-sm btn-secondary" %></div>
+    </div>
+  <% end %>
+  <% if !@certifications.empty? %>
+    <% @certifications.each do |certification| %>
+      <%= form_for(certification) do |f| %>
+        <% if certification.errors.any? %>
+          <div id="error_explanation">
+            <h5><%= pluralize(certification.errors.count, "error") %> prohibited change!</h5>
+            <ul>
+              <% certification.errors.full_messages.each do |msg| %>
+                <li class="error"><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="row my-1">
+          <div class="col-9"><%= f.text_field :name, placeholder: "Certification Name", class: "no-border color-bottom-border btn-block", required: true %></div>
+          <div class="col-3"><%= f.text_field :level, placeholder: "Level", class: "no-border color-bottom-border btn-block", required: true %></div>
+          <div class="col-6"><%= f.text_field :accreditor, placeholder: "accreditor name", class: "no-border color-bottom-border btn-block", required: true %></div>
+          <div class="col-6"><%= f.text_field :website_url, placeholder: "www.certwebsite.com", class: "no-border color-bottom-border btn-block", required: true %></div>
+          <div class="col-12"><%= f.text_field :description, placeholder: "description", class: "no-border color-bottom-border btn-block", required: true %></div>
+          <div class="col-2"><%= image_tag("date.png", height:'11', width:'11' ) %></div>
+          <div class="col-10"><%= f.date_field :start_date, placeholder: Date.today, class: "no-border color-bottom-border btn-block", required: true %></div>
+        </div>
+        <div class="row my-1 mb-2">
+          <div class="col-6 text-left">
+            <%= x.submit "Update Certification", class:"btn btn-sm btn-secondary" %>
+          </div>
+      <% end %>
+          <div class="col-6 text-right">
+            <%= button_to "Delete Certification", { action: "destroy", id: certification.id },
+              method: :delete, data: { confirm: "Are you sure?" },
+              class: "btn btn-sm btn-danger" %>
+          </div>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+
 <div class="container my-3" id="experience">
   <div class="row mb-2">
-    <div class="col-12">Certs & Experience: </div>
+    <div class="col-12">Experience: </div>
   </div>
   <%= form_for(@milestone) do |f| %>
     <% if @milestone.errors.any? %>
@@ -133,7 +205,7 @@
     </div>
     <div class="row my-1 mb-2 text-left">
       <div class="col-12">
-        <%= f.submit "Add New Milestone", class:"btn btn-sm btn-secondary" %>
+        <%= f.submit "Add Milestone", class:"btn btn-sm btn-secondary" %>
       </div>
     </div>
   <% end %>
