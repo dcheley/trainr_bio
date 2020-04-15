@@ -16,7 +16,7 @@
       <div class="col-1"></div>
       <div class="col-10">
         <%= form_tag(users_url, method: "get", id: "search") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", required: true %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", required: true, class: "ml-1" %>
           <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
         <% end %>
       </div>
@@ -30,15 +30,15 @@
       <div class="col-3"></div>
     </div>
     <div class="row mb-4">
-      <div class="col-4"></div>
-      <div class="col-4">
+      <div class="col-3"></div>
+      <div class="col-6">
         <%= link_to "Log In", new_user_session_url, class:'btn btn-sm btn-outline-primary btn-block round-btn' %>
       </div>
-      <div class="col-4"></div>
+      <div class="col-3"></div>
     </div>
     <div class="row mb-5">
       <div class="col-12">
-        <p>trainr.bio 2020</p>
+        <p>mvmt.bio 2020</p>
       </div>
     </div>
     <!-- Use a better way to stop footer overlapping content later -->
@@ -48,7 +48,7 @@
 <% else %>
   <div class="container text-center">
     <div class="row my-5">
-      <div class="col-12"><h1 class="home">trainr.bio</h1></div>
+      <div class="col-12"><h1 class="home">mvmt.bio</h1></div>
     </div>
 
     <p class="text-primary my-1"><%= flash[:notice] %></p>
@@ -81,7 +81,7 @@
 
   <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
-  <% elsif current_user.role == 1 %>
+  <% else %>
     <%= render 'layouts/footer_trainer' %>
   <% end %>
 <% end %>

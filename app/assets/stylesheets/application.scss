@@ -2,6 +2,8 @@
 @import "profile";
 @import "variables";
 @import "texts";
+//= depend_on_asset "example.png"
+//= depend_on_asset "texts.scss"
 
 // * {
 // 	box-sizing: border-box;

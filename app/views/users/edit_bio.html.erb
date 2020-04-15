@@ -114,30 +114,30 @@
   <div class="row mb-2">
     <div class="col-12">Certs & Experience: </div>
   </div>
-  <% if !@milestones.empty? %>
-    <%= form_for(@milestone) do |f| %>
-      <% if @milestone.errors.any? %>
-        <div id="error_explanation">
-          <h5><%= pluralize(@milestone.errors.count, "error") %> prohibited change!</h5>
-          <ul>
-            <% @milestone.errors.full_messages.each do |msg| %>
-              <li class="error"><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <div class="row my-1">
-        <div class="col-2"><%= f.select :month, 1..12 %></div>
-        <div class="col-3"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
-        <div class="col-7"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
-        <%= f.hidden_field :trainer_id, value: @user.id %>
-      </div>
-      <div class="row my-1 mb-2 text-right">
-        <div class="col-12">
-          <%= f.submit "Add New Milestone", class:"btn btn-sm btn-secondary" %>
-        </div>
+  <%= form_for(@milestone) do |f| %>
+    <% if @milestone.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@milestone.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+          <% @milestone.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+        </ul>
       </div>
     <% end %>
+    <div class="row my-1">
+      <div class="col-2"><%= f.select :month, 1..12 %></div>
+      <div class="col-3"><%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
+      <div class="col-7"><%= f.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
+      <%= f.hidden_field :trainer_id, value: @user.id %>
+    </div>
+    <div class="row my-1 mb-2 text-left">
+      <div class="col-12">
+        <%= f.submit "Add New Milestone", class:"btn btn-sm btn-secondary" %>
+      </div>
+    </div>
+  <% end %>
+  <% if !@milestones.empty? %>
     <% @milestones.each do |milestone| %>
       <%= form_for(milestone) do |x| %>
         <% if milestone.errors.any? %>
@@ -155,17 +155,17 @@
           <div class="col-3"><%= x.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></div>
           <div class="col-7"><%= x.text_field :milestone, placeholder: "", class: "no-border color-bottom-border btn-block", required: true %></div>
         </div>
-        <div class="row my-1 mb-2 text-center">
-          <div class="col-6">
+        <div class="row my-1 mb-2">
+          <div class="col-6 text-left">
+            <%= x.submit "Update Milestone", class:"btn btn-sm btn-secondary" %>
+          </div>
+      <% end %>
+          <div class="col-6 text-right">
             <%= button_to "Delete Milestone", { action: "destroy", id: milestone.id },
               method: :delete, data: { confirm: "Are you sure?" },
               class: "btn btn-sm btn-danger" %>
           </div>
-          <div class="col-6">
-            <%= x.submit "Update Milestone", class:"btn btn-sm btn-secondary" %>
-          </div>
         </div>
-      <% end %>
     <% end %>
   <% end %>
 </div>

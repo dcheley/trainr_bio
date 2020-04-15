@@ -1,0 +1,14 @@
+<% if current_user && current_user.role == 8 %>
+  <%= render 'layouts/navbar_search_results_logged_out' %>
+  <p class="my-5">Welcome to the admin panel!</p>
+  <%= render 'layouts/footer_admin' %>
+<% else %>
+  <%= render 'layouts/navbar_search_results_logged_out' %>
+  <p class="my-5">Sorry, this page is not for you</p>
+  <%= link_to "Go Home", home_url, class:'btn btn-sm btn-outline-primary btn-block round-btn' %>
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% else %>
+    <%= render 'layouts/footer_trainer' %>
+  <% end %>
+<% end %>

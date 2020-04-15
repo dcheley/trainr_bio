@@ -13,51 +13,38 @@
       </div>
     <% end %>
 
-    <div class="row mx-2">
-      <div class="col-4">
-        <div class="row mb-2">
-          <% if @user.avatar.attachment.nil? %>
-            <%= image_tag('user.svg', class:'btn-block')%>
-          <% else %>
-            <%= image_tag(@user.avatar.service_url, class:'btn-block')%>
-          <% end %>
+    <div class="row">
+      <div class="col-3">
+        <p>URL</p>
+      </div>
+      <div class="col-9">
+        <%= f.text_field :username, placeholder: "mvmt.bio/username", required: true, class: "btn-block no-border grey-bottom-border" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>First</p>
+      </div>
+      <div class="col-9">
+        <div>
+          <%= f.text_field :first_name, placeholder: "First Name", required: true, class: "btn-block no-border grey-bottom-border " %>
         </div>
       </div>
-      <div class="col-8">
-        <div class="row">
-          <div class="col-3">
-            <p>URL</p>
-          </div>
-          <div class="col-9">
-            <%= f.text_field :username, placeholder: "trainr.bio/username", required: true, class: "btn-block no-border grey-bottom-border" %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3">
-            <p>First</p>
-          </div>
-          <div class="col-9">
-            <div>
-              <%= f.text_field :first_name, placeholder: "First Name", required: true, class: "btn-block no-border grey-bottom-border " %>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3">
-            <p>Last</p>
-          </div>
-          <div class="col-9">
-            <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "btn-block no-border grey-bottom-border " %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-3">
-            <p>Header</p>
-          </div>
-          <div class="col-9">
-            <%= f.text_field :headline, placeholder: "Headline", required: true, class: "btn-block no-border grey-bottom-border " %>
-          </div>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Last</p>
+      </div>
+      <div class="col-9">
+        <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "btn-block no-border grey-bottom-border " %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <p>Header</p>
+      </div>
+      <div class="col-9">
+        <%= f.text_field :headline, placeholder: "Headline", required: true, class: "btn-block no-border grey-bottom-border " %>
       </div>
     </div>
 
@@ -83,7 +70,8 @@
          <p>Instagram</p>
       </div>
       <div class="col-9">
-        <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button>
+        <%= f.text_field :instagram_url, placeholder: "mvmt.bio", class: "no-border grey-bottom-border" %>
+        <!-- <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button> -->
       </div>
     </div>
 
@@ -92,7 +80,7 @@
         <p>Website</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :website_url, placeholder: "mypersonalsite.co", class: "no-border grey-bottom-border" %>
+        <%= f.text_field :website_url, placeholder: "example.com", class: "no-border grey-bottom-border" %>
       </div>
     </div>
 
