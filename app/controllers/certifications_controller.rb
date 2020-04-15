@@ -5,7 +5,7 @@ class CertificationsController < ApplicationController
     @certification = Certification.new(certification_params)
 
     if @certification.save
-      redirect_to user_edit_bio_url(current_user), notice: "Certification created!"
+      redirect_to user_edit_bio_url(current_user), notice: "Certification added!"
     else
       render template: "users/edit_bio"
     end
