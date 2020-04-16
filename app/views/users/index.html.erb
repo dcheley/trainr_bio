@@ -66,7 +66,7 @@
               </div>
             <% end %>
           </div>
-          <div class="col-2 my-auto">
+          <div class="col-4 my-auto text-right">
             <p class=""><%= trainer.location %></p>
           </div>
         </div>
@@ -80,24 +80,37 @@
     </div>
 
     <div class="tab-pane" id="studios" role="tabpanel" aria-labelledby="studios-tab">
-      <% @studios.each do |s| %>
-        <div class="row mt-3 mb-3 pb-3 border-bottom">
-          <div class="col-4 my-auto">
-            <%= image_tag('search.svg', height: 64, width: 64, class:'') %>
+      <div class="grey-bottom-border"></div>
+        <p class="text-center mt-2">Don't see your studio? Please <%= link_to "add now", new_studio_url %></p>
+      <div class="grey-bottom-border"></div>
+      <% @studios.each do |studio| %>
+        <div class="row mt-3 mx-2">
+          <div class="col-2 my-auto">
+            <% if studio.avatar.attachment.nil? %>
+              <%= image_tag('search.svg', height: 27, width: 27, class:'round-btn')%>
+            <% else %>
+              <%= image_tag(studio.avatar.service_url, height: 27, width: 27, class:'round-btn')%>
+            <% end %>
           </div>
-          <div class="col-4 my-auto">
-            <h5><%= link_to s.name, studio_url(s) %></h5>
+          <div class="col-6 my-auto text-left">
+            <% if !studio.name.nil? %>
+              <p class=""><%= link_to "#{studio.name}", studio_url(studio) %></p>
+            <% end %>
           </div>
-          <div class="col-4 my-auto">
-            <p class=""><%= s.location %></p>
-            <p class=""><%= s.phone %></p>
+          <div class="col-4 my-auto text-right">
+            <% if !studio.location.nil? %>
+              <p class=""><%= studio.location %></p>
+            <% end %>
+            <% if !studio.phone.nil? %>
+              <p class=""><%= studio.phone %></p>
+            <% end %>
           </div>
-          <div class="divider"></div>
         </div>
+        <div class="grey-bottom-border"></div>
       <% end %>
       <% if @studios.empty? %>
         <div class="col-12">
-          <p class="mb-3">No studios found.</p>
+          <p class="mt-3 mb-3">No studios found.</p>
         </div>
       <% end %>
     </div>

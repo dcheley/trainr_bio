@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :first_name
       t.string :last_name
       t.string :img_url
-      t.string :instragram_url
+      t.string :instagram_url
       t.string :facebook_url
       t.string :website_url
       t.string :tik_tok_url

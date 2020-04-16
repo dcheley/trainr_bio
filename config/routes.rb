@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :after_signup
   resources :milestones, only: [:create, :edit, :update, :destroy]
+  resources :certifications, only: [:create, :edit, :update, :destroy]
   resources :practice_categories, only: [:create, :index, :edit, :update, :destroy]
   resources :specialty_categories, only: [:create, :index, :edit, :update, :destroy]
 

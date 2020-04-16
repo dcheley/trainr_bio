@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_31_171022) do
+ActiveRecord::Schema.define(version: 2020_04_12_073500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(version: 2020_03_31_171022) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "certifications", force: :cascade do |t|
+    t.integer "trainer_id"
+    t.string "name"
+    t.string "level"
+    t.string "accreditor"
+    t.string "website_url"
+    t.string "description"
+    t.date "start_date"
+    t.date "end_date"
+    t.index ["trainer_id"], name: "index_certifications_on_trainer_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -152,7 +164,7 @@ ActiveRecord::Schema.define(version: 2020_03_31_171022) do
     t.string "first_name"
     t.string "last_name"
     t.string "img_url"
-    t.string "instragram_url"
+    t.string "instagram_url"
     t.string "facebook_url"
     t.string "website_url"
     t.string "tik_tok_url"

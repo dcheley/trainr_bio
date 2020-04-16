@@ -17,20 +17,20 @@
 
   <% @studios.each do |s| %>
     <div class="row mt-3 mb-3 pb-3 border-bottom">
-      <div class="col-2 my-auto">
-        <%= button_to "X", { action: "destroy", id: s.id },
+      <div class="col-1 my-auto">
+        <%= button_to "x", { action: "destroy", id: s.id },
           method: :delete, data: { confirm: "Are you sure?" },
-          class: "btn btn-danger" %>
+          class: "btn btn-sm btn-danger" %>
       </div>
-      <div class="col-6 my-auto">
+      <div class="col-7 my-auto">
         <h5><%= link_to "#{s.name}", studio_url(s) %><h5>
-        <p class="">@<%= s.website_url %></p>
+        <p class="">@<%= s.username %></p>
       </div>
-      <div class="col-2 my-auto">
+      <div class="col-3 my-auto">
         <%= s.location %>
       </div>
-      <div class="col-2 my-auto">
-        <%= link_to "Edit", edit_studio_url(s) %>
+      <div class="col-1 my-auto">
+        <%= link_to image_tag('edit.png', height: 11, width: 11, class:'text-right'), edit_studio_url(s) %>
       </div>
       <div class="divider"></div>
     </div>
