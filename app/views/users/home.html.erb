@@ -8,7 +8,7 @@
     <div class="row mb-4">
       <div class="col-12">
         <!-- Phone image with scroll displaying app -->
-        <p>Own your profile. For Free. In minutes.</p>
+        <p>Welcome to mvmt.bio beta. :Own your profile. For Free. In minutes.</p>
         <%= image_tag("example.png", width: 175, height: 350)%>
       </div>
     </div>
@@ -16,7 +16,7 @@
       <div class="col-1"></div>
       <div class="col-10">
         <%= form_tag(users_url, method: "get", id: "search") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", required: true, class: "ml-1" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Name or S'tudio", required: true, class: "ml-1" %>
           <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
         <% end %>
       </div>
