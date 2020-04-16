@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     confirmations: "users/confirmations"
   }
 
-  resources :users, only: [:show, :index, :edit, :update, :destroy]
+  resources :users, only: [:index, :edit, :update, :destroy]
   resources :studios
   resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :offers, only: [:new, :create, :show, :edit, :update, :destroy]

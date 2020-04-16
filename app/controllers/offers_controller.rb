@@ -24,7 +24,7 @@ class OffersController < ApplicationController
     attach_image
 
     if @offer.save
-      redirect_to user_path(@offer.trainer_id), notice: "Offer created!"
+      redirect_to user_offers_path(@offer.trainer_id), notice: "Offer created!"
     else
       render :new
     end
@@ -39,7 +39,7 @@ class OffersController < ApplicationController
     end
 
     if @offer.update_attributes(offer_params)
-      redirect_to user_url(@offer.trainer_id), notice: "Offer details updated!"
+      redirect_to user_offers_url(@offer.trainer_id), notice: "Offer details updated!"
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to user_url(@offer.trainer_id), notice: "Offer deleted."
+    redirect_to user_offers_url(@offer.trainer_id), notice: "Offer deleted."
   end
 
   private

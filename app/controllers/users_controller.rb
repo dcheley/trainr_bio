@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
   before_action :load_user_id, only: [:my_trainers]
 
-  def show
-    @events = @user.trainer_events.order("date ASC")
-    @bio = @user.bio
-  end
+  # def show
+  #   @events = @user.trainer_events.order("date ASC")
+  #   @bio = @user.bio
+  # end
 
   def index
     if !params[:search].blank?

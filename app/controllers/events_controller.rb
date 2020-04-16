@@ -31,7 +31,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      redirect_to user_path(@event.trainer_id), notice: "Event created!"
+      redirect_to user_events_path(@event.trainer_id), notice: "Event created!"
     else
       render :new
     end
@@ -42,7 +42,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(event_params)
-      redirect_to user_url(@event.trainer_id), notice: "Event details updated!"
+      redirect_to user_events_url(@event.trainer_id), notice: "Event details updated!"
     else
       render :edit
     end
@@ -50,7 +50,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to user_url(@event.trainer_id), notice: "Event deleted."
+    redirect_to user_events_url(@event.trainer_id), notice: "Event deleted."
   end
 
   private
