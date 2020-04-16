@@ -10,7 +10,5 @@ class CreateCertifications < ActiveRecord::Migration[5.2]
 	t.date :start_date
 	t.date :end_date
     end
-
-	rename_column :users, :instagram_url, :instagram_url
   end
 end
