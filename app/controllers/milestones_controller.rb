@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
     @milestone = Milestone.new(milestone_params)
 
     if @milestone.save
-      redirect_to user_edit_bio_url(current_user), notice: "Milestone created!"
+      redirect_to user_edit_bio_url(current_user), notice: "Milestone added!"
     else
       render template: "users/edit_bio"
     end
