@@ -20,14 +20,14 @@
     <% end %>
     <div class="row mb-3">
       <div class="col-3">
-        <p>Bio Pic</p>
+        <p>Additional Picture</p>
       </div>
       <div class="col-9">
         <%= f.file_field :bio_pic, class: "btn-sm" %>
       </div>
     </div>
     <div class="row mb-2">
-      <div class="col-12"><%= f.label "About Me" %></div>
+      <div class="col-12"><%= f.label "Creative Space" %></div>
     </div>
     <div class="row mb-2">
       <div class="col-12"><%= f.text_area :bio, placeholder: "", class: "btn-block no-border color-bottom-border" %></div>
@@ -44,7 +44,7 @@
 
 <div class="container my-3" id="practice">
   <div class="row mb-2">
-    <div class="col-12">I Practice: </div>
+    <div class="col-12">I Teach: </div>
   </div>
   <% if !@practices.empty? %>
     <div class="row mb-2">
@@ -78,7 +78,7 @@
 
 <div class="container my-3" id="specialty">
   <div class="row mb-2">
-    <div class="col-12">I'm Known for: </div>
+    <div class="col-12">I'm Known For: </div>
   </div>
   <% if !@specialties.empty? %>
     <div class="row mb-2">

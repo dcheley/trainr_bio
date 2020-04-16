@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_073500) do
+ActiveRecord::Schema.define(version: 2020_04_16_013645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,9 +80,9 @@ ActiveRecord::Schema.define(version: 2020_04_12_073500) do
     t.text "description"
     t.time "start_time"
     t.date "date"
-    t.integer "duration"
+    t.integer "oldduration"
     t.integer "status"
-    t.integer "cost"
+    t.integer "oldcost"
     t.integer "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -92,6 +92,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_073500) do
     t.text "highlights"
     t.float "latitude"
     t.float "longitude"
+    t.string "cost"
+    t.string "duration"
     t.index ["trainer_id"], name: "index_offers_on_trainer_id"
   end
 

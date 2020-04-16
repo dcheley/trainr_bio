@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
   validates :username, uniqueness: true, presence: true, on: :update, allow_blank: false
-  validates_length_of :description, maximum: 150
+  validates_length_of :description, maximum: 250
 
   has_many :user_studios
   has_many :trainer_studios

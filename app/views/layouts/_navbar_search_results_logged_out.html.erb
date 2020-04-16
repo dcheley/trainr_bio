@@ -7,7 +7,7 @@
     </div>
     <div class="col-10 mt-1">
       <%= form_tag(users_url, method: "get", id: "search") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", required: true, class: "ml-1" %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Name or Studio", required: true, class: "ml-1" %>
         <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
       <% end %>
     </div>

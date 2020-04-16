@@ -9,6 +9,7 @@
   <% end %>
 <% end %>
 
+<hr>
 <div class="container text-center">
   <%= flash[:notice] %>
 
@@ -27,7 +28,7 @@
       <div class="col-8">
       <ul class="nav nav-pills justify-content-center" role="tablist" id="searchTab">
         <li class="nav-item">
-          <a class="schedule week-toggle mr-1 ml-1 active" id="trainers-tab" href="#trainers" data-toggle="pill" role="tab" aria-controls="trainers" aria-selected="true">Trainrs</a>
+          <a class="schedule week-toggle mr-1 ml-1 active" id="trainers-tab" href="#trainers" data-toggle="pill" role="tab" aria-controls="trainers" aria-selected="true">People</a>
         </li>
         <p class="nav-splitter">  ●  </p>
         <li class="nav-item">
@@ -56,12 +57,12 @@
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
                   <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%><br/>
                 <% else %>
-                  <p class="">The Nameless One<br/>
+                  <p class="">-<br/>
                 <% end %>
                 <% if !trainer.headline.nil? %>
                   <%= "#{trainer.headline}"%></p>
                 <% else %>
-                  Trainr</p>
+                  -</p>
                 <% end %>
               </div>
             <% end %>
@@ -74,7 +75,7 @@
       <% end %>
       <% if @users.empty? %>
         <div class="col-12">
-          <p class="mt-3 mb-3">No trainers found.</p>
+          <p class="mt-3 mb-3">No humans found.</p>
         </div>
       <% end %>
     </div>

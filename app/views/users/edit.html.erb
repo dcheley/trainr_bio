@@ -15,7 +15,7 @@
 
     <div class="row">
       <div class="col-3">
-        <p>URL</p>
+        <p>Username</p>
       </div>
       <div class="col-9">
         <%= f.text_field :username, placeholder: "mvmt.bio/username", required: true, class: "btn-block no-border grey-bottom-border" %>
@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-3">
-        <p>First</p>
+        <p>First Name</p>
       </div>
       <div class="col-9">
         <div>
@@ -33,7 +33,7 @@
     </div>
     <div class="row">
       <div class="col-3">
-        <p>Last</p>
+        <p>Last Name</p>
       </div>
       <div class="col-9">
         <%= f.text_field :last_name, placeholder: "Last Name", required: true, class: "btn-block no-border grey-bottom-border " %>
@@ -41,20 +41,20 @@
     </div>
     <div class="row">
       <div class="col-3">
-        <p>Header</p>
+        <p>Headline</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :headline, placeholder: "Headline", required: true, class: "btn-block no-border grey-bottom-border " %>
+        <%= f.text_field :headline, placeholder: "e.g. Yoga Teacher", required: true, class: "btn-block no-border grey-bottom-border " %>
       </div>
     </div>
 
     <hr>
 
     <div class="row mb-2">
-      <div class="col-12"><p>About</p></div>
+      <div class="col-12"><p>Quick Profile / Bulletin</p></div>
     </div>
     <div class="row mb-2">
-      <div class="col-12"><%= f.text_area :description, placeholder: "Max 150 characters. Try tagging studios.", rows: 5, class: "btn-block", required: true %></div>
+      <div class="col-12"><%= f.text_area :description, placeholder: "Max 250 characters.", rows: 5, class: "btn-block", required: true %></div>
     </div>
 
     <hr>
@@ -70,7 +70,7 @@
          <p>Instagram</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :instagram_url, placeholder: "mvmt.bio", class: "no-border grey-bottom-border" %>
+        <%= f.text_field :instagram_url, placeholder: "IG Handle excluding @", class: "no-border grey-bottom-border" %>
         <!-- <button class="btn btn-primary btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button> -->
       </div>
     </div>
@@ -100,7 +100,7 @@
          <p>Phone</p>
        </div>
        <div class="col-9">
-         <%= f.text_field :phone, placeholder: "416-xxx-xxxx", class: "no-border grey-bottom-border" %>
+         <%= f.text_field :phone, placeholder: "xxx-xxx-xxxx", class: "no-border grey-bottom-border" %>
        </div>
     </div>
 
@@ -109,7 +109,7 @@
         <p>City/Region</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :location, placeholder: "Location", class: "no-border grey-bottom-border", id: :autocomplete_address  %>
+        <%= f.text_field :location, placeholder: "City", class: "no-border grey-bottom-border", id: :autocomplete_address  %>
       </div>
     </div>
 
