@@ -1,108 +1,102 @@
-<div class="row mb-5">
-  <div class="col-2"></div>
-  <div class="col-8">
-    <!-- < Add/Edit Studio -->
-    <div class="container my-5 text-center">
-      <p class="text-primary mb-3"><%= flash[:notice] %></p>
-      <%= flash[:alert] %>
+<!-- < Add/Edit Studio -->
+<div class="container my-5 text-center">
+  <p class="text-primary mb-3"><%= flash[:notice] %></p>
+  <%= flash[:alert] %>
 
-      <%= form_for(@studio) do |f| %>
-        <% if @studio.errors.any? %>
-          <div id="error_explanation">
-            <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
-            <ul>
-              <% @studio.errors.full_messages.each do |msg| %>
-                <li class="error"><%= msg %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
+  <%= form_for(@studio) do |f| %>
+    <% if @studio.errors.any? %>
+      <div id="error_explanation">
+        <h5><%= pluralize(@studio.errors.count, "error") %> prohibited change!</h5>
+        <ul>
+          <% @studio.errors.full_messages.each do |msg| %>
+            <li class="error"><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Username*:</h6>
-              <br/>
-              <%= f.text_field :username, placeholder: "Username", class: "form-control no-border color-bottom-border", required: true %>
-            </div>
-           </div>
-           <div class="col"></div>
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Studio Username*:</h6>
+          <br/>
+          <%= f.text_field :username, placeholder: "CoreStudio", class: "form-control no-border color-bottom-border", required: true %>
         </div>
-
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Name*:</h6>
-              <br/>
-              <%= f.text_field :name, placeholder: "Name", class: "form-control no-border color-bottom-border", required: true %>
-            </div>
-           </div>
-           <div class="col"></div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Address*:</h6>
-              <br/>
-              <%= f.text_field :location, placeholder: "15 Front St.", class: "form-control no-border color-bottom-border", required: true, id: :autocomplete_address %>
-            </div>
-           </div>
-           <div class="col"></div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Phone:</h6>
-              <br/>
-              <%= f.text_field :phone, placeholder: "416-123-456", class: "form-control no-border color-bottom-border" %>
-            </div>
-           </div>
-           <div class="col"></div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Studio Schedule URL:</h6>
-              <br/>
-              <%= f.text_field :website_url, placeholder: "example.com", class: "form-control no-border color-bottom-border" %>
-            </div>
-           </div>
-           <div class="col"></div>
-        </div>
-
-        <div class="row mb-3">
-          <div class="col"></div>
-          <div class="col-10">
-            <div class="form-group">
-              <h6>Avatar image:</h6>
-              <br/>
-              <%= f.file_field :avatar, class: "form-control no-border color-bottom-border" %>
-            </div>
-           </div>
-           <div class="col"></div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-8"></div>
-          <div class="col-3">
-            <%= f.submit 'Save', class: 'btn btn-secondary' %>
-          </div>
-          <div class="col"></div>
-        </div>
-
-      <% end %>
+       </div>
+       <div class="col-1"></div>
     </div>
-  </div>
-  <div class="col-2"></div>
+
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Studio Name*:</h6>
+          <br/>
+          <%= f.text_field :name, placeholder: "Core Studio", class: "form-control no-border color-bottom-border", required: true %>
+        </div>
+       </div>
+       <div class="col-1"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Address*:</h6>
+          <br/>
+          <%= f.text_field :location, placeholder: "15 Front St.", class: "form-control no-border color-bottom-border", required: true, id: :autocomplete_address %>
+        </div>
+       </div>
+       <div class="col-1"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Phone:</h6>
+          <br/>
+          <%= f.text_field :phone, placeholder: "416-123-456", class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col-1"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Studio Schedule URL:</h6>
+          <br/>
+          <%= f.text_field :website_url, placeholder: "example.com", class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col-1"></div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <div class="form-group">
+          <h6>Cover Photo:</h6>
+          <br/>
+          <%= f.file_field :avatar, class: "form-control no-border color-bottom-border" %>
+        </div>
+       </div>
+       <div class="col-1"></div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-8"></div>
+      <div class="col-3">
+        <%= f.submit 'Save', class: 'btn btn-secondary' %>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+  <% end %>
 </div>
 
 <%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>

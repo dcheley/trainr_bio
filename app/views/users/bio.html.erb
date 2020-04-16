@@ -53,9 +53,6 @@
 <div class="container mb-5">
   <% if !@user.bio.nil? %>
     <% if !@user.bio.empty? %>
-      <div class="row mb-2 mx-1">
-        <div class="col-12"><h3>About Me</h3></div>
-      </div>
       <div class="row mb-2 mx-2">
         <div class="col-12"><p><%= @user.bio %></p></div>
       </div>

@@ -81,7 +81,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find(params[:user_id])
-    @events = @user.trainer_events.where(date: Date.today..Date.today.end_of_week+7).limit(6).order("date ASC")
+    @events = @user.trainer_events.limit(5).order("date ASC")
   end
 
   def bio

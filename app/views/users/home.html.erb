@@ -2,34 +2,32 @@
   <%= render 'layouts/navbar_home_logged_out' %>
 
   <div class="container text-center">
-    <p class="text-primary mb-5"><%= flash[:notice] %></p>
-    <p class="text-danger mb-5"><%= flash[:alert] %></p>
-
-    <div class="row mb-4">
+    <p class="text-primary mb-2"><%= flash[:notice] %></p>
+    <p class="text-danger mb-2"><%= flash[:alert] %></p>
+    <hr>
+    <div class="row mb-4 mt-3">
       <div class="col-12">
-        <!-- Phone image with scroll displaying app -->
-        <p>Welcome to mvmt.bio beta:</p>
-        <p>Welcome to mvmt.bio beta:</p>
-        <p>Welcome to mvmt.bio beta:</p>
-        <p>Welcome to mvmt.bio beta:</p>
-        <p>
+        <b><p class="mt-2">An online network dedicated to wellness.</p></b>
+        <div class="row mt-3 mb-2">
+          <div class="col"></div>
+          <div class="col">
+            <%= form_tag(users_url, method: "get", id: "search") do %>
+              <%= text_field_tag :search, params[:search], placeholder: " Search Name or Studio", style:"border-style:solid; border-width:1px", required: true, class: "ml-1" %>
+              <%= submit_tag "Go", style:"border-style:solid" %>
+            <% end %>
+          </div>
+          <div class="col"></div>
+        </div>
         <%= image_tag("example.png", width: 175, height: 350)%>
       </div>
     </div>
-    <div class="row my-5">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <%= form_tag(users_url, method: "get", id: "search") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Name or Studio", required: true, class: "ml-1" %>
-          <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
-        <% end %>
-      </div>
-      <div class="col-1"></div>
-    </div>
-    <div class="row mb-4">
+    <p>Do you offer fitness or wellness services?</p>
+    <p class="mt-2 mb-4">The world needs what you have to offer.</p>
+
+    <div class="row mb-2">
       <div class="col-3"></div>
       <div class="col-6">
-        <%= link_to "Sign Up", new_user_registration_url, class:'btn btn-sm btn-primary btn-block round-btn' %>
+        <%= link_to "Sign Up [Free]", new_user_registration_url, class:'btn btn-sm btn-primary btn-block round-btn' %>
       </div>
       <div class="col-3"></div>
     </div>
@@ -40,13 +38,11 @@
       </div>
       <div class="col-3"></div>
     </div>
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-12">
         <p>mvmt.bio 2020</p>
       </div>
     </div>
-    <!-- Use a better way to stop footer overlapping content later -->
-    <div style="height: 150px;"></div>
   </div>
 
 <% else %>
@@ -62,7 +58,7 @@
       <div class="col-1"></div>
       <div class="col-10">
         <%= form_tag(users_url, method: "get", id: "search") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", required: true %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search name or studio", style:"border-style:solid", required: true %>
           <%= submit_tag "Go", class:"btn btn-outline-success btn-sm" %>
         <% end %>
       </div>
