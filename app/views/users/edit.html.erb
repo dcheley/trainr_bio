@@ -138,6 +138,13 @@
       </div>
     </div>
   <% end %>
+  <div class="row my-4">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <%= link_to "Log Out", destroy_user_session_url, method: :delete, class:'btn btn-sm btn-primary btn-block round-btn' %>
+    </div>
+    <div class="col-3"></div>
+  </div>
 </div>
 
 <%= javascript_include_tag 'autocomplete', 'data-turbolinks-track': 'reload' %>
