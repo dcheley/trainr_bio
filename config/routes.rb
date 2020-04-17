@@ -45,5 +45,10 @@ Rails.application.routes.draw do
   get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
 
+  get '/:permalink',          to: 'users#show',     as: 'custom_user'
+  get '/:permalink/edit',     to: 'users#edit',     as: 'custom_user_edit'
+  get '/:permalink/bio',      to: 'users#bio',      as: 'custom_user_bio'
+  get '/:permalink/edit_bio', to: 'users#edit_bio', as: 'custom_user_bio_edit'
+
   root to: 'users#home'
 end

@@ -50,6 +50,11 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def show
+    @user = User.find_by_permalink(params[:permalink])
+    @events = @user.trainer_events.limit(5).order("date ASC")
+  end
+
   def home
   end
 
