@@ -27,6 +27,7 @@ class User < ApplicationRecord
 
   scope :trainer, -> { where(role: 1) }
   scope :basic, -> { where(role: 0) }
+  scope :admin, -> { where(role: 8) }
 
   geocoded_by :location
   after_validation :geocode, if: ->(obj){ obj.location.present? and obj.location_changed? }

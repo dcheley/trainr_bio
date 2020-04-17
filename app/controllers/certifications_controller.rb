@@ -3,6 +3,7 @@ class CertificationsController < ApplicationController
 
   def create
     @certification = Certification.new(certification_params)
+    attach_image
 
     if @certification.save
       redirect_to user_edit_bio_url(current_user), notice: "Certification added!"
@@ -15,9 +16,8 @@ class CertificationsController < ApplicationController
   end
 
   def update
-    # if !params[:certification][:cert_pic].nil?
-    #   @user.cert_pic.attach(params[:user][:cert_pic])
-    # end
+    attach_image
+    
     if @certification.update_attributes(certification_params)
       redirect_to user_edit_bio_url(current_user), notice: "Certification details updated!"
     else
@@ -38,7 +38,14 @@ class CertificationsController < ApplicationController
 
   def certification_params
     params.require(:certification).permit(
-      :trainer_id, :certification, :name, :level, :accreditor, :website_url, :description, :start_date, :end_date
+      :trainer_id, :name, :level, :accreditor, :website_url, :description,
+      :start_date, :end_date
     )
+  end
+
+  def attach_image
+    if !params[:certification][:cert_pic].nil?
+      @certification.cert_pic.attach(params[:certification][:cert_pic])
+    end
   end
 end

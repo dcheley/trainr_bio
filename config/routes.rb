@@ -44,6 +44,7 @@ Rails.application.routes.draw do
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
+  get 'manage_users' => 'users#manage_users', as: :manage_users
 
   root to: 'users#home'
 end

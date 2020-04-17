@@ -44,6 +44,14 @@
 
         <div class="row">
           <div class="col-12">
+            <div class="form-group text-right">
+              <%= link_to "Resend Verification?", new_confirmation_url(:user) %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
             <%= f.submit "Next", class: 'btn btn-primary btn-block' %>
           </div>
         </div>
