@@ -109,6 +109,10 @@ class UsersController < ApplicationController
     @specialties = SpecialtyCategory.all.order("name ASC")
   end
 
+  def manage_users
+    @users = User.all.order("email ASC")
+  end
+
   private
 
   def load_user

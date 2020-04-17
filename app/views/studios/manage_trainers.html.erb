@@ -5,7 +5,11 @@
   <div class="row mb-8">
     <div class="col-2"></div>
     <div class="col-8">
-      <!-- search & add -->
+      <%= form_tag trainer_studios_url(@studio), method: :post do %>
+        <%= select_tag 'trainer_id', options_from_collection_for_select(@trainers, 'id', "first_name") %>
+        <%= hidden_field_tag "studio_id", @studio.id %>
+        <%= submit_tag "Add", class:"btn btn-secondary" %>
+      <% end %>
     </div>
     <div class="col-2"></div>
   </div>
@@ -29,8 +33,11 @@
           </div>
           <div class="col-1"></div>
           <div class="col-1">
-            <%= image_tag("imagesx.gif", class: "x-icon") %>
-            <!-- add logic to remove trainr on click -->
+            <% if current_user.trainer %>
+              <%= button_to "x", { action: "destroy", id: s.id },
+                method: :delete, data: { confirm: "Are you sure?" },
+                class: "btn btn-sm btn-danger" %>
+            <% end %>
           </div>
         </div>
       </div>

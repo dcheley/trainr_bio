@@ -34,9 +34,7 @@ class OffersController < ApplicationController
   end
 
   def update
-    if !params[:offer][:avatar]
-      attach_image
-    end
+    attach_image
 
     if @offer.update_attributes(offer_params)
       redirect_to user_offers_url(@offer.trainer_id), notice: "Offer details updated!"
@@ -64,6 +62,8 @@ class OffersController < ApplicationController
   end
 
   def attach_image
-    @offer.avatar.attach(params[:offer][:avatar])
+    if !params[:offer][:avatar].nil?
+      @offer.avatar.attach(params[:offer][:avatar])
+    end
   end
 end
