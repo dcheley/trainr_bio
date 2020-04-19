@@ -1,68 +1,54 @@
 <div class="bg-light fixed-bottom">
   <div class="container">
     <div class="row">
-      <div class="col-1"></div>
-      <div class="col-1">
-        <%= link_to new_practice_category_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
-          <p class="mt-1 mb-1">+Practice</p>
+      <div class="col">
+        <%= link_to home_url, class: "footer-link" do %>
+          <%= image_tag("home.svg", width: "18", height: "18") %>
+          <p class="mt-1 mb-1">Home</p>
         <% end %>
       </div>
-      <div class="col-1">
-        <%= link_to new_specialty_category_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
-          <p class="mt-1 mb-1">+Specialty</p>
-        <% end %>
-      </div>
-      <div class="col-1">
+      <div class="col">
         <%= link_to new_studio_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
+          <%= image_tag("plus.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">+Studio</p>
         <% end %>
       </div>
-      <div class="col-1">
-        <%= link_to manage_practice_categories_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
+      <div class="col">
+        <%= link_to practice_categories_url, class: "footer-link" do %>
+          <%= image_tag("gear.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">Practices</p>
         <% end %>
       </div>
-      <div class="col-1">
-        <%= link_to manage_specialty_categories_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
+      <div class="col">
+        <%= link_to specialty_categories_url, class: "footer-link" do %>
+          <%= image_tag("gear.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">Specialties</p>
         <% end %>
       </div>
-      <div class="col-1">
+      <div class="col">
         <%= link_to manage_studios_url, class: "footer-link" do %>
-          <%= image_tag("search.svg", width: "8", height: "8") %>
+          <%= image_tag("gear.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">Studios</p>
         <% end %>
       </div>
-      <div class="col-1">
-        <%= link_to manage_providers_url, class: "footer-link" do %>
-          <%= image_tag("speed.svg", width: "8", height: "8") %>
-          <p class="mt-1 mb-1">Providers</p>
-        <% end %>
-      </div>
-      <div class="col-1">
+      <div class="col">
         <%= link_to manage_users_url, class: "footer-link" do %>
-          <%= image_tag("plus.svg", width: "8", height: "8") %>
+          <%= image_tag("gear.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">Users</p>
         <% end %>
       </div>
-      <div class="col-1">
-        <%= link_to manage_promotions_url, class: "footer-link" do %>
-          <%= image_tag("calendar.svg", width: "8", height: "8") %>
-          <p class="mt-1 mb-1">Promos</p>
+      <div class="col">
+        <%= link_to admin_url, class: "footer-link" do %>
+          <%= image_tag("gear.svg", width: "8", height: "8") %>
+          <p class="mt-1 mb-1">Admin</p>
         <% end %>
       </div>
-      <div class="col-1">
+      <div class="col">
         <%= link_to user_profile_url(current_user), class: "footer-link" do %>
           <%= image_tag("finger-print.svg", width: "8", height: "8") %>
           <p class="mt-1 mb-1">Profile</p>
         <% end %>
       </div>
-      <div class="col-1"></div>
     </div>
   </div>
 </div>

@@ -36,4 +36,18 @@ class User < ApplicationRecord
     where("first_name ILIKE ? OR last_name ILIKE ?", "%#{search}%", "%#{search}%")
     .trainer
   end
+
+  before_create :create_permalink
+  .
+  .
+  def to_param
+    permalink
+  end
+  .
+  .
+  private
+
+    def create_permalink
+      self.permalink = username.downcase
+    end
 end

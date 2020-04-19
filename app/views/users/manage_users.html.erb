@@ -1,10 +1,20 @@
-<div class="container text-center">
-  <ol class="mt-5">
-    <h5 class="mb-3">Mailing List</h5>
-    <% @users.each do |user| %>
-      <li><%= link_to user.email, user_profile_url(user), class:"" %></li>
-    <% end %>
-  </ol>
-<div>
-
-<%= render 'layouts/footer_trainer' %>
+<% if current_user && current_user.role == 8 %>
+  <div class="container text-center">
+    <ol class="mt-5">
+      <h5 class="mb-3">Mailing List</h5>
+      <% @users.each do |user| %>
+        <li><%= link_to user.email, user_profile_url(user), class:"" %></li>
+      <% end %>
+    </ol>
+  <div>
+  <%= render 'layouts/footer_admin' %>
+<% else %>
+  <%= render 'layouts/navbar_search_results_logged_out' %>
+  <p class="my-5">Sorry, this page is not for you</p>
+  <%= link_to "Go Home", home_url, class:'btn btn-sm btn-outline-primary btn-block round-btn' %>
+  <% if current_user.role == 0 %>
+    <%= render 'layouts/footer_trainee' %>
+  <% else %>
+    <%= render 'layouts/footer_trainer' %>
+  <% end %>
+<% end %>
