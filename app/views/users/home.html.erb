@@ -6,20 +6,14 @@
     <hr>
     <div class="row mb-4 mt-4">
       <div class="col-12">
-        <b><p class="mt-2">An online network dedicated to wellness.</p></b>
-        <div class="row mt-4 mb-4">
-          <div class="col-12">
-            <%= form_tag(users_url, method: "get", id: "search") do %>
-              <%= text_field_tag :search, params[:search], placeholder: " Search Name or Studio", style:"border-style:solid; border-width:1px", required: true, class: "ml-1" %>
-              <%= submit_tag "Go", style:"border-style:solid" %>
-            <% end %>
-          </div>
-        </div>
+        <b><p class="mt-2 mb-4">An online network dedicated to wellness.</p></b>
         <%= link_to image_tag("example.png", width: 175, height: 350), "https://www.instagram.com/mvmt.bio"%>
       </div>
     </div>
-    <p>Do you offer fitness or wellness services?</p>
-    <p class="mt-2 mb-4">The world needs what you have to offer.</p>
+    <div class="row d-flex justify-content-center">
+      <p>Do you offer fitness or wellness services?</p>
+      <p class=" mb-4">The world needs what you have to offer.</p>
+    </div>
 
     <div class="row mb-2">
       <div class="col-3"></div>
@@ -28,6 +22,7 @@
       </div>
       <div class="col-3"></div>
     </div>
+
     <div class="row mb-4">
       <div class="col-3"></div>
       <div class="col-6">
@@ -35,12 +30,16 @@
       </div>
       <div class="col-3"></div>
     </div>
-    <div class="row mb-3">
+
+    <div class="row mt-5 mb-5">
       <div class="col-12">
         <p>mvmt.bio 2020</p>
       </div>
     </div>
   </div>
+  <%= render 'layouts/footer' %>
+
+
 
 <% else %>
   <div class="container text-center">
