@@ -37,23 +37,28 @@
     </div>
   </div>
 
+<!--
   <div class="row my-1 text-center">
     <div class="col-1"></div>
     <div class="col-1"></div>
     <div class="col-8"> ● ○ ○ </div>
-    <div class="col-1">
-      <% if current_user && current_user == @user %>
-        <%= link_to image_tag('edit.png', height: 11, width: 11, class:''), user_edit_bio_url(current_user) %>
-      <% end %>
-    </div>
     <div class="col-1"></div>
-  </div>
+    <div class="col-1"></div>
+  </div> -->
+
+  <% if current_user && current_user == @user %>
+      <div class="row d-flex justify-content-center mx-3">
+        <%= link_to "Edit Bio", user_edit_bio_url(current_user), class: "btn btn-block btn-sm btn-primary" %>
+      </div>
+      <hr>
+  <% end %>
+
 </div>
 
 <div class="container mb-5">
   <% if !@user.bio.nil? %>
     <% if !@user.bio.empty? %>
-      <div class="row mb-2 mx-2">
+      <div class="row mb-2 mx-1">
         <div class="col-12"><p><%= @user.bio %></p></div>
       </div>
     <% end %>
@@ -74,7 +79,7 @@
         <div class="row">
           <div class="col-12">
             <% @practices.each do |practice| %>
-              <div class="btn btn-sm btn-success"><%= practice.practice_category.name %></div>
+              <div class="btn btn-sm btn-info  "><%= practice.practice_category.name %></div>
             <% end %>
           </div>
         </div>
@@ -90,7 +95,7 @@
         <div class="row">
           <div class="col-12">
             <% @specialties.each do |specialty| %>
-              <div class="btn btn-sm btn-info"><%= specialty.specialty_category.name %></div>
+                <div class="btn btn-sm btn-info"><%= specialty.specialty_category.name %></div>
             <% end %>
           </div>
         </div>
@@ -98,43 +103,7 @@
     <% end %>
   <% end %>
 
-  <% if !@certifications.nil? %>
-    <% if !@certifications.empty? %>
-      <% @certifications.each do |certification| %>
-        <div class="row mt-3 mx-2">
-          <div class="col-2 mt-1">
-            <% if !certification.avatar.attachment.nil? %>
-              <%= image_tag(certification.avatar.service_url, height: 27, width: 27, class:'round-btn')%>
-            <% end %>
-          </div>
-          <div class="col-6 mx-2 text-left">
-            <%= link_to user_profile_url(certification) do %>
-              <div class="row">
-                <% if !certification.name.nil? || !certification.level.nil? %>
-                  <p class=""><%= "#{certification.name + ' ' + certification.level}"%><br/>
-                <% else %>
-                  <p class="">The Nameless Cert<br/>
-                <% end %>
-                <% if !certification.description.nil? %>
-                  <%= "#{certification.description}"%></p>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
-          <div class="col-4 my-auto text-right">
-            <% if !certification.website_url.nil? %>
-              <% if !certification.website_url.empty? %>
-                <div class="row d-flex justify-content-center"><p class="">
-                  <%= link_to "#{certification.accreditor}", "https://#{certification.website_url}", target: :_blank,  class: "" %>
-                </p></div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-        <div class="grey-bottom-border"></div>
-      <% end %>
-    <% end %>
-  <% end %>
+
 
   <% if !@milestones.nil? %>
     <% if !@milestones.empty? %>
@@ -142,7 +111,7 @@
       <!-- <div class="color-bottom-border mt-3 mb-3"></div> -->
       <div class="timeline my-3">
         <div class="row mb-2">
-          <div class="col-12"><h3>Certifications & Experience</h3></div>
+          <div class="col-12"><h3>Experience & Milestones</h3></div>
         </div>
           <% @milestones.each do |milestone| %>
             <div class="row">
@@ -155,6 +124,44 @@
       </div>
     <% end %>
   <% end %>
+
+  <% if !@certifications.nil? %>
+    <% if !@certifications.empty? %>
+      <hr>
+      <div class="row mb-2">
+        <div class="col-12"><h3>Certifications</h3></div>
+      </div>
+      <% @certifications.each do |certification| %>
+        <div class="row mt-3 mx-2">
+          <div class="col-2 mt-1">
+            <% if !certification.cert_pic.attachment.nil? %>
+              <%= image_tag(certification.cert_pic.service_url, height: 27, width: 27, class:'round-btn')%>
+            <% end %>
+          </div>
+          <div class="col-8 mx-2 text-left">
+            <%= link_to user_profile_url(certification) do %>
+              <div class="row">
+                <% if !certification.name.nil? || !certification.level.nil? %>
+                  <p class=""><%= "#{certification.name + ' ' + certification.level}"%><br/>
+                <% else %>
+                  <p class="">The Nameless Cert<br/>
+                <% end %>
+                <% if !certification.description.nil? %>
+                  <%= "#{certification.description}"%></p>
+                <% end %>
+              </div>
+            <% end %>
+            <% if !certification.website_url.nil? %>
+              <% if !certification.website_url.empty? %>
+                  <p><%= link_to "#{certification.accreditor}", "https://#{certification.website_url}", target: :_blank,  class: "" %></p>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
 </div>
 
 <%= render 'layouts/footer' %>
