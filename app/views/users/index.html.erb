@@ -2,9 +2,9 @@
   <%= render 'layouts/navbar_search_results_logged_out' %>
 <% else %>
   <%= render 'layouts/navbar_search_results_logged_in' %>
-  <% if current_user.basic %>
+  <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
-  <% elsif current_user.trainer || current_user.admin %>
+  <% else %>
     <%= render 'layouts/footer_trainer' %>
   <% end %>
 <% end %>
