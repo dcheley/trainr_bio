@@ -37,17 +37,4 @@ class User < ApplicationRecord
     .trainer
   end
 
-  before_create :create_permalink
-  .
-  .
-  def to_param
-    permalink
-  end
-  .
-  .
-  private
-
-    def create_permalink
-      self.permalink = username.downcase
-    end
 end

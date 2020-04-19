@@ -24,8 +24,11 @@
 
 
 <div class="container">
-  <div class="row text-center">
-    <div class="col-12"><h2><%= @offer.title %></h2></div>
+  <div class="row">
+    <div class="col-12 offer-title"><h2><%= @offer.title %></h2></div>
+  </div>
+  <div class="row">
+    <div class="col-12 offer-location"><h2><%= @offer.location %></h2></div>
   </div>
   <div class="row text-center">
     <div class="col-12"><p><%= @offer.category %></p></div>
@@ -81,19 +84,6 @@
       <div class="col-1"></div>
       <div class="col-10">
         <p> <%= @offer.duration %> </p>
-      </div>
-      <div class="col-1"></div>
-    </div>
-  <% end %>
-
-  <% if !@offer.location.nil? %> <!-- if it exists/isTrue (if it contains valuable data instead of loose pointer)-->
-    <div class="row my-1">
-      <div class="col-12"><h3> Location </h3></div>
-    </div>
-    <div class="row mb-3">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <p> <%= @offer.location %> </p>
       </div>
       <div class="col-1"></div>
     </div>
