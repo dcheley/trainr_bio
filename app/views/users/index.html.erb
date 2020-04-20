@@ -40,17 +40,17 @@
     <div class="tab-pane active" id="trainers" role="tabpanel" aria-labelledby="trainers-tab">
       <div class="grey-bottom-border"></div>
       <% @users.each do |trainer| %>
-        <div class="row mt-3 mx-2">
-          <div class="col-2 mt-1">
+        <div class="row mt-3 ml-1">
+          <div class="col-2 ">
             <% if trainer.avatar.attachment.nil? %>
-              <%= image_tag('user.svg', height: 27, width: 27, class:'round-btn')%>
+              <%= image_tag('user.svg', height: 42, width: 42, class:'round-btn')%>
             <% else %>
-              <%= image_tag(trainer.avatar.service_url, height: 27, width: 27, class:'round-btn')%>
+              <%= image_tag(trainer.avatar.service_url, height: 42, width: 42, class:'round-btn')%>
             <% end %>
           </div>
           <div class="col-6 mx-2 text-left">
             <%= link_to user_profile_url(trainer) do %>
-              <div class="row">
+              <div class="row ml-1">
                 <% if !trainer.first_name.nil? || !trainer.last_name.nil? %>
                   <p class=""><%= "#{trainer.first_name + ' ' + trainer.last_name}"%><br/>
                 <% else %>
@@ -79,15 +79,15 @@
 
     <div class="tab-pane" id="studios" role="tabpanel" aria-labelledby="studios-tab">
       <div class="grey-bottom-border"></div>
-        <p class="text-center mt-2">Don't see your studio? Please <%= link_to "add now", new_studio_url %></p>
+        <p class="text-center mt-3">Don't see your studio? <%= link_to "Add New", new_studio_url %></p>
       <div class="grey-bottom-border"></div>
       <% @studios.each do |studio| %>
         <div class="row mt-3 mx-2">
           <div class="col-2 my-auto">
             <% if studio.avatar.attachment.nil? %>
-              <%= image_tag('search.svg', height: 27, width: 27, class:'round-btn')%>
+              <%= image_tag('search.svg', height: 42, width: 42, class:'round-btn')%>
             <% else %>
-              <%= image_tag(studio.avatar.service_url, height: 27, width: 27, class:'round-btn')%>
+              <%= image_tag(studio.avatar.service_url, height: 42, width: 42, class:'round-btn')%>
             <% end %>
           </div>
           <div class="col-6 my-auto text-left">
