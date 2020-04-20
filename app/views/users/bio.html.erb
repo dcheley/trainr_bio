@@ -77,7 +77,7 @@
         <div class="row">
           <div class="col-12">
             <% @practices.each do |practice| %>
-              <div class="btn btn-sm btn-outline-info  "><%= practice.practice_category.name %></div>
+              <div class="badge badge-success"><%= practice.practice_category.name %></div>
             <% end %>
           </div>
         </div>
@@ -93,7 +93,7 @@
         <div class="row">
           <div class="col-12">
             <% @specialties.each do |specialty| %>
-                <div class="btn btn-sm btn-outline-info"><%= specialty.specialty_category.name %></div>
+                <div class="badge badge-success"><%= specialty.specialty_category.name %></div>
             <% end %>
           </div>
         </div>

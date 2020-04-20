@@ -1,9 +1,9 @@
 <nav class="navbar navbar-light mt-3 mb-3">
   <div class="col-3">
-    <%= link_to image_tag("back.jfif", height:'13', width:'18' ), :back %>
+    <%= link_to image_tag("back.jfif", height:'13', width:'18' ), user_profile_url(current_user) %>
   </div>
   <div class="col-6 text-center">
-    <h1 class="title ml-auto mr-auto mt-1 my-auto">Edit Profile</h1>
+    <h1 class="ml-auto mr-auto my-auto branding main">Edit Profile</h1>
   </div>
   <div class="col-3"></div>
 </nav>
@@ -169,7 +169,7 @@
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <%= f.submit 'Save', class: 'btn btn-sm btn-outline-success btn-block round-btn' %>
+        <%= f.submit 'Save', class: 'btn btn-sm btn-info btn-block round-btn' %>
       </div>
       <div class="col-3"></div>
     </div>
@@ -177,7 +177,7 @@
   <div class="row my-4">
     <div class="col-3"></div>
     <div class="col-6">
-      <%= link_to "Log Out", destroy_user_session_url, method: :delete, class:'btn btn-sm btn-outline-secondary btn-block round-btn' %>
+      <%= link_to "Log Out", destroy_user_session_url, method: :delete, class:'btn btn-sm btn-outline-info btn-block round-btn' %>
     </div>
     <div class="col-3"></div>
   </div>
