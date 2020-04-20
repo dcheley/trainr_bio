@@ -5,7 +5,7 @@
 <% else %>
   <%= render 'layouts/navbar_search_results_logged_out' %>
   <p class="my-5">Sorry, this page is not for you</p>
-  <%= link_to "Go Home", home_url, class:'btn btn-sm btn-outline-primary btn-block round-btn' %>
+  <%= link_to "Go Home", home_url, class:'btn btn-sm btn-outline-info btn-block round-btn' %>
   <% if current_user.role == 0 %>
     <%= render 'layouts/footer_trainee' %>
   <% else %>

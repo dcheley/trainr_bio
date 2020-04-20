@@ -1,5 +1,5 @@
 <% if !current_user %>
-  <%= render 'layouts/navbar_home_logged_out' %>
+  <%= render 'layouts/navbar_home' %>
 
   <div class="container text-center">
     <p class="text-danger mb-2"><%= flash[:alert] %></p>
@@ -18,7 +18,7 @@
     <div class="row mb-2">
       <div class="col-3"></div>
       <div class="col-6">
-        <%= link_to "Sign Up [Free]", new_user_registration_url, class:'btn btn-sm btn-primary btn-block round-btn' %>
+        <%= link_to "Sign Up [Free]", new_user_registration_url, class:'btn btn-sm btn-info btn-block round-btn' %>
       </div>
       <div class="col-3"></div>
     </div>
@@ -26,7 +26,7 @@
     <div class="row mb-4">
       <div class="col-3"></div>
       <div class="col-6">
-        <%= link_to "Log In", new_user_session_url, class:'btn btn-sm btn-outline-primary btn-block round-btn' %>
+        <%= link_to "Log In", new_user_session_url, class:'btn btn-sm btn-outline-info btn-block round-btn' %>
       </div>
       <div class="col-3"></div>
     </div>
@@ -42,10 +42,8 @@
 
 
 <% else %>
+  <%= render 'layouts/navbar_home' %>
   <div class="container text-center">
-    <div class="row mt-5 mb-3">
-      <div class="col-12"><h1 class="home">mvmt.bio</h1></div>
-    </div>
 
     <p class="text-danger my-1"><%= flash[:alert] %></p>
 
