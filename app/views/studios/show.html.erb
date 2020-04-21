@@ -74,9 +74,5 @@
     </div>
   </div>
 
-  <% if current_user && current_user.role == 1 %>
-  	<%= render 'layouts/footer_trainer' %>
-  <% elsif current_user && current_user.role == 0 %>
-  	<%= render 'layouts/footer_trainee' %>
-  <% end %>
+  <%= render 'layouts/footer' %>
 </div>
