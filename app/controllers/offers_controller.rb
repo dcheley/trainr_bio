@@ -7,7 +7,7 @@ class OffersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:user_id])
   end
 
   def manage_offers
