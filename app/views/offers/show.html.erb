@@ -3,7 +3,9 @@
     <%= link_to image_tag("back.jfif", height:'13', width:'18' ), :back %>
   </div>
   <div class="col-6 text-center">
-    <h1 class="ml-auto mr-auto my-auto branding main"><%= @user.first_name %>'s Offerings</h1>
+    <% if !@user.first_name.blank? %>
+      <h1 class="ml-auto mr-auto my-auto branding main"><%= @user.first_name %>'s Offerings</h1>
+    <% end %>
   </div>
   <div class="col-3"></div>
 </nav>
@@ -123,8 +125,4 @@
 
 </div>
 
-<% if current_user && current_user.role == 1 %>
-	<%= render 'layouts/footer_trainer' %>
-<% else %>
-	<%= render 'layouts/footer_trainee' %>
-<% end %>
+<%= render 'layouts/footer' %>
