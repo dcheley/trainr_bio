@@ -44,7 +44,7 @@
             <% if offer.avatar.attachment.nil? %>
               <%= link_to image_tag("cover.jpg", class: "offer-pic btn-block"), offer_url(offer) %>
             <% else %>
-              <%= link_to image_tag(offer.avatar.service_url, class: "offer-pic btn-block"), offer_url(offer) %>
+              <%= link_to image_tag(offer.avatar.service_url, class: "offer-pic btn-block"), offer_url(offer, @user) %>
             <% end %>
           </div>
         </div>
