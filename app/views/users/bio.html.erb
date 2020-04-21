@@ -130,29 +130,25 @@
         <div class="col-12"><h3>Certifications</h3></div>
       </div>
       <% @certifications.each do |certification| %>
-        <div class="row mt-3 mx-2">
+        <div class="row mt-3">
           <div class="col-2 mt-1">
             <% if !certification.cert_pic.attachment.nil? %>
               <%= image_tag(certification.cert_pic.service_url, height: 27, width: 27, class:'round-btn')%>
             <% end %>
           </div>
-          <div class="col-8 mx-2 text-left">
-            <%= link_to user_profile_url(certification) do %>
-              <div class="row">
-                <% if !certification.name.nil? || !certification.level.nil? %>
-                  <p class=""><%= "#{certification.name + ' ' + certification.level}"%><br/>
-                <% else %>
-                  <p class="">The Nameless Cert<br/>
-                <% end %>
-                <% if !certification.description.nil? %>
-                  <%= "#{certification.description}"%></p>
-                <% end %>
-              </div>
+          <div class="col-10 px-2 text-left">
+            <% if !certification.name.nil? || !certification.level.nil? %>
+              <p><%= "#{certification.name + ' ' + certification.level}" %><br/>
+            <% else %>
+              <p>Cert name & level missing<br/>
             <% end %>
             <% if !certification.website_url.nil? %>
               <% if !certification.website_url.empty? %>
-                  <p><%= link_to "#{certification.accreditor}", "https://#{certification.website_url}", target: :_blank,  class: "" %></p>
+                <%= link_to "#{certification.accreditor}", "https://#{certification.website_url}", target: :_blank,  class: "" %><br/>
               <% end %>
+            <% end %>
+            <% if !certification.description.nil? %>
+              <%= "#{certification.description}"%></p>
             <% end %>
           </div>
         </div>
