@@ -43,8 +43,10 @@
             <%= image_tag(trainr.avatar.service_url, class: "profile-pic-md") %>
           <% end %>
           <p class=""><%= "#{trainr.first_name} #{trainr.last_name}" %></p>
-          <%= form_tag trainer_studio_url(trainer_studio.id), method: :delete do %>
-            <%= submit_tag 'Remove', class:'btn btn-danger' %>
+          <% if current_user && current_user.role == 8 %>
+            <%= form_tag trainer_studio_url(trainer_studio.id), method: :delete do %>
+              <%= submit_tag 'Remove', class:'btn btn-danger' %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
