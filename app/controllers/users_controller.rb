@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :load_user_id, only: [:my_trainers]
+  before_action :load_user_id, only: [:profile, :bio, :my_trainers]
 
   # def show
   #   @events = @user.trainer_events.order("date ASC")
@@ -85,12 +85,10 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @user = User.find(params[:user_id])
     @events = @user.trainer_events.limit(5).order("date ASC")
   end
 
   def bio
-    @user = User.find(params[:user_id])
     @milestones = @user.milestones.order("year ASC")
     @certifications = @user.certifications.order("start_date ASC")
     @practices = UserPracticeCategory.where(user_id: @user.id).includes(:practice_category).sort_by { |p| p.practice_category.name }
@@ -116,11 +114,11 @@ class UsersController < ApplicationController
   private
 
   def load_user
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def load_user_id
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
   end
 
   def user_params

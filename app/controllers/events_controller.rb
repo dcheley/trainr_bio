@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :load_event, only: [:edit, :update, :destroy]
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     start_of_week = Date.today
     end_of_week = Date.today.end_of_week
     @events = @user.trainer_events.where(date: start_of_week..end_of_week).order("date ASC")
