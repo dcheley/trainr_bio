@@ -11,7 +11,7 @@ class StudiosController < ApplicationController
 
     if @studio.save
       session[:studio_id] = @studio.id
-      redirect_to studios_path(@studio), notice: "Studio created!"
+      redirect_to studio_url(@studio.id), notice: "Studio created!"
     else
       render :new
     end
