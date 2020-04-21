@@ -48,7 +48,7 @@
     <p class="text-danger my-1"><%= flash[:alert] %></p>
 
 
-    <%= image_tag('lotus.png', width: 42, height: 42)%>
+    <%= image_tag('lotus.png', width: 42, height: 42, class: "mt-2")%>
 
 
     <div class="row"></div>
@@ -77,7 +77,7 @@
     <div class="row mt-5">
       <div class="col-3"></div>
       <div class="col-6">
-        <%= link_to "About Us", "http://www.instagram.com/mvmt.bio", method: :delete, class: "btn btn-sm btn-link"%>
+        <%= link_to image_tag("instagram.svg", width: 21, height: 21), "http://www.instagram.com/mvmt.bio", method: :delete, class: "btn btn-sm btn-link"%>
       </div>
       <div class="col-3"></div>
     </div>

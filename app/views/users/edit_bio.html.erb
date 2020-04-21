@@ -38,7 +38,7 @@
     <%= f.hidden_field :trainer_id, value: @user.id %>
     <div class="row mb-2 text-right">
       <div class="col-12">
-        <%= f.submit 'Save', class: 'btn btn-sm btn-secondary' %>
+        <%= f.submit 'Save', class: 'btn btn-sm btn-info' %>
       </div>
     </div>
   <% end %>
@@ -55,7 +55,7 @@
         <%= form_tag user_practice_categories_url(@user), method: :post do %>
           <%= select_tag 'practice_category_id', options_from_collection_for_select(@practices, 'id', "name") %>
           <%= hidden_field_tag "user_id", @user.id %>
-          <%= submit_tag "Add Practice", class:"btn btn-sm btn-secondary" %>
+          <%= submit_tag "Add Practice", class:"btn btn-sm btn-info" %>
         <% end %>
       </div>
     </div>
@@ -89,7 +89,7 @@
         <%= form_tag user_specialty_categories_url(@user), method: :post do %>
           <%= select_tag 'specialty_category_id', options_from_collection_for_select(@specialties, 'id', "name") %>
           <%= hidden_field_tag "user_id", @user.id %>
-          <%= submit_tag "Add Specialty", class:"btn btn-sm btn-secondary" %>
+          <%= submit_tag "Add Specialty", class:"btn btn-sm btn-info" %>
         <% end %>
       </div>
     </div>
@@ -156,7 +156,7 @@
       </div>
     </div>
     <%= f.hidden_field :trainer_id, value: @user.id %>
-    <div class="col-12 text-center"><%= f.submit "Add Certification", class:"btn btn-sm btn-secondary" %></div>
+    <div class="col-12 text-center"><%= f.submit "Add Certification", class:"btn btn-sm btn-info" %></div>
   <% end %>
 </div>
 
@@ -187,7 +187,7 @@
         </div>
         <div class="row my-1 mb-2">
           <div class="col-6 text-left">
-            <%= f.submit "Update Certification", class:"btn btn-sm btn-secondary" %>
+            <%= f.submit "Update Certification", class:"btn btn-sm btn-info" %>
           </div>
       <% end %>
           <div class="col-6 text-right">
@@ -223,7 +223,7 @@
     </div>
     <div class="row my-1 mb-2 text-left">
       <div class="col-12">
-        <%= f.submit "Add Milestone", class:"btn btn-sm btn-secondary" %>
+        <%= f.submit "Add Milestone", class:"btn btn-sm btn-info" %>
       </div>
     </div>
   <% end %>
@@ -247,7 +247,7 @@
         </div>
         <div class="row my-1 mb-2">
           <div class="col-6 text-left">
-            <%= x.submit "Update Milestone", class:"btn btn-sm btn-secondary" %>
+            <%= x.submit "Update Milestone", class:"btn btn-sm btn-info" %>
           </div>
       <% end %>
           <div class="col-6 text-right">

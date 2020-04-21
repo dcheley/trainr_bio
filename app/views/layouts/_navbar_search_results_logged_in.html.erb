@@ -1,12 +1,12 @@
 <div class="container text-center">
   <div class="row my-3">
-    <div class="col-1"></div>
-    <div class="col-10">
+
+    <div class="col-12">
       <%= form_tag(users_url, method: "get", id: "search") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search Name or Studio", required: true %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Name or Studio", required: true  %>
         <%= submit_tag "Go", class:"btn btn-outline-info btn-sm" %>
       <% end %>
     </div>
-    <div class="col-1"></div>
+
   </div>
 </div>

@@ -9,7 +9,7 @@
         <%= form_tag trainer_studios_url(@studio), method: :post do %>
           <%= select_tag 'trainer_id', options_from_collection_for_select(@trainers, 'id', "first_name") %>
           <%= hidden_field_tag "studio_id", @studio.id %>
-          <%= submit_tag "Add", class:"btn btn-secondary" %>
+          <%= submit_tag "Add", class:"btn btn-info" %>
         <% end %>
       </div>
     </div>
