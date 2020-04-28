@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   resources :user_specialty_categories, only: [:create, :destroy]
   resources :trainer_studios, only: [:create, :destroy]
   resources :user_studios, only: [:create, :destroy]
-
-  resources :users, only: [:show] do
+  
+  resources :users, only: [:show], path: '' do
     resources :events, only: [:index]
     resources :offers, only: [:index]
     resources :trainer_studios

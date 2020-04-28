@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :load_user_id, only: [:profile, :bio, :my_trainers]
+  before_action :load_friendly_id, only: [:profile, :bio, :edit_bio, :my_trainers]
 
   # def show
   #   @events = @user.trainer_events.order("date ASC")
@@ -117,7 +117,7 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
   end
 
-  def load_user_id
+  def load_friendly_id
     @user = User.friendly.find(params[:user_id])
   end
 
