@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update, :destroy]
-  before_action :load_friendly_id, only: [:profile, :bio, :edit_bio, :my_trainers]
+  before_action :load_friendly_id, only: [:bio, :edit_bio, :my_trainers]
 
-  # def show
-  #   @events = @user.trainer_events.order("date ASC")
-  #   @bio = @user.bio
-  # end
+  def show
+    @events = @user.trainer_events.order("date ASC")
+    @bio = @user.bio
+    @events = @user.trainer_events.limit(5).order("date ASC")
+  end
 
   def index
     if !params[:search].blank?
@@ -41,18 +42,13 @@ class UsersController < ApplicationController
     end
 
     if @user.update_attributes(user_params)
-      redirect_to user_profile_path(@user), notice: "Account updated!"
+      redirect_to user_url(@user), notice: "Account updated!"
     else
       render :edit
     end
   end
 
   def destroy
-  end
-
-  def show
-    @user = User.find_by_permalink(params[:permalink])
-    @events = @user.trainer_events.limit(5).order("date ASC")
   end
 
   def home
