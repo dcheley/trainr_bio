@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     confirmations: "users/confirmations"
   }
 
+  get 'home' => 'users#home', as: :home
+  root to: 'users#home'
+
   resources :users, only: [:show, :index, :edit, :update, :destroy], path: ''
   resources :studios
   resources :events, only: [:new, :create, :show, :edit, :update, :destroy]
@@ -41,17 +44,9 @@ Rails.application.routes.draw do
     get 'manage_trainers' => 'studios#manage_trainers', as: :manage_trainers
   end
 
-  get 'home' => 'users#home', as: :home
   post 'landing_email' => 'users#landing_email', as: :landing_email
   get 'forgot_password' => 'users#forgot_password', as: :forgot_password
   get 'welcome' => 'users#welcome', as: :welcome
   get 'verification' => 'users#verification', as: :verification
   get 'manage_users' => 'users#manage_users', as: :manage_users
-
-  get '/:permalink',          to: 'users#show',     as: 'custom_user'
-  get '/:permalink/edit',     to: 'users#edit',     as: 'custom_user_edit'
-  get '/:permalink/bio',      to: 'users#bio',      as: 'custom_user_bio'
-  get '/:permalink/edit_bio', to: 'users#edit_bio', as: 'custom_user_bio_edit'
-
-  root to: 'users#home'
 end
