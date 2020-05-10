@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 
   get 'home' => 'users#home', as: :home
+  get 'search' => 'users#index', as: :search
   root to: 'users#home'
 
   resources :users, only: [:show, :index, :edit, :update, :destroy], path: ''
