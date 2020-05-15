@@ -118,16 +118,28 @@
       </div>
     </div>
 
-
+    <div class="row mb-2">
+      <div class="col-3">
+         <p>TrustFollo</p>
+      </div>
+      <div class="col-9">
+        <%= f.text_field :instagram_url, placeholder: "http://app.trustfollo.com/checkout-link", class: "no-border grey-bottom-border" %>
+        <!-- <button class="btn btn-info btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button> -->
+      </div>
+    </div>
     <div class="row mb-3">
+      <p>We currently use TF to handle Booking & Payments while we build out a more ideal user experience. On your TF account, go to "Settings -> Checkout Link" Don't have an account? <%= link_to "Create Account", "https://app.trustfollo.com/auth/register" %> </p>
+    </div>
+
+    <!-- <div class="row mb-3">
       <div class="col-3">
          <p>Instagram</p>
       </div>
       <div class="col-9">
-        <%= f.text_field :instagram_url, placeholder: "IG Handle excluding @", class: "no-border grey-bottom-border" %>
-        <!-- <button class="btn btn-info btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button> -->
+        RUBYTAG f.text_field :instagram_url, placeholder: "IG Handle excluding @", class: "no-border grey-bottom-border" RUBYTAG
+        <button class="btn btn-info btn-sm" style="font-size: 9px;border-radius: 18px;"><i class="fa fa-instagram" aria-hidden="true"></i> Connect with Instagram</button>
       </div>
-    </div>
+    </div> -->
 
     <div class="row mb-3">
       <div class="col-3">
